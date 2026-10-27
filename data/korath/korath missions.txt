@@ -1,0 +1,67 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "label korath space"
+	galaxy "label korath"
+		sprite "label/korath"
+		
+phrase "kor efret small package offer"
+	word
+		`A Tzenketh`
+		`A Kor Efret`
+		`A local`
+	word
+		` `
+	word
+		`communicates using gestures that it wants you to`
+		`uses gestures to ask you to`
+	word
+		` `
+	word
+		`bring a small crate`
+		`bring a package`
+		`take a shipment weighing less than one ton`
+		`carry a box`
+	word
+		` `
+	word
+		`to <destination> for <payment>.`
+	word
+		` `
+	word
+		`It shouldn't take up any significant room on your ship.`
+		`It's small enough to fit below your seat.`
+		`The item is small enough for you to hold in your hands.`
+		`It's small enough that it won't take up any cargo space.`
+
+substitutions
+	"<EDC-ship>" "Esketari"
+
+ship "Charm-Shallop" "Charm-Shallop (Distressed)"
+	outfits
+		"Digger Mining Beam" 2
+		"Fuel Processor"
+		"Generator (Furnace Class)"
+		"Large Heat Shunt"
+		"Plasma Core"
+		"Scram Drive"
+		"Small Heat Shunt"
+		"Steering (Planetary Class)"
+		"Thermal Repeater Rifle" 19
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile"
+	gun 0 -118 "Digger Mining Beam"
+	gun -16.5 -114.5 "Digger Mining Beam"
+	gun 16.5 -114.5
+	turret 0 -35 "Warder Anti-Missile"
+	turret 0 97

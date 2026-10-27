@@ -1,0 +1,533 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Small Collector Module"
+	category "Power"
+	series "Solar"
+	index 08010
+	licenses
+		Coalition
+	cost 60000
+	thumbnail "outfit/small collector module"
+	"mass" 8
+	"outfit space" -6
+	"solar collection" .8
+	"solar heat" .4
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Collector Module"
+	category "Power"
+	series "Solar"
+	index 08020
+	licenses
+		Coalition
+	cost 300000
+	thumbnail "outfit/large collector module"
+	"mass" 28
+	"outfit space" -21
+	"solar collection" 3.3
+	"solar heat" 1.5
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Small Reactor Module"
+	category "Power"
+	series "Generators"
+	index 08030
+	licenses
+		Heliarch
+	cost 5497000
+	thumbnail "outfit/small reactor module"
+	"mass" 42
+	"outfit space" -42
+	"energy generation" 9.8
+	"heat generation" 19
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt runs hot, it runs loud, and it runs, which is more than can be said for most of its competitors."
+
+outfit "Large Reactor Module"
+	category "Power"
+	series "Generators"
+	index 08040
+	licenses
+		Heliarch
+	cost 17754000
+	thumbnail "outfit/large reactor module"
+	"mass" 98
+	"outfit space" -98
+	"energy generation" 24.2
+	"heat generation" 45
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tThe design is old enough that the people who invented it are a matter of archaeology rather than engineering."
+
+outfit "Small Cogeneration Module"
+	category "Power"
+	series "Generators"
+	index 08010
+	licenses
+		Coalition
+	cost 176000
+	thumbnail "outfit/small cogeneration module"
+	"mass" 11
+	"outfit space" -11
+	"energy generation" 1.15
+	"heat generation" .85
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+outfit "Large Cogeneration Module"
+	category "Power"
+	series "Generators"
+	index 08020
+	licenses
+		Coalition
+	cost 799000
+	thumbnail "outfit/large cogeneration module"
+	"mass" 46
+	"outfit space" -46
+	"energy generation" 5.3
+	"heat generation" 3.45
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Small Battery Module"
+	category "Power"
+	series "Batteries"
+	index 08010
+	licenses
+		Coalition
+	cost 22000
+	thumbnail "outfit/small battery module"
+	"mass" 4
+	"outfit space" -4
+	"energy capacity" 3600
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Battery Module"
+	category "Power"
+	series "Batteries"
+	index 08020
+	licenses
+		Coalition
+	cost 170000
+	thumbnail "outfit/large battery module"
+	"mass" 18
+	"outfit space" -18
+	"energy capacity" 18000
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+
+outfit "Small Shield Module"
+	category "Systems"
+	series "Shields"
+	index 08010
+	licenses
+		Coalition
+	cost 84000
+	thumbnail "outfit/small shield module"
+	"mass" 11
+	"outfit space" -11
+	"shield generation" .28
+	"shield energy" .28
+	"shield heat" .1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Shield Module"
+	category "Systems"
+	series "Shields"
+	index 08020
+	licenses
+		Coalition
+	cost 553000
+	thumbnail "outfit/large shield module"
+	"mass" 39
+	"outfit space" -39
+	"shield generation" 1.3
+	"shield energy" 1.3
+	"shield heat" .5
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Overcharged Shield Module"
+	category "Systems"
+	series "Shields"
+	index 08030
+	licenses
+		Heliarch
+	cost 1216000
+	thumbnail "outfit/overcharged shield module"
+	"mass" 44
+	"outfit space" -44
+	"shield generation" 4.6
+	"shield energy" 4.6
+	"shield heat" 1.4
+	"energy consumption" .5
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Small Repair Module"
+	category "Systems"
+	series "Repair"
+	index 08010
+	licenses
+		Coalition
+	cost 64000
+	thumbnail "outfit/small repair module"
+	"mass" 6
+	"outfit space" -6
+	"hull repair rate" .12
+	"hull energy" .12
+	"hull heat" .1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Repair Module"
+	category "Systems"
+	series "Repair"
+	index 08020
+	licenses
+		Coalition
+	cost 553000
+	thumbnail "outfit/large repair module"
+	"mass" 21
+	"outfit space" -21
+	"hull repair rate" .57
+	"hull energy" .57
+	"hull heat" .5
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Overclocked Repair Module"
+	category "Systems"
+	series "Repair"
+	index 08030
+	licenses
+		Heliarch
+	cost 1126000
+	thumbnail "outfit/overclocked repair module"
+	"mass" 32
+	"outfit space" -32
+	"hull repair rate" 1.4
+	"hull energy" 1.4
+	"hull heat" 1.2
+	"heat generation" .6
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Cooling Module"
+	category "Systems"
+	series "Cooling"
+	index 08010
+	licenses
+		Coalition
+	cost 160000
+	thumbnail "outfit/cooling module"
+	"mass" 5
+	"outfit space" -5
+	"active cooling" 21
+	"cooling energy" 1.4
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Fuel Module"
+	category "Systems"
+	series "Fuel"
+	index 08020
+	licenses
+		Coalition
+	cost 270000
+	thumbnail "outfit/fuel module"
+	"mass" 19
+	"outfit space" -19
+	"fuel capacity" 400
+	"fuel protection" .25
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tA version of this is carried by every ship of the faction that built it, which is either a recommendation or a warning."
+
+outfit "Decoy Plating"
+	category "Systems"
+	series "Jammers"
+	index 08010
+	cost 93000
+	thumbnail "outfit/decoy plating"
+	"mass" 7
+	"outfit space" -7
+	"scan interference" 2
+	"radar jamming" 5
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+outfit "Refueling Module"
+	category "Systems"
+	series "Fuel"
+	index 08030
+	cost 822000
+	thumbnail "outfit/refueling module"
+	"mass" 10
+	"outfit space" -10
+	"fuel capacity" -100
+	"fuel generation" .05
+	"energy consumption" .11
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt does the job it was built for, and it does not pretend to do anything else."
+
+outfit "Shield Refactor Module"
+	category "Systems"
+	series "Shields"
+	index 08040
+	cost 3248000
+	thumbnail "outfit/shield refactor module"
+	"mass" 7
+	"outfit space" -7
+	"hull repair rate" -.25
+	"shield energy multiplier" .2
+	"shield heat" .32
+	"shield generation multiplier" .2
+	"hull repair multiplier" -.2
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt has been repaired with parts from at least three other machines, and the repairs are better done than the original."
+
+outfit "Small Recovery Module"
+	category "Systems"
+	series "Shields"
+	index 08050
+	cost 625000
+	thumbnail "outfit/small recovery module"
+	"mass" 25
+	"outfit space" -25
+	"shield generation" .97
+	"shield energy" .43
+	"shield heat" .7
+	"hull repair rate" .43
+	"hull energy" .97
+	"hull heat" .07
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Scanning Module"
+	category "Systems"
+	series "Scanners"
+	index 08010
+	licenses
+		Heliarch
+	cost 453600
+	thumbnail "outfit/scan module"
+	"mass" 3
+	"outfit space" -3
+	"outfit scan power" 25
+	"outfit scan efficiency" 18
+	"cargo scan power" 25
+	"cargo scan efficiency" 18
+	"tactical scan power" 25
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Outskirts Gauger"
+	category "Systems"
+	series "Scanners"
+	index 08020
+	cost 1406000
+	thumbnail "outfit/outskirts gauger"
+	"mass" 8
+	"outfit space" -8
+	"unique" 1
+	"tactical scan power" 169
+	"energy consumption" .2
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tIt runs hot, it runs loud, and it runs, which is more than can be said for most of its competitors."
+
+outfit "Small Thrust Module"
+	category "Engines"
+	series "Engines"
+	index 08011
+	licenses
+		Coalition
+	"cost" 66000
+	thumbnail "outfit/small thrust module"
+	"mass" 9
+	"outfit space" -9
+	"engine capacity" -9
+	"thrust" 12.45
+	"thrusting energy" 0.46
+	"thrusting heat" 3
+	"flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"flare sound" "atomic tiny"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Thrust Module"
+	category "Engines"
+	series "Engines"
+	index 08021
+	licenses
+		Coalition
+	"cost" 292000
+	thumbnail "outfit/large thrust module"
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"thrust" 45.9
+	"thrusting energy" 1.7
+	"thrusting heat" 11
+	"flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"flare sound" "atomic small"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Small Reverse Module"
+	category "Engines"
+	series "Engines"
+	index 08012
+	licenses
+		Coalition
+	"cost" 66000
+	thumbnail "outfit/small reverse module"
+	"mass" 9
+	"outfit space" -9
+	"weapon capacity" -9
+	"reverse thrust" 12.45
+	"reverse thrusting energy" 0.46
+	"reverse thrusting heat" 3
+	"reverse flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"reverse flare sound" "atomic tiny"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tThe previous owner left it behind, which is the sort of testimony that should tell you something."
+
+outfit "Large Reverse Module"
+	category "Engines"
+	series "Engines"
+	index 08022
+	licenses
+		Coalition
+	"cost" 292000
+	thumbnail "outfit/large reverse module"
+	"mass" 32
+	"outfit space" -32
+	"weapon capacity" -32
+	"reverse thrust" 45.9
+	"reverse thrusting energy" 1.7
+	"reverse thrusting heat" 11
+	"reverse flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"reverse flare sound" "atomic small"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tThe tolerances are loose by Union standards and the result is, somehow, more reliable."
+
+outfit "Small Steering Module"
+	category "Engines"
+	series "Engines"
+	index 08010
+	licenses
+		Coalition
+	"cost" 60000
+	thumbnail "outfit/small steering module"
+	"mass" 7
+	"outfit space" -7
+	"engine capacity" -7
+	"turn" 268.2
+	"turning energy" 0.26
+	"turning heat" 1.8
+	"steering flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"steering flare sound" "atomic tiny"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Large Steering Module"
+	category "Engines"
+	series "Engines"
+	index 08020
+	licenses
+		Coalition
+	"cost" 269000
+	thumbnail "outfit/large steering module"
+	"mass" 25
+	"outfit space" -25
+	"engine capacity" -25
+	"turn" 1120.5
+	"turning energy" 1.0
+	"turning heat" 6.5
+	"steering flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"steering flare sound" "atomic small"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Enforcer Confrontation Gear"
+	category "Hand to Hand"
+	series "H2H"
+	index 08020
+	licenses
+		Heliarch
+	cost 369000
+	thumbnail "outfit/enforcer confrontation gear"
+	"capture attack" 3.1
+	"capture defense" 4.9
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Enforcer Riot Staff"
+	category "Hand to Hand"
+	series "H2H"
+	index 08010
+	licenses
+		Heliarch
+	cost 97000
+	thumbnail "outfit/enforcer riot staff"
+	"capture attack" 2.0
+	"capture defense" 3.5
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Guardian Turret"
+	category "Hand to Hand"
+	series "Fortifications"
+	index 08025
+	licenses
+		Heliarch
+	cost 876000
+	thumbnail "outfit/guardian turret"
+	"mass" 1
+	"outfit space" -1
+	"capture defense" 19
+	"unplunderable" 1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tThe rating plate is in a language the dockyard does not read, and nobody has offered to translate it."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+outfit "Anti-Materiel Gun"
+	category "Hand to Hand"
+	series "H2H"
+	index 08030
+	cost 257200
+	thumbnail "outfit/anti-materiel gun"
+	"capture attack" 3.4
+	"capture defense" 1.9
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Coalition License"
+	category "Licenses"
+	series "Licenses"
+	index 08010
+	thumbnail "outfit/coalition license"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tA version of this is carried by every ship of the faction that built it, which is either a recommendation or a warning."
+
+outfit "Heliarch License"
+	category "Licenses"
+	series "Licenses"
+	index 08020
+	thumbnail "outfit/heliarch license"
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+
+outfit "Beyond the Hyperdrive"
+	category "Unique"
+	series "Non-Functional Unique"
+	index 11
+	thumbnail "outfit/beyond the hyperdrive"
+	"unique" 1
+	description "This is Xelayan equipment, built for the high gravity of a Xelayan homeworld and heavier than it looks."
+	description "\tThe previous owner left it behind, which is the sort of testimony that should tell you something."

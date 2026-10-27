@@ -1,0 +1,528 @@
+# Copyright (c) 2014 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "smuggler's den: payment"
+
+
+
+effect "puff"
+	sprite "effect/puff"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 20
+	"random angle" 360
+	"velocity scale" -.005
+
+outfit "Imaginary Weapon"
+	category "Guns"
+	"gun ports" -1
+	weapon
+		sprite "projectile/rainbow"
+			"frame rate" 12
+			"random start frame"
+		"hit effect" "puff"
+		"die effect" "puff"
+		"inaccuracy" 20
+		"velocity" 12
+		"lifetime" 60
+		"reload" 10
+		"acceleration" 1.2
+		"drag" .1
+		"turn" 3
+		"homing"
+			"leading"
+			"throttle control"
+		"tracking" 1.
+
+ship "Hallucination"
+	noun "flower"
+	sprite "ship/hallucination"
+		"frame rate" 1
+		"random start frame"
+	"never disabled"
+	"administrative cost" 1
+	attributes
+		category "Unclassified"
+		"hull" 1000
+		"mass" 180
+		"drag" 2.1
+		"heat dissipation" .7
+		"fuel capacity" 100000
+		"jump fuel" 100
+		"jump speed" 1
+		"jump drive" 1
+		"automaton" 1
+		"thrust" 30
+		"turn" 500
+		"energy generation" 1
+	outfits
+		"Imaginary Weapon" 1
+	gun 0 0
+
+phrase "generic human package offer"
+	word
+		`A local`
+		`A man`
+		`A resident of <origin>`
+		`A stranger`
+		`A woman`
+	word
+		` `
+	word
+		`appears from seemingly nowhere to ask,`
+		`approaches you and says,`
+		`flags you down and asks,`
+		`walks up to you and asks,`
+		`stops you and asks,`
+	word
+		` "`
+	word
+		`Captain,`
+		`Excuse me, Captain.`
+		`Sorry to interrupt, but`
+		`Hey there, Captain.`
+	word
+		` `
+	word
+		`I have a small package that needs to get to <planet> by <day>.`
+		`I'm trying to get a package to a relative on <planet> by <day>.`
+		`I need to get this package to one of my clients on <planet> by <day>.`
+		`I'm trying to get this package to <planet> before <day>.`
+	word
+		` `
+	word
+		`Are you able to carry it for me?`
+		`Can you carry it for me?`
+		`Could you take it there?`
+		`Can you help me out with this?`
+	word
+		` I'll give you <payment> for the effort.`
+		` I'm willing to pay you <payment>.`
+		` I can afford to give you <payment> for it.`
+	word
+		`"`
+
+ship "Asteroid"
+	noun "asteroid"
+	sprite "asteroid/medium rock/spin"
+		"frame rate" 10
+	"administrative cost" 2
+	attributes
+		category "Unclassified"
+		"fuel capacity" 1
+		"hull" 10000
+		"mass" 1000
+		"drag" 10
+		"heat dissipation" .1
+		"required crew" 0
+		"automaton" 1
+		"bunks" 0
+		"thrust" 10
+		"turn" 100
+		"thrusting energy" 1
+		"turning energy" 1
+		"energy generation" 3
+		"inscrutable" 1
+	explode "small explosion" 25
+	explode "medium explosion" 35
+	explode "large explosion" 45
+	explode "huge explosion" 30
+
+
+
+event "terraforming Rand"
+	planet "Rand"
+		add description `	Recent terraforming experiments have caused an increase in precipitation. Flash floods have scoured the landscape in some areas, but sandstorms are also less frequent, and the locals say the heat is a bit less oppressive than it used to be.`
+
+event "terraforming timer"
+
+event "terraforming research"
+
+event "terraforming Tundra"
+	planet "Tundra"
+		description `Millions of years ago, this was a warm world, perhaps even tropical. But some cataclysmic event, perhaps a meteor strike or a massive volcanic eruption, altered the planet's atmosphere enough to turn it into the nearly lifeless, frozen planet it is today. Recent experiments in terraforming the planet have attempted to remedy the climate by causing a supervolcano to prematurely erupt.`
+		description `	The first settlers came here to drill for the oil trapped deep under the surface, a relic of Tundra's former, more lively days. Instead of refining the oil into plastic, which sells relatively cheap in this region, they have developed an industry in synthetic fabrics and clothing.`
+
+
+
+event "terraforming timer 2"
+
+event "terraforming follow-up"
+	planet "Rand"
+		add attributes "tourism"
+		description `Rand is a desert world, too dry for much farming and with gravity low enough to be uncomfortable for most Union beings. It is, however, the best source of heavy metals in the galactic south. Aside from the managers of the mining companies, nearly all the people here are migrant workers from elsewhere in the Dirt Belt, who have come to spend a season working for the relatively high wages that uranium mining offers, either to send money off-world or to save it up in order to build a better life for themselves.`
+		description `	Due to the results of recent terraforming experiments, Rand has become a moderately more habitable place. Fascination with this change in climate has led to Rand becoming a semi-popular tourist destination of the Dirt Belt.`
+		spaceport `The landing pads here are poured concrete, raised up slightly above the level of the desert to keep them from being buried in sand. A few workers are constantly driving brush sweepers across the unoccupied pads. The air is filled with sand particles and dust. Aside from the storage sheds, there are only two buildings, each with a large sign out front: "Labor" and "Trade."`
+		spaceport `	For once, the spaceport is lively during Remembrance Day. It appears that more and more people are choosing to invite their family over to Rand to commemorate the day instead of traveling to another planet.`
+			to display
+				"days since year start" > 35
+				"days since year start" < 55
+	planet "Tundra"
+		spaceport `The spaceport village consists of several large domes, which keep out the wind and driving snow; ships enter and exit the largest of the domes through a hatch that closes as soon as they have come through. Before the planet was terraformed, enough snow would pile up on top of one of the domes every decade or so that it became a danger of collapsing under its own weight; the locals would simply move out of that dome and build another one higher up on the snowpack, but the changing climate has reduced the amount of snow enough that the locals may never need to build another dome again.`
+		spaceport `	For Remembrance Day, several stalls have been set up to showcase items of clothing made with the planet's synthetic fabrics. A new addition to the event is a group of stalls dedicated to presenting clothing tailored here on Tundra.`
+			to display
+				"days since year start" > 35
+				"days since year start" < 55
+
+
+
+ship "Science Drone"
+	sprite "ship/science drone"
+	"administrative cost" 0
+	attributes
+		category "Drone"
+		hull 200
+		mass 30
+		drag 2
+		"heat dissipation" 1
+	explode "tiny explosion" 5
+	explode "small explosion" 2
+
+
+
+ship "Vanguard" "Vanguard (Plasma Slow)"
+	outfits
+		"Plasma Cannon" 7
+		"Heavy Anti-Missile Turret"
+		"Fusion Reactor"
+		Supercapacitor
+		"D14-RN Shield Generator"
+		"Fuel Pod" 5
+		"Small Radar Jammer" 2
+		"Interference Plating" 4
+		"Cargo Expansion" 3
+		"Laser Rifle" 11
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+
+
+
+event "fumbling mugger timer"
+
+
+event "fumbling mugger followup timer"
+
+
+
+event "laborer payment"
+
+event "quicksilver mixup 2 available"
+
+
+event "lost racer deadline"
+
+event "artemis renard recovered"
+
+ship "Racing Flivver"
+	sprite "ship/racing flivver"
+	thumbnail "thumbnail/racing flivver"
+	"administrative cost" 1
+	attributes
+		category "Transport"
+		# This Flivver has a high cost so that you can sell it for roughly the same amount as a normal Flivver would cost.
+		"cost" 4900000
+		"shields" 1100
+		"hull" 150
+		"required crew" 1
+		"bunks" 2
+		"mass" 32
+		"drag" 1.0
+		"heat dissipation" .9
+		"fuel capacity" 600
+		"cargo space" 0
+		"outfit space" 160
+		"weapon capacity" 22
+		"engine capacity" 60
+		weapon
+			"blast radius" 16
+			"shield damage" 160
+			"hull damage" 80
+			"hit force" 240
+	outfits
+		"Ramscoop"
+		"Water Coolant System"
+		"Hyperdrive"
+
+		"Dwarf Core"
+		"Supercapacitor"
+		
+		"A125 Atomic Steering"
+		"A250 Atomic Thruster"
+		"AR120 Reverse Thruster"
+		"Volcano Afterburner"
+		
+	engine -16.5 26
+	engine 16.5 26
+	"reverse engine" -16.5 -11 0.8
+	"reverse engine" 16.5 -11 0.8
+	"steering engine" -16.5 26 0.8
+		"right"
+	"steering engine" 16.5 26 0.8
+		"left"
+	"steering engine" -16.5 -11 0.8
+		"angle" 180
+		"left"
+	"steering engine" 16.5 -11 0.8
+		"angle" 180
+		"right"
+	leak "leak" 60 50
+	explode "tiny explosion" 10
+	explode "small explosion" 10
+	description "One of champion racer Artemis Renard's many beloved racing crafts, this Lionheart Flivver has been so heavily modified you're not sure if it can even be considered one. Its sleek, elegant lines belie its underlying power: the oversized engines hum with energy and roar to life with spine-bending force at the gentlest touch of the controls, propelling the craft and its pilot to the stars like butterflies on a moonbeam."
+	description "	A gift to you for saving Artemis' life after it was pulled from the sand where she crashed post-race, the Renard family has spared no expense in restoring the craft to gleaming perfection."
+
+
+
+event "kris gets frustrated"
+
+event "tom and carl's wedding"
+
+event "hogshead poll"
+
+event "lost dog: homeward bound"
+
+
+event "adelita 2 offer expired"
+
+
+event "start of independent violence"
+	government "Independent (Killable)"
+		"attitude toward"
+			"Independent" -.01
+	government "Independent"
+		"attitude toward"
+			"Independent (Killable)" -.01
+
+event "end of independent violence"
+	government "Independent (Killable)"
+		"attitude toward"
+			"Independent" 0
+	government "Independent"
+		"attitude toward"
+			"Independent (Killable)" 0
+
+# Feel free to change this escape shuttle to a different ship once escape pod mechanics are implemented.
+ship "Emergency Shuttle"
+	sprite "ship/escape shuttle"
+	"administrative cost" 1
+	attributes
+		category "Utility"
+		"cost" 45000
+		"shields" 300
+		"hull" 600
+		"required crew" 1
+		"bunks" 10
+		"mass" 65
+		"drag" 1.7
+		"heat dissipation" .7
+		"fuel capacity" 100
+		"cargo space" 20
+		"outfit space" 39
+		"weapon capacity" 0
+		"engine capacity" 20
+		weapon
+			"blast radius" 9
+			"shield damage" 90
+			"hull damage" 45
+			"hit force" 135
+	outfits
+		"KP-6 Photovoltaic Panel" 2
+		"LP036a Battery Pack"
+		"Outfits Expansion"
+		
+		"X1050 Ion Engines"
+
+		"Hyperdrive"
+		
+	engine 0 26
+		zoom 1.4
+	leak "leak" 40 50
+	explode "tiny explosion" 5
+	explode "small explosion" 1
+	description "This Emergency Shuttle is custom-built, designed to be attached to a larger ship and to serve as a lifeboat if the need arises. It is intentionally designed to maximize the number of people it can carry to safety, but has very little space for outfits."
+
+
+
+event "syndicate business 1m investment done"
+
+
+event "syndicate business 10m investment done"
+
+event "timothy radrickson: on rand"
+event "timothy radrickson: mummy"
+
+
+event "timothy radrickson: governor"
+
+
+event "timothy radrickson imprisoned"
+
+
+event "rad tim dead"
+
+event "timothy radrickson forever"
+
+
+event "stone waiting most"
+
+
+conversation "Ice Queen"
+	branch "has stone"
+		has "Stone to Hope: done"
+	`There is nothing here. Only unceasing desolation. The slow churning of hateful ice that swallowed the dream of a world. Yet, here you are. You've landed along the equator, where the environment is not quite so hostile, and where patches of unconquered ice-free rock still reign.`
+	`	Beyond your ship are the ruins of the last unfrozen city. Where the final refugees huddled together awaiting their saviors, the Republic Navy, and were whisked away to other more welcoming worlds.`
+	choice
+		`	(Explore the area.)`
+			goto explore
+		`	(Leave this world.)`
+	`	There is nothing here anyone could want. You leave this abandoned world to its glaciers and ghosts.`
+		decline
+
+	label explore
+	`	You break out the cold gear and dress yourself in warm layers with sturdy boots. Furtive frost cracks and breaks as your ship's door opens, and you step out into the cold air. This world's dim light reflects painfully off the ice and snow, momentarily blinding you.`
+	`	Once outside in the sharp, crisp air it's easy to find the dismal ruins of this world's last spaceport. The trek is slow and clumsy in the unfamiliar gravity and granular snow.`
+	`	You work around the silent spaceport, where the half-buried hangars are littered with the forgotten mementos of desperate refugees, and many of the buildings are lost beneath the encroaching ice. Eventually you see a cliff edge with dozens of cairns piled along it. Silent watchers of the churning glaciers.`
+	`	The sun begins to set, and you can already feel the temperature beginning to plummet. There's not much else to see in this abandoned world, and it may be time to head back.`
+		goto building
+
+	label "has stone"
+	`There is nothing here. Only unceasing desolation. The slow churning of hateful ice that swallowed the dream of a world. Yet, here you are. You've landed along the equator, where the environment is not quite so hostile, and where patches of unconquered ice-free rock still reign.`
+	`	Beyond your ship are the ruins of the last unfrozen city. Where the final refugees huddled together awaiting their saviors, the Republic Navy, and were whisked away to other more welcoming worlds.`
+	choice
+		`	(Search for the Snaiwaz Family-Cairn.)`
+			goto "cairn search"
+		`	(Toss the stone out of the hatch and leave this world.)`
+
+	action
+		set "chucked tosti's stone"
+	`	The stone of Tosti's father tumbles out of the ship and comes to rest in a heap of cluttered refuse. This is as close as it will get to its Family-Cairn, and far closer than Tosti could have gotten it on his own.`
+		decline
+
+	label "cairn search"
+	`	You break out the cold gear and dress yourself in warm layers with sturdy boots. Furtive frost cracks and breaks as your ship's door opens, and you step out into the cold air. This world's dim light reflects painfully off the ice and snow, momentarily blinding you.`
+	`	Once outside in the sharp, crisp air it's easy to find the dismal ruins of this world's last spaceport. The trek is slow and clumsy in the unfamiliar gravity and granular snow.`
+	`	You work around the silent spaceport, where the half-buried hangars are littered with the forgotten mementos of desperate refugees, and many of the buildings are lost beneath the encroaching ice. Eventually you find the cliffs that Tosti spoke of, and the many dozens of Family-Cairns piled along side it. Silent watchers of the churning glaciers.`
+	`	You see a nearly toppled Family-Cairn with the name "Snaiwaz" at its base.`
+	choice
+		`	(Place Tosti's father's stone.)`
+			goto "place stone"
+		`	(Throw the stone off the side of the cliff.)`
+
+	action
+		set "threw tosti's stone"
+	`	You hurl the stone far beyond the cliff side and down into glacial slopes beneath it, forever separated from its kindred-stones.`
+		decline
+
+	label "place stone"
+	action
+		set "placed tosti's stone"
+	`	Carefully you place Tosti's stone with the others. The act is greeted only by the deafening silence and the icy air of the abandoned world.`
+	`	The sun is setting and your task here is done. You start making your way back through ice and ruin to your ship.`
+
+	label building
+	`	As you pass around one corner of the sagging spaceport, you notice a large, ice-free building in the distance with a light burning within.`
+	choice
+		`	(Enter the building.)`
+			goto "lit building"
+		`	(Keep heading toward my ship.)`
+
+	`	Whatever is going on in that building, it has nothing to do with you, and so you ignore it and return to your waiting ship.`
+		decline
+	
+	label "lit building"
+	`	You enter into the sturdy and unfrozen building at the edge of the spaceport.`
+	`	Faded wealth still clings to peeling walls of this once spacious manor. It is evident that it was once the heart and hearth of a wealthy family in an earlier, warmer time. The home feels like a tomb or a museum; it seems as if everything here has been left in a certain way for a long time. But as you work deeper into its nested walls you begin to see signs of much more recent life.`
+	`	Eventually you find your way to the kitchen, which appears to be the epicenter of activity in this household. You see assorted survival rations and gear strewn about everywhere. More alarmingly, you also see a young woman sitting on the floor with her back against a counter.`
+	choice
+		`	"Who are you?"`
+		`	"Are you okay?"`
+		`	"What are you doing here?"`
+
+	`	The woman has short jet black hair. She's wearing a military grade, all-purpose survival suit, the kind you might see on deeply embedded special forces. The only weapon on her is a decorated knife at her belt. She looks pale and frail, probably malnourished. But her icy eyes are clear, and she locks them onto you.`
+	`	"You come into my home, and expect me to answer your questions?" Her voice is steady.`
+	`	Slowly, awkwardly, she pulls herself to her feet, keeping one hand on the counter for balance. She rests her other hand over her knife.`
+	`	"You are lucky that you did not barge in here a year ago, or even a month ago." Despite her bravado there is a deep wariness behind her words. "Now tell me, who are you, and what are you doing here?" she asks, through gritted teeth.`
+	choice
+		`	(Tell her who I am, and how I was just delivering a stone.)`
+			to display
+				has "Stone to Hope: done"
+		`	(Tell her who I am, and how I was just out exploring.)`
+		`	(Tell her it's none of her business.)`
+
+	`	The woman nods slowly, and then painfully, slides back down to the ground.`
+	`	Her eyes fall to the floor. "I have no choice but to trust you. I have lived here all my life, but my equipment has failed. I never wanted to leave, I was never meant to leave, but I won't let the ice win. I won't let it take me, too."`
+	`	She looks back up at you with her piercing eyes. "I am Ildico, last of House Drifa, daughter of Deoric, once one of the most powerful men on Hope. Everyone fled the ice. The Republic Navy made it easy. Enter their ships and be shipped off to paradise, to live as nobodies at the sufferance of strangers.`
+	`	"But we were House Drifa. More than anyone else we built this world, and we would not abandon it to be someone else's dredges. My father bought supplies, equipment, necessities from the Navy. Enough so that me, my brother, and my mother could survive here."`
+	`	She pauses, as though unsure she wants to continue; then finally, in a less firm voice: "And then my father left. He said that dozens of worlds, worse off than ours, were terraformed every day. He said all they needed was a little convincing, and that he would come back with the support to terraform, and save, Hope. And then... he never came back."`
+	`	Ildico sighs. "A treasure hunter killed my brother a few years back. My mother... she is also dead, and I am starving. I have no way to contact anyone else, and no one else is left.`
+	`	"So, what do you say," she says while leaning her head back, clearly exhausted by this exchange. "Will you kill me? Take advantage of me? Save me? Or leave me... to die?"`
+	choice
+		`	"Come with me. It's time you gave up on Hope."`
+			goto "come with me"
+		`	"I'll get you out of here. After that, no promises."`
+			goto "come with me"
+		`	"I don't have time for wretches. You're on your own."`
+	`	Ildico, her eyes still closed, takes a deep breath. She opens her eyes just as she lunges at you, with a swift arm motion toward your head. Before you have a chance to react, her knife is embedded deep in your throat.`
+	`	You're on the ground now, with ruby red blood oozing out over the cold floor. You hear a strange moan escaping from your mouth, and Ildico's hands are in your pockets removing everything you have of value.`
+	`	As the world fades to black, you hear her talking, her words sound as though they are coming from a great distance. "Like I said, I won't die here. Thanks for the ship."`
+	`	Your vision grows darker until only a single point of light remains. You don't feel cold, or pain, or anything at all. You just feel heavy. So heavy. Too heavy. So, you let go.`
+		die
+
+	label "come with me"
+	`	You help her back onto her feet, and with her leaning on you, the two of you make your way back outside and through the perilous cold to your ship.`
+	`	Once aboard, after she's eaten and regained a little of her strength, she comes to talk with you.`
+	`	"Thank you for saving me. There are places I need to go. But I know I cannot force you to take me. And I have no credits to pay you. If you could take me to <planet>, I could make my own way from there."`
+	choice
+		`	"Anywhere you need to go, I can take you."`
+			goto "where she needs to go"
+		`	"Okay, I'll take you to <planet>, but after that you're on your own."`
+			accept
+
+	label "where she needs to go"
+	`	Ildico narrows her eyes. "Nothing is free."`
+	choice
+		`	"I just want to make the universe a better place."`
+		`	"It's karma. What goes around comes around."`
+		`	"One day you'll be able to pay me back."`
+		`	"It's how they do things on Norn."`
+			to display
+				has "Stone to Hope: done"
+		`	"My reasons are my own."`
+
+	action
+		set "helpildico"
+	`	Ildico doesn't react for a moment, seemingly taking in your words.`
+	`	At length she nods slowly. "We'll see."`
+	`	She pauses again and then shrugs. "It's not like I have anything to lose... very well. I need to discover what happened to my father. I know he first went to Clark to meet with a terraforming firm there. That's where I start my search."`
+		launch
+
+conversation "Ice Queen End"
+	branch "help ildico"
+		has "helpildico"
+	`Your thrusters kick up fresh dust as you land on your assigned concrete pad in the sprawling spaceport. Ildico, looking less pale and significantly more sturdy, waits by the exit.`
+	`	"Thank you for getting me out of there. After all those years on the ice this place will be no challenge for me. Perhaps someday our paths will cross again. If they do, I will remember this small kindness."`
+	`	She gives you a stern nod, and then exits your ship and into the chaos of Clark.`
+		goto end
+
+	label "help ildico"
+	`Your thrusters kick up fresh dust as you land on your assigned concrete pad on the fringes of the sprawling spaceport. Ildico, looking less pale and significantly more sturdy, waits by the exit.`
+	`	"The terraforming firm is certain to have an office, or booth, in the ramshackle spaceport here. Let's pay them a visit."`
+	label end
+
+
+event "deoricdeeds"
+
+
+event "pirateildy"
+

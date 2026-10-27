@@ -1,0 +1,495 @@
+# Orville Endless Sky Mod - Systems and planets.
+#
+# Model keys unchanged so fleet/trade/link references resolve.
+# galaxy/system blocks do NOT support "display name" — only top-level
+# planet blocks do (Planet.cpp:101,265). Nested object nodes do not
+# support it either, and planets do NOT support "plural".
+#
+# Government keys are stock keys carrying an Orville display name
+# (see data/orville/governments.txt): the Union is "Republic", the
+# Motilali are "Wanderer". Never invent a new government key here.
+
+# ---- ORVILLE SYSTEMS -----------------------------------------------------
+
+# Ekos — Krill border world (Union vs Krill flashpoint)
+system "Ekos"
+	government "Republic"
+	pos 400 -300
+	attributes "border world"
+	link Sol
+	link "Orville Space"
+	link Calivon
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	trade "Union Rations" 200
+	trade "Quantum Drive Components" 300
+	trade "Moclan Alloys" 150
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	minables tungsten 2 4.5
+	fleet "Small Union" 400
+	fleet "Large Union" 800
+	object
+		sprite star/o0
+		period 10
+	object
+		sprite planet/mercury
+		distance 400
+		period 60
+	object "Ekos Prime"
+		sprite planet/mars
+		distance 900
+		period 365
+
+planet "Ekos Prime"
+	attributes "union"
+	landscape land/city5
+	description `Ekos Prime is a Union border world on the edge of Krill space, a world of factories and shipyards that never quite sleeps. It is here that the Planetary Union tests the resolve of anyone who would settle the frontier.`
+	spaceport `The spaceport is a sprawl of grey landing towers and humming assembly hangars, patrolled constantly by Union interceptors.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	outfitter "Union Fabricator"
+	outfitter "Crildari Exchange"
+	bribe 0.05
+	security 0.8
+
+# Otranta — Moclan scholarly preserve
+system "Otranta"
+	government "Moclan"
+	pos -500 400
+	attributes "scholarly preserve"
+	link Sol
+	link "Midgard System"
+	link "Deep Region"
+	link Kaylon
+	asteroids "small rock" 15 1.8
+	trade Metal 520
+	trade Equipment 469
+	trade Industrial 767
+	trade "Moclan Biotech" 400
+	trade "Moclan Alloys" 350
+	trade Medical 777
+	minables titanium 6 3.6
+	minables platinum 3 4.8
+	minables gold 2 5.0
+	fleet "Small Moclan" 300
+	fleet "Large Moclan" 600
+	object
+		sprite star/g3
+		period 10
+	object
+		sprite planet/venus
+		distance 500
+		period 150
+	object Otranta
+		sprite planet/earth
+		distance 1000
+		period 400
+
+planet Otranta
+	attributes "moclan"
+	landscape land/city5
+	description `Otranta is a Moclan scholarly preserve, a world of quiet academies and orderly shipyards. The Moclan Hegemony trains its officers and engineers here before assigning them to the fleet.`
+	spaceport `The spaceport is austere and precise: every tower is identical, every landing pad numbered, every arrival logged before the hangar doors open.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	outfitter "Moclan Forge"
+	bribe 0.05
+	security 0.8
+
+# Kaylon — synthetic collective homeworld
+system "Kaylon"
+	government "Kaylon"
+	pos 600 500
+	attributes "synthetic world"
+	link Otranta
+	link "Deep Space"
+	asteroids "medium metal" 10 3.0
+	trade Electronics 831
+	trade "Heavy Metals" 1241
+	trade Industrial 767
+	trade "Kaylon Processors" 500
+	trade "Kaylon Memory Archives" 300
+	minables tungsten 5 4.0
+	minables neodymium 3 4.5
+	minables uranium 2 5.2
+	fleet "Kaylon Core" 500
+	fleet "Kaylon Aggressive" 1000
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/mercury
+		distance 600
+		period 90
+	object Kaylon
+		sprite planet/jupiter
+		distance 1200
+		period 500
+
+planet Kaylon
+	attributes "kaylon"
+	landscape land/station0
+	description `Kaylon is the homeworld of a synthetic collective that does not negotiate and does not forgive. Its surface is a lattice of identical structures, its skies a constant stream of silent vessels.`
+	spaceport `There is no spaceport in the human sense. A flat grey platform extends from the planet's equatorial band; landing here is an act of considerable trust.`
+	outfitter "Common Outfits"
+	outfitter "Kaylon Fabricator"
+	bribe 0
+	security 0.9
+
+# Calivon — collector zoo research station
+system "Calivon"
+	government "Krill"
+	pos -200 -600
+	attributes "research station"
+	link Sol
+	link "Orville Space"
+	link Ekos
+	asteroids "large metal" 5 4.0
+	trade Food 231
+	trade "Luxury Goods" 1135
+	trade Medical 777
+	trade "Krill Avis Scriptures" 400
+	trade "Krill Relics" 250
+	trade "Calivon Exotic Specimens" 300
+	minables silicon 6 3.5
+	minables lead 4 3.8
+	minables silver 2 4.6
+	fleet "Krill" 700
+	fleet "Large Krill" 1400
+	object
+		sprite star/k3
+		period 10
+	object
+		sprite planet/saturn
+		distance 800
+		period 200
+	object "Calivon Prime"
+		sprite planet/earth
+		distance 1400
+		period 600
+
+planet "Calivon Prime"
+	attributes "krill"
+	landscape land/city5
+	description `Calivon Prime is a Krill research station famous for its collector zoo, a place where species from across the galaxy are kept and catalogued. Krill scientists regard it with a reverence most species reserve for temples.`
+	spaceport `The spaceport is built around a soaring central archive. Krill and human researchers cross the landing pads in equal numbers, both heading for the exhibits below.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	outfitter "Calivon Curator"
+	bribe 0.05
+	security 0.8
+
+# Velos — Union frontier outpost
+system "Velos"
+	government "Republic"
+	pos 200 600
+	attributes "frontier outpost"
+	link Sol
+	link "Midgard System"
+	link "Deep Space"
+	asteroids "small rock" 25 2.2
+	trade Food 231
+	trade Clothing 251
+	trade Equipment 469
+	trade "Union Rations" 300
+	trade "Union Textiles" 250
+	trade "Union Medical Supplies" 150
+	minables iron 5 3.7
+	minables aluminum 4 3.5
+	minables copper 3 4.0
+	fleet "Small Union" 500
+	fleet "Large Union" 900
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/mars
+		distance 700
+		period 120
+	object "Velos Station"
+		sprite planet/uranus
+		distance 1100
+		period 450
+
+planet "Velos Station"
+	attributes "union"
+	landscape land/fields7
+	description `Velos Station is a Union frontier outpost, little more than a landing field and a trading post at the end of the shipping lanes. It is the first stop for captains looking to make their name in the outer reaches.`
+	spaceport `The station is a cluster of prefabricated towers anchored to a rocky plain, its docking bays crowded with freighters taking on cargo for the core worlds.`
+	shipyard "Basic Ships"
+	outfitter "Basic Outfits"
+	outfitter "Union Fabricator"
+	bribe 0.05
+	security 0.6
+
+
+# ---- START SYSTEMS -------------------------------------------------------
+#
+# These five systems are the start destinations referenced by data/starts.txt.
+# Each pairs a system with a planet that actually has a shipyard: the start
+# conversations end with the player choosing a ship from the yard, so a
+# start planet without one would leave the player stranded.
+
+# Midgard System — Union homeworld region (start "default")
+system "Midgard System"
+	government "Republic"
+	pos -250 150
+	attributes "garden world"
+	link Sol
+	link "Deep Region"
+	link "Deep Space"
+	link Velos
+	link "Frontier Zone"
+	link Otranta
+	asteroids "small rock" 12 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade "Luxury Goods" 1135
+	trade "Union Medical Supplies" 300
+	trade "Union Textiles" 200
+	minables iron 10 3.6
+	minables titanium 5 3.9
+	minables gold 2 4.8
+	fleet "Small Union" 400
+	fleet "Large Union" 800
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/mercury
+		distance 400
+		period 60
+	object "Midgard Prime"
+		sprite planet/earth
+		distance 900
+		period 365
+
+planet "Midgard Prime"
+	attributes "union" "garden world"
+	landscape land/city5
+	description `Midgard Prime is a garden world in the heart of Union space. Mountains, tundra, desert, oceans, marshes and plains lie within a few hours' flight of one another, and the cities have grown up around the mills and factories that clothe the Union. It was here that you were born.`
+	spaceport `The spaceport is located in the centre of New Reykjavik, a bustling metropolis which is also the planet's centre of government. It is a collection of tall, square granite towers connected by bridges at various levels.`
+	shipyard "Basic Ships"
+	shipyard "Lionheart Basics"
+	outfitter "Common Outfits"
+	outfitter "Ammo North"
+	outfitter "Union Fabricator"
+	bribe 0.05
+	security 0.8
+
+# Deep Region — Union core (start "deep")
+system "Deep Region"
+	government "Republic"
+	pos -450 250
+	attributes "deep region"
+	link Sol
+	link "Midgard System"
+	link Otranta
+	asteroids "small rock" 10 1.9
+	trade Electronics 831
+	trade Industrial 767
+	trade Medical 777
+	trade "Union Rations" 250
+	trade "Quantum Drive Components" 350
+	trade "Union Medical Supplies" 250
+	minables platinum 4 4.7
+	minables silicon 5 3.8
+	minables neodymium 3 4.4
+	fleet "Small Union" 500
+	fleet "Large Union" 1000
+	object
+		sprite star/g3
+		period 10
+	object
+		sprite planet/venus
+		distance 500
+		period 150
+	object "Deep Region Prime"
+		sprite planet/earth
+		distance 1000
+		period 400
+
+planet "Deep Region Prime"
+	attributes "union" "deep region"
+	landscape land/city5
+	description `Deep Region Prime is one of the most advanced worlds in Union space, a world whose universities have trained starship captains for seven centuries. The government has always backed its captains with low-interest loans, provided their grades were good enough.`
+	spaceport `The spaceport is a calm, orderly place: wide walkways of polished stone, gardens, and a government office that handles starship loans with brisk efficiency.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	outfitter "Ammo North"
+	outfitter "Deep Sky Advanced"
+	outfitter "Union Fabricator"
+	bribe 0.05
+	security 0.8
+
+# Deep Space — Paradise Worlds (start "paradise")
+system "Deep Space"
+	government "Republic"
+	pos 350 250
+	attributes "paradise world"
+	link Sol
+	link "Midgard System"
+	link Velos
+	link Kaylon
+	asteroids "small rock" 8 2.2
+	trade "Luxury Goods" 1135
+	trade Medical 777
+	trade Food 231
+	trade "Union Textiles" 300
+	trade "Navarian Crystals" 200
+	trade "Union Medical Supplies" 200
+	minables gold 3 4.9
+	minables silver 2 5.1
+	minables titanium 3 4.3
+	fleet "Small Union" 400
+	fleet "Large Union" 800
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/venus
+		distance 400
+		period 120
+	object "Mainsail Prime"
+		sprite planet/earth
+		distance 800
+		period 300
+
+planet "Mainsail Prime"
+	attributes "union" "paradise world"
+	landscape land/sea0
+	description `Mainsail Prime is an oceanic Paradise World terraformed to perfection, where the richest citizens of the Union keep floating villas and private spaceports. Only the wealthy live here; the rest merely serve.`
+	spaceport `The spaceport is a marble terrace jutting over a calm turquoise sea, its landing pads polished until they mirror the sky.`
+	shipyard "Basic Ships"
+	shipyard "Luxury Ships"
+	outfitter "Basic Outfits"
+	outfitter "Lovelace Basics"
+	outfitter "Union Fabricator"
+	bribe 0.05
+	security 0.9
+
+# Frontier Zone — Syndicate frontier (start "syndicate")
+system "Frontier Zone"
+	government "Republic"
+	pos -600 0
+	attributes "frontier"
+	link Sol
+	link "Midgard System"
+	link Calivon
+	asteroids "large rock" 18 3.0
+	trade Metal 520
+	trade Industrial 767
+	trade Food 231
+	trade "Moclan Alloys" 200
+	trade "Union Rations" 200
+	minables iron 8 3.5
+	minables lead 5 3.6
+	minables copper 4 3.9
+	fleet "Small Union" 400
+	fleet "Large Union" 800
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/mars
+		distance 600
+		period 150
+	object "Frontier Outpost"
+		sprite planet/mercury
+		distance 1100
+		period 400
+
+planet "Frontier Outpost"
+	attributes "frontier"
+	landscape land/fields7
+	description `Frontier Outpost is unlike any world you have been on: the entire spaceport is built into a colossal mountain cave, one side exposed to the open air. It is the last port with a shipyard before the empty systems begin.`
+	spaceport `The landing pads are carved from the cavern floor, their lights strung along the cliff walls like a harbour at night.`
+	shipyard "Basic Ships"
+	shipyard "Syndicate Basics"
+	outfitter "Syndicate Advanced"
+	outfitter "Basic Outfits"
+	outfitter "Union Fabricator"
+	bribe 0.05
+	security 0.6
+
+# Orville Space — Motilali border (start "hai space")
+system "Orville Space"
+	government "Wanderer"
+	pos 350 -450
+	attributes "motilali"
+	link Sol
+	link Ekos
+	link Calivon
+	asteroids "small rock" 8 2.5
+	trade Clothing 251
+	trade "Luxury Goods" 1135
+	trade Food 231
+	trade "Moritali Relics" 300
+	trade "Moritali Spices" 250
+	trade "Crildari Textiles" 200
+	minables silicon 5 3.7
+	minables aluminum 4 3.6
+	minables titanium 3 4.1
+	fleet "Small Motilali" 500
+	fleet "Large Motilali" 1000
+	object
+		sprite star/k3
+		period 10
+	object
+		sprite planet/mars
+		distance 500
+		period 150
+	object "Orville World"
+		sprite planet/earth
+		distance 1000
+		period 400
+
+planet "Orville World"
+	attributes "motilali"
+	landscape land/city5
+	description `Orville World is a Motilali world with a rich and mixed culture thanks to its climate. Humans are welcome here alongside the Motilali, and the spaceport is a meeting ground for traders from both sides of the border.`
+	spaceport `The spaceport is built into the edge of a sprawling port city, its towers climbing toward a sky the colour of an old rose.`
+	shipyard "Imo Loo Mer Basics"
+	shipyard "Yeer e Ki Basics"
+	outfitter "Hai Basics"
+	outfitter "Moritali Foundry"
+	bribe 0.05
+	security 0.8
+
+
+# ---- HABITABLE RANGES ----------------------------------------------------
+
+system "Ekos"
+	habitable 950
+
+system "Otranta"
+	habitable 1200
+
+system "Kaylon"
+	habitable 800
+
+system "Calivon"
+	habitable 900
+
+system "Velos"
+	habitable 1000
+
+system "Midgard System"
+	habitable 950
+
+system "Deep Region"
+	habitable 1100
+
+system "Deep Space"
+	habitable 900
+
+system "Frontier Zone"
+	habitable 800
+
+system "Orville Space"
+	habitable 950

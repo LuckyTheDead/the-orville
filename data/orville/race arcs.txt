@@ -1,0 +1,3317 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: per-race sub-questlines.
+#
+# Six-mission arcs, one per race. Each arc is a self-contained chain on
+# its own "<race> arc: *" conditions, so a player can pursue any race's
+# storyline independently of the main campaign.
+
+# ======================================================================
+# UNION
+# ======================================================================
+
+event "union arc begins"
+	date 1 1 3013
+	set "union arc: start"
+
+mission "Union The Home Front 0"
+	landing
+	non-blocking
+	name "The Home Front"
+	description "A Union colony needs medical supplies. Deliver them to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "event: union arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The colony's hospital was damaged in a storm and the nearest supply ship is three weeks out.`
+				accept
+	on complete
+		payment 25000
+		set "union arc: ch0"
+		log "The Home Front: The colony's hospital was damaged in a storm and the nearest supply ship is three weeks out."
+
+mission "Union The Recruiter 1"
+	landing
+	non-blocking
+	name "The Recruiter"
+	description "Carry a Union Navy recruiting officer to the outer colonies and report to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "union arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Navy needs pilots. The outer colonies have them.`
+				accept
+	on complete
+		payment 29000
+		set "union arc: ch1"
+		log "The Recruiter: The Navy needs pilots. The outer colonies have them."
+
+mission "Union The Shipyard 2"
+	landing
+	non-blocking
+	name "The Shipyard"
+	description "A Union shipyard needs a specialist alloy. Deliver it to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "union arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The alloy is used in quantum drive housings and there is a shortage across the fleet.`
+				accept
+	on complete
+		payment 33000
+		set "union arc: ch2"
+		log "The Shipyard: The alloy is used in quantum drive housings and there is a shortage across the fleet."
+
+mission "Union The Families 3"
+	landing
+	non-blocking
+	name "The Families"
+	description "Carry the families of a Union crew to their new posting on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "union arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The crew's families have been waiting at the dock for two days.`
+				accept
+	on complete
+		payment 37000
+		set "union arc: ch3"
+		log "The Families: The crew's families have been waiting at the dock for two days."
+
+mission "Union The Memorial 4"
+	landing
+	non-blocking
+	name "The Memorial"
+	description "Carry a memorial plaque to the cemetery on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "union arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The plaque is for a Union crew lost in the Krill war.`
+				accept
+	on complete
+		payment 41000
+		set "union arc: ch4"
+		log "The Memorial: The plaque is for a Union crew lost in the Krill war."
+
+mission "Union The Promise 5"
+	landing
+	non-blocking
+	name "The Promise"
+	description "Carry the Navy's reply to a colony's request for a permanent garrison to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "union arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Union need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The colony has asked three times. The answer is finally yes.`
+				accept
+	on complete
+		payment 45000
+		set "union arc: ch5"
+		log "The Promise: The colony has asked three times. The answer is finally yes."
+
+# ======================================================================
+# MOCLAN
+# ======================================================================
+
+event "moclan arc begins"
+	date 1 1 3013
+	set "moclan arc: start"
+
+mission "Moclan The Refusal 0"
+	landing
+	non-blocking
+	name "The Refusal"
+	description "A Moclan colony has refused an inspection. Carry the team to <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "event: moclan arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Moclans say inspection is a prelude to occupation.`
+				accept
+	on complete
+		payment 25000
+		set "moclan arc: ch0"
+		log "The Refusal: The Moclans say inspection is a prelude to occupation."
+
+mission "Moclan The Officer 1"
+	landing
+	non-blocking
+	name "The Officer"
+	description "A Moclan officer has asked for a transfer off his ship. Carry him to <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "moclan arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`He has served twenty years and he wants to see his family before he dies.`
+				accept
+	on complete
+		payment 29000
+		set "moclan arc: ch1"
+		log "The Officer: He has served twenty years and he wants to see his family before he dies."
+
+mission "Moclan The Foundry 2"
+	landing
+	non-blocking
+	name "The Foundry"
+	description "Carry a Moclan weapons specialist to the forge world on <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "moclan arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The forges are the only place in the Hegemony that can cast the alloy he needs.`
+				accept
+	on complete
+		payment 33000
+		set "moclan arc: ch2"
+		log "The Foundry: The forges are the only place in the Hegemony that can cast the alloy he needs."
+
+mission "Moclan The Dispute 3"
+	landing
+	non-blocking
+	name "The Dispute"
+	description "Two Moclan houses are in dispute over a mining claim. Carry the adjudicator to <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "moclan arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The adjudicator is the only neutral party either house will accept.`
+				accept
+	on complete
+		payment 37000
+		set "moclan arc: ch3"
+		log "The Dispute: The adjudicator is the only neutral party either house will accept."
+
+mission "Moclan The Deserter 4"
+	landing
+	non-blocking
+	name "The Deserter"
+	description "A Moclan soldier has deserted. Carry the Hegemony's hunters to <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "moclan arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`Desertion is the one crime the Hegemony will not forgive.`
+				accept
+	on complete
+		payment 41000
+		set "moclan arc: ch4"
+		log "The Deserter: Desertion is the one crime the Hegemony will not forgive."
+
+mission "Moclan The Change 5"
+	landing
+	non-blocking
+	name "The Change"
+	description "Carry a Moclan doctor to a colony that has asked for outside medical help on <destination>."
+	cargo "Moclan Mission Supplies" 5 20
+	deadline
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "moclan arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Moclan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The colony has a sickness it cannot treat and it has asked the Union for help.`
+				accept
+	on complete
+		payment 45000
+		set "moclan arc: ch5"
+		log "The Change: The colony has a sickness it cannot treat and it has asked the Union for help."
+
+# ======================================================================
+# KRILL
+# ======================================================================
+
+event "krill arc begins"
+	date 1 1 3013
+	set "krill arc: start"
+
+mission "Krill The Chapel 0"
+	landing
+	non-blocking
+	name "The Chapel"
+	description "A Krill chapel has been damaged. Carry the repair crew to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "event: krill arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The chapel is the centre of the colony and it has no roof.`
+				accept
+	on complete
+		payment 25000
+		set "krill arc: ch0"
+		log "The Chapel: The chapel is the centre of the colony and it has no roof."
+
+mission "Krill The Scripture 1"
+	landing
+	non-blocking
+	name "The Scripture"
+	description "Recover a stolen scripture and return it to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "krill arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`It is the only copy of the Avi text in this arm.`
+				accept
+	on complete
+		payment 29000
+		set "krill arc: ch1"
+		log "The Scripture: It is the only copy of the Avi text in this arm."
+
+mission "Krill The Chaplain 2"
+	landing
+	non-blocking
+	name "The Chaplain"
+	description "Carry a Krill chaplain to a frontier colony and report to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "krill arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`He goes where the Krill are dying, to bury them and to argue with them.`
+				accept
+	on complete
+		payment 33000
+		set "krill arc: ch2"
+		log "The Chaplain: He goes where the Krill are dying, to bury them and to argue with them."
+
+mission "Krill The Tribute 3"
+	landing
+	non-blocking
+	name "The Tribute"
+	description "A Krill world is due tribute. Carry the negotiator to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "krill arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The tribute is paid in food and the colony has none to spare.`
+				accept
+	on complete
+		payment 37000
+		set "krill arc: ch3"
+		log "The Tribute: The tribute is paid in food and the colony has none to spare."
+
+mission "Krill The Heretic 4"
+	landing
+	non-blocking
+	name "The Heretic"
+	description "A Krill chaplain has been accused of heresy. Carry the witnesses to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "krill arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`His crime is saying the Krill god may not want this war.`
+				accept
+	on complete
+		payment 41000
+		set "krill arc: ch4"
+		log "The Heretic: His crime is saying the Krill god may not want this war."
+
+mission "Krill The Truce 5"
+	landing
+	non-blocking
+	name "The Truce"
+	description "Carry a Krill envoy to the Union border and report to <destination>."
+	cargo "Krill Mission Supplies" 5 20
+	deadline
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "krill arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Krill need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The envoy carries terms. The Union has never had Krill terms before.`
+				accept
+	on complete
+		payment 45000
+		set "krill arc: ch5"
+		log "The Truce: The envoy carries terms. The Union has never had Krill terms before."
+
+# ======================================================================
+# CALIVON
+# ======================================================================
+
+event "calivon arc begins"
+	date 1 1 3013
+	set "calivon arc: start"
+
+mission "Calivon The Swamp 0"
+	landing
+	non-blocking
+	name "The Swamp"
+	description "A Calivon world needs survey equipment. Carry it to <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "event: calivon arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Calivon are curious about their own world in a way the Union finds hard to follow.`
+				accept
+	on complete
+		payment 25000
+		set "calivon arc: ch0"
+		log "The Swamp: The Calivon are curious about their own world in a way the Union finds hard to follow."
+
+mission "Calivon The Specimen 1"
+	landing
+	non-blocking
+	name "The Specimen"
+	description "Recover a Calivon biological specimen and bring it to <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "calivon arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The specimen is alive and it does not like being moved.`
+				accept
+	on complete
+		payment 29000
+		set "calivon arc: ch1"
+		log "The Specimen: The specimen is alive and it does not like being moved."
+
+mission "Calivon The Ancestor 2"
+	landing
+	non-blocking
+	name "The Ancestor"
+	description "Carry a Calivon elder to a gathering on <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "calivon arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The elder is very old and remembers the last time the Union asked for help.`
+				accept
+	on complete
+		payment 33000
+		set "calivon arc: ch2"
+		log "The Ancestor: The elder is very old and remembers the last time the Union asked for help."
+
+mission "Calivon The Trade 3"
+	landing
+	non-blocking
+	name "The Trade"
+	description "A Calivon world has offered a trade in exotic materials. Carry the Union broker to <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "calivon arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The materials are worth more than the broker's ship.`
+				accept
+	on complete
+		payment 37000
+		set "calivon arc: ch3"
+		log "The Trade: The materials are worth more than the broker's ship."
+
+mission "Calivon The Warning 4"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Calivon warning to the Union Admiralty on <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "calivon arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon. The Calivon have seen species like them before.`
+				accept
+	on complete
+		payment 41000
+		set "calivon arc: ch4"
+		log "The Warning: The warning is about the Kaylon. The Calivon have seen species like them before."
+
+mission "Calivon The Memory 5"
+	landing
+	non-blocking
+	name "The Memory"
+	description "Recover a Calivon memory crystal and bring it to <destination>."
+	cargo "Calivon Mission Supplies" 5 20
+	deadline
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "calivon arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Calivon need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The crystal contains a record of a war the Union has never heard of.`
+				accept
+	on complete
+		payment 45000
+		set "calivon arc: ch5"
+		log "The Memory: The crystal contains a record of a war the Union has never heard of."
+
+# ======================================================================
+# MOTILALI
+# ======================================================================
+
+event "motilali arc begins"
+	date 1 1 3013
+	set "motilali arc: start"
+
+mission "Motilali The Hive 0"
+	landing
+	non-blocking
+	name "The Hive"
+	description "A Motilali hive has been damaged. Carry the repair crew to <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "event: motilali arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The hive is a living structure and it is dying.`
+				accept
+	on complete
+		payment 25000
+		set "motilali arc: ch0"
+		log "The Hive: The hive is a living structure and it is dying."
+
+mission "Motilali The Tribute 1"
+	landing
+	non-blocking
+	name "The Tribute"
+	description "Carry tribute to the Motilali hive on <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "motilali arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The tribute is food. The hive will not fight without it.`
+				accept
+	on complete
+		payment 29000
+		set "motilali arc: ch1"
+		log "The Tribute: The tribute is food. The hive will not fight without it."
+
+mission "Motilali The Wanderer 2"
+	landing
+	non-blocking
+	name "The Wanderer"
+	description "A Motilali fleet has asked for a Union escort. Carry the offer to <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "motilali arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Motilali move in swarms and they do not like being separated.`
+				accept
+	on complete
+		payment 33000
+		set "motilali arc: ch2"
+		log "The Wanderer: The Motilali move in swarms and they do not like being separated."
+
+mission "Motilali The Egg 3"
+	landing
+	non-blocking
+	name "The Egg"
+	description "Recover a Motilali brood chamber and bring it to <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "motilali arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The chamber contains the hive's future and it cannot survive the trip on its own.`
+				accept
+	on complete
+		payment 37000
+		set "motilali arc: ch3"
+		log "The Egg: The chamber contains the hive's future and it cannot survive the trip on its own."
+
+mission "Motilali The Dispute 4"
+	landing
+	non-blocking
+	name "The Dispute"
+	description "Two Motilali hives are in dispute. Carry the arbiter to <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "motilali arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The arbiter is a third hive that both trust.`
+				accept
+	on complete
+		payment 41000
+		set "motilali arc: ch4"
+		log "The Dispute: The arbiter is a third hive that both trust."
+
+mission "Motilali The Alliance 5"
+	landing
+	non-blocking
+	name "The Alliance"
+	description "Carry the Motilali's answer to the Union's offer to <destination>."
+	cargo "Motilali Mission Supplies" 5 20
+	deadline
+	source
+		government "Wanderer"
+		attributes "spaceport"
+	to offer
+		has "motilali arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Motilali need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is yes, with conditions the Union has never seen before.`
+				accept
+	on complete
+		payment 45000
+		set "motilali arc: ch5"
+		log "The Alliance: The answer is yes, with conditions the Union has never seen before."
+
+# ======================================================================
+# XELAYAN
+# ======================================================================
+
+event "xelayan arc begins"
+	date 1 1 3013
+	set "xelayan arc: start"
+
+mission "Xelayan The Cadets 0"
+	landing
+	non-blocking
+	name "The Cadets"
+	description "A Xelayan academy needs flight instructors. Carry them to <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "event: xelayan arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The cadets have never flown a Union ship and the Union has never flown theirs.`
+				accept
+	on complete
+		payment 25000
+		set "xelayan arc: ch0"
+		log "The Cadets: The cadets have never flown a Union ship and the Union has never flown theirs."
+
+mission "Xelayan The Ringworld 1"
+	landing
+	non-blocking
+	name "The Ringworld"
+	description "Carry construction materials to the Xelayan ringworld on <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "xelayan arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The ring is the oldest structure in the sector and it is still growing.`
+				accept
+	on complete
+		payment 29000
+		set "xelayan arc: ch1"
+		log "The Ringworld: The ring is the oldest structure in the sector and it is still growing."
+
+mission "Xelayan The Interpreter 2"
+	landing
+	non-blocking
+	name "The Interpreter"
+	description "A Xelayan delegation needs an interpreter. Carry one to <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "xelayan arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The delegation speaks four languages and none of them is Union standard.`
+				accept
+	on complete
+		payment 33000
+		set "xelayan arc: ch2"
+		log "The Interpreter: The delegation speaks four languages and none of them is Union standard."
+
+mission "Xelayan The Species 3"
+	landing
+	non-blocking
+	name "The Species"
+	description "Three Xelayan species share one world. Carry the mediator to <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "xelayan arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The mediator has kept the peace for forty years.`
+				accept
+	on complete
+		payment 37000
+		set "xelayan arc: ch3"
+		log "The Species: The mediator has kept the peace for forty years."
+
+mission "Xelayan The Shipyard 4"
+	landing
+	non-blocking
+	name "The Shipyard"
+	description "Carry a Xelayan shipyard engineer to the Union yards on <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "xelayan arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The engineer wants to see how the Union builds quantum drives.`
+				accept
+	on complete
+		payment 41000
+		set "xelayan arc: ch4"
+		log "The Shipyard: The engineer wants to see how the Union builds quantum drives."
+
+mission "Xelayan The Homeworld 5"
+	landing
+	non-blocking
+	name "The Homeworld"
+	description "Carry a Union gift to the Xelayan homeworld on <destination>."
+	cargo "Xelayan Mission Supplies" 5 20
+	deadline
+	source
+		government "Coalition"
+		attributes "spaceport"
+	to offer
+		has "xelayan arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Xelayan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The gift is a Union ship's bell. The Xelayan have never had a bell.`
+				accept
+	on complete
+		payment 45000
+		set "xelayan arc: ch5"
+		log "The Homeworld: The gift is a Union ship's bell. The Xelayan have never had a bell."
+
+# ======================================================================
+# MERIDIAN
+# ======================================================================
+
+event "meridian arc begins"
+	date 1 1 3013
+	set "meridian arc: start"
+
+mission "Meridian The Lineage 0"
+	landing
+	non-blocking
+	name "The Lineage"
+	description "A Meridian lineage needs a genealogist. Carry one to <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "event: meridian arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The genealogies are the constitution of the Collective.`
+				accept
+	on complete
+		payment 25000
+		set "meridian arc: ch0"
+		log "The Lineage: The genealogies are the constitution of the Collective."
+
+mission "Meridian The Duel 1"
+	landing
+	non-blocking
+	name "The Duel"
+	description "Two Meridian officers are to duel. Carry the witnesses to <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "meridian arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The duel is over a point of honour and it will be settled by noon.`
+				accept
+	on complete
+		payment 29000
+		set "meridian arc: ch1"
+		log "The Duel: The duel is over a point of honour and it will be settled by noon."
+
+mission "Meridian The Assembly 2"
+	landing
+	non-blocking
+	name "The Assembly"
+	description "Carry a Meridian delegate to the assembly on <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "meridian arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The assembly meets once a decade and decides the Collective's wars.`
+				accept
+	on complete
+		payment 33000
+		set "meridian arc: ch2"
+		log "The Assembly: The assembly meets once a decade and decides the Collective's wars."
+
+mission "Meridian The Scin 3"
+	landing
+	non-blocking
+	name "The Scin"
+	description "The Meridian Scin need a new forge. Carry the survey team to <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "meridian arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Scin are the Collective's craftsmen and their forges are ancient.`
+				accept
+	on complete
+		payment 37000
+		set "meridian arc: ch3"
+		log "The Scin: The Scin are the Collective's craftsmen and their forges are ancient."
+
+mission "Meridian The Vi 4"
+	landing
+	non-blocking
+	name "The Vi"
+	description "The Meridian Vi need a new duelling ground. Carry the architect to <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "meridian arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Vi are the Collective's warriors and their ground is a matter of honour.`
+				accept
+	on complete
+		payment 41000
+		set "meridian arc: ch4"
+		log "The Vi: The Vi are the Collective's warriors and their ground is a matter of honour."
+
+mission "Meridian The Treaty 5"
+	landing
+	non-blocking
+	name "The Treaty"
+	description "Carry the Meridian's proposed treaty to the Union Senate on <destination>."
+	cargo "Meridian Mission Supplies" 5 20
+	deadline
+	source
+		government "Gegno"
+		attributes "spaceport"
+	to offer
+		has "meridian arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Meridian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The treaty is written in the Collective's genealogical style and it takes a day to read.`
+				accept
+	on complete
+		payment 45000
+		set "meridian arc: ch5"
+		log "The Treaty: The treaty is written in the Collective's genealogical style and it takes a day to read."
+
+# ======================================================================
+# ORFAN
+# ======================================================================
+
+event "orfan arc begins"
+	date 1 1 3013
+	set "orfan arc: start"
+
+mission "Orfan The Camp 0"
+	landing
+	non-blocking
+	name "The Camp"
+	description "An Orfan camp is moving. Carry the survey team to <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "event: orfan arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The camp moves with the seasons and it is never in the same place twice.`
+				accept
+	on complete
+		payment 25000
+		set "orfan arc: ch0"
+		log "The Camp: The camp moves with the seasons and it is never in the same place twice."
+
+mission "Orfan The River 1"
+	landing
+	non-blocking
+	name "The River"
+	description "Carry a Union engineer to the Orfan river delta on <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "orfan arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The engineer is there to build a bridge the Orfan can take down again.`
+				accept
+	on complete
+		payment 29000
+		set "orfan arc: ch1"
+		log "The River: The engineer is there to build a bridge the Orfan can take down again."
+
+mission "Orfan The Trade 2"
+	landing
+	non-blocking
+	name "The Trade"
+	description "The Orfan want to trade. Carry the Union broker to <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "orfan arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Orfan trade in things they have made that day and will not make again.`
+				accept
+	on complete
+		payment 33000
+		set "orfan arc: ch2"
+		log "The Trade: The Orfan trade in things they have made that day and will not make again."
+
+mission "Orfan The Wounded 3"
+	landing
+	non-blocking
+	name "The Wounded"
+	description "An Orfan settlement has wounded. Carry a Union medical team to <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "orfan arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Orfan do not usually ask for help.`
+				accept
+	on complete
+		payment 37000
+		set "orfan arc: ch3"
+		log "The Wounded: The Orfan do not usually ask for help."
+
+mission "Orfan The Map 4"
+	landing
+	non-blocking
+	name "The Map"
+	description "Carry the Orfan's seasonal migration map to the Union cartographers on <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "orfan arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The map is drawn from memory and it is accurate.`
+				accept
+	on complete
+		payment 41000
+		set "orfan arc: ch4"
+		log "The Map: The map is drawn from memory and it is accurate."
+
+mission "Orfan The Pact 5"
+	landing
+	non-blocking
+	name "The Pact"
+	description "Carry the Orfan's answer to the Union's offer of a permanent trading post to <destination>."
+	cargo "Orfan Mission Supplies" 5 20
+	deadline
+	source
+		government "Avgi"
+		attributes "spaceport"
+	to offer
+		has "orfan arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Orfan need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is that the Orfan do not have permanent anything.`
+				accept
+	on complete
+		payment 45000
+		set "orfan arc: ch5"
+		log "The Pact: The answer is that the Orfan do not have permanent anything."
+
+# ======================================================================
+# BOTWIN
+# ======================================================================
+
+event "botwin arc begins"
+	date 1 1 3013
+	set "botwin arc: start"
+
+mission "Botwin The Precision 0"
+	landing
+	non-blocking
+	name "The Precision"
+	description "A Botwin yard needs a Union component. Carry it to <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "event: botwin arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The component must arrive within a tolerance the Botwin will measure twice.`
+				accept
+	on complete
+		payment 25000
+		set "botwin arc: ch0"
+		log "The Precision: The component must arrive within a tolerance the Botwin will measure twice."
+
+mission "Botwin The Guard 1"
+	landing
+	non-blocking
+	name "The Guard"
+	description "Carry a Botwin guard detachment to a new outpost on <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "botwin arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Botwin build slowly and they guard what they build.`
+				accept
+	on complete
+		payment 29000
+		set "botwin arc: ch1"
+		log "The Guard: The Botwin build slowly and they guard what they build."
+
+mission "Botwin The Megasa 2"
+	landing
+	non-blocking
+	name "The Megasa"
+	description "The Botwin Megasa need a new archive. Carry the archivist to <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "botwin arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Megasa are the Botwin's scholars and they record everything.`
+				accept
+	on complete
+		payment 33000
+		set "botwin arc: ch2"
+		log "The Megasa: The Megasa are the Botwin's scholars and they record everything."
+
+mission "Botwin The Erabu 3"
+	landing
+	non-blocking
+	name "The Erabu"
+	description "The Botwin Erabu need a new foundry. Carry the engineers to <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "botwin arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Erabu are the Botwin's builders and their foundries are works of art.`
+				accept
+	on complete
+		payment 37000
+		set "botwin arc: ch3"
+		log "The Erabu: The Erabu are the Botwin's builders and their foundries are works of art."
+
+mission "Botwin The Visit 4"
+	landing
+	non-blocking
+	name "The Visit"
+	description "Carry a Union delegation to a Botwin world on <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "botwin arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Botwin do not host often and they will have prepared for a year.`
+				accept
+	on complete
+		payment 41000
+		set "botwin arc: ch4"
+		log "The Visit: The Botwin do not host often and they will have prepared for a year."
+
+mission "Botwin The Contract 5"
+	landing
+	non-blocking
+	name "The Contract"
+	description "Carry the Botwin's contract to the Union Admiralty on <destination>."
+	cargo "Botwin Mission Supplies" 5 20
+	deadline
+	source
+		government "Bunrodea"
+		attributes "spaceport"
+	to offer
+		has "botwin arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Botwin need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The contract is precise to the gram and it will be honoured to the gram.`
+				accept
+	on complete
+		payment 45000
+		set "botwin arc: ch5"
+		log "The Contract: The contract is precise to the gram and it will be honoured to the gram."
+
+# ======================================================================
+# TANDOGA
+# ======================================================================
+
+event "tandoga arc begins"
+	date 1 1 3013
+	set "tandoga arc: start"
+
+mission "Tandoga The First Contact 0"
+	landing
+	non-blocking
+	name "The First Contact"
+	description "Carry a Union xenology team to the Tandoga border on <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "event: tandoga arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Tandoga do not explain how their equipment works.`
+				accept
+	on complete
+		payment 25000
+		set "tandoga arc: ch0"
+		log "The First Contact: The Tandoga do not explain how their equipment works."
+
+mission "Tandoga The Artifact 1"
+	landing
+	non-blocking
+	name "The Artifact"
+	description "Recover a Tandoga artifact and bring it to <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "tandoga arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The artifact is technology the Tandoga no longer use.`
+				accept
+	on complete
+		payment 29000
+		set "tandoga arc: ch1"
+		log "The Artifact: The artifact is technology the Tandoga no longer use."
+
+mission "Tandoga The Survey 2"
+	landing
+	non-blocking
+	name "The Survey"
+	description "Carry a Union survey team to a Tandoga world on <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "tandoga arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Tandoga have agreed to let the Union map one world.`
+				accept
+	on complete
+		payment 33000
+		set "tandoga arc: ch2"
+		log "The Survey: The Tandoga have agreed to let the Union map one world."
+
+mission "Tandoga The Trade 3"
+	landing
+	non-blocking
+	name "The Trade"
+	description "Carry a Union trade delegation to the Tandoga on <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "tandoga arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Tandoga trade in things the Union does not have names for.`
+				accept
+	on complete
+		payment 37000
+		set "tandoga arc: ch3"
+		log "The Trade: The Tandoga trade in things the Union does not have names for."
+
+mission "Tandoga The Warning 4"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Tandoga warning to the Union Admiralty on <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "tandoga arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon and it is not encouraging.`
+				accept
+	on complete
+		payment 41000
+		set "tandoga arc: ch4"
+		log "The Warning: The warning is about the Kaylon and it is not encouraging."
+
+mission "Tandoga The Pact 5"
+	landing
+	non-blocking
+	name "The Pact"
+	description "Carry the Tandoga's answer to the Union's alliance offer to <destination>."
+	cargo "Tandoga Mission Supplies" 5 20
+	deadline
+	source
+		government "Incipias"
+		attributes "spaceport"
+	to offer
+		has "tandoga arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tandoga need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is not a yes and it is not a no.`
+				accept
+	on complete
+		payment 45000
+		set "tandoga arc: ch5"
+		log "The Pact: The answer is not a yes and it is not a no."
+
+# ======================================================================
+# KAEL
+# ======================================================================
+
+event "kael arc begins"
+	date 1 1 3013
+	set "kael arc: start"
+
+mission "Kael The Offer 0"
+	landing
+	non-blocking
+	name "The Offer"
+	description "A Kael world has offered to trade. Carry the Union broker to <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "event: kael arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Kael have opinions about everything and they will share them at length.`
+				accept
+	on complete
+		payment 25000
+		set "kael arc: ch0"
+		log "The Offer: The Kael have opinions about everything and they will share them at length."
+
+mission "Kael The Dispute 1"
+	landing
+	non-blocking
+	name "The Dispute"
+	description "Two Kael houses are in dispute. Carry the arbiter to <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "kael arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Kael arbiter is chosen by lot and serves for a day.`
+				accept
+	on complete
+		payment 29000
+		set "kael arc: ch1"
+		log "The Dispute: The Kael arbiter is chosen by lot and serves for a day."
+
+mission "Kael The Relic 2"
+	landing
+	non-blocking
+	name "The Relic"
+	description "Recover a Kael relic and bring it to <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "kael arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The relic is older than the Kael and they do not know what it does.`
+				accept
+	on complete
+		payment 33000
+		set "kael arc: ch2"
+		log "The Relic: The relic is older than the Kael and they do not know what it does."
+
+mission "Kael The Ship 3"
+	landing
+	non-blocking
+	name "The Ship"
+	description "A Kael ship has been damaged. Carry the repair crew to <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "kael arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Kael ship is built to a plan the Union has never seen.`
+				accept
+	on complete
+		payment 37000
+		set "kael arc: ch3"
+		log "The Ship: The Kael ship is built to a plan the Union has never seen."
+
+mission "Kael The Envoy 4"
+	landing
+	non-blocking
+	name "The Envoy"
+	description "Carry a Union envoy to the Kael homeworld on <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "kael arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The envoy is there to ask the Kael to join the coalition.`
+				accept
+	on complete
+		payment 41000
+		set "kael arc: ch4"
+		log "The Envoy: The envoy is there to ask the Kael to join the coalition."
+
+mission "Kael The Answer 5"
+	landing
+	non-blocking
+	name "The Answer"
+	description "Carry the Kael's answer to the coalition offer to <destination>."
+	cargo "Kael Mission Supplies" 5 20
+	deadline
+	source
+		government "Pug"
+		attributes "spaceport"
+	to offer
+		has "kael arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Kael need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is yes, but the Kael will explain why at length.`
+				accept
+	on complete
+		payment 45000
+		set "kael arc: ch5"
+		log "The Answer: The answer is yes, but the Kael will explain why at length."
+
+# ======================================================================
+# GOTH
+# ======================================================================
+
+event "goth arc begins"
+	date 1 1 3013
+	set "goth arc: start"
+
+mission "Goth The Dig 0"
+	landing
+	non-blocking
+	name "The Dig"
+	description "A Goth archaeology team needs equipment. Carry it to <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "event: goth arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Goth dig up their own history and they do not share what they find.`
+				accept
+	on complete
+		payment 25000
+		set "goth arc: ch0"
+		log "The Dig: The Goth dig up their own history and they do not share what they find."
+
+mission "Goth The Ruin 1"
+	landing
+	non-blocking
+	name "The Ruin"
+	description "Recover a Goth ruin artifact and bring it to <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "goth arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The artifact is from a Goth war the Union has never heard of.`
+				accept
+	on complete
+		payment 29000
+		set "goth arc: ch1"
+		log "The Ruin: The artifact is from a Goth war the Union has never heard of."
+
+mission "Goth The Map 2"
+	landing
+	non-blocking
+	name "The Map"
+	description "Carry a Goth survey map to the Union cartographers on <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "goth arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The map shows ruins the Goth have not yet excavated.`
+				accept
+	on complete
+		payment 33000
+		set "goth arc: ch2"
+		log "The Map: The map shows ruins the Goth have not yet excavated."
+
+mission "Goth The Warning 3"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Goth warning to the Union Admiralty on <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "goth arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about what the Goth found under their own world.`
+				accept
+	on complete
+		payment 37000
+		set "goth arc: ch3"
+		log "The Warning: The warning is about what the Goth found under their own world."
+
+mission "Goth The Trade 4"
+	landing
+	non-blocking
+	name "The Trade"
+	description "Carry a Union trade delegation to the Goth on <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "goth arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Goth trade in history and they are careful about what they sell.`
+				accept
+	on complete
+		payment 41000
+		set "goth arc: ch4"
+		log "The Trade: The Goth trade in history and they are careful about what they sell."
+
+mission "Goth The Pact 5"
+	landing
+	non-blocking
+	name "The Pact"
+	description "Carry the Goth's answer to the coalition offer to <destination>."
+	cargo "Goth Mission Supplies" 5 20
+	deadline
+	source
+		government "Sheragi"
+		attributes "spaceport"
+	to offer
+		has "goth arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Goth need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Goth will fight the Kaylon. They have fought worse.`
+				accept
+	on complete
+		payment 45000
+		set "goth arc: ch5"
+		log "The Pact: The Goth will fight the Kaylon. They have fought worse."
+
+# ======================================================================
+# THEM
+# ======================================================================
+
+event "them arc begins"
+	date 1 1 3013
+	set "them arc: start"
+
+mission "Them The Signal 0"
+	landing
+	non-blocking
+	name "The Signal"
+	description "Carry a Union xenology team to the Them border on <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "event: them arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Them do not build anything for the reason the Union would assume.`
+				accept
+	on complete
+		payment 25000
+		set "them arc: ch0"
+		log "The Signal: The Them do not build anything for the reason the Union would assume."
+
+mission "Them The Structure 1"
+	landing
+	non-blocking
+	name "The Structure"
+	description "Recover a Them structure fragment and bring it to <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "them arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The fragment is technology the Them no longer use.`
+				accept
+	on complete
+		payment 29000
+		set "them arc: ch1"
+		log "The Structure: The fragment is technology the Them no longer use."
+
+mission "Them The Survey 2"
+	landing
+	non-blocking
+	name "The Survey"
+	description "Carry a Union survey team to a Them world on <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "them arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Them have agreed to let the Union look at one world.`
+				accept
+	on complete
+		payment 33000
+		set "them arc: ch2"
+		log "The Survey: The Them have agreed to let the Union look at one world."
+
+mission "Them The Warning 3"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Them warning to the Union Admiralty on <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "them arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon and it is very short.`
+				accept
+	on complete
+		payment 37000
+		set "them arc: ch3"
+		log "The Warning: The warning is about the Kaylon and it is very short."
+
+mission "Them The Envoy 4"
+	landing
+	non-blocking
+	name "The Envoy"
+	description "Carry a Union envoy to the Them homeworld on <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "them arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The envoy is there to ask the Them to join the coalition.`
+				accept
+	on complete
+		payment 41000
+		set "them arc: ch4"
+		log "The Envoy: The envoy is there to ask the Them to join the coalition."
+
+mission "Them The Answer 5"
+	landing
+	non-blocking
+	name "The Answer"
+	description "Carry the Them's answer to the coalition offer to <destination>."
+	cargo "Them Mission Supplies" 5 20
+	deadline
+	source
+		government "Drak"
+		attributes "spaceport"
+	to offer
+		has "them arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Them need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is a single word and it took them a month to decide.`
+				accept
+	on complete
+		payment 45000
+		set "them arc: ch5"
+		log "The Answer: The answer is a single word and it took them a month to decide."
+
+# ======================================================================
+# SILURIAN
+# ======================================================================
+
+event "silurian arc begins"
+	date 1 1 3013
+	set "silurian arc: start"
+
+mission "Silurian The Beneath 0"
+	landing
+	non-blocking
+	name "The Beneath"
+	description "A Silurian settlement needs medical supplies. Carry them to <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "event: silurian arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Silurians live beneath their world's surface and they rarely ask for help.`
+				accept
+	on complete
+		payment 25000
+		set "silurian arc: ch0"
+		log "The Beneath: The Silurians live beneath their world's surface and they rarely ask for help."
+
+mission "Silurian The Ruin 1"
+	landing
+	non-blocking
+	name "The Ruin"
+	description "Recover a Silurian ruin artifact and bring it to <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "silurian arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The artifact is from a Silurian war older than the Union.`
+				accept
+	on complete
+		payment 29000
+		set "silurian arc: ch1"
+		log "The Ruin: The artifact is from a Silurian war older than the Union."
+
+mission "Silurian The Survey 2"
+	landing
+	non-blocking
+	name "The Survey"
+	description "Carry a Union survey team to a Silurian world on <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "silurian arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Silurians have agreed to let the Union map one world.`
+				accept
+	on complete
+		payment 33000
+		set "silurian arc: ch2"
+		log "The Survey: The Silurians have agreed to let the Union map one world."
+
+mission "Silurian The Warning 3"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Silurian warning to the Union Admiralty on <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "silurian arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon and it is not encouraging.`
+				accept
+	on complete
+		payment 37000
+		set "silurian arc: ch3"
+		log "The Warning: The warning is about the Kaylon and it is not encouraging."
+
+mission "Silurian The Envoy 4"
+	landing
+	non-blocking
+	name "The Envoy"
+	description "Carry a Union envoy to the Silurian homeworld on <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "silurian arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The envoy is there to ask the Silurians to join the coalition.`
+				accept
+	on complete
+		payment 41000
+		set "silurian arc: ch4"
+		log "The Envoy: The envoy is there to ask the Silurians to join the coalition."
+
+mission "Silurian The Answer 5"
+	landing
+	non-blocking
+	name "The Answer"
+	description "Carry the Silurian's answer to the coalition offer to <destination>."
+	cargo "Silurian Mission Supplies" 5 20
+	deadline
+	source
+		government "Rulei"
+		attributes "spaceport"
+	to offer
+		has "silurian arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Silurian need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is yes, and the Silurians have been waiting for the question.`
+				accept
+	on complete
+		payment 45000
+		set "silurian arc: ch5"
+		log "The Answer: The answer is yes, and the Silurians have been waiting for the question."
+
+# ======================================================================
+# BENDER
+# ======================================================================
+
+event "bender arc begins"
+	date 1 1 3013
+	set "bender arc: start"
+
+mission "Bender The Pride 0"
+	landing
+	non-blocking
+	name "The Pride"
+	description "A Bender world has offered to trade. Carry the Union broker to <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "event: bender arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Bender are proud of their work in a way that makes negotiations awkward.`
+				accept
+	on complete
+		payment 25000
+		set "bender arc: ch0"
+		log "The Pride: The Bender are proud of their work in a way that makes negotiations awkward."
+
+mission "Bender The Foundry 1"
+	landing
+	non-blocking
+	name "The Foundry"
+	description "Carry a Union engineer to the Bender foundries on <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "bender arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Bender foundries are the best in the sector and they know it.`
+				accept
+	on complete
+		payment 29000
+		set "bender arc: ch1"
+		log "The Foundry: The Bender foundries are the best in the sector and they know it."
+
+mission "Bender The Relic 2"
+	landing
+	non-blocking
+	name "The Relic"
+	description "Recover a Bender relic and bring it to <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "bender arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The relic is a machine the Bender no longer build.`
+				accept
+	on complete
+		payment 33000
+		set "bender arc: ch2"
+		log "The Relic: The relic is a machine the Bender no longer build."
+
+mission "Bender The Warning 3"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Bender warning to the Union Admiralty on <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "bender arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon and it is delivered with pride.`
+				accept
+	on complete
+		payment 37000
+		set "bender arc: ch3"
+		log "The Warning: The warning is about the Kaylon and it is delivered with pride."
+
+mission "Bender The Envoy 4"
+	landing
+	non-blocking
+	name "The Envoy"
+	description "Carry a Union envoy to the Bender homeworld on <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "bender arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The envoy is there to ask the Bender to join the coalition.`
+				accept
+	on complete
+		payment 41000
+		set "bender arc: ch4"
+		log "The Envoy: The envoy is there to ask the Bender to join the coalition."
+
+mission "Bender The Answer 5"
+	landing
+	non-blocking
+	name "The Answer"
+	description "Carry the Bender's answer to the coalition offer to <destination>."
+	cargo "Bender Mission Supplies" 5 20
+	deadline
+	source
+		government "Vyrmeid"
+		attributes "spaceport"
+	to offer
+		has "bender arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Bender need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is yes, and the Bender will build the ships themselves.`
+				accept
+	on complete
+		payment 45000
+		set "bender arc: ch5"
+		log "The Answer: The answer is yes, and the Bender will build the ships themselves."
+
+# ======================================================================
+# TZENKETH
+# ======================================================================
+
+event "tzenketh arc begins"
+	date 1 1 3013
+	set "tzenketh arc: start"
+
+mission "Tzenketh The Forge 0"
+	landing
+	non-blocking
+	name "The Forge"
+	description "A Tzenketh forge world needs a Union alloy. Carry it to <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "event: tzenketh arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Tzenketh have been smelting on this pattern since before the Union existed.`
+				accept
+	on complete
+		payment 25000
+		set "tzenketh arc: ch0"
+		log "The Forge: The Tzenketh have been smelting on this pattern since before the Union existed."
+
+mission "Tzenketh The Settlers 1"
+	landing
+	non-blocking
+	name "The Settlers"
+	description "Carry a Union observer to the Tzenketh settlers on <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "tzenketh arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The settlers are the Tzenketh's first civilians in a generation.`
+				accept
+	on complete
+		payment 29000
+		set "tzenketh arc: ch1"
+		log "The Settlers: The settlers are the Tzenketh's first civilians in a generation."
+
+mission "Tzenketh The Memorial 2"
+	landing
+	non-blocking
+	name "The Memorial"
+	description "Recover the Tzenketh dead from a battlefield and bring them to <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "tzenketh arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The Tzenketh burn their dead and they do not leave them on a field.`
+				accept
+	on complete
+		payment 33000
+		set "tzenketh arc: ch2"
+		log "The Memorial: The Tzenketh burn their dead and they do not leave them on a field."
+
+mission "Tzenketh The Probe 3"
+	landing
+	non-blocking
+	name "The Probe"
+	description "Recover a Tzenketh probe and bring it to <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "tzenketh arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The probe is a weapon the Tzenketh no longer use.`
+				accept
+	on complete
+		payment 37000
+		set "tzenketh arc: ch3"
+		log "The Probe: The probe is a weapon the Tzenketh no longer use."
+
+mission "Tzenketh The Warning 4"
+	landing
+	non-blocking
+	name "The Warning"
+	description "Carry a Tzenketh warning to the Union Admiralty on <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "tzenketh arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The warning is about the Kaylon and it is delivered as a threat.`
+				accept
+	on complete
+		payment 41000
+		set "tzenketh arc: ch4"
+		log "The Warning: The warning is about the Kaylon and it is delivered as a threat."
+
+mission "Tzenketh The Pact 5"
+	landing
+	non-blocking
+	name "The Pact"
+	description "Carry the Tzenketh's answer to the coalition offer to <destination>."
+	cargo "Tzenketh Mission Supplies" 5 20
+	deadline
+	source
+		government "Korath"
+		attributes "spaceport"
+	to offer
+		has "tzenketh arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Tzenketh need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is that the Tzenketh will fight the Kaylon on their own terms.`
+				accept
+	on complete
+		payment 45000
+		set "tzenketh arc: ch5"
+		log "The Pact: The answer is that the Tzenketh will fight the Kaylon on their own terms."
+
+# ======================================================================
+# SUCCESSOR
+# ======================================================================
+
+event "successor_houses arc begins"
+	date 1 1 3013
+	set "successor_houses arc: start"
+
+mission "Successor The House 0"
+	landing
+	non-blocking
+	name "The House"
+	description "A Successor house needs a Union mediator. Carry one to <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "event: successor_houses arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The house has held its claim to this world since before the Union existed.`
+				accept
+	on complete
+		payment 25000
+		set "successor_houses arc: ch0"
+		log "The House: The house has held its claim to this world since before the Union existed."
+
+mission "Successor The Vault 1"
+	landing
+	non-blocking
+	name "The Vault"
+	description "Recover a Successor archive and bring it to <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "successor_houses arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The archive records a war the Successors have never stopped fighting.`
+				accept
+	on complete
+		payment 29000
+		set "successor_houses arc: ch1"
+		log "The Vault: The archive records a war the Successors have never stopped fighting."
+
+mission "Successor The Assembly 2"
+	landing
+	non-blocking
+	name "The Assembly"
+	description "Carry a Union delegate to the Successor assembly on <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "successor_houses arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The assembly is where the houses decide whether to join the coalition.`
+				accept
+	on complete
+		payment 33000
+		set "successor_houses arc: ch2"
+		log "The Assembly: The assembly is where the houses decide whether to join the coalition."
+
+mission "Successor The Heir 3"
+	landing
+	non-blocking
+	name "The Heir"
+	description "Carry a Successor heir to a Union academy on <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "successor_houses arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The heir wants to learn how the Union builds its ships.`
+				accept
+	on complete
+		payment 37000
+		set "successor_houses arc: ch3"
+		log "The Heir: The heir wants to learn how the Union builds its ships."
+
+mission "Successor The Tribute 4"
+	landing
+	non-blocking
+	name "The Tribute"
+	description "Carry tribute to a Successor house on <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "successor_houses arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The tribute is a gesture and the Successors understand gestures.`
+				accept
+	on complete
+		payment 41000
+		set "successor_houses arc: ch4"
+		log "The Tribute: The tribute is a gesture and the Successors understand gestures."
+
+mission "Successor The Answer 5"
+	landing
+	non-blocking
+	name "The Answer"
+	description "Carry the Successor's answer to the coalition offer to <destination>."
+	cargo "Successor Mission Supplies" 5 20
+	deadline
+	source
+		government "Successor"
+		attributes "spaceport"
+	to offer
+		has "successor_houses arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take it on."`
+					accept
+				`\t"What does the Successor need?"`
+					goto explain
+				`\t"Not my business."`
+					decline
+			label explain
+			`The answer is yes, from some houses, and the others will be persuaded.`
+				accept
+	on complete
+		payment 45000
+		set "successor_houses arc: ch5"
+		log "The Answer: The answer is yes, from some houses, and the others will be persuaded."
+

@@ -1,0 +1,359 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: campaign events rewritten for Planetary Union / Krill / Kaylon / etc.
+
+event "Krill border raid"
+	date 12 11 3014
+	system "Ekos"
+		government "Krill"
+		remove fleet "Small Krill Patrol"
+		remove fleet "Large Krill Patrol"
+		fleet "Krill Raider" 800
+
+mission "Krill border raid"
+	landing
+	non-blocking
+	source
+		government "Krill"
+		attributes "spaceport"
+	to offer
+		has "event: Krill border raid"
+	on offer
+		log "Factions" "Krill" `Intelligence reports a Krill border raid on the Ekos system. The Krill are expanding their temple network aggressively, and the Planetary Union has placed the fleet on high alert.`
+		conversation
+			`You receive a priority transmission from Admiral Hanson. A Krill task force has attacked the Ekos system. The Ekos colony is a Moclan research outpost -- if the Krill succeed, it will be a major escalation.`
+			`	Understood, Admiral. I'm heading to Ekos now. Any additional instructions?`
+			`	Maintain defensive posture. If the Krill are driven off, the Moclan Hegemony has offered a research cooperation treaty. If not, prepare for a Krill counterstrike.`
+			choice
+				`	"I'll engage the Krill task force immediately."`
+				`	"What about the Moclan outpost's survival?"`
+				`	"I'll notify the Union Science Council first."`
+
+			label krill_engage
+			`You're right. The Krill won't stop until they've secured the Mid Rim. I'll engage.`
+			`	Scanning the battle map, you see three Krill cruisers engaging the Union patrol near Ekos. The battle is evenly matched, but reinforcements are two hours out.`
+			choice
+				`		Push the attack -- destroy the Krill formation."`
+				`		Break off and retreat to Union lines."`
+
+			label krill_destroy
+			`Your fighters score direct hits on all three Krill cruisers. The lead ship explodes in a fireball, and the other two break retreat toward Krill space. The Ekos system is secure, but the victory comes at a cost -- your ship's shields are at 15%.`
+			action
+				set "krill conflict: engaged"
+				set "union standing: improved"
+			`Admiral Hanson commends you: Excellent work, Captain. The Krill will think twice before attacking a Union outpost again.`
+			goto krill_end
+
+			label krill_retreat
+			`You break off the engagement and fall back to Union lines. The Krill cruisers pursue for a moment, then return to their temple network. Admiral Hanson is dissatisfied but understands the strategic reality.`
+			action
+				set "krill conflict: avoided"
+			`The Krill will remember this, Captain. But for now, the Ekos system remains under Union protection.`
+			goto krill_end
+
+			label moclan_concern
+			`Understood, Admiral. The Moclans have been protective of their research outposts. I'll factor that into my response.`
+			goto union_response
+
+			label union_response
+			`Transmission ends. You plot a course for Ekos, Union sensors picking up Krill fleet movements. The Mid Rim is about to become very interesting indeed.`
+			goto krill_end
+
+			label krill_end
+			decline
+
+event "Moclan schism resolution"
+	date 5 2 3015
+	system "Otranta"
+		government "Moclan"
+		remove fleet "Small Moclan Science Vessel"
+		remove fleet "Large Moclan Science Vessel"
+		fleet "Moclan Heavy Cruiser" 500
+
+mission "Moclan schism resolution"
+	landing
+	non-blocking
+	source
+		government "Moclan"
+		attributes "spaceport"
+	to offer
+		has "event: Moclan schism resolution"
+	on offer
+		log "Factions" "Moclan" `A Moclan schism has reached a critical point. A faction of conservative scientists has seceded from the Hegemony, taking several heavy cruisers with them. They're hoarding biogenic weapons research and threatening to use it unless the Hegemony meets their demands. The Planetary Union has been asked to mediate.`
+		conversation
+			`The Moclan High Council has convened an emergency session. The schism threatens to tear the Hegemony apart, and the biogenic research could change the balance of power in the Mid Rim.`
+			`	What does the Union want us to do, Admiral?`
+			`	We want you to mediate. The reformists are willing to share their research if the Hegemony guarantees their safety. The conservatives refuse to back down.`
+			choice
+				`	"Support the reformists -- share the research with the Union."`
+				`	"Back the High Council -- suppress the schism by force."`
+				`	"Remain neutral -- let the Moclans work it out themselves."`
+
+			label reformist_path
+			`You accept the reformists' offer. The biogenic research is shared, and the Hegemony agrees to Union protection in exchange. The schism is resolved without bloodshed, and the Union gains valuable scientific data.`
+			action
+				set "moclan schism: resolved"
+				set "union standing: improved"
+			decline
+
+			label council_path
+			`You side with the High Council. Moclan forces move against the reformist fleet. The battle over Otranta is brief but bloody -- three heavy cruisers are destroyed before the reformists surrender.`
+			action
+				set "moclan schism: suppressed"
+				set "moclan standing: improved"
+			`Admiral Hanson is troubled by the outcome. The biogenic research is lost, but the Hegemony remains intact. The Union watches warily.`
+			decline
+
+			label neutral_path
+			`You decline to intervene. The Moclans resolve the schism internally, but the biogenic research disappears into the hands of the conservatives. The Union loses a potential ally and a valuable resource.`
+			action
+				set "moclan schism: unresolved"
+			`Admiral Hanson understands but is disappointed. The Mid Rim just got more dangerous.`
+			decline
+
+event "Kaylon incursion"
+	date 8 15 3015
+	system "Kaylon"
+		government "Kaylon"
+		remove fleet "Small Kaylon Ship"
+		remove fleet "Large Kaylon Ship"
+		fleet "Kaylon Vessel" 1000
+
+mission "Kaylon incursion"
+	landing
+	non-blocking
+	source
+		government "Kaylon"
+		attributes "spaceport"
+	to offer
+		has "event: Kaylon incursion"
+	on offer
+		log "Factions" "Kaylon" `Kaylon vessels have crossed the Union border near the Kaylon system. Their signature is unmistakable -- synthetic, efficient, and utterly without mercy. The Planetary Union has declared a state of emergency.`
+		conversation
+			`Urgent priority transmission from Union Command. Kaylon vessels have crossed the border. They're not hailing, not negotiating -- just advancing.`
+			`	What are our orders, Admiral?`
+			`	Engage at will. The Kaylon must not penetrate Union space. Use maximum force.`
+			choice
+				`	"Understood. I'll engage the Kaylon vessels."`
+				`	"Can we attempt communication first?"`
+				`	"Recommend full fleet mobilization before engagement."`
+
+			label kaylon_engage
+			`You engage the Kaylon vessels. They fight with ruthless efficiency, adapting to your tactics within minutes. Your ship takes heavy damage, but you drive them back to the border.`
+			action
+				set "kaylon incursion: repelled"
+				set "union standing: improved"
+			`Admiral Hanson: Well done, Captain. The Kaylon have been repelled -- for now. But they're learning from every encounter.`
+			decline
+
+			label kaylon_comm
+			`You attempt to hail the Kaylon lead vessel. No response. They continue advancing, scanning your ship with clinical precision. Without warning, they open fire. You have no choice but to engage.`
+			action
+				set "kaylon incursion: repelled"
+			`The Kaylon are repelled, but their silence speaks volumes. They don't negotiate. They don't surrender. They only compute.`
+			decline
+
+			label kaylon_mobilize
+			`You recommend full fleet mobilization. Admiral Hanson agrees, but the nearest Union fleet is four hours away. By the time they arrive, the Kaylon will have penetrated deep into Union space.`
+			action
+				set "kaylon incursion: delayed"
+			`You engage the Kaylon alone to buy time. The battle is desperate, but you hold them long enough for the Union fleet to arrive. The Kaylon withdraw, calculating the odds are no longer in their favor.`
+			action
+				set "union standing: improved"
+			`Admiral Hanson: You saved the sector, Captain. The Union owes you one.`
+			decline
+
+event "Calivon zoo incident"
+	date 11 3 3015
+	system "Calivon"
+		government "Calivon"
+		remove fleet "Small Calivon Ship"
+		fleet "Calivon Cruiser" 300
+
+mission "Calivon zoo incident"
+	landing
+	non-blocking
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "event: Calivon zoo incident"
+	on offer
+		log "Factions" "Calivon" `A Calivon vessel has been detected near Union space. The Calivon consider less advanced species as animals -- suitable for collection and display. A Union freighter has gone missing near Calivon territory.`
+		conversation
+			`Admiral Hanson's face appears on your screen, pale. "Captain, we've lost contact with the Union science vessel Descartes near Calivon space. The Calivon have claimed it."`
+			`	They've taken the crew?`
+			`	They consider us animals, Captain. The crew is now exhibits in a Calivon zoo. We need you to retrieve them -- discreetly. The Calivon don't take kindly to rescue missions.`
+			choice
+				`	"I'll infiltrate Calivon space and rescue the crew."`
+				`	"Can we negotiate their release?"`
+				`	"Too risky. Recommend abandoning the crew."`
+
+			label calivon_rescue
+			`You slip past Calivon sensors using a stealth approach. The Descartes crew is held in a display habitat, observed by Calivon researchers who treat them like curiosities. You extract the crew without detection, but not before the Calivon record your ship's signature.`
+			action
+				set "calivon incident: rescued"
+				set "calivon standing: worsened"
+			`Admiral Hanson: The crew is safe, Captain. But the Calivon now know our capabilities. They'll be watching.`
+			decline
+
+			label calivon_negotiate
+			`You attempt to open diplomatic channels with the Calivon. They respond with amusement. To them, negotiating with "lesser species" is like negotiating with livestock. They offer to trade the crew for Union technology -- specifically, your ship's quantum drive.`
+			action
+				set "calivon incident: negotiated"
+			`You refuse the trade. The Calivon withdraw their offer but keep the crew. A diplomatic incident looms.`
+			decline
+
+			label calivon_abandon
+			`You recommend abandoning the crew. Admiral Hanson is silent for a long moment. "Understood, Captain. The Descartes crew is officially listed as missing in action."`
+			action
+				set "calivon incident: abandoned"
+			`The Union mourns the lost crew, but Calivon relations remain stable. For now.`
+			decline
+
+event "Crildari diplomatic mission"
+	date 3 20 3015
+	system "Velos"
+		government "Crildari"
+		remove fleet "Small Crildari Ship"
+		remove fleet "Large Crildari Ship"
+		fleet "Crildari Cruiser" 400
+
+mission "Crildari diplomatic mission"
+	landing
+	non-blocking
+	source
+		government "Crildari"
+		attributes "spaceport"
+	to offer
+		has "event: Crildari diplomatic mission"
+	on offer
+		log "Factions" "Crildari" `A Crildari trade delegation requests Union escort through Krill space. Their cargo of bioluminescent algae is valuable, and the Krill have been seizing Crildari vessels without warning. The Union must decide whether to protect the delegation or risk diplomatic incident.`
+		conversation
+			`Priority transmission from Captain Velez. Crildari merchant vessel Farrier is waiting in orbit. The Krill have been harassing our trade routes.`
+			`	What's our standing orders, Admiral?`
+			`	Escort the Farrier through Krill space with all available firepower. Do not engage unless fired upon.`
+			choice
+				`	"Understood. I'll escort the Farrier through."`
+				`	"I'll try to negotiate safe passage first."`
+				`	"Let the Farrier run the gauntlet alone."`
+
+			label crildari_escort
+			`You escort the Farrier through Krill space. The Krill challenge you at the system boundary, but your escort group drives them off. The Farrier reaches Union space safely, and the Crildari thank you.`
+			action
+				set "crildari conflict: escorted"
+				set "union standing: improved"
+			decline
+
+			label crildari_negotiate
+			`You attempt hail the Krill task force. They demand a tribute of algae in exchange for safe passage. You refuse, and tension rises.`
+			action
+				set "crildari conflict: negotiated"
+			`The Krill accept your offer. The Farrier passes through, but the Krill mark your ship for future inspection.`
+			decline
+
+			label crildari_alone
+			`You leave the Farrier to its fate. The Krill seize the vessel and its cargo. The Crildari are furious, and union standing suffers.`
+			action
+				set "crildari conflict: lost"
+			`Admiral Hanson is angered. The Krill have overstepped, but we cannot be everywhere.`
+			decline
+
+
+event "Kaylon diplomatic thaw"
+	date 6 10 3015
+	system "Kaylon"
+		government "Kaylon"
+		remove fleet "Small Kaylon Ship"
+		fleet "Kaylon Observer" 600
+
+mission "Kaylon diplomatic thaw"
+	landing
+	non-blocking
+	source
+		government "Kaylon"
+		attributes "spaceport"
+	to offer
+		has "event: Kaylon diplomatic thaw"
+	on offer
+		log "Factions" "Kaylon" `The Kaylon collective has transmitted a mathematical sequence that appears to be a greeting. Though they do not speak, Union xenolinguists have analyzed the patterns and believe it may be an overture for diplomatic contact. The Kaylon rarely initiate such contact, and the offer must be evaluated carefully.`
+		conversation
+			`Union xenolinguists have decoded the Kaylon signal. It's a sequence of prime numbers and geometric shapes -- clearly intentional.`
+			`	We cannot interpret semantic meaning, Admiral. But the Kaylon have not fired on us. For the first time, communication is possible.`
+			choice
+				`	"We should respond with our own mathematical sequence."`
+				`	"Hail them on open frequencies -- attempt simple concepts."`
+				`	"Maintain defensive posture and monitor only."`
+
+			label kaylon_math_response
+			`You transmit the Kaylon's prime-number sequence back. They respond with a longer pattern -- complex mathematical truths. The Kaylon are communicating, however limited.`
+			action
+				set "kaylon diplomatic status: communicating"
+				set "union standing: improved"
+			decline
+
+			label kaylon_simple_hail
+			`You hail the Kaylon vessel on open frequencies. They respond with a simple "recognize" pattern -- a basic acknowledgment. No semantic content, but the channel is open.`
+			action
+				set "kaylon diplomatic status: hailing"
+			decline
+
+			label kaylon_defensive
+			`You decline and maintain defensive posture. The Kaylon transmit nothing further. The opportunity for diplomacy is postponed.`
+			decline
+
+
+event "Calivon artifact retrieval"
+	date 7 25 3015
+	system "Calivon"
+		government "Calivon"
+		remove fleet "Small Calivon Ship"
+		fleet "Calivon Cruiser" 300
+
+mission "Calivon artifact retrieval"
+	landing
+	non-blocking
+	source
+		government "Calivon"
+		attributes "spaceport"
+	to offer
+		has "event: Calivon artifact retrieval"
+	on offer
+		log "Factions" "Calivon" `A Calivon vessel has detected an ancient artifact in the asteroid field near the Calivon system. They've offered to share the find with the Union if we assist in its retrieval. The artifact may contain technology far beyond our current understanding.`
+		conversation
+			`Admiral Hanson: Captain, a Calivon vessel has detected an artifact in the asteroid field. They're willing to share it with the Union -- but only if we help retrieve it from a derelict station.`
+			`	The artifact could be invaluable. But the Calivon are untrustworthy partners.`
+			choice
+				`	"Assist Calivon in retrieving the artifact."`
+				`	"Decline -- the Calivon cannot be trusted with such technology."`
+				`	"Offer to retrieve it ourselves, independent of Calivon."`
+
+			label calivon_assist
+			`You assist the Calivon in retrieving the artifact from the derelict station. The find is remarkable -- a pre-union cache of faster-than-prototype drive components. The Calivon share the technology, and union standing improves.`
+			action
+				set "calivon artifact: retrieved"
+				set "union standing: improved"
+			decline
+
+			label calivon_decline
+			`You decline the Calivon offer. The artifact remains in Calivon hands, and the opportunity is lost. Union standing remains unchanged.`
+			decline
+
+			label calivon_independent
+			`You offer to retrieve the artifact independently. The Calivon accept, though reluctantly. You retrieve the artifact without Calivon assistance, and the technology is shared with the Union.`
+			action
+				set "calivon artifact: retrieved"
+				set "union standing: improved"
+			decline
+

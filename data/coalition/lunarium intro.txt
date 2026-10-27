@@ -1,0 +1,102 @@
+# Copyright (c) 2022 by Arachi-Lover
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "bebliss research fw"
+
+event "lunarium training: shaula empty"
+	system "Shaula"
+		remove fleet "Small Southern Pirates"
+		remove fleet "Large Southern Pirates"
+		remove fleet "Small Core Pirates"
+		remove fleet "Large Core Pirates"
+		remove fleet "Small Northern Pirates"
+		remove fleet "Large Northern Pirates"
+		remove fleet "Large Militia"
+		remove fleet "Large Free Worlds"
+
+event "lunarium training: shaula back to normal"
+	system "Shaula"
+		add fleet "Small Southern Pirates" 500
+		add fleet "Large Southern Pirates" 800
+		add fleet "Small Core Pirates" 4000
+		add fleet "Large Core Pirates" 7000
+		add fleet "Small Northern Pirates" 5000
+		add fleet "Large Northern Pirates" 9000
+		add fleet "Large Free Worlds" 9000
+
+event "lunarium training done"
+
+event "first lunarium unlock"
+	planet "Remote Blue"
+		outfitter "Lunarium Basics"
+	planet "Fourth Shadow"
+		outfitter "Lunarium Basics"
+	planet "Into White"
+		outfitter "Lunarium Basics"
+	planet "Secret Sky"
+		outfitter "Lunarium Basics"
+	planet "Shifting Sand"
+		outfitter "Lunarium Basics"
+	planet "Mebla's Portion"
+		outfitter "Lunarium Basics"
+	planet "Refuge of Belugt"
+		outfitter "Lunarium Basics"
+
+
+
+# Patch for if the player joined both Heliarch and Lunarium prior to a fix.
+event "fix: chose heliarchs"
+	planet "Remote Blue"
+		remove outfitter "Lunarium Basics"
+	planet "Fourth Shadow"
+		remove outfitter "Lunarium Basics"
+	planet "Into White"
+		remove outfitter "Lunarium Basics"
+	planet "Secret Sky"
+		remove outfitter "Lunarium Basics"
+	planet "Shifting Sand"
+		remove outfitter "Lunarium Basics"
+	planet "Mebla's Portion"
+		remove outfitter "Lunarium Basics"
+	planet "Refuge of Belugt"
+		remove outfitter "Lunarium Basics"
+
+event "fix: chose lunarium"
+	planet "Ring of Friendship"
+		remove outfitter "Heliarch Basics"
+	planet "Ring of Power"
+		remove outfitter "Heliarch Basics"
+	planet "Ring of Wisdom"
+		remove outfitter "Heliarch Basics"
+	planet "Saros"
+		remove outfitter "Heliarch Basics"
+	planet "Ahr"
+		remove outfitter "Heliarch Basics"
+	planet "Ki Patek Ka"
+		remove outfitter "Heliarch Basics"
+	planet "Belug's Plunge"
+		remove outfitter "Heliarch Basics"
+	planet "Stronghold of Flugbu"
+		remove outfitter "Heliarch Basics"
+	planet "Delve of Bloptab"
+		remove outfitter "Heliarch Basics"
+	planet "Far Home"
+		remove outfitter "Heliarch Basics"
+	planet "Dwelling of Speloog"
+		remove outfitter "Heliarch Basics"
+	planet "Blue Interor"
+		remove outfitter "Heliarch Basics"
+	planet "Sandy Two"
+		remove outfitter "Heliarch Basics"
+	planet "Second Rose"
+		remove outfitter "Heliarch Basics"

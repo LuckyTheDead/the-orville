@@ -1,0 +1,979 @@
+# Copyright (c) 2017 by Michael Zahniser
+# Copyright (c) 2021 by Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Weapons:
+
+outfit "Inhibitor Cannon"
+	category "Guns"
+	series "Guns"
+	index 03010
+	licenses
+		Remnant
+	cost 471000
+	thumbnail "outfit/inhibitor cannon"
+	"mass" 16
+	"outfit space" -16
+	"weapon capacity" -16
+	"gun ports" -1
+	weapon
+		sprite "projectile/inhibitor"
+			"frame rate" 10
+			"no repeat"
+		sound "inhibitor"
+		"hit effect" "inhibitor impact" 3
+		"inaccuracy" .5
+		"velocity" 36
+		"random velocity" .5
+		"lifetime" 24
+		"reload" 13
+		"cluster"
+		"firing energy" 26
+		"firing heat" 45.5
+		"firing force" 19.5
+		"shield damage" 26
+		"hull damage" 19.5
+		"hit force" 58.5
+		"slowing damage" .5
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+effect "inhibitor impact"
+	sprite "effect/inhibitor impact"
+		"frame rate" 30
+		"no repeat"
+	"lifetime" 11
+	"random angle" 360
+	"random frame rate" 15
+	"random velocity" 6
+	"velocity scale" -.05
+
+outfit "Inhibitor Turret"
+	category "Turrets"
+	series "Turrets"
+	index 03010
+	licenses
+		Remnant
+	cost 1371000
+	thumbnail "outfit/inhibitor turret"
+	"mass" 42
+	"outfit space" -42
+	"weapon capacity" -42
+	"required crew" 1
+	"turret mounts" -1
+	weapon
+		sprite "projectile/inhibitor"
+			"frame rate" 10
+			"no repeat"
+		"hardpoint sprite" "hardpoint/inhibitor turret"
+		"hardpoint offset" 6.
+		sound "inhibitor"
+		"hit effect" "inhibitor impact" 3
+		"inaccuracy" .5
+		"turret turn" 3.6
+		"velocity" 36
+		"random velocity" .5
+		"lifetime" 24
+		"reload" 6.5
+		"cluster"
+		"firing energy" 26
+		"firing heat" 45.5
+		"firing force" 19.5
+		"shield damage" 26
+		"hull damage" 19.5
+		"hit force" 58.5
+		"slowing damage" .5
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt was captured rather than bought, and the crew who took it are still proud of that fact."
+
+
+outfit "Thrasher Cannon"
+	category "Guns"
+	series "Guns"
+	index 03020
+	licenses
+		Remnant
+	cost 218000
+	thumbnail "outfit/thrasher cannon"
+	"mass" 10
+	"outfit space" -10
+	"weapon capacity" -10
+	"gun ports" -1
+	weapon
+		sprite "projectile/thrasher"
+			"frame rate" 10
+			"random start frame"
+			"no repeat"
+		sound "thrasher"
+		"hit effect" "thrasher impact"
+		"inaccuracy" 9
+		"velocity" 10
+		"lifetime" 36
+		"reload" 20
+		"firing energy" 36
+		"firing heat" 27
+		"shield damage" 38
+		"hull damage" 46
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+effect "thrasher impact"
+	sprite "effect/thrasher impact"
+		"frame rate" 30
+		"no repeat"
+	"lifetime" 11
+	"random angle" 360
+	"random spin" 30
+	"random velocity" 3
+	"velocity scale" -.1
+
+
+outfit "Thrasher Turret"
+	category "Turrets"
+	series "Turrets"
+	index 03020
+	licenses
+		Remnant
+	cost 980000
+	thumbnail "outfit/thrasher turret"
+	"mass" 49
+	"outfit space" -49
+	"weapon capacity" -49
+	"required crew" 1
+	"turret mounts" -1
+	weapon
+		sprite "projectile/thrasher"
+			"frame rate" 10
+			"random start frame"
+			"no repeat"
+		"hardpoint sprite" "hardpoint/thrasher turret"
+		"hardpoint offset" 6.
+		sound "thrasher"
+		"hit effect" "thrasher impact"
+		"inaccuracy" 6
+		"turret turn" 2
+		"velocity" 10
+		"lifetime" 36
+		"reload" 5
+		"firing energy" 36
+		"firing heat" 27
+		"shield damage" 38
+		"hull damage" 46
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+
+outfit "Point Defense Turret"
+	category "Turrets"
+	series "Anti-Missile"
+	index 03010
+	licenses
+		Remnant
+	cost 1120000
+	thumbnail "outfit/point defense"
+	"mass" 33
+	"outfit space" -33
+	"weapon capacity" -33
+	"turret mounts" -1
+	weapon
+		"hardpoint sprite" "hardpoint/point defense"
+		"fire effect" "point defense fire"
+		"die effect" "point defense hit"
+		"die effect" "point defense die"
+		"anti-missile" 42
+		"velocity" 270
+		"lifetime" 1
+		"reload" 10
+		"firing energy" 62
+		"firing heat" 18
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+effect "point defense fire"
+	sprite "effect/point defense fire"
+		"frame rate" 17
+		"no repeat"
+	sound "point defense"
+	"sound category" "anti-missile"
+	lifetime 10
+	"velocity scale" .5
+
+effect "point defense hit"
+	sprite "effect/point defense hit"
+		"frame rate" 13
+		"no repeat"
+	lifetime 10
+	"velocity scale" .2
+
+effect "point defense die"
+	sprite "effect/point defense die"
+		"frame rate" 20
+		"no repeat"
+	lifetime 15
+	"velocity scale" .2
+
+
+outfit "EMP Torpedo"
+	plural "EMP Torpedoes"
+	category "Ammunition"
+	series "Ammunition"
+	index 03010
+	cost 4400
+	thumbnail "outfit/emp torpedo"
+	"mass" .6
+	"emp torpedo capacity" -1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "EMP Torpedo Storage Bay"
+	category "Ammunition"
+	series "Ammunition"
+	index 03011
+	licenses
+		Remnant
+	cost 98000
+	thumbnail "outfit/emp rack"
+	"mass" 4.8
+	"outfit space" -12
+	"energy capacity" 400
+	"emp torpedo capacity" 12
+	ammo "EMP Torpedo"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+outfit "EMP Torpedo Bay"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03010
+	licenses
+		Remnant
+	cost 583000
+	thumbnail "outfit/emp torpedo bay"
+	"mass" 9
+	"outfit space" -18
+	"weapon capacity" -18
+	"gun ports" -1
+	"emp torpedo capacity" 15
+	weapon
+		sprite "projectile/emp torpedo"
+			"frame rate" 2
+			"no repeat"
+		sound "torpedo"
+		ammo "EMP Torpedo"
+		icon "icon/emp"
+		"fire effect" "emp torpedo fire" 5
+		"hit effect" "nuke explosion"
+		"hit effect" "emp ring" 30
+		"hit effect" "emp spark" 20
+		"die effect" "tiny explosion"
+		stream
+		"reload" 330
+		"firing energy" 400
+		"firing heat" 18
+		"inaccuracy" 5
+		"lifetime" 300
+		"velocity" 7
+		"acceleration" .7
+		"drag" .1
+		"turn" 2
+		"homing"
+			"throttle control"
+		"infrared tracking" .2
+		"radar tracking" .8
+		"trigger radius" 50
+		"blast radius" 200
+		"shield damage" 700
+		"hull damage" 100
+		"ion damage" 48
+		"scrambling damage" 48
+		"hit force" 135
+		"missile strength" 80
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt runs hot, it runs loud, and it runs, which is more than can be said for most of its competitors."
+		to display
+			has "gamerule: universal ammo restocking"
+
+
+
+outfit "Teciimach Bay"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03030
+	licenses
+		Remnant
+	cost 1525000
+	thumbnail "outfit/teciimach bay"
+	"mass" 6
+	"outfit space" -18
+	"weapon capacity" -18
+	"gun ports" -1
+	"emp torpedo capacity" 20
+	weapon
+		sprite "projectile/emp torpedo"
+			"frame rate" 2
+			"no repeat"
+		sound "torpedo"
+		ammo "EMP Torpedo"
+		icon "icon/emp"
+		"fire effect" "emp torpedo fire" 5
+		"hit effect" "nuke explosion"
+		"hit effect" "emp ring" 30
+		"hit effect" "emp spark" 20
+		"die effect" "tiny explosion"
+		stream
+		safe
+		"reload" 330
+		"firing energy" 400
+		"firing heat" 18
+		"inaccuracy" 5
+		"lifetime" 300
+		"velocity" 7
+		"acceleration" .7
+		"drag" .1
+		"turn" 2
+		"homing"
+			"throttle control"
+		"infrared tracking" .2
+		"radar tracking" .8
+		"trigger radius" 50
+		"blast radius" 200
+		"shield damage" 700
+		"hull damage" 100
+		"ion damage" 48
+		"scrambling damage" 48
+		"hit force" 135
+		"missile strength" 80
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tA version of this is carried by every ship of the faction that built it, which is either a recommendation or a warning."
+	description "\tIt has been repaired with parts from at least three other machines, and the repairs are better done than the original."
+	description "\tThe tolerances are loose by Union standards and the result is, somehow, more reliable."
+		to display
+			has "gamerule: universal ammo restocking"
+
+outfit "Teciimach Pod"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03020
+	licenses
+		Remnant
+	cost 762500
+	thumbnail "outfit/teciimach pod"
+	"mass" 4
+	"outfit space" -6
+	"weapon capacity" -6
+	"gun ports" -1
+	"emp torpedo capacity" 3
+	weapon
+		sprite "projectile/emp torpedo"
+			"frame rate" 2
+			"no repeat"
+		sound "torpedo"
+		ammo "EMP Torpedo"
+		icon "icon/emp"
+		"fire effect" "emp torpedo fire" 5
+		"hit effect" "nuke explosion"
+		"hit effect" "emp ring" 30
+		"hit effect" "emp spark" 20
+		"die effect" "tiny explosion"
+		safe
+		"burst count" 3
+		"burst reload" 330
+		"reload" 660
+		"firing energy" 400
+		"firing heat" 18
+		"inaccuracy" 5
+		"lifetime" 300
+		"velocity" 7
+		"acceleration" .7
+		"drag" .1
+		"turn" 2
+		"homing"
+			"throttle control"
+		"infrared tracking" .2
+		"radar tracking" .8
+		"trigger radius" 50
+		"blast radius" 200
+		"shield damage" 700
+		"hull damage" 100
+		"ion damage" 48
+		"scrambling damage" 48
+		"hit force" 135
+		"missile strength" 80
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe previous owner left it behind, which is the sort of testimony that should tell you something."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+		to display
+			has "gamerule: universal ammo restocking"
+
+outfitter "EMP Torpedo Restock"
+	to sell
+		has "gamerule: universal ammo restocking"
+		or
+			has "outfit: EMP Torpedo Bay"
+			has "outfit: Teciimach Bay"
+			has "outfit: Teciimach Pod"
+			has "outfit: Ka'het EMP Deployer"
+			has "outfit: EMP Torpedo Storage Bay"
+	location
+		attributes "outfitter"
+	stock
+		"EMP Torpedo"
+
+effect "emp torpedo fire"
+	sprite "effect/emp torpedo fire"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 31
+	"random angle" 10
+	"random frame rate" 10
+	"random spin" 2
+	"random velocity" 7
+
+effect "emp ring"
+	sprite "effect/emp ring"
+		"no repeat"
+		"frame rate" 12
+	"lifetime" 60
+	"random angle" 360
+	"random frame rate" 6
+	"random velocity" 4
+	"velocity scale" 0.1
+
+effect "emp spark"
+	sprite "effect/emp spark"
+		"no repeat"
+		"frame rate" 8
+	"lifetime" 45
+	"random angle" 360
+	"random frame rate" 6
+	"random velocity" 7
+	"velocity scale" 0.1
+
+
+
+outfit "Ember Tear"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 03040
+	licenses
+		"Remnant Capital"
+	cost 270000000
+	thumbnail "outfit/ember tear"
+	"mass" 250
+	"outfit space" -190
+	"weapon capacity" -200
+	"gun ports" -1
+	"spinal mount" -1
+	"unplunderable" 1
+	weapon
+		sprite "projectile/ember tear/ember tear"
+			"frame rate" 30
+		sound "ember tear"
+		"hit effect" "ember tear spark"
+		"hit effect" "ember tear impact"
+		"hit effect" "ember tear vortex"
+		"fire effect" "ember tear fire"
+		"velocity" 800
+		"inaccuracy" 0
+		"safe"
+		"lifetime" 1
+		"reload" 1
+		"firing force" 1.5
+		"blast radius" 150
+		"firing energy" 230
+		"firing fuel" 10
+		"firing heat" 105
+		"shield damage" 250
+		"hull damage" 250
+		"slowing damage" 10
+		"fuel damage" 2.5
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe tolerances are loose by Union standards and the result is, somehow, more reliable."
+	description "\tThe fittings are not Union standard, and the dockyard will charge you extra for the adapter."
+
+effect "ember tear spark"
+	sprite "effect/ember tear/ember tear spark"
+		"start frame" 0
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 10
+	"velocity scale" 0
+	"random angle" 360
+	"random velocity" 10
+	"random frame rate" 10
+
+effect "ember tear fire"
+	sprite "effect/ember tear/ember tear fire"
+		"start frame" 0
+		"no repeat"
+		"frame rate" 60
+	"lifetime" 3
+	"velocity scale" 1
+	"random angle" 360
+	"random velocity" 3
+	"random frame rate" 10
+
+effect "ember tear impact"
+	sprite "effect/ember tear/ember tear impact"
+		"start frame" 1
+		"no repeat"
+		"frame rate" 60
+	"lifetime" 3
+	"velocity scale" 0
+	"random angle" 360
+	"random velocity" 10
+	"random frame rate" 10
+
+effect "ember tear vortex"
+	sprite "effect/ember tear/ember tear vortex"
+		"start frame" 0
+		"no repeat"
+		"frame rate" 10
+	"sound" "ember tear hit"
+	"lifetime" 100
+	"velocity scale" 0
+	"random angle" 360
+	"random velocity" 0
+	"random frame rate" 30
+
+
+
+# Systems:
+
+outfit "Crystal Capacitor"
+	category "Power"
+	series "Batteries"
+	index 03010
+	licenses
+		Remnant
+	cost 57000
+	thumbnail "outfit/crystal capacitor"
+	"mass" 12
+	"outfit space" -12
+	"energy capacity" 13600
+	"energy consumption" .4
+	"heat generation" .4
+	"ion resistance" 0.01
+	"scramble resistance" 0.01
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe design is old enough that the people who invented it are a matter of archaeology rather than engineering."
+
+outfit "Millennium Cell"
+	category "Power"
+	series "Generators"
+	index 03010
+	licenses
+		Remnant
+	cost 553000
+	thumbnail "outfit/millennium cell"
+	"mass" 29
+	"outfit space" -29
+	"energy generation" 3.6
+	"heat generation" 6.0
+	"ion resistance" 0.025
+	"scramble resistance" 0.025
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe tolerances are loose by Union standards and the result is, somehow, more reliable."
+
+outfit "Epoch Cell"
+	category "Power"
+	series "Generators"
+	index 03020
+	licenses
+		Remnant
+	cost 2123000
+	thumbnail "outfit/epoch cell"
+	"mass" 98
+	"outfit space" -98
+	"energy generation" 12.7
+	"heat generation" 19.8
+	"ion resistance" 0.085
+	"scramble resistance" 0.085
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt is maintained by people who learned the design from someone who learned it from someone else, and the chain of custody is the only manual there is."
+
+outfit "Aeon Cell"
+	category "Power"
+	series "Generators"
+	index 03030
+	licenses
+		Remnant
+	cost 4384000
+	thumbnail "outfit/aeon cell"
+	"mass" 160
+	"outfit space" -160
+	"energy generation" 21.9
+	"heat generation" 31.5
+	"ion resistance" 0.14
+	"scramble resistance" 0.14
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe rating plate is in a language the dockyard does not read, and nobody has offered to translate it."
+
+outfit "Thermoelectric Cooler"
+	category "Systems"
+	series "Cooling"
+	index 03010
+	licenses
+		Remnant
+	cost 100000
+	thumbnail "outfit/thermoelectric cooler"
+	"mass" 4
+	"outfit space" -4
+	"active cooling" 8
+	"cooling energy" .4
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Emergency Ramscoop"
+	category "Systems"
+	series "Ramscoops"
+	index 03010
+	licenses
+		Remnant
+	cost 72000
+	thumbnail "outfit/emergency ramscoop"
+	"mass" 4
+	"outfit space" -4
+	"ramscoop" 1.25
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "NDR-114 Android"
+	category "Unique"
+	series "Functional Unique"
+	index 40
+	cost 120000
+	thumbnail "outfit/android"
+	"required crew" -1
+	"energy consumption" 0.01
+	"unique" 1
+	unplunderable 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe fittings are not Union standard, and the dockyard will charge you extra for the adapter."
+
+outfit "Research Laboratory"
+	category "Systems"
+	series "Scanners"
+	index 03020
+	licenses
+		Remnant
+	cost 500000
+	thumbnail "outfit/research laboratory"
+	"mass" 11
+	"outfit space" -6
+	"asteroid scan power" 84
+	"cargo scan power" 20
+	"cargo scan efficiency" 6
+	"atmosphere scan" 100
+	"required crew" 1
+	"unplunderable" 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt has been repaired with parts from at least three other machines, and the repairs are better done than the original."
+
+outfit "Quantum Key Stone"
+	category "Systems"
+	series "Drives"
+	index 60
+	licenses
+		Remnant
+	cost 240000
+	thumbnail "outfit/keystone"
+	"mass" 0.1
+	"outfit space" -1
+	"quantum keystone" 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Salvage Scanner"
+	category "Systems"
+	series "Scanners"
+	index 03010
+	licenses
+		Remnant
+	cost 410000
+	thumbnail "outfit/salvage scanner"
+	"mass" 7
+	"outfit space" -7
+	"outfit scan power" 13
+	"outfit scan efficiency" 12
+	"tactical scan power" 84
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tThe design is old enough that the people who invented it are a matter of archaeology rather than engineering."
+
+
+
+# Engines:
+
+outfit "Bellows-Class Afterburner"
+	category "Engines"
+	series "Afterburners"
+	index 03010
+	"cost" 640000
+	thumbnail "outfit/remnant afterburner"
+	"mass" 8
+	"outfit space" -11
+	"engine capacity" -11
+	"slowing resistance" 0.01
+	"afterburner thrust" 187.5
+	"afterburner fuel" 1.95
+	"afterburner energy" 6
+	"afterburner heat" 72
+	"afterburner effect" "remnant afterburner"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt does the job it was built for, and it does not pretend to do anything else."
+
+effect "remnant afterburner"
+	sprite "effect/remnant afterburner/remnant afterburner"
+		"frame rate" 10
+	sound "remnant afterburner"
+	"sound category" "afterburner"
+
+
+
+outfit "Anvil-Class Engine"
+	category "Engines"
+	series "Engines"
+	index 03010
+	licenses
+		Remnant
+	"cost" 290000
+	thumbnail "outfit/tiny remnant engine"
+	"mass" 26
+	"outfit space" -26
+	"engine capacity" -26
+	"thrust" 20.7
+	"thrusting energy" 2.05
+	"thrusting heat" 1.95
+	"turn" 554.4
+	"turning energy" 1.05
+	"turning heat" 1.1
+	"reverse thrust" 15.45
+	"reverse thrusting energy" 1.5
+	"reverse thrusting heat" 1.45
+	"slowing resistance" 0.02
+	"flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"flare sound" "plasma tiny"
+	"steering flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"steering flare sound" "plasma tiny"
+	"reverse flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"reverse flare sound" "plasma tiny"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Crucible-Class Thruster"
+	category "Engines"
+	series "Engines"
+	index 03021
+	licenses
+		Remnant
+	"cost" 200000
+	thumbnail "outfit/small remnant thruster"
+	"mass" 20
+	"outfit space" -20
+	"engine capacity" -20
+	"thrust" 24.825
+	"thrusting energy" 2.1
+	"thrusting heat" 2.0
+	"reverse thrust" 18.6
+	"reverse thrusting energy" 1.6
+	"reverse thrusting heat" 1.5
+	"slowing resistance" 0.012
+	"flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"flare sound" "plasma tiny"
+	"reverse flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"reverse flare sound" "plasma tiny"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Forge-Class Thruster"
+	category "Engines"
+	series "Engines"
+	index 03031
+	licenses
+		Remnant
+	"cost" 441000
+	thumbnail "outfit/medium remnant thruster"
+	"mass" 39
+	"outfit space" -39
+	"engine capacity" -39
+	"thrust" 51
+	"thrusting energy" 4.4
+	"thrusting heat" 4.25
+	"reverse thrust" 38.25
+	"reverse thrusting energy" 3.3
+	"reverse thrusting heat" 3.2
+	"slowing resistance" 0.024
+	"flare sprite" "effect/remnant flare/medium"
+		"frame rate" 4
+	"flare sound" "plasma small"
+	"reverse flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"reverse flare sound" "plasma small"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Smelter-Class Thruster"
+	category "Engines"
+	series "Engines"
+	index 03041
+	licenses
+		Remnant
+	"cost" 984000
+	thumbnail "outfit/large remnant thruster"
+	"mass" 76
+	"outfit space" -76
+	"engine capacity" -76
+	"thrust" 106.65
+	"thrusting energy" 9.5
+	"thrusting heat" 9.6
+	"reverse thrust" 79.95
+	"reverse thrusting energy" 7.1
+	"reverse thrusting heat" 7.2
+	"slowing resistance" 0.048
+	"flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	"flare sound" "plasma medium"
+	"reverse flare sprite" "effect/remnant flare/medium"
+		"frame rate" 5
+	"reverse flare sound" "plasma medium"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Crucible-Class Steering"
+	category "Engines"
+	series "Engines"
+	index 03020
+	licenses
+		Remnant
+	"cost" 172000
+	thumbnail "outfit/small remnant steering"
+	"mass" 14
+	"outfit space" -14
+	"engine capacity" -14
+	"turn" 684
+	"turning energy" 1.32
+	"turning heat" 1.4
+	"slowing resistance" 0.008
+	"steering flare sprite" "effect/remnant flare/small"
+		"frame rate" 5
+	"steering flare sound" "plasma tiny"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Forge-Class Steering"
+	category "Engines"
+	series "Engines"
+	index 03030
+	licenses
+		Remnant
+	"cost" 393000
+	thumbnail "outfit/medium remnant steering"
+	"mass" 28
+	"outfit space" -28
+	"engine capacity" -28
+	"turn" 1492.5
+	"turning energy" 2.64
+	"turning heat" 3.0
+	"slowing resistance" 0.016
+	"steering flare sprite" "effect/remnant flare/medium"
+		"frame rate" 4
+	"steering flare sound" "plasma small"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Smelter-Class Steering"
+	category "Engines"
+	series "Engines"
+	index 03040
+	licenses
+		Remnant
+	"cost" 880000
+	thumbnail "outfit/large remnant steering"
+	"mass" 55
+	"outfit space" -55
+	"engine capacity" -55
+	"turn" 3184.5
+	"turning energy" 5.21
+	"turning heat" 6.2
+	"slowing resistance" 0.032
+	"steering flare sprite" "effect/remnant flare/large"
+		"frame rate" 3
+	"steering flare sound" "plasma medium"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+
+
+# Hand to Hand
+
+outfit "Tuning Rifle"
+	category "Hand to Hand"
+	series "H2H"
+	index 03010
+	licenses
+		Remnant
+	cost 22000
+	thumbnail "outfit/remnant rifle"
+	"capture attack" 1.2
+	"capture defense" 1.8
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+
+
+# Unique
+
+outfit "Void Rifle"
+	category "Unique"
+	series "Functional Unique"
+	index 50
+	licenses
+		Remnant
+	cost 1000000
+	thumbnail "outfit/void rifle"
+	"capture attack" 20
+	"capture defense" 20
+	"energy consumption" 0.017
+	"unique" 1
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tA version of this is carried by every ship of the faction that built it, which is either a recommendation or a warning."
+
+
+
+outfit "Void Sprite Parts"
+	plural "Void Sprite Parts"
+	category "Unique"
+	series "Non-Functional Unique"
+	index 20
+	cost 500
+	thumbnail "outfit/void sprite parts"
+	"flotsam sprite" "effect/void sprite parts/void sprite parts"
+	"mass" 1
+	"outfit space" -1
+	"flotsam chance" .5
+	"installable" -1
+	"unique" 1
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+
+
+# Special
+
+outfit "Remnant License"
+	category "Licenses"
+	series "Licenses"
+	index 03010
+	thumbnail "outfit/remnant license"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."
+
+outfit "Remnant Capital License"
+	category "Licenses"
+	series "Licenses"
+	index 03020
+	thumbnail "outfit/remnant capital license"
+	description "This is Kaylon equipment, and the machines that made it are still deciding whether to keep it."

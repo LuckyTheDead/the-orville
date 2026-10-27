@@ -1,0 +1,300 @@
+# Orville Endless Sky Mod - Ship display names
+# Mechanism: "display name" overrides the player-visible model name while
+# keeping the model key intact, so all fleet/sprite/variant references
+# continue to resolve. Sprites are reused; the art is the fiction.
+
+ship "Aerie"
+	"display name" "USS Orville (ECV-197)"
+	plural "Orville Explorers"
+
+ship "Argosy"
+	"display name" "USS Enterprise NCC-1701"
+	plural "Union Transports"
+
+ship "Arrow"
+	"display name" "USS Defiant NX-74205"
+	plural "Union Interceptors"
+
+ship "Auxiliary"
+	"display name" "USS Voyager NCC-74656"
+	plural "Union Auxiliaries"
+
+ship "Bactrian"
+	"display name" "Romulan Warbird"
+	plural "Krill Raiders"
+
+ship "Barb"
+	"display name" "Romulan Scout"
+	plural "Krill Darts"
+
+ship "Bastion"
+	"display name" "Cardassian Space Station"
+	plural "Moclan Battlestations"
+
+ship "Behemoth"
+	"display name" "Borg Cube"
+	plural "Kaylon Capital Ships"
+
+ship "Berserker"
+	"display name" "Borg Sphere"
+	plural "Kaylon Berserkers"
+
+ship "Blackbird"
+	"display name" "USS Discovery NCC-1031"
+	plural "Union Scouts"
+
+ship "Bounder"
+	"display name" "Romulan D'Deridex"
+	plural "Krill Marauders"
+
+ship "Boxwing"
+	"display name" "Klingon Bird-of-Prey"
+	plural "Moclan Escorts"
+
+ship "Bulk Freighter"
+	"display name" "USS Constitution"
+	plural "Union Freighters"
+
+ship "Bulwark"
+	"display name" "Klingon Vor'cha"
+	plural "Moclan Bulwarks"
+
+ship "Carrier"
+	"display name" "USS Enterprise NCC-1701-D"
+	plural "Union Carriers"
+
+ship "Class C Freighter"
+	"display name" "Romulan Transport"
+	plural "Krill Freighters"
+
+ship "Clipper"
+	"display name" "USS Excelsior NCC-2000"
+	plural "Union Clippers"
+
+ship "Combat Drone"
+	"display name" "Borg Probe"
+	plural "Kaylon Drones"
+
+ship "Container Transport"
+	"display name" "Planetary Union Heavy Freighter"
+	plural "Union Container Transports"
+
+ship "Corvette"
+	"display name" "USS Enterprise NCC-1701-A"
+	plural "Union Corvettes"
+
+ship "Cruiser"
+	"display name" "USS Excelsior NCC-2000-B"
+	plural "Union Cruisers"
+
+ship "Cutthroat"
+	"display name" "Krill Cutthroat"
+	plural "Krill Cutthroats"
+
+ship "Dagger"
+	"display name" "USS Defiant NX-74205-B"
+	plural "Union Daggers"
+
+ship "Dreadnought"
+	"display name" "Moclan Dreadnought"
+	plural "Moclan Dreadnoughts"
+
+ship "Dropship"
+	"display name" "USS Voyager NCC-74656"
+	plural "Union Dropships"
+
+ship "Enforcer"
+	"display name" "USS Discovery NCC-1031"
+	plural "Union Enforcers"
+
+ship "Falcon"
+	"display name" "USS Phoenix"
+	plural "Union Falcons"
+
+ship "Finch"
+	"display name" "USS Enterprise NCC-1701-C"
+	plural "Union Finches"
+
+ship "Firebird"
+	"display name" "USS Enterprise NCC-1701-D"
+	plural "Union Firebirds"
+
+ship "Flivver"
+	"display name" "USS Enterprise NCC-1701-E"
+	plural "Union Flivvers"
+
+ship "Freighter"
+	"display name" "USS Constitution"
+	plural "Union Freighters"
+
+ship "Frigate"
+	"display name" "USS Enterprise NCC-1701-F"
+	plural "Union Frigates"
+
+ship "Fury"
+	"display name" "Kaylon Fury"
+	plural "Kaylon Furies"
+
+ship "Gunboat"
+	"display name" "USS Enterprise NCC-1701-G"
+	plural "Union Gunboats"
+
+ship "Hauler"
+	"display name" "Planetary Union Transport"
+	plural "Union Haulers"
+
+ship "Hauler II"
+	"display name" "Planetary Union Heavy Transport"
+	plural "Union Haulers"
+
+ship "Hauler III"
+	"display name" "Planetary Union Cargo"
+	plural "Union Haulers"
+
+ship "Hawk"
+	"display name" "USS Enterprise NCC-1701-H"
+	plural "Union Hawks"
+
+ship "Headhunter"
+	"display name" "Krill Headhunter"
+	plural "Krill Headhunters"
+
+ship "Heavy Shuttle"
+	"display name" "Planetary Union Shuttle"
+	plural "Union Heavy Shuttles"
+
+ship "Hogshead"
+	"display name" "USS Voyager NCC-74656-A"
+	plural "Union Hogsheads"
+
+ship "Jackal"
+	"display name" "USS Defiant NX-74205-A"
+	plural "Union Jackals"
+
+ship "Lance"
+	"display name" "USS Enterprise NCC-1701-I"
+	plural "Union Lances"
+
+ship "Leviathan"
+	"display name" "Calivon Leviathan"
+	plural "Calivon Leviathans"
+
+ship "Mammoth"
+	"display name" "Calivon Mammoth"
+	plural "Calivon Mammoths"
+
+ship "Manta"
+	"display name" "Calivon Manta"
+	plural "Calivon Mantas"
+
+ship "Modified Argosy"
+	"display name" "Modified Planetary Union Transport"
+	plural "Modified Union Transports"
+
+ship "Monitor"
+	"display name" "Moclan Monitor"
+	plural "Union Monitors"
+
+ship "Mule"
+	"display name" "Planetary Union Mule"
+	plural "Union Mules"
+
+ship "Nest"
+	"display name" "Kaylon Nest"
+	plural "Kaylon Nests"
+
+ship "Nighthawk"
+	"display name" "Krill Nighthawk"
+	plural "Krill Nighthawks"
+
+ship "Osprey"
+	"display name" "Planetary Union Scout"
+	plural "Union Ospreys"
+
+ship "Protector"
+	"display name" "Moclan Protector"
+	plural "Moclan Protectors"
+
+ship "Quicksilver"
+	"display name" "USS Discovery NCC-1031-A"
+	plural "Union Quicksilvers"
+
+ship "Rainmaker"
+	"display name" "Planetary Union Weather"
+	plural "Union Rainmakers"
+
+ship "Raven"
+	"display name" "Krill Raven"
+	plural "Krill Ravens"
+
+ship "Roost"
+	"display name" "Kaylon Roost"
+	plural "Kaylon Roosts"
+
+ship "Saber"
+	"display name" "USS Enterprise NCC-1701-J"
+	plural "Union Sabers"
+
+ship "Scout"
+	"display name" "USS Discovery NCC-1031"
+	plural "Union Scouts"
+
+ship "Scrapper"
+	"display name" "Planetary Union Salvage"
+	plural "Union Scrappers"
+
+ship "Shuttle"
+	"display name" "Planetary Union Shuttle"
+	plural "Union Shuttles"
+
+ship "Skein"
+	"display name" "Kaylon Skein"
+	plural "Kaylon Skeins"
+
+ship "Sparrow"
+	"display name" "Planetary Union Sparrow"
+	plural "Union Sparrows"
+
+ship "Splinter"
+	"display name" "Kaylon Splinter"
+	plural "Kaylon Splinters"
+
+ship "Star Barge"
+	"display name" "Planetary Union Star Barge"
+	plural "Union Star Barges"
+
+ship "Star Queen"
+	"display name" "Planetary Union Queen"
+	plural "Union Star Queens"
+
+ship "Sunder"
+	"display name" "Moclan Sunder"
+	plural "Moclan Sunders"
+
+ship "Surveillance Drone"
+	"display name" "Kaylon Surveillance Drone"
+	plural "Kaylon Surveillance Drones"
+
+ship "Valkyrie"
+	"display name" "Moclan Valkyrie"
+	plural "Moclan Valkyries"
+
+ship "Vanguard"
+	"display name" "USS Enterprise NCC-1701-K"
+	plural "Union Vanguards"
+
+ship "Wasp"
+	"display name" "Planetary Union Wasp"
+	plural "Union Wasps"
+
+ship "Aphid"
+	"display name" "Motilali Aphid"
+	plural "Motilali Aphids"
+
+ship "Centipede"
+	"display name" "Motilali Centipede"
+	plural "Motilali Centipedes"
+
+ship "Grasshopper"
+	"display name" "Motilali Grasshopper"
+	plural "Motilali Grasshoppers"

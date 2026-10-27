@@ -1,0 +1,332 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "wanderers: kaliptari battle begins"
+	system Kaliptari
+		fleet "Wanderer Flycatchers" 500
+
+event "wanderers: kaliptari battle ends"
+	system Kaliptari
+		add fleet "Large Quarg (Kor Efret)" 2000
+		add fleet "Small Kor Mereti" 8000
+		add fleet "Large Kor Mereti" 3600
+		add fleet "Wanderer Defense" 1000
+		add fleet "Wanderer Drones" 500
+
+event "wanderers: kashikt battle begins"
+	system "Kashikt"
+		fleet "Kor Efret Home" 6000
+
+event "wanderers: kashikt battle ends"
+	system "Kashikt"
+		fleet "Quarg (Kor Efret)" 1000
+		fleet "Large Quarg (Kor Efret)" 2000
+		fleet "Kor Efret Home" 1000
+
+event "wanderers: kor mereti friendly"
+	government "Kor Mereti"
+		"attitude toward"
+			"Wanderer" 1
+	government "Quarg (Kor Efret)"
+		"attitude toward"
+			"Kor Mereti" 0
+	government "Quarg"
+		"attitude toward"
+			"Kor Mereti" 0
+	government "Kor Efret"
+		"attitude toward"
+			"Kor Mereti" 0
+	"reputation: Kor Mereti" >?= 1
+	"reputation: Kor Mereti (Hostile)" = -1000
+	planet "Rekat Moraski"
+		"required reputation" 1000
+
+# A backwards compatibility event and mission for being able to speak with Kor Mereti ships.
+event "wanderers: kor mereti language"
+	government "Kor Mereti"
+		language "Wanderer"
+		"friendly hail" "friendly wanderer"
+		"friendly disabled hail" "friendly disabled wanderer"
+		"hostile hail" "hostile wanderer"
+		"hostile disabled hail" "hostile disabled wanderer"
+
+event "wanderers: kor mereti transformation"
+	system Chimitarp
+		add fleet "Small Kor Mereti" 250
+		add fleet "Large Kor Mereti" 450
+	planet "Korbatri Eska"
+		add description `	Far from the ruined cities, the Kor Mereti have begun building a sort of village of their own: a sprawling complex of greenhouses containing a wide variety of plant samples.`
+
+event "wanderers: battle in solifar begins"
+	system Solifar
+		fleet "Wanderer Flycatchers" 400
+
+event "wanderers: battle in solifar ends"
+	system Solifar
+		fleet "Large Quarg (Kor Efret)" 3000
+		fleet "Wanderer Defense" 1800
+		fleet "Wanderer Drones" 700
+		fleet "Wanderer Flycatchers" 800
+
+event "wanderers: kor sestor are aimless"
+	fleet "Small Kor Sestor"
+		personality
+			timid
+			coward
+	fleet "Large Kor Sestor"
+		personality
+			timid
+			coward
+	system "Mesuket"
+		fleet "Large Kor Mereti" 900
+		fleet "Large Kor Sestor" 5000
+	system Eshkoshtar
+		remove fleet "Large Kor Sestor"
+	system Salipastart
+		remove fleet "Large Kor Sestor"
+	system Mekislepti
+		remove fleet "Large Kor Sestor"
+	system Similisti
+		remove fleet "Large Kor Sestor"
+	system Faronektu
+		remove fleet "Large Kor Sestor"
+	planet "Varu K'prai"
+		landscape land/beach1
+		add description `	There used to be a thriving spaceport here, but it has been razed to the ground by the Kor Sestor fleet.`
+		remove spaceport
+		remove outfitter
+		remove "required reputation"
+		remove tribute
+	planet Zenith
+		bribe 0
+		"required reputation" 1000
+	"reputation: Pirate" <?= -1
+	"unvisit planet" "Varu K'prai"
+
+event "bombed zenith"
+	government "Kor Sestor"
+		"attitude toward"
+			"Pirate" -.01
+	planet "Zenith"
+		description `Zenith is a cold and unpleasant world, where the fog seldom lifts and the sun is rarely seen, where much of the lowlands are flooded each day by the tide, and storms are unpredictable and fierce. It has, however, one major advantage as a place to settle: it is far enough away that the Union makes no attempt to control it.`
+		description `	The settlements here were never more than tenuous villages operating on the brink of starvation as they sought to make a living in this icy wilderness. Now, many of them have collapsed due to massive earthquakes that came after the Oathkeepers had the planet bombed to destroy an Alpha base.`
+		bribe .04
+		"required reputation" 0
+	system "Alnilam"
+		remove object "Zenith"
+			sprite planet/ocean7
+			distance 1776.59
+		add object "Zenith"
+			sprite "planet/zenith hot"
+			distance 1776.59
+			object
+				sprite planet/ice8
+				distance 136
+
+event "zenith cooling"
+	system "Alnilam"
+		remove object "Zenith"
+			sprite "planet/zenith hot"
+			distance 1776.59
+		add object "Zenith"
+			sprite "planet/zenith cold"
+			distance 1776.59
+			object
+				sprite planet/ice8
+				distance 136
+
+event "liberated zenith"
+	planet "Zenith"
+		bribe .04
+		"required reputation" 0
+
+event "wanderers: exiles peaceful"
+	"reputation: Korath" >?= 1
+	"reputation: Korath (Civilian)" >?= 1
+
+event "wanderers: asikafarnut battle"
+	system "Asikafarnut"
+		fleet "Large Kor Mereti" 10000
+
+event "wanderers: sestor shutdown"
+	system "Celeborim"
+		fleet "Small Kor Sestor" 2400
+		fleet "Large Kor Sestor" 10000
+	system "Makferuti"
+		fleet "Small Kor Sestor" 2400
+		fleet "Large Kor Sestor" 10000
+	system "Asikafarnut"
+		fleet "Large Kor Mereti" 3600
+		fleet "Small Kor Sestor" 1200
+		fleet "Large Kor Sestor" 6000
+	system "Sobarati"
+		fleet "Small Kor Sestor" 1600
+		fleet "Large Kor Sestor" 8000
+	system "Silikatakfar"
+		fleet "Large Kor Mereti" 1600
+		fleet "Small Kor Sestor" 3200
+		fleet "Large Kor Sestor" 4800
+	system "Ferukistek"
+		fleet "Large Kor Mereti" 2400
+		fleet "Small Kor Sestor" 8000
+		fleet "Large Kor Sestor" 10000
+	system "Eneremprukt"
+		fleet "Large Kor Mereti" 2000
+		fleet "Small Kor Sestor" 3200
+		fleet "Large Kor Sestor" 4800
+	system "Mesuket"
+		remove fleet "Large Kor Sestor"
+		add fleet "Large Kor Sestor" 10000
+
+event "wanderers: exiles hostile"
+	"reputation: Korath" = -1000
+
+event "wanderers: exiles have drones"
+	fleet "Korath Home"
+		add variant 2
+			"Tek Far 71 - Lek"
+			"Far Lek 14" 6
+		add variant 2
+			"Tek Far 71 - Lek (Close Quarters)"
+			"Far Lek 14" 4
+		add variant 2
+			"Tek Far 78 - Osk (Close Quarters)"
+			"Far Osk 27" 5
+		add variant 2
+			"Tek Far 78 - Osk"
+			"Far Osk 27" 2
+		add variant 3
+			"Tek Far 109"
+			"Far Lek 14" 9
+			"Far Osk 27" 7
+		add variant 3
+			"Met Par Tek 53" 3
+		add variant 2
+			"Met Par Tek 53 (Sniper)" 3
+		add variant
+			"Kar Ik Vot 349"
+		add variant
+			"Kar Ik Vot 349 (Defense)"
+		add variant
+			"Kar Ik Vot 349 (Offense)"
+		add variant
+			"Kar Ik Vot 349 (Trapper)"
+		add variant 1
+			"Model 512"
+		add variant 2
+			"Model 512"
+			"Model 256"
+		add variant 2
+			"Model 256"
+		add variant 2
+			"Model 256"
+			"Model 64" 2
+		add variant 2
+			"Model 128" 2
+		add variant 2
+			"Model 64"
+			"Model 32" 3
+		add variant 3
+			"Model 64" 2
+			"Model 32" 3
+		add variant 4
+			"Model 32"
+			"Model 16" 5
+
+event "wanderers: sestor eliminated"
+	system "Celeborim"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Makferuti"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Asikafarnut"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 3600
+	system "Sobarati"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Silikatakfar"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 1600
+	system "Ferukistek"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 2400
+	system "Eneremprukt"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 2000
+	system "Mesuket"
+		remove fleet "Large Kor Sestor"
+
+event "wanderers: sabira eseskrai colony"
+	system "Skeruto"
+		government "Wanderer"
+		fleet "Large Quarg (Kor Efret)" 1000
+		fleet "Wanderer Defense" 1200
+		fleet "Wanderer Drones" 800
+		fleet "Kor Efret Home" 800
+	system "Furmeliki"
+		add fleet "Kor Efret Home" 800
+	planet "Sabira Eseskrai"
+		add attributes "wanderer"
+		description `Long ago, this planet was home to several Tzenketh oil mining settlements, but now all that remains visible are the tops of a few dozen of the tallest buildings. Everything else has been buried by sandstorms.`
+		description `	Due to a recent shift in climate the deserts have begun shrinking once more, with local vegetation growing to cover more and more land each year. The Motilali, working together with the Kor Efreti, have founded a settlement here and begun working to accelerate the process of rejuvenating the wastelands.`
+		spaceport `This small settlement is populated by a roughly equal number of Tzenketh and Motilali settlers. Since most of them do not speak each other's language, the two groups do not mingle much, and communicate mostly via gestures and drawings. It's not much, but it's at least a start for the two species to begin learning from each other.`
+
+event "wanderers: sestor planets unrestricted"
+	planet "Drekag Firask"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sestor Ikfar"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+		description `This dry, hot world is home to almost no native life, but is ideal for the Tzenketh automata because of its abundant solar energy. In the places where the Tzenketh cities once were, the Kor Sestor have built massive factories with buildings sometimes close to a kilometer in height. In other places the land remains undeveloped, and now that the factories have been shut down it seems likely that it will stay that way for a very long time.`
+	planet "Devru Kaska"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sebra Skira"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Keneska Fek"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sopi Lefarkata"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+		description `This is a cold and mountainous world, and most of its oceans are covered in ice. A handful of giant craters gouged out from the sides of mountains are the only sign that there were once Tzenketh settlements here. The Kor Sestor robots began building settlements of their own, in caverns deep under the mountains where they are safe from orbital bombardment, but now these settlements are falling into disrepair. Where the last set of Kor Mereti attacks collapsed one of the access tunnels, a handful of robots have gathered, trying in vain to dig them out.`
+
+event "wanderers taking jobs from kor efreti"
+	system "Sumprast"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Sevrelect"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Kashikt"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Dokdobaru"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Furmeliki"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Meftarkata"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Skeruto"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Kaliptari"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Solifar"
+		add fleet "Wanderer Kor Efret Traders" 1500

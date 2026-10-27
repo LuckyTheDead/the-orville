@@ -1,0 +1,59 @@
+# Copyright (c) 2026 by Daeridanii
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+phrase "successor ghosts story failed"
+	word
+		"You have failed a crucial mission of the Successor House Houses' story line. If you wish to continue it, revert to an earlier save."
+
+conversation "successor house contact"
+	`After you were asked to deploy sensor drones by House Seineq, it might be prudent to contact your patron House to update them about this development.`
+	choice
+		`	(Yes.)`
+		`	(No.)`
+			decline
+	action
+		event "successors: ghosts message delay" 4
+	`	You find your way to the local spaceport's communication hub, where you check out one of the Successors' data-spheres to encode your message for delivery to your patron House. When you're done, you submerge the data-sphere into a liquid-metal bath that pushes it around for a few moments before spitting it back at you, quietly chirping "missive sent."`
+		accept
+
+
+conversation "saajret returns"
+	`	Your ship once again glides into the <planet> spaceport, slipping beneath a dense layer of early-morning fog. Saajret meets you just outside, informing you the data they were sent to collect has already been transmitted and thanking you for your help.`
+	branch helped
+		has "Successors: Ghosts Helped Saajret"
+	`	They tell you to expect a deposit of <payment> from House Kaatrij.`
+		goto secret
+
+	label helped
+	`	They tell you to expect a deposit of 140000 credits from House Kaatrij and hand over a small chip containing 80000 additional credits.`
+
+	label secret
+	`	As Saajret watches a dockworker fitting a fuel hose to the <ship>'s side, something changes in their demeanor and a glint of almost furious orange sparks on their skin. "Captain," they say. "I'm told that thou'st experienced for thyself the hunting practices of the dread Kijran-Khora."`
+	choice
+		`	"I beg your pardon?"`
+		`	"A little too closely, actually."`
+	`	They continue, the color continuing to sparkle on their skin. "Beautiful beasts, aren't they? Truly aspirational; adept at camouflage, hiding themselves beyond all but the most scrutinizing gaze before closing in on their quarry. In the early days of Kaatrij, when the Kijran were still new, some particularly well-cloaked ones slipped into a weather-control tower. Perhaps," they say, "one might learn from their example, were there somewhere notable one wished to go." They cast their gaze upward, where the shimmering dots of planets above peek through the clouds.`
+	choice
+		`	"Why are you telling me this?"`
+		`	"Are you trying to tell me something?"`
+			goto foolish
+	`	The sparkle of color on their skin dies down and they look at you with mirth in their eyes. "I'm an archivist," they say. "I adore a good story."`
+		goto end
+
+	label foolish
+	`	The sparkle of color on their face intensifies for a moment before dying out. "Naught but an archivist's foolish games," they say.`
+
+	label end
+	`	They look over at the spaceport again. "Till again we meet, <first> <last>."`
+
+

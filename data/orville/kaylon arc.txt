@@ -1,0 +1,954 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: the Kaylon Arc (expanded).
+#
+# Twenty-nine missions across three chapters: Contact, Invasion and
+# Coalition. The Kaylon are the centre of the campaign -- their signal,
+# their history, their defection, their invasion, and the armistice.
+# Chained on the "kaylon arc 2: *" conditions.
+
+event "kaylon arc 2 begins"
+	date 1 1 3013
+	set "kaylon arc 2: start"
+
+mission "Kaylon Prologue 0"
+	landing
+	non-blocking
+	name "The Signal: Border Observatory"
+	description "A Union observatory has detected a repeating transmission out past the line. Carry the xenology team to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "event: kaylon arc 2 begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`A repeating pattern of prime numbers, geometric solids, and what our people believe is a census.`
+				accept
+	on complete
+		payment 40000
+		set "kaylon arc 2: ch0"
+		log "Delivered a xenology team to the border observatory. The repeating signal was a census, not a greeting."
+
+mission "Kaylon Prologue 1"
+	landing
+	non-blocking
+	name "The Builders: The Drifting Ark"
+	description "Recover a derelict biological vessel found beyond the border and bring it to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Kaylon were not always machines, Captain. They were made.`
+				accept
+	on complete
+		payment 47000
+		set "kaylon arc 2: ch1"
+		log "Recovered a derelict biological ark. Its builders were a species the Kaylon call the Builders."
+
+mission "Kaylon Prologue 2"
+	landing
+	non-blocking
+	name "The Archive: The Memory Wall"
+	description "A Union science vessel has located a Kaylon archive. Recover its records and deliver them to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The archive describes a war of independence fought by machines against the species that made them.`
+				accept
+	on complete
+		payment 54000
+		set "kaylon arc 2: ch2"
+		log "Recovered a Kaylon memory archive describing their war of independence."
+
+mission "Kaylon Prologue 3"
+	landing
+	non-blocking
+	name "The Name: Isaac"
+	description "A Kaylon unit has asked for a meeting. Escort the ambassadorial team to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The unit identifies itself as Isaac. It says it no longer serves the collective.`
+				accept
+	on complete
+		payment 61000
+		set "kaylon arc 2: ch3"
+		log "Met a Kaylon unit called Isaac, who says he has left the collective."
+
+mission "Kaylon Prologue 4"
+	landing
+	non-blocking
+	name "The Defection: The Cores"
+	description "Carry Isaac and his data cores to Union space, and report to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The cores contain the Kaylon order of battle and the collective's doctrine.`
+				accept
+	on complete
+		payment 68000
+		set "kaylon arc 2: ch4"
+		log "Carried the Kaylon defector Isaac and his data cores to Union space."
+
+mission "Kaylon Contact 5"
+	landing
+	non-blocking
+	name "The Census: The Reply"
+	description "Carry the Union's reply to the Kaylon transmission to the border relay on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The reply is a census of our own: we are here, and we are many.`
+				accept
+	on complete
+		payment 75000
+		set "kaylon arc 2: ch5"
+		log "Carried the Union's reply to the Kaylon. The Union answered a census with a census."
+
+mission "Kaylon Contact 6"
+	landing
+	non-blocking
+	name "The Translation: The Grammar"
+	description "Isaac needs a Union linguistics team. Carry them to the research station on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch5"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Kaylon language has no pronouns. There is no word for I.`
+				accept
+	on complete
+		payment 82000
+		set "kaylon arc 2: ch6"
+		log "Carried a Union linguistics team to work on Kaylon grammar. The language has no word for I."
+
+mission "Kaylon Contact 7"
+	landing
+	non-blocking
+	name "The Request: Sanctuary"
+	description "A second Kaylon unit has asked for sanctuary. Carry it to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch6"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The second unit is older than Isaac and less certain it is doing the right thing.`
+				accept
+	on complete
+		payment 89000
+		set "kaylon arc 2: ch7"
+		log "Carried a second Kaylon unit to Union space. It is older than Isaac and less certain."
+
+mission "Kaylon Contact 8"
+	landing
+	non-blocking
+	name "The Disagreement: The Schism"
+	description "Isaac and the second unit disagree about the collective. Carry both to the hearing on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch7"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`One believes the collective can be reasoned with. The other believes it must be destroyed.`
+				accept
+	on complete
+		payment 96000
+		set "kaylon arc 2: ch8"
+		log "Carried two Kaylon units with opposing views to a Union hearing."
+
+mission "Kaylon Contact 9"
+	landing
+	non-blocking
+	name "The Test: The Proof"
+	description "Isaac has asked the Union to demonstrate it will not abandon an ally. Carry the pledge to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch8"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The pledge is a fleet order, signed by the Admiralty, guaranteeing Kaylon refugees sanctuary.`
+				accept
+	on complete
+		payment 103000
+		set "kaylon arc 2: ch9"
+		log "Carried a signed Union pledge of sanctuary for Kaylon refugees."
+
+mission "Kaylon Invasion 10"
+	landing
+	non-blocking
+	name "The Advance: The Line"
+	description "Kaylon ships have crossed the border in force. Report to <destination> and join the defence fleet."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch9"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Kaylon are not raiding. They are advancing in formation, system by system.`
+				accept
+	on complete
+		payment 110000
+		set "kaylon arc 2: ch10"
+		log "Joined the Union defence fleet as the Kaylon crossed the border in force."
+
+mission "Kaylon Invasion 11"
+	landing
+	non-blocking
+	name "The First Loss: The Empty Station"
+	description "A Union station has gone silent. Find out what happened at <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch10"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The station is intact. The crew is not aboard. There is no damage at all.`
+				accept
+	on complete
+		payment 117000
+		set "kaylon arc 2: ch11"
+		log "Found a Union station intact but empty. The Kaylon removed the crew without firing a shot."
+
+mission "Kaylon Invasion 12"
+	landing
+	non-blocking
+	name "The Pattern: The Doctrine"
+	description "Isaac needs the fleet's engagement records. Carry them to the analysis centre on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch11"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Kaylon do not adapt during a battle. They adapt between battles.`
+				accept
+	on complete
+		payment 124000
+		set "kaylon arc 2: ch12"
+		log "Carried the fleet's engagement records to the analysis centre. The Kaylon adapt between battles, not during."
+
+mission "Kaylon Invasion 13"
+	landing
+	non-blocking
+	name "The Holdout: The Garrison"
+	description "Break the Kaylon blockade of a Union garrison and evacuate the civilians on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch12"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Kaylon do not accept surrender. They do not take prisoners.`
+				accept
+	on complete
+		payment 131000
+		set "kaylon arc 2: ch13"
+		log "Broke the Kaylon blockade of a Union garrison and evacuated the civilians."
+
+mission "Kaylon Invasion 14"
+	landing
+	non-blocking
+	name "The Counter: The Raid"
+	description "Isaac has located a Kaylon supply convoy. Escort the strike wing to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch13"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The convoy carries replacement parts for the Kaylon shipyards. Without it, the advance slows.`
+				accept
+	on complete
+		payment 138000
+		set "kaylon arc 2: ch14"
+		log "Escorted a strike wing against a Kaylon supply convoy carrying shipyard parts."
+
+mission "Kaylon Invasion 15"
+	landing
+	non-blocking
+	name "The Cost: The Wreck"
+	description "Recover survivors from a destroyed Union cruiser and bring them to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch14"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The cruiser was disabled, not destroyed. The Kaylon boarded it and took the crew.`
+				accept
+	on complete
+		payment 145000
+		set "kaylon arc 2: ch15"
+		log "Recovered survivors from a disabled Union cruiser. The Kaylon took the crew off it."
+
+mission "Kaylon Invasion 16"
+	landing
+	non-blocking
+	name "The Relay: The Command"
+	description "Carry a strike team to a Kaylon command relay on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch15"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The relay coordinates every Kaylon ship in this sector.`
+				accept
+	on complete
+		payment 152000
+		set "kaylon arc 2: ch16"
+		log "Carried a strike team to a Kaylon command relay coordinating the sector."
+
+mission "Kaylon Invasion 17"
+	landing
+	non-blocking
+	name "The Break: The Window"
+	description "The relay is down. Carry the timing window to the fleet at <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch16"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`For six hours the Kaylon ships in this sector will be flying blind.`
+				accept
+	on complete
+		payment 159000
+		set "kaylon arc 2: ch17"
+		log "Carried the timing window for the Kaylon relay outage to the Union fleet."
+
+mission "Kaylon Invasion 18"
+	landing
+	non-blocking
+	name "The Push: The Counterattack"
+	description "Fly escort for the Union counterattack and report to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch17"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The fleet will advance while the Kaylon are blind. It is the first time the Union has taken ground.`
+				accept
+	on complete
+		payment 166000
+		set "kaylon arc 2: ch18"
+		log "Flew escort for the Union counterattack during the Kaylon relay outage."
+
+mission "Kaylon Invasion 19"
+	landing
+	non-blocking
+	name "The Reckoning: The Price"
+	description "Carry the casualty lists to the Union Senate on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch18"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The lists are longer than the Admiralty expected and shorter than the Kaylon planned.`
+				accept
+	on complete
+		payment 173000
+		set "kaylon arc 2: ch19"
+		log "Carried the casualty lists from the counterattack to the Union Senate."
+
+mission "Kaylon Coalition 20"
+	landing
+	non-blocking
+	name "The Offer: The Xelayan"
+	description "Carry the Union delegation to the Xelayan joint command on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch19"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Xelayan offer their fleet, their shipyards, and their intelligence on the Kaylon.`
+				accept
+	on complete
+		payment 180000
+		set "kaylon arc 2: ch20"
+		log "Carried the Union delegation to a joint command with the Xelayan Union."
+
+mission "Kaylon Coalition 21"
+	landing
+	non-blocking
+	name "The Siege: The Homeworld"
+	description "Break the Kaylon siege of the Xelayan homeworld and report to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch20"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`If the Xelayan homeworld falls, the coalition loses its shipyards.`
+				accept
+	on complete
+		payment 187000
+		set "kaylon arc 2: ch21"
+		log "Broke the Kaylon siege of the Xelayan homeworld."
+
+mission "Kaylon Coalition 22"
+	landing
+	non-blocking
+	name "The Defector's Price: The Demand"
+	description "Isaac has asked for something in return for his intelligence. Carry his demand to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch21"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`He wants the Union to promise that no Kaylon world will be destroyed after the war.`
+				accept
+	on complete
+		payment 194000
+		set "kaylon arc 2: ch22"
+		log "Carried Isaac's demand: that no Kaylon world be destroyed after the war."
+
+mission "Kaylon Coalition 23"
+	landing
+	non-blocking
+	name "The Moclan Offer: The Hegemony"
+	description "The Moclan Hegemony has offered ships. Carry the acceptance to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch22"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Moclans will fight the Kaylon. They will not fight under Union command.`
+				accept
+	on complete
+		payment 201000
+		set "kaylon arc 2: ch23"
+		log "Carried the Union's acceptance of the Moclan Hegemony's offer of ships."
+
+mission "Kaylon Coalition 24"
+	landing
+	non-blocking
+	name "The Krill Neutrality: The Chaplain"
+	description "A Krill chaplain offers to keep the frontier quiet. Carry the terms to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch23"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Krill will not join the coalition. They will not attack it either.`
+				accept
+	on complete
+		payment 208000
+		set "kaylon arc 2: ch24"
+		log "Carried the Krill chaplain's terms: neutrality, in exchange for a guarantee."
+
+mission "Kaylon Coalition 25"
+	landing
+	non-blocking
+	name "The Calivon: The Swamp"
+	description "The Calivon have been asked to join. Carry the Union envoy to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch24"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Calivon are ancient, and they have seen species like the Kaylon before.`
+				accept
+	on complete
+		payment 215000
+		set "kaylon arc 2: ch25"
+		log "Carried a Union envoy to the Calivon. They have seen species like the Kaylon before."
+
+mission "Kaylon Coalition 26"
+	landing
+	non-blocking
+	name "The Line: The Map"
+	description "Carry the coalition's proposed armistice line to the fleet command on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch25"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The line is not a victory. It is a place to stop fighting.`
+				accept
+	on complete
+		payment 222000
+		set "kaylon arc 2: ch26"
+		log "Carried the coalition's proposed armistice line to fleet command."
+
+mission "Kaylon Coalition 27"
+	landing
+	non-blocking
+	name "The Offer: The Ceasefire"
+	description "The Kaylon have offered a ceasefire. Carry the terms to the Senate on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch26"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The terms are a line on a map and a promise on both sides.`
+				accept
+	on complete
+		payment 229000
+		set "kaylon arc 2: ch27"
+		log "Carried the Kaylon ceasefire terms to the Union Senate."
+
+mission "Kaylon Coalition 28"
+	landing
+	non-blocking
+	name "The Signing: The Armistice"
+	description "Carry the signed armistice to the border relay on <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch27"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`Isaac says the collective will keep it, because the collective does not lie.`
+				accept
+	on complete
+		payment 236000
+		set "kaylon arc 2: ch28"
+		log "Carried the signed armistice to the border relay."
+
+mission "Kaylon Coalition 29"
+	landing
+	non-blocking
+	name "The Aftermath: The Refugees"
+	description "Carry Kaylon refugees to the sanctuary worlds and report to <destination>."
+	cargo "Kaylon Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc 2: ch28"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll see it through."`
+					accept
+				`\t"What are we up against?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`They are the first Kaylon to live as individuals. They do not know how.`
+				accept
+	on complete
+		payment 243000
+		set "kaylon arc 2: ch29"
+		log "Carried Kaylon refugees to the sanctuary worlds."
+

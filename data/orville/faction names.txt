@@ -1,0 +1,2969 @@
+# The Orville -- faction ship and outfit display names
+
+# Overrides the player-visible name of every stock faction ship and
+# outfit so the shipyard and outfitter show Orville names. Stock keys
+# and all attributes are inherited unchanged.
+
+ship "Anomalocaris"
+	"display name" "Barylian Anomalocaris"
+	plural "Barylian Anomalocarises"
+
+ship "Aphid"
+	"display name" "Barylian Aphid"
+	plural "Barylian Aphids"
+
+ship "Centipede"
+	"display name" "Barylian Centipede"
+	plural "Barylian Centipedes"
+
+ship "Cicada"
+	"display name" "Barylian Cicada"
+	plural "Barylian Cicadas"
+
+ship "Flea"
+	"display name" "Barylian Flea"
+	plural "Barylian Fleas"
+
+ship "Geocoris"
+	"display name" "Barylian Geocoris"
+	plural "Barylian Geocorises"
+
+ship "Grasshopper"
+	"display name" "Barylian Grasshopper"
+	plural "Barylian Grasshoppers"
+
+ship "Lightning Bug"
+	"display name" "Barylian Lightning Bug"
+	plural "Barylian Lightning Bugs"
+
+ship "Ladybug"
+	"display name" "Barylian Ladybug"
+	plural "Barylian Ladybugs"
+
+ship "Pond Strider"
+	"display name" "Barylian Pond Strider"
+	plural "Barylian Pond Striders"
+
+ship "Sea Scorpion"
+	"display name" "Barylian Sea Scorpion"
+	plural "Barylian Sea Scorpions"
+
+ship "Scarab"
+	"display name" "Barylian Scarab"
+	plural "Barylian Scarabs"
+
+ship "Shield Beetle"
+	"display name" "Barylian Shield Beetle"
+	plural "Barylian Shield Beetles"
+
+ship "Emperor Beetle"
+	"display name" "Barylian Emperor Beetle"
+	plural "Barylian Emperor Beetles"
+
+ship "Solifuge"
+	"display name" "Barylian Solifuge"
+	plural "Barylian Solifuges"
+
+ship "Violin Spider"
+	"display name" "Barylian Violin Spider"
+	plural "Barylian Violin Spiders"
+
+ship "Water Bug"
+	"display name" "Barylian Water Bug"
+	plural "Barylian Water Bugs"
+
+ship "Arach Courier"
+	"display name" "Xelayan Arach Courier"
+	plural "Xelayan Arach Couriers"
+
+ship "Arach Freighter"
+	"display name" "Xelayan Arach Freighter"
+	plural "Xelayan Arach Freighters"
+
+ship "Arach Hulk"
+	"display name" "Xelayan Arach Hulk"
+	plural "Xelayan Arach Hulks"
+
+ship "Arach Spindle"
+	"display name" "Xelayan Arach Spindle"
+	plural "Xelayan Arach Spindles"
+
+ship "Arach Transport"
+	"display name" "Xelayan Arach Transport"
+	plural "Xelayan Arach Transports"
+
+ship "Heliarch Breacher"
+	"display name" "Xelayan Heliarch Breacher"
+	plural "Xelayan Heliarch Breachers"
+
+ship "Heliarch Hunter"
+	"display name" "Xelayan Heliarch Hunter"
+	plural "Xelayan Heliarch Hunters"
+
+ship "Heliarch Interdictor"
+	"display name" "Xelayan Heliarch Interdictor"
+	plural "Xelayan Heliarch Interdictors"
+
+ship "Heliarch Judicator"
+	"display name" "Xelayan Heliarch Judicator"
+	plural "Xelayan Heliarch Judicators"
+
+ship "Heliarch Neutralizer"
+	"display name" "Xelayan Heliarch Neutralizer"
+	plural "Xelayan Heliarch Neutralizers"
+
+ship "Heliarch Punisher"
+	"display name" "Xelayan Heliarch Punisher"
+	plural "Xelayan Heliarch Punishers"
+
+ship "Heliarch Pursuer"
+	"display name" "Xelayan Heliarch Pursuer"
+	plural "Xelayan Heliarch Pursuers"
+
+ship "Heliarch Rover"
+	"display name" "Xelayan Heliarch Rover"
+	plural "Xelayan Heliarch Rovers"
+
+ship "Heliarch Stalker"
+	"display name" "Xelayan Heliarch Stalker"
+	plural "Xelayan Heliarch Stalkers"
+
+ship "Kimek Briar"
+	"display name" "Xelayan Kimek Briar"
+	plural "Xelayan Kimek Briars"
+
+ship "Kimek Spire"
+	"display name" "Xelayan Kimek Spire"
+	plural "Xelayan Kimek Spires"
+
+ship "Kimek Thistle"
+	"display name" "Xelayan Kimek Thistle"
+	plural "Xelayan Kimek Thistles"
+
+ship "Kimek Thorn"
+	"display name" "Xelayan Kimek Thorn"
+	plural "Xelayan Kimek Thorns"
+
+ship "Saryd Runabout"
+	"display name" "Xelayan Saryd Runabout"
+	plural "Xelayan Saryd Runabouts"
+
+ship "Saryd Sojourner"
+	"display name" "Xelayan Saryd Sojourner"
+	plural "Xelayan Saryd Sojourners"
+
+ship "Saryd Traveler"
+	"display name" "Xelayan Saryd Traveler"
+	plural "Xelayan Saryd Travelers"
+
+ship "Saryd Visitor"
+	"display name" "Xelayan Saryd Visitor"
+	plural "Xelayan Saryd Visitors"
+
+ship "Rano'erek"
+	"display name" "Tzenketh Rano'erek"
+	plural "Tzenketh Rano'ereks"
+
+ship "Palavret"
+	"display name" "Tzenketh Palavret"
+	plural "Tzenketh Palavrets"
+
+ship "Tubfalet"
+	"display name" "Tzenketh Tubfalet"
+	plural "Tzenketh Tubfalets"
+
+ship "'nra'ret"
+	"display name" "Tzenketh 'nra'ret"
+	plural "Tzenketh 'nra'rets"
+
+ship "'olofez"
+	"display name" "Tzenketh 'olofez"
+	plural "Tzenketh 'olofezes"
+
+ship "Kas'ik Tek 7"
+	"display name" "Tzenketh Kas'ik Tek 7"
+	plural "Tzenketh Kas'ik Tek 7s"
+
+ship "Rai'alorej"
+	"display name" "Tzenketh Rai'alorej"
+	plural "Tzenketh Rai'alorejs"
+
+ship "Ikatila'ej"
+	"display name" "Tzenketh Ikatila'ej"
+	plural "Tzenketh Ikatila'ejs"
+
+ship "Lor'kas Ik 577"
+	"display name" "Tzenketh Lor'kas Ik 577"
+	plural "Tzenketh Lor'kas Ik 577s"
+
+ship "Ra'gru Ik 618"
+	"display name" "Tzenketh Ra'gru Ik 618"
+	plural "Tzenketh Ra'gru Ik 618s"
+
+ship "Kas'lor Ik 582"
+	"display name" "Tzenketh Kas'lor Ik 582"
+	plural "Tzenketh Kas'lor Ik 582s"
+
+ship "Lor'nag Ik 590"
+	"display name" "Tzenketh Lor'nag Ik 590"
+	plural "Tzenketh Lor'nag Ik 590s"
+
+ship "Ra'at Ik 621"
+	"display name" "Tzenketh Ra'at Ik 621"
+	plural "Tzenketh Ra'at Ik 621s"
+
+ship "Kasichara A'awoj"
+	"display name" "Tzenketh Kasichara A'awoj"
+	plural "Tzenketh Kasichara A'awojs"
+
+ship "Korsmanath A'awoj"
+	"display name" "Tzenketh Korsmanath A'awoj"
+	plural "Tzenketh Korsmanath A'awojs"
+
+ship "Echo-Galleon"
+	"display name" "Tzenketh Echo-Galleon"
+	plural "Tzenketh Echo-Galleons"
+
+ship "Arch-Carrack"
+	"display name" "Tzenketh Arch-Carrack"
+	plural "Tzenketh Arch-Carracks"
+
+ship "Charm-Shallop"
+	"display name" "Tzenketh Charm-Shallop"
+	plural "Tzenketh Charm-Shallops"
+
+ship "Kar Ik Vot 349"
+	"display name" "Tzenketh Kar Ik Vot 349"
+	plural "Tzenketh Kar Ik Vot 349s"
+
+ship "Tek Far 71 - Lek"
+	"display name" "Tzenketh Tek Far 71 - Lek"
+	plural "Tzenketh Tek Far 71 - Leks"
+
+ship "Tek Far 78 - Osk"
+	"display name" "Tzenketh Tek Far 78 - Osk"
+	plural "Tzenketh Tek Far 78 - Osks"
+
+ship "Tek Far 109"
+	"display name" "Tzenketh Tek Far 109"
+	plural "Tzenketh Tek Far 109s"
+
+ship "Met Par Tek 53"
+	"display name" "Tzenketh Met Par Tek 53"
+	plural "Tzenketh Met Par Tek 53s"
+
+ship "Far Lek 14"
+	"display name" "Tzenketh Far Lek 14"
+	plural "Tzenketh Far Lek 14s"
+
+ship "Far Osk 27"
+	"display name" "Tzenketh Far Osk 27"
+	plural "Tzenketh Far Osk 27s"
+
+ship "Model 8"
+	"display name" "Tzenketh Model 8"
+	plural "Tzenketh Model 8s"
+
+ship "Model 16"
+	"display name" "Tzenketh Model 16"
+	plural "Tzenketh Model 16s"
+
+ship "Model 32"
+	"display name" "Tzenketh Model 32"
+	plural "Tzenketh Model 32s"
+
+ship "Model 64"
+	"display name" "Tzenketh Model 64"
+	plural "Tzenketh Model 64s"
+
+ship "Model 128"
+	"display name" "Tzenketh Model 128"
+	plural "Tzenketh Model 128s"
+
+ship "Model 256"
+	"display name" "Tzenketh Model 256"
+	plural "Tzenketh Model 256s"
+
+ship "Model 512"
+	"display name" "Tzenketh Model 512"
+	plural "Tzenketh Model 512s"
+
+ship "Albatross"
+	"display name" "Kaylon Albatross"
+	plural "Kaylon Albatrosses"
+
+ship "Modified Dromedary"
+	"display name" "Kaylon Modified Dromedary"
+	plural "Kaylon Modified Dromedaries"
+
+ship "Gull"
+	"display name" "Kaylon Gull"
+	plural "Kaylon Gulls"
+
+ship "Heron"
+	"display name" "Kaylon Heron"
+	plural "Kaylon Herons"
+
+ship "Ibis"
+	"display name" "Kaylon Ibis"
+	plural "Kaylon Ibises"
+
+ship "Merganser"
+	"display name" "Kaylon Merganser"
+	plural "Kaylon Mergansers"
+
+ship "Pelican"
+	"display name" "Kaylon Pelican"
+	plural "Kaylon Pelicans"
+
+ship "Penguin"
+	"display name" "Kaylon Penguin"
+	plural "Kaylon Penguins"
+
+ship "Peregrine"
+	"display name" "Kaylon Peregrine"
+	plural "Kaylon Peregrines"
+
+ship "Petrel"
+	"display name" "Kaylon Petrel"
+	plural "Kaylon Petrels"
+
+ship "Puffin"
+	"display name" "Kaylon Puffin"
+	plural "Kaylon Puffins"
+
+ship "Smew"
+	"display name" "Kaylon Smew"
+	plural "Kaylon Smews"
+
+ship "Starling"
+	"display name" "Kaylon Starling"
+	plural "Kaylon Starlings"
+
+ship "Swan"
+	"display name" "Kaylon Swan"
+	plural "Kaylon Swans"
+
+ship "Tern"
+	"display name" "Kaylon Tern"
+	plural "Kaylon Terns"
+
+ship "Shale"
+	"display name" "Meridian Shale"
+	plural "Meridian Shales"
+
+ship "Dolomite"
+	"display name" "Meridian Dolomite"
+	plural "Meridian Dolomites"
+
+ship "Conglomerate"
+	"display name" "Meridian Conglomerate"
+	plural "Meridian Conglomerates"
+
+ship "Granofel"
+	"display name" "Meridian Granofel"
+	plural "Meridian Granofels"
+
+ship "Gypsum"
+	"display name" "Meridian Gypsum"
+	plural "Meridian Gypsums"
+
+ship "Corundum"
+	"display name" "Meridian Corundum"
+	plural "Meridian Corundums"
+
+ship "Protolith"
+	"display name" "Meridian Protolith"
+	plural "Meridian Protoliths"
+
+ship "Dunite"
+	"display name" "Meridian Dunite"
+	plural "Meridian Dunites"
+
+ship "Augen"
+	"display name" "Meridian Augen"
+	plural "Meridian Augens"
+
+ship "Slate"
+	"display name" "Meridian Slate"
+	plural "Meridian Slates"
+
+ship "Schist"
+	"display name" "Meridian Schist"
+	plural "Meridian Schists"
+
+ship "Rhyolite"
+	"display name" "Meridian Rhyolite"
+	plural "Meridian Rhyolites"
+
+ship "Eclogite"
+	"display name" "Meridian Eclogite"
+	plural "Meridian Eclogites"
+
+ship "Diorite"
+	"display name" "Meridian Diorite"
+	plural "Meridian Diorites"
+
+ship "Hornfel"
+	"display name" "Meridian Hornfel"
+	plural "Meridian Hornfels"
+
+ship "Gneiss"
+	"display name" "Meridian Gneiss"
+	plural "Meridian Gneisses"
+
+ship "Granulite"
+	"display name" "Meridian Granulite"
+	plural "Meridian Granulites"
+
+ship "Halite"
+	"display name" "Meridian Halite"
+	plural "Meridian Halites"
+
+ship "Mica"
+	"display name" "Meridian Mica"
+	plural "Meridian Micas"
+
+ship "Coesite"
+	"display name" "Meridian Coesite"
+	plural "Meridian Coesites"
+
+ship "Tridymite"
+	"display name" "Meridian Tridymite"
+	plural "Meridian Tridymites"
+
+ship "Felsic"
+	"display name" "Meridian Felsic"
+	plural "Meridian Felsics"
+
+ship "Feldspar"
+	"display name" "Meridian Feldspar"
+	plural "Meridian Feldspars"
+
+ship "Epidote"
+	"display name" "Meridian Epidote"
+	plural "Meridian Epidotes"
+
+ship "Kyanite"
+	"display name" "Meridian Kyanite"
+	plural "Meridian Kyanites"
+
+ship "Koryfi"
+	"display name" "Orfan Koryfi"
+	plural "Orfan Koryfis"
+
+ship "Melodikos"
+	"display name" "Orfan Melodikos"
+	plural "Orfan Melodikoses"
+
+ship "Avlaki"
+	"display name" "Orfan Avlaki"
+	plural "Orfan Avlakis"
+
+ship "Harmonikos"
+	"display name" "Orfan Harmonikos"
+	plural "Orfan Harmonikoses"
+
+ship "Phononos"
+	"display name" "Orfan Phononos"
+	plural "Orfan Phononoses"
+
+ship "Frequentia"
+	"display name" "Orfan Frequentia"
+	plural "Orfan Frequentias"
+
+ship "Polari"
+	"display name" "Orfan Polari"
+	plural "Orfan Polaris"
+
+ship "Entasi"
+	"display name" "Orfan Entasi"
+	plural "Orfan Entasis"
+
+ship "Undsyni"
+	"display name" "Orfan Undsyni"
+	plural "Orfan Undsynis"
+
+ship "Modified Tachytia"
+	"display name" "Orfan Modified Tachytia"
+	plural "Orfan Modified Tachytias"
+
+ship "Tremoros"
+	"display name" "Orfan Tremoros"
+	plural "Orfan Tremoroses"
+
+ship "Prismaios"
+	"display name" "Orfan Prismaios"
+	plural "Orfan Prismaioses"
+
+ship "Interferos"
+	"display name" "Orfan Interferos"
+	plural "Orfan Interferoses"
+
+ship "Diaspersi"
+	"display name" "Orfan Diaspersi"
+	plural "Orfan Diaspersis"
+
+ship "Refraktos"
+	"display name" "Orfan Refraktos"
+	plural "Orfan Refraktoses"
+
+ship "Difraktos"
+	"display name" "Orfan Difraktos"
+	plural "Orfan Difraktoses"
+
+ship "Atenuatia"
+	"display name" "Orfan Atenuatia"
+	plural "Orfan Atenuatias"
+
+ship "Akoustiki"
+	"display name" "Orfan Akoustiki"
+	plural "Orfan Akoustikis"
+
+ship "Photikon"
+	"display name" "Orfan Photikon"
+	plural "Orfan Photikons"
+
+ship "Vibratia"
+	"display name" "Orfan Vibratia"
+	plural "Orfan Vibratias"
+
+ship "Undulon"
+	"display name" "Orfan Undulon"
+	plural "Orfan Undulons"
+
+ship "Optikon"
+	"display name" "Orfan Optikon"
+	plural "Orfan Optikons"
+
+ship "Sonikis"
+	"display name" "Orfan Sonikis"
+	plural "Orfan Sonikises"
+
+ship "Windjammer"
+	"display name" "Orfan Windjammer"
+	plural "Orfan Windjammers"
+
+ship "Bluejacket"
+	"display name" "Orfan Bluejacket"
+	plural "Orfan Bluejackets"
+
+ship "Pollen"
+	"display name" "Orfan Pollen"
+	plural "Orfan Pollens"
+
+ship "Sprout"
+	"display name" "Orfan Sprout"
+	plural "Orfan Sprouts"
+
+ship "Aaulqra"
+	"display name" "Successor Aaulqra"
+	plural "Successor Aaulqras"
+
+ship "Ejniisde"
+	"display name" "Successor Ejniisde"
+	plural "Successor Ejniisdes"
+
+ship "Ejniisde-Khora"
+	"display name" "Successor Ejniisde-Khora"
+	plural "Successor Ejniisde-Khoras"
+
+ship "Kaskhorade"
+	"display name" "Successor Kaskhorade"
+	plural "Successor Kaskhorades"
+
+ship "Kvelqde"
+	"display name" "Successor Kvelqde"
+	plural "Successor Kvelqdes"
+
+ship "Kvelqde-Khora"
+	"display name" "Successor Kvelqde-Khora"
+	plural "Successor Kvelqde-Khoras"
+
+ship "Myaede"
+	"display name" "Successor Myaede"
+	plural "Successor Myaedes"
+
+ship "Nnaatej"
+	"display name" "Successor Nnaatej"
+	plural "Successor Nnaatejs"
+
+ship "Nnesaarau"
+	"display name" "Successor Nnesaarau"
+	plural "Successor Nnesaaraus"
+
+ship "Ojde"
+	"display name" "Successor Ojde"
+	plural "Successor Ojdes"
+
+ship "Seiitej"
+	"display name" "Successor Seiitej"
+	plural "Successor Seiitejs"
+
+ship "Stolsaqra"
+	"display name" "Successor Stolsaqra"
+	plural "Successor Stolsaqras"
+
+ship "Veusade"
+	"display name" "Successor Veusade"
+	plural "Successor Veusades"
+
+ship "Vujlet"
+	"display name" "Successor Vujlet"
+	plural "Successor Vujlets"
+
+ship "Vujlet-Usaqri"
+	"display name" "Successor Vujlet-Usaqri"
+	plural "Successor Vujlet-Usaqris"
+
+ship "Resja, of the Nine Eyes"
+	"display name" "Successor Resja, of the Nine Eyes"
+	plural "Successor Resjas, of the Nine Eyes"
+
+ship "Hasur, Vowsworn"
+	"display name" "Successor Hasur, Vowsworn"
+	plural "Successor Hasurs, Vowsworn"
+
+ship "Queru, Luminous Gaze"
+	"display name" "Successor Queru, Luminous Gaze"
+	plural "Successor Querus, Luminous Gaze"
+
+ship "Valkkyiara-Khorasaqra"
+	"display name" "Successor Valkkyiara-Khorasaqra"
+	plural "Successor Valkkyiara-Khorasaqras"
+
+ship "Earth Shaper"
+	"display name" "Motilali Earth Shaper"
+	plural "Motilali Earth Shapers"
+
+ship "Flycatcher"
+	"display name" "Motilali Flycatcher"
+	plural "Motilali Flycatchers"
+
+ship "Summer Leaf"
+	"display name" "Motilali Summer Leaf"
+	plural "Motilali Summer Leafs"
+
+ship "Autumn Leaf"
+	"display name" "Motilali Autumn Leaf"
+	plural "Motilali Autumn Leafs"
+
+ship "Strong Wind"
+	"display name" "Motilali Strong Wind"
+	plural "Motilali Strong Winds"
+
+ship "Heavy Gust"
+	"display name" "Motilali Heavy Gust"
+	plural "Motilali Heavy Gusts"
+
+ship "Tempest"
+	"display name" "Motilali Tempest"
+	plural "Motilali Tempests"
+
+ship "Derecho"
+	"display name" "Motilali Derecho"
+	plural "Motilali Derechos"
+
+ship "Hurricane"
+	"display name" "Motilali Hurricane"
+	plural "Motilali Hurricanes"
+
+ship "Cool Breeze"
+	"display name" "Motilali Cool Breeze"
+	plural "Motilali Cool Breezes"
+
+ship "Winter Gale"
+	"display name" "Motilali Winter Gale"
+	plural "Motilali Winter Gales"
+
+ship "Deep River"
+	"display name" "Motilali Deep River"
+	plural "Motilali Deep Rivers"
+
+ship "Deep River Transport"
+	"display name" "Motilali Deep River Transport"
+	plural "Motilali Deep River Transports"
+
+ship "Riptide"
+	"display name" "Motilali Riptide"
+	plural "Motilali Riptides"
+
+ship "Kaiken"
+	"display name" "Botwin Kaiken"
+	plural "Botwin Kaikens"
+
+ship "Sasumata"
+	"display name" "Botwin Sasumata"
+	plural "Botwin Sasumatas"
+
+ship "Tanto"
+	"display name" "Botwin Tanto"
+	plural "Botwin Tantos"
+
+ship "Ararebo"
+	"display name" "Botwin Ararebo"
+	plural "Botwin Ararebos"
+
+ship "Tekkan"
+	"display name" "Botwin Tekkan"
+	plural "Botwin Tekkans"
+
+ship "Kunai"
+	"display name" "Botwin Kunai"
+	plural "Botwin Kunais"
+
+ship "Kama"
+	"display name" "Botwin Kama"
+	plural "Botwin Kamas"
+
+ship "Chigiriki"
+	"display name" "Botwin Chigiriki"
+	plural "Botwin Chigirikis"
+
+ship "Quarg Lindwyrm"
+	"display name" "Calivon Lindwyrm"
+	plural "Calivon Lindwyrms"
+
+ship "Quarg Guivre"
+	"display name" "Calivon Guivre"
+	plural "Calivon Guivres"
+
+ship "Quarg Drake"
+	"display name" "Calivon Drake"
+	plural "Calivon Drakes"
+
+ship "Quarg Wardragon"
+	"display name" "Calivon Wardragon"
+	plural "Calivon Wardragons"
+
+ship "Quarg Wyvern"
+	"display name" "Calivon Wyvern"
+	plural "Calivon Wyverns"
+
+ship "Quarg Hydra"
+	"display name" "Calivon Hydra"
+	plural "Calivon Hydras"
+
+ship "Venta"
+	"display name" "Tandoga Venta"
+	plural "Tandoga Ventas"
+
+ship "Nimbus"
+	"display name" "Tandoga Nimbus"
+	plural "Tandoga Nimbuses"
+
+ship "Nimbo Stratus"
+	"display name" "Tandoga Nimbo Stratus"
+	plural "Tandoga Nimbo Stratuses"
+
+ship "Nimbo Cirrus"
+	"display name" "Tandoga Nimbo Cirrus"
+	plural "Tandoga Nimbo Cirruses"
+
+ship "Gero"
+	"display name" "Tandoga Gero"
+	plural "Tandoga Geros"
+
+ship "Pug Zibruka"
+	"display name" "Kael Zibruka"
+	plural "Kael Zibrukas"
+
+ship "Pug Enfolta"
+	"display name" "Kael Enfolta"
+	plural "Kael Enfoltas"
+
+ship "Pug Maboro"
+	"display name" "Kael Maboro"
+	plural "Kael Maboros"
+
+ship "Pug Arfecta"
+	"display name" "Kael Arfecta"
+	plural "Kael Arfectas"
+
+ship "Emerald Sword"
+	"display name" "Goth Emerald Sword"
+	plural "Goth Emerald Swords"
+
+ship "Black Diamond"
+	"display name" "Goth Black Diamond"
+	plural "Goth Black Diamonds"
+
+ship "Archon"
+	"display name" "Them Archon"
+	plural "Them Archons"
+
+ship "Subsidurial"
+	"display name" "Them Subsidurial"
+	plural "Them Subsidurials"
+
+ship "Void Sprite"
+	"display name" "Them Void Sprite"
+	plural "Them Void Sprites"
+
+ship "Ember Waste Node"
+	"display name" "Them Ember Waste Node"
+	plural "Them Ember Waste Nodes"
+
+ship "Embershade"
+	"display name" "Them Embershade"
+	plural "Them Embershades"
+
+ship "Embersylph"
+	"display name" "Them Embersylph"
+	plural "Them Embersylphs"
+
+ship "Maeri'het"
+	"display name" "Kaylon Maeri'het"
+	plural "Kaylon Maeri'hets"
+
+ship "Telis'het"
+	"display name" "Kaylon Telis'het"
+	plural "Kaylon Telis'hets"
+
+ship "Vareti'het"
+	"display name" "Kaylon Vareti'het"
+	plural "Kaylon Vareti'hets"
+
+ship "Selii'mar"
+	"display name" "Kaylon Selii'mar"
+	plural "Kaylon Selii'mars"
+
+ship "Faes'mar"
+	"display name" "Kaylon Faes'mar"
+	plural "Kaylon Faes'mars"
+
+ship "Fetri'sei"
+	"display name" "Kaylon Fetri'sei"
+	plural "Kaylon Fetri'seis"
+
+ship "Aberrant Latte"
+	"display name" "Kaylon Aberrant Latte"
+	plural "Kaylon Aberrant Lattes"
+
+ship "Aberrant Chomper"
+	"display name" "Kaylon Aberrant Chomper"
+	plural "Kaylon Aberrant Chompers"
+
+ship "Aberrant Pileup"
+	"display name" "Kaylon Aberrant Pileup"
+	plural "Kaylon Aberrant Pileups"
+
+ship "Aberrant Hugger"
+	"display name" "Kaylon Aberrant Hugger"
+	plural "Kaylon Aberrant Huggers"
+
+ship "Aberrant Longfellow"
+	"display name" "Kaylon Aberrant Longfellow"
+	plural "Kaylon Aberrant Longfellows"
+
+ship "Aberrant Dancer"
+	"display name" "Kaylon Aberrant Dancer"
+	plural "Kaylon Aberrant Dancers"
+
+ship "Aberrant Junior"
+	"display name" "Kaylon Aberrant Junior"
+	plural "Kaylon Aberrant Juniors"
+
+ship "Aberrant Icebreaker"
+	"display name" "Kaylon Aberrant Icebreaker"
+	plural "Kaylon Aberrant Icebreakers"
+
+ship "Aberrant Pike"
+	"display name" "Kaylon Aberrant Pike"
+	plural "Kaylon Aberrant Pikes"
+
+ship "Aberrant Mole"
+	"display name" "Kaylon Aberrant Mole"
+	plural "Kaylon Aberrant Moles"
+
+ship "Aberrant Whiskers"
+	"display name" "Kaylon Aberrant Whiskers"
+	plural "Kaylon Aberrant Whiskerses"
+
+ship "Aberrant Trip"
+	"display name" "Kaylon Aberrant Trip"
+	plural "Kaylon Aberrant Trips"
+
+ship "Aberrant Triplet"
+	"display name" "Kaylon Aberrant Triplet"
+	plural "Kaylon Aberrant Triplets"
+
+ship "vyu-Ir"
+	"display name" "Silurian vyu-Ir"
+	plural "Silurian vyu-Irs"
+
+ship "Vyrmeid"
+	"display name" "Bender"
+	plural "Benders"
+
+ship "Astral Cetacean"
+	"display name" "Bender Astral Cetacean"
+	plural "Bender Astral Cetaceans"
+
+ship "Jje"
+	"display name" "Iiji Jje"
+	plural "Iiji Jjes"
+
+ship "Ayym"
+	"display name" "Iiji Ayym"
+	plural "Iiji Ayyms"
+
+ship "Nanobot"
+	"display name" "Tzenketh Nanobot"
+	plural "Tzenketh Nanobots"
+
+outfit "Phantom Pallet"
+	"display name" "Barylian Phantom Pallet"
+	plural "Barylian Phantom Pallets"
+
+outfit "Holovid Zone"
+	"display name" "Barylian Holovid Zone"
+	plural "Barylian Holovid Zones"
+
+outfit "Pulse Cannon"
+	"display name" "Barylian Pulse Cannon"
+	plural "Barylian Pulse Cannons"
+
+outfit "Pulse Turret"
+	"display name" "Barylian Pulse Turret"
+	plural "Barylian Pulse Turrets"
+
+outfit "Tripulse Shredder"
+	"display name" "Barylian Tripulse Shredder"
+	plural "Barylian Tripulse Shredders"
+
+outfit "Ion Cannon"
+	"display name" "Barylian Ion Cannon"
+	plural "Barylian Ion Cannons"
+
+outfit "Ionic Blaster Prototype"
+	"display name" "Barylian Ionic Blaster Prototype"
+	plural "Barylian Ionic Blaster Prototypes"
+
+outfit "Ionic Turret Prototype"
+	"display name" "Barylian Ionic Turret Prototype"
+	plural "Barylian Ionic Turret Prototypes"
+
+outfit "Railgun Slug"
+	"display name" "Barylian Railgun Slug"
+	plural "Barylian Railgun Slugs"
+
+outfit "Railgun Slug Rack"
+	"display name" "Barylian Railgun Slug Rack"
+	plural "Barylian Railgun Slug Racks"
+
+outfit "Railgun"
+	"display name" "Barylian Railgun"
+	plural "Barylian Railguns"
+
+outfit "rslug"
+	"display name" "Barylian rslug"
+	plural "Barylian rslugs"
+
+outfit "Hai Tracker"
+	"display name" "Barylian Tracker"
+	plural "Barylian Trackers"
+
+outfit "Tracker Storage Pod"
+	"display name" "Barylian Tracker Storage Pod"
+	plural "Barylian Tracker Storage Pods"
+
+outfit "Hai Tracker Pod"
+	"display name" "Barylian Tracker Pod"
+	plural "Barylian Tracker Pods"
+
+outfit "Bullfrog Anti-Missile"
+	"display name" "Barylian Bullfrog Anti-Missile"
+	plural "Barylian Bullfrog Anti-Missiles"
+
+outfit "Chameleon Anti-Missile"
+	"display name" "Barylian Chameleon Anti-Missile"
+	plural "Barylian Chameleon Anti-Missiles"
+
+outfit "Hai Cuttlefish Jammer"
+	"display name" "Barylian Cuttlefish Jammer"
+	plural "Barylian Cuttlefish Jammers"
+
+outfit "Hai Octopus Jammer"
+	"display name" "Barylian Octopus Jammer"
+	plural "Barylian Octopus Jammers"
+
+outfit "Hai Corundum Regenerator"
+	"display name" "Barylian Corundum Regenerator"
+	plural "Barylian Corundum Regenerators"
+
+outfit "Hai Diamond Regenerator"
+	"display name" "Barylian Diamond Regenerator"
+	plural "Barylian Diamond Regenerators"
+
+outfit "Hai Williwaw Cooling"
+	"display name" "Barylian Williwaw Cooling"
+	plural "Barylian Williwaw Coolings"
+
+outfit "Quantum Keystone"
+	"display name" "Barylian Quantum Keystone"
+	plural "Barylian Quantum Keystones"
+
+outfit "Value Detector"
+	"display name" "Barylian Value Detector"
+	plural "Barylian Value Detectors"
+
+outfit "Hai Chasm Batteries"
+	"display name" "Barylian Chasm Batteries"
+	plural "Barylian Chasm Batterieses"
+
+outfit "Hai Fissure Batteries"
+	"display name" "Barylian Fissure Batteries"
+	plural "Barylian Fissure Batterieses"
+
+outfit "Hai Gorge Batteries"
+	"display name" "Barylian Gorge Batteries"
+	plural "Barylian Gorge Batterieses"
+
+outfit "Hai Ravine Batteries"
+	"display name" "Barylian Ravine Batteries"
+	plural "Barylian Ravine Batterieses"
+
+outfit "Hai Valley Batteries"
+	"display name" "Barylian Valley Batteries"
+	plural "Barylian Valley Batterieses"
+
+outfit "Boulder Reactor"
+	"display name" "Barylian Boulder Reactor"
+	plural "Barylian Boulder Reactors"
+
+outfit "Geode Reactor"
+	"display name" "Barylian Geode Reactor"
+	plural "Barylian Geode Reactors"
+
+outfit "Pebble Core"
+	"display name" "Barylian Pebble Core"
+	plural "Barylian Pebble Cores"
+
+outfit "Sand Cell"
+	"display name" "Barylian Sand Cell"
+	plural "Barylian Sand Cells"
+
+outfit "Pulse Rifle"
+	"display name" "Barylian Pulse Rifle"
+	plural "Barylian Pulse Rifles"
+
+outfit "Shield Beetle Pendant"
+	"display name" "Barylian Shield Beetle Pendant"
+	plural "Barylian Shield Beetle Pendants"
+
+outfit "Small Collector Module"
+	"display name" "Xelayan Small Collector Module"
+	plural "Xelayan Small Collector Modules"
+
+outfit "Large Collector Module"
+	"display name" "Xelayan Large Collector Module"
+	plural "Xelayan Large Collector Modules"
+
+outfit "Small Reactor Module"
+	"display name" "Xelayan Small Reactor Module"
+	plural "Xelayan Small Reactor Modules"
+
+outfit "Large Reactor Module"
+	"display name" "Xelayan Large Reactor Module"
+	plural "Xelayan Large Reactor Modules"
+
+outfit "Small Cogeneration Module"
+	"display name" "Xelayan Small Cogeneration Module"
+	plural "Xelayan Small Cogeneration Modules"
+
+outfit "Large Cogeneration Module"
+	"display name" "Xelayan Large Cogeneration Module"
+	plural "Xelayan Large Cogeneration Modules"
+
+outfit "Small Battery Module"
+	"display name" "Xelayan Small Battery Module"
+	plural "Xelayan Small Battery Modules"
+
+outfit "Large Battery Module"
+	"display name" "Xelayan Large Battery Module"
+	plural "Xelayan Large Battery Modules"
+
+outfit "Small Shield Module"
+	"display name" "Xelayan Small Shield Module"
+	plural "Xelayan Small Shield Modules"
+
+outfit "Large Shield Module"
+	"display name" "Xelayan Large Shield Module"
+	plural "Xelayan Large Shield Modules"
+
+outfit "Overcharged Shield Module"
+	"display name" "Xelayan Overcharged Shield Module"
+	plural "Xelayan Overcharged Shield Modules"
+
+outfit "Small Repair Module"
+	"display name" "Xelayan Small Repair Module"
+	plural "Xelayan Small Repair Modules"
+
+outfit "Large Repair Module"
+	"display name" "Xelayan Large Repair Module"
+	plural "Xelayan Large Repair Modules"
+
+outfit "Overclocked Repair Module"
+	"display name" "Xelayan Overclocked Repair Module"
+	plural "Xelayan Overclocked Repair Modules"
+
+outfit "Cooling Module"
+	"display name" "Xelayan Cooling Module"
+	plural "Xelayan Cooling Modules"
+
+outfit "Fuel Module"
+	"display name" "Xelayan Fuel Module"
+	plural "Xelayan Fuel Modules"
+
+outfit "Decoy Plating"
+	"display name" "Xelayan Decoy Plating"
+	plural "Xelayan Decoy Platings"
+
+outfit "Refueling Module"
+	"display name" "Xelayan Refueling Module"
+	plural "Xelayan Refueling Modules"
+
+outfit "Shield Refactor Module"
+	"display name" "Xelayan Shield Refactor Module"
+	plural "Xelayan Shield Refactor Modules"
+
+outfit "Small Recovery Module"
+	"display name" "Xelayan Small Recovery Module"
+	plural "Xelayan Small Recovery Modules"
+
+outfit "Scanning Module"
+	"display name" "Xelayan Scanning Module"
+	plural "Xelayan Scanning Modules"
+
+outfit "Outskirts Gauger"
+	"display name" "Xelayan Outskirts Gauger"
+	plural "Xelayan Outskirts Gaugers"
+
+outfit "Small Thrust Module"
+	"display name" "Xelayan Small Thrust Module"
+	plural "Xelayan Small Thrust Modules"
+
+outfit "Large Thrust Module"
+	"display name" "Xelayan Large Thrust Module"
+	plural "Xelayan Large Thrust Modules"
+
+outfit "Small Reverse Module"
+	"display name" "Xelayan Small Reverse Module"
+	plural "Xelayan Small Reverse Modules"
+
+outfit "Large Reverse Module"
+	"display name" "Xelayan Large Reverse Module"
+	plural "Xelayan Large Reverse Modules"
+
+outfit "Small Steering Module"
+	"display name" "Xelayan Small Steering Module"
+	plural "Xelayan Small Steering Modules"
+
+outfit "Large Steering Module"
+	"display name" "Xelayan Large Steering Module"
+	plural "Xelayan Large Steering Modules"
+
+outfit "Enforcer Confrontation Gear"
+	"display name" "Xelayan Enforcer Confrontation Gear"
+	plural "Xelayan Enforcer Confrontation Gears"
+
+outfit "Enforcer Riot Staff"
+	"display name" "Xelayan Enforcer Riot Staff"
+	plural "Xelayan Enforcer Riot Staffs"
+
+outfit "Guardian Turret"
+	"display name" "Xelayan Guardian Turret"
+	plural "Xelayan Guardian Turrets"
+
+outfit "Anti-Materiel Gun"
+	"display name" "Xelayan Anti-Materiel Gun"
+	plural "Xelayan Anti-Materiel Guns"
+
+outfit "Coalition License"
+	"display name" "Xelayan License"
+	plural "Xelayan Licenses"
+
+outfit "Heliarch License"
+	"display name" "Xelayan Heliarch License"
+	plural "Xelayan Heliarch Licenses"
+
+outfit "Beyond the Hyperdrive"
+	"display name" "Xelayan Beyond the Hyperdrive"
+	plural "Xelayan Beyond the Hyperdrives"
+
+outfit "Bombardment Cannon"
+	"display name" "Xelayan Bombardment Cannon"
+	plural "Xelayan Bombardment Cannons"
+
+outfit "Bombardment Turret"
+	"display name" "Xelayan Bombardment Turret"
+	plural "Xelayan Bombardment Turrets"
+
+outfit "Finisher Pod"
+	"display name" "Xelayan Finisher Pod"
+	plural "Xelayan Finisher Pods"
+
+outfit "Finisher Maegrolain"
+	"display name" "Xelayan Finisher Maegrolain"
+	plural "Xelayan Finisher Maegrolains"
+
+outfit "Active Finisher"
+	"display name" "Xelayan Active Finisher"
+	plural "Xelayan Active Finishers"
+
+outfit "Finisher Storage Tube"
+	"display name" "Xelayan Finisher Storage Tube"
+	plural "Xelayan Finisher Storage Tubes"
+
+outfit "Finisher Torpedo"
+	"display name" "Xelayan Finisher Torpedo"
+	plural "Xelayan Finisher Torpedos"
+
+outfit "Heliarch Attractor"
+	"display name" "Xelayan Heliarch Attractor"
+	plural "Xelayan Heliarch Attractors"
+
+outfit "Heliarch Repulsor"
+	"display name" "Xelayan Heliarch Repulsor"
+	plural "Xelayan Heliarch Repulsors"
+
+outfit "Ion Hail Turret"
+	"display name" "Xelayan Ion Hail Turret"
+	plural "Xelayan Ion Hail Turrets"
+
+outfit "ion hail"
+	"display name" "Xelayan ion hail"
+	plural "Xelayan ion hails"
+
+outfit "Ion Rain Gun"
+	"display name" "Xelayan Ion Rain Gun"
+	plural "Xelayan Ion Rain Guns"
+
+outfit "MCS Extractor"
+	"display name" "Xelayan MCS Extractor"
+	plural "Xelayan MCS Extractors"
+
+outfit "Generator (Candle Class)"
+	"display name" "Tzenketh Generator (Candle Class)"
+	plural "Tzenketh Generator (Candle Class)s"
+
+outfit "Generator (Furnace Class)"
+	"display name" "Tzenketh Generator (Furnace Class)"
+	plural "Tzenketh Generator (Furnace Class)s"
+
+outfit "Generator (Inferno Class)"
+	"display name" "Tzenketh Generator (Inferno Class)"
+	plural "Tzenketh Generator (Inferno Class)s"
+
+outfit "Plasma Core"
+	"display name" "Tzenketh Plasma Core"
+	plural "Tzenketh Plasma Cores"
+
+outfit "Double Plasma Core"
+	"display name" "Tzenketh Double Plasma Core"
+	plural "Tzenketh Double Plasma Cores"
+
+outfit "Triple Plasma Core"
+	"display name" "Tzenketh Triple Plasma Core"
+	plural "Tzenketh Triple Plasma Cores"
+
+outfit "Small Heat Shunt"
+	"display name" "Tzenketh Small Heat Shunt"
+	plural "Tzenketh Small Heat Shunts"
+
+outfit "Large Heat Shunt"
+	"display name" "Tzenketh Large Heat Shunt"
+	plural "Tzenketh Large Heat Shunts"
+
+outfit "Liquid Sodium Cooler"
+	"display name" "Tzenketh Liquid Sodium Cooler"
+	plural "Tzenketh Liquid Sodium Coolers"
+
+outfit "Systems Core (Tiny)"
+	"display name" "Tzenketh Systems Core (Tiny)"
+	plural "Tzenketh Systems Core (Tiny)s"
+
+outfit "Systems Core (Small)"
+	"display name" "Tzenketh Systems Core (Small)"
+	plural "Tzenketh Systems Core (Small)s"
+
+outfit "Systems Core (Medium)"
+	"display name" "Tzenketh Systems Core (Medium)"
+	plural "Tzenketh Systems Core (Medium)s"
+
+outfit "Systems Core (Large)"
+	"display name" "Tzenketh Systems Core (Large)"
+	plural "Tzenketh Systems Core (Large)s"
+
+outfit "Fuel Processor"
+	"display name" "Tzenketh Fuel Processor"
+	plural "Tzenketh Fuel Processors"
+
+outfit "Command Center"
+	"display name" "Tzenketh Command Center"
+	plural "Tzenketh Command Centers"
+
+outfit "Reasoning Node"
+	"display name" "Tzenketh Reasoning Node"
+	plural "Tzenketh Reasoning Nodes"
+
+outfit "Control Transceiver"
+	"display name" "Tzenketh Control Transceiver"
+	plural "Tzenketh Control Transceivers"
+
+outfit "Afterburner (Asteroid Class)"
+	"display name" "Tzenketh Afterburner (Asteroid Class)"
+	plural "Tzenketh Afterburner (Asteroid Class)s"
+
+outfit "Afterburner (Comet Class)"
+	"display name" "Tzenketh Afterburner (Comet Class)"
+	plural "Tzenketh Afterburner (Comet Class)s"
+
+outfit "Afterburner (Lunar Class)"
+	"display name" "Tzenketh Afterburner (Lunar Class)"
+	plural "Tzenketh Afterburner (Lunar Class)s"
+
+outfit "Afterburner (Planetary Class)"
+	"display name" "Tzenketh Afterburner (Planetary Class)"
+	plural "Tzenketh Afterburner (Planetary Class)s"
+
+outfit "Afterburner (Stellar Class)"
+	"display name" "Tzenketh Afterburner (Stellar Class)"
+	plural "Tzenketh Afterburner (Stellar Class)s"
+
+outfit "Engine (Meteor Class)"
+	"display name" "Tzenketh Engine (Meteor Class)"
+	plural "Tzenketh Engine (Meteor Class)s"
+
+outfit "Bow Drive (Meteor Class)"
+	"display name" "Tzenketh Bow Drive (Meteor Class)"
+	plural "Tzenketh Bow Drive (Meteor Class)s"
+
+outfit "Reverser (Asteroid Class)"
+	"display name" "Tzenketh Reverser (Asteroid Class)"
+	plural "Tzenketh Reverser (Asteroid Class)s"
+
+outfit "Reverser (Comet Class)"
+	"display name" "Tzenketh Reverser (Comet Class)"
+	plural "Tzenketh Reverser (Comet Class)s"
+
+outfit "Reverser (Lunar Class)"
+	"display name" "Tzenketh Reverser (Lunar Class)"
+	plural "Tzenketh Reverser (Lunar Class)s"
+
+outfit "Reverser (Planetary Class)"
+	"display name" "Tzenketh Reverser (Planetary Class)"
+	plural "Tzenketh Reverser (Planetary Class)s"
+
+outfit "Reverser (Stellar Class)"
+	"display name" "Tzenketh Reverser (Stellar Class)"
+	plural "Tzenketh Reverser (Stellar Class)s"
+
+outfit "Thruster (Asteroid Class)"
+	"display name" "Tzenketh Thruster (Asteroid Class)"
+	plural "Tzenketh Thruster (Asteroid Class)s"
+
+outfit "Thruster (Comet Class)"
+	"display name" "Tzenketh Thruster (Comet Class)"
+	plural "Tzenketh Thruster (Comet Class)s"
+
+outfit "Thruster (Lunar Class)"
+	"display name" "Tzenketh Thruster (Lunar Class)"
+	plural "Tzenketh Thruster (Lunar Class)s"
+
+outfit "Thruster (Planetary Class)"
+	"display name" "Tzenketh Thruster (Planetary Class)"
+	plural "Tzenketh Thruster (Planetary Class)s"
+
+outfit "Thruster (Stellar Class)"
+	"display name" "Tzenketh Thruster (Stellar Class)"
+	plural "Tzenketh Thruster (Stellar Class)s"
+
+outfit "Steering (Asteroid Class)"
+	"display name" "Tzenketh Steering (Asteroid Class)"
+	plural "Tzenketh Steering (Asteroid Class)s"
+
+outfit "Steering (Comet Class)"
+	"display name" "Tzenketh Steering (Comet Class)"
+	plural "Tzenketh Steering (Comet Class)s"
+
+outfit "Steering (Lunar Class)"
+	"display name" "Tzenketh Steering (Lunar Class)"
+	plural "Tzenketh Steering (Lunar Class)s"
+
+outfit "Steering (Planetary Class)"
+	"display name" "Tzenketh Steering (Planetary Class)"
+	plural "Tzenketh Steering (Planetary Class)s"
+
+outfit "Steering (Stellar Class)"
+	"display name" "Tzenketh Steering (Stellar Class)"
+	plural "Tzenketh Steering (Stellar Class)s"
+
+outfit "Arkrof GP Hybrid Thruster"
+	"display name" "Tzenketh Arkrof GP Hybrid Thruster"
+	plural "Tzenketh Arkrof GP Hybrid Thrusters"
+
+outfit "Farves GP Hybrid Thruster"
+	"display name" "Tzenketh Farves GP Hybrid Thruster"
+	plural "Tzenketh Farves GP Hybrid Thrusters"
+
+outfit "Gaktem GP Hybrid Thruster"
+	"display name" "Tzenketh Gaktem GP Hybrid Thruster"
+	plural "Tzenketh Gaktem GP Hybrid Thrusters"
+
+outfit "Nelmeb GP Hybrid Thruster"
+	"display name" "Tzenketh Nelmeb GP Hybrid Thruster"
+	plural "Tzenketh Nelmeb GP Hybrid Thrusters"
+
+outfit "Arkrof GP Hybrid Steering"
+	"display name" "Tzenketh Arkrof GP Hybrid Steering"
+	plural "Tzenketh Arkrof GP Hybrid Steerings"
+
+outfit "Farves GP Hybrid Steering"
+	"display name" "Tzenketh Farves GP Hybrid Steering"
+	plural "Tzenketh Farves GP Hybrid Steerings"
+
+outfit "Gaktem GP Hybrid Steering"
+	"display name" "Tzenketh Gaktem GP Hybrid Steering"
+	plural "Tzenketh Gaktem GP Hybrid Steerings"
+
+outfit "Nelmeb GP Hybrid Steering"
+	"display name" "Tzenketh Nelmeb GP Hybrid Steering"
+	plural "Tzenketh Nelmeb GP Hybrid Steerings"
+
+outfit "Thermal Repeater Rifle"
+	"display name" "Tzenketh Thermal Repeater Rifle"
+	plural "Tzenketh Thermal Repeater Rifles"
+
+outfit "Microbot Defense Station"
+	"display name" "Tzenketh Microbot Defense Station"
+	plural "Tzenketh Microbot Defense Stations"
+
+outfit "Grab-Strike Turret"
+	"display name" "Tzenketh Grab-Strike Turret"
+	plural "Tzenketh Grab-Strike Turrets"
+
+outfit "Shunt-Strike Turret"
+	"display name" "Tzenketh Shunt-Strike Turret"
+	plural "Tzenketh Shunt-Strike Turrets"
+
+outfit "Banisher Grav-Turret"
+	"display name" "Tzenketh Banisher Grav-Turret"
+	plural "Tzenketh Banisher Grav-Turrets"
+
+outfit "Expeller Grav-Ray"
+	"display name" "Tzenketh Expeller Grav-Ray"
+	plural "Tzenketh Expeller Grav-Rays"
+
+outfit "Warder Anti-Missile"
+	"display name" "Tzenketh Warder Anti-Missile"
+	plural "Tzenketh Warder Anti-Missiles"
+
+outfit "Fire-Lance"
+	"display name" "Tzenketh Fire-Lance"
+	plural "Tzenketh Fire-Lances"
+
+outfit "Blaze-Pike Turret"
+	"display name" "Tzenketh Blaze-Pike Turret"
+	plural "Tzenketh Blaze-Pike Turrets"
+
+outfit "Korath Inferno"
+	"display name" "Tzenketh Inferno"
+	plural "Tzenketh Infernos"
+
+outfit "Thermal Repeater"
+	"display name" "Tzenketh Thermal Repeater"
+	plural "Tzenketh Thermal Repeaters"
+
+outfit "Thermal Repeater Turret"
+	"display name" "Tzenketh Thermal Repeater Turret"
+	plural "Tzenketh Thermal Repeater Turrets"
+
+outfit "Piercer Missile"
+	"display name" "Tzenketh Piercer Missile"
+	plural "Tzenketh Piercer Missiles"
+
+outfit "Piercer Missile Rack"
+	"display name" "Tzenketh Piercer Missile Rack"
+	plural "Tzenketh Piercer Missile Racks"
+
+outfit "Piercer Missile Launcher"
+	"display name" "Tzenketh Piercer Missile Launcher"
+	plural "Tzenketh Piercer Missile Launchers"
+
+outfit "Korath Detainer"
+	"display name" "Tzenketh Detainer"
+	plural "Tzenketh Detainers"
+
+outfit "Cluster Mine"
+	"display name" "Tzenketh Cluster Mine"
+	plural "Tzenketh Cluster Mines"
+
+outfit "Cluster Mine Rack"
+	"display name" "Tzenketh Cluster Mine Rack"
+	plural "Tzenketh Cluster Mine Racks"
+
+outfit "Cluster Mine Layer"
+	"display name" "Tzenketh Cluster Mine Layer"
+	plural "Tzenketh Cluster Mine Layers"
+
+outfit "Korath Mine Submunition"
+	"display name" "Tzenketh Mine Submunition"
+	plural "Tzenketh Mine Submunitions"
+
+outfit "Shield Disruptor Turret"
+	"display name" "Tzenketh Shield Disruptor Turret"
+	plural "Tzenketh Shield Disruptor Turrets"
+
+outfit "Husk-Slice"
+	"display name" "Tzenketh Husk-Slice"
+	plural "Tzenketh Husk-Slices"
+
+outfit "Husk-Slice Turret"
+	"display name" "Tzenketh Husk-Slice Turret"
+	plural "Tzenketh Husk-Slice Turrets"
+
+outfit "Digger Mining Turret"
+	"display name" "Tzenketh Digger Mining Turret"
+	plural "Tzenketh Digger Mining Turrets"
+
+outfit "Digger Mining Beam"
+	"display name" "Tzenketh Digger Mining Beam"
+	plural "Tzenketh Digger Mining Beams"
+
+outfit "Langrage Hyper-Heaver"
+	"display name" "Tzenketh Langrage Hyper-Heaver"
+	plural "Tzenketh Langrage Hyper-Heavers"
+
+outfit "Heaver Shard"
+	"display name" "Tzenketh Heaver Shard"
+	plural "Tzenketh Heaver Shards"
+
+outfit "Heaver Splinter"
+	"display name" "Tzenketh Heaver Splinter"
+	plural "Tzenketh Heaver Splinters"
+
+outfit "Firelight Storage Rack"
+	"display name" "Tzenketh Firelight Storage Rack"
+	plural "Tzenketh Firelight Storage Racks"
+
+outfit "Firelight Missile"
+	"display name" "Tzenketh Firelight Missile"
+	plural "Tzenketh Firelight Missiles"
+
+outfit "Firelight Missile Bank"
+	"display name" "Tzenketh Firelight Missile Bank"
+	plural "Tzenketh Firelight Missile Banks"
+
+outfit "Firelight Turning"
+	"display name" "Tzenketh Firelight Turning"
+	plural "Tzenketh Firelight Turnings"
+
+outfit "Firelight Activated"
+	"display name" "Tzenketh Firelight Activated"
+	plural "Tzenketh Firelight Activateds"
+
+outfit "Microbot Grinder"
+	"display name" "Tzenketh Microbot Grinder"
+	plural "Tzenketh Microbot Grinders"
+
+outfit "Firestorm Torpedo"
+	"display name" "Tzenketh Firestorm Torpedo"
+	plural "Tzenketh Firestorm Torpedos"
+
+outfit "Firestorm Torpedo Rack"
+	"display name" "Tzenketh Firestorm Torpedo Rack"
+	plural "Tzenketh Firestorm Torpedo Racks"
+
+outfit "Firestorm Battery"
+	"display name" "Tzenketh Firestorm Battery"
+	plural "Tzenketh Firestorm Batteries"
+
+outfit "Inhibitor Cannon"
+	"display name" "Kaylon Inhibitor Cannon"
+	plural "Kaylon Inhibitor Cannons"
+
+outfit "Inhibitor Turret"
+	"display name" "Kaylon Inhibitor Turret"
+	plural "Kaylon Inhibitor Turrets"
+
+outfit "Thrasher Cannon"
+	"display name" "Kaylon Thrasher Cannon"
+	plural "Kaylon Thrasher Cannons"
+
+outfit "Thrasher Turret"
+	"display name" "Kaylon Thrasher Turret"
+	plural "Kaylon Thrasher Turrets"
+
+outfit "Point Defense Turret"
+	"display name" "Kaylon Point Defense Turret"
+	plural "Kaylon Point Defense Turrets"
+
+outfit "EMP Torpedo"
+	"display name" "Kaylon EMP Torpedo"
+	plural "Kaylon EMP Torpedos"
+
+outfit "EMP Torpedo Storage Bay"
+	"display name" "Kaylon EMP Torpedo Storage Bay"
+	plural "Kaylon EMP Torpedo Storage Bays"
+
+outfit "EMP Torpedo Bay"
+	"display name" "Kaylon EMP Torpedo Bay"
+	plural "Kaylon EMP Torpedo Bays"
+
+outfit "Teciimach Bay"
+	"display name" "Kaylon Teciimach Bay"
+	plural "Kaylon Teciimach Bays"
+
+outfit "Teciimach Pod"
+	"display name" "Kaylon Teciimach Pod"
+	plural "Kaylon Teciimach Pods"
+
+outfit "Ember Tear"
+	"display name" "Kaylon Ember Tear"
+	plural "Kaylon Ember Tears"
+
+outfit "Crystal Capacitor"
+	"display name" "Kaylon Crystal Capacitor"
+	plural "Kaylon Crystal Capacitors"
+
+outfit "Millennium Cell"
+	"display name" "Kaylon Millennium Cell"
+	plural "Kaylon Millennium Cells"
+
+outfit "Epoch Cell"
+	"display name" "Kaylon Epoch Cell"
+	plural "Kaylon Epoch Cells"
+
+outfit "Aeon Cell"
+	"display name" "Kaylon Aeon Cell"
+	plural "Kaylon Aeon Cells"
+
+outfit "Thermoelectric Cooler"
+	"display name" "Kaylon Thermoelectric Cooler"
+	plural "Kaylon Thermoelectric Coolers"
+
+outfit "Emergency Ramscoop"
+	"display name" "Kaylon Emergency Ramscoop"
+	plural "Kaylon Emergency Ramscoops"
+
+outfit "NDR-114 Android"
+	"display name" "Kaylon NDR-114 Android"
+	plural "Kaylon NDR-114 Androids"
+
+outfit "Research Laboratory"
+	"display name" "Kaylon Research Laboratory"
+	plural "Kaylon Research Laboratories"
+
+outfit "Quantum Key Stone"
+	"display name" "Kaylon Quantum Key Stone"
+	plural "Kaylon Quantum Key Stones"
+
+outfit "Salvage Scanner"
+	"display name" "Kaylon Salvage Scanner"
+	plural "Kaylon Salvage Scanners"
+
+outfit "Bellows-Class Afterburner"
+	"display name" "Kaylon Bellows-Class Afterburner"
+	plural "Kaylon Bellows-Class Afterburners"
+
+outfit "Anvil-Class Engine"
+	"display name" "Kaylon Anvil-Class Engine"
+	plural "Kaylon Anvil-Class Engines"
+
+outfit "Crucible-Class Thruster"
+	"display name" "Kaylon Crucible-Class Thruster"
+	plural "Kaylon Crucible-Class Thrusters"
+
+outfit "Forge-Class Thruster"
+	"display name" "Kaylon Forge-Class Thruster"
+	plural "Kaylon Forge-Class Thrusters"
+
+outfit "Smelter-Class Thruster"
+	"display name" "Kaylon Smelter-Class Thruster"
+	plural "Kaylon Smelter-Class Thrusters"
+
+outfit "Crucible-Class Steering"
+	"display name" "Kaylon Crucible-Class Steering"
+	plural "Kaylon Crucible-Class Steerings"
+
+outfit "Forge-Class Steering"
+	"display name" "Kaylon Forge-Class Steering"
+	plural "Kaylon Forge-Class Steerings"
+
+outfit "Smelter-Class Steering"
+	"display name" "Kaylon Smelter-Class Steering"
+	plural "Kaylon Smelter-Class Steerings"
+
+outfit "Tuning Rifle"
+	"display name" "Kaylon Tuning Rifle"
+	plural "Kaylon Tuning Rifles"
+
+outfit "Void Rifle"
+	"display name" "Kaylon Void Rifle"
+	plural "Kaylon Void Rifles"
+
+outfit "Void Sprite Parts"
+	"display name" "Kaylon Void Sprite Parts"
+	plural "Kaylon Void Sprite Partses"
+
+outfit "Remnant License"
+	"display name" "Kaylon License"
+	plural "Kaylon Licenses"
+
+outfit "Remnant Capital License"
+	"display name" "Kaylon Capital License"
+	plural "Kaylon Capital Licenses"
+
+outfit "R01 Skirmish Battery"
+	"display name" "Meridian R01 Skirmish Battery"
+	plural "Meridian R01 Skirmish Batteries"
+
+outfit "R02 Battlezone Battery"
+	"display name" "Meridian R02 Battlezone Battery"
+	plural "Meridian R02 Battlezone Batteries"
+
+outfit "R03 Warforge Battery"
+	"display name" "Meridian R03 Warforge Battery"
+	plural "Meridian R03 Warforge Batteries"
+
+outfit "R04 Crusade Battery"
+	"display name" "Meridian R04 Crusade Battery"
+	plural "Meridian R04 Crusade Batteries"
+
+outfit "C3 Scrap Cell"
+	"display name" "Meridian C3 Scrap Cell"
+	plural "Meridian C3 Scrap Cells"
+
+outfit "C7 Brawl Cell"
+	"display name" "Meridian C7 Brawl Cell"
+	plural "Meridian C7 Brawl Cells"
+
+outfit "C17 Warzone Core"
+	"display name" "Meridian C17 Warzone Core"
+	plural "Meridian C17 Warzone Cores"
+
+outfit "C27 Campaign Core"
+	"display name" "Meridian C27 Campaign Core"
+	plural "Meridian C27 Campaign Cores"
+
+outfit "I70 Ameliorate Cell"
+	"display name" "Meridian I70 Ameliorate Cell"
+	plural "Meridian I70 Ameliorate Cells"
+
+outfit "RG15 Torch Thruster"
+	"display name" "Meridian RG15 Torch Thruster"
+	plural "Meridian RG15 Torch Thrusters"
+
+outfit "RG15 Torch Steering"
+	"display name" "Meridian RG15 Torch Steering"
+	plural "Meridian RG15 Torch Steerings"
+
+outfit "RG18 Torch Thruster"
+	"display name" "Meridian RG18 Torch Thruster"
+	plural "Meridian RG18 Torch Thrusters"
+
+outfit "RG18 Torch Steering"
+	"display name" "Meridian RG18 Torch Steering"
+	plural "Meridian RG18 Torch Steerings"
+
+outfit "RG3 Torch Thruster"
+	"display name" "Meridian RG3 Torch Thruster"
+	plural "Meridian RG3 Torch Thrusters"
+
+outfit "RG3 Torch Steering"
+	"display name" "Meridian RG3 Torch Steering"
+	plural "Meridian RG3 Torch Steerings"
+
+outfit "SC-1 Plasma Engines"
+	"display name" "Meridian SC-1 Plasma Engines"
+	plural "Meridian SC-1 Plasma Engineses"
+
+outfit "SC-12 Plasma Thruster"
+	"display name" "Meridian SC-12 Plasma Thruster"
+	plural "Meridian SC-12 Plasma Thrusters"
+
+outfit "SC-12 Plasma Steering"
+	"display name" "Meridian SC-12 Plasma Steering"
+	plural "Meridian SC-12 Plasma Steerings"
+
+outfit "SC-14 Plasma Thruster"
+	"display name" "Meridian SC-14 Plasma Thruster"
+	plural "Meridian SC-14 Plasma Thrusters"
+
+outfit "SC-14 Plasma Steering"
+	"display name" "Meridian SC-14 Plasma Steering"
+	plural "Meridian SC-14 Plasma Steerings"
+
+outfit "SC-15 Plasma Thrusters"
+	"display name" "Meridian SC-15 Plasma Thrusters"
+	plural "Meridian SC-15 Plasma Thrusterses"
+
+outfit "Irate Cannon"
+	"display name" "Meridian Irate Cannon"
+	plural "Meridian Irate Cannons"
+
+outfit "Irate Cannon Turret"
+	"display name" "Meridian Irate Cannon Turret"
+	plural "Meridian Irate Cannon Turrets"
+
+outfit "Choleric Cannon"
+	"display name" "Meridian Choleric Cannon"
+	plural "Meridian Choleric Cannons"
+
+outfit "Choleric Cannon Turret"
+	"display name" "Meridian Choleric Cannon Turret"
+	plural "Meridian Choleric Cannon Turrets"
+
+outfit "Ballistic Cannon"
+	"display name" "Meridian Ballistic Cannon"
+	plural "Meridian Ballistic Cannons"
+
+outfit "Ballistic Cannon Turret"
+	"display name" "Meridian Ballistic Cannon Turret"
+	plural "Meridian Ballistic Cannon Turrets"
+
+outfit "Astuit Battery"
+	"display name" "Meridian Astuit Battery"
+	plural "Meridian Astuit Batteries"
+
+outfit "Acuit Artillery"
+	"display name" "Meridian Acuit Artillery"
+	plural "Meridian Acuit Artilleries"
+
+outfit "Acumen Bolt Cannon"
+	"display name" "Meridian Acumen Bolt Cannon"
+	plural "Meridian Acumen Bolt Cannons"
+
+outfit "Guile Pulse Laser"
+	"display name" "Meridian Guile Pulse Laser"
+	plural "Meridian Guile Pulse Lasers"
+
+outfit "Excavator"
+	"display name" "Meridian Excavator"
+	plural "Meridian Excavators"
+
+outfit "Burrower"
+	"display name" "Meridian Burrower"
+	plural "Meridian Burrowers"
+
+outfit "Ion Torch"
+	"display name" "Meridian Ion Torch"
+	plural "Meridian Ion Torches"
+
+outfit "Savagery Bludgeon"
+	"display name" "Meridian Savagery Bludgeon"
+	plural "Meridian Savagery Bludgeons"
+
+outfit "Savagery Pike"
+	"display name" "Meridian Savagery Pike"
+	plural "Meridian Savagery Pikes"
+
+outfit "Irate Carronade"
+	"display name" "Meridian Irate Carronade"
+	plural "Meridian Irate Carronades"
+
+outfit "Plasmasickle"
+	"display name" "Meridian Plasmasickle"
+	plural "Meridian Plasmasickles"
+
+outfit "Plasma Grenades"
+	"display name" "Meridian Plasma Grenades"
+	plural "Meridian Plasma Grenadeses"
+
+outfit "Gegno Civilian License"
+	"display name" "Meridian Civilian License"
+	plural "Meridian Civilian Licenses"
+
+outfit "Gegno Driller License"
+	"display name" "Meridian Driller License"
+	plural "Meridian Driller Licenses"
+
+outfit "Vi Lord License"
+	"display name" "Meridian Vi Lord License"
+	plural "Meridian Vi Lord Licenses"
+
+outfit "Vi Centurion License"
+	"display name" "Meridian Vi Centurion License"
+	plural "Meridian Vi Centurion Licenses"
+
+outfit "Vi Evocati License"
+	"display name" "Meridian Vi Evocati License"
+	plural "Meridian Vi Evocati Licenses"
+
+outfit "Scin Hoplologist License"
+	"display name" "Meridian Scin Hoplologist License"
+	plural "Meridian Scin Hoplologist Licenses"
+
+outfit "Scin Architect License"
+	"display name" "Meridian Scin Architect License"
+	plural "Meridian Scin Architect Licenses"
+
+outfit "Scin Adjutant License"
+	"display name" "Meridian Scin Adjutant License"
+	plural "Meridian Scin Adjutant Licenses"
+
+outfit "Radiative Lamina"
+	"display name" "Orfan Radiative Lamina"
+	plural "Orfan Radiative Laminas"
+
+outfit "Concealment Lamina"
+	"display name" "Orfan Concealment Lamina"
+	plural "Orfan Concealment Laminas"
+
+outfit "Magnetic Scoop"
+	"display name" "Orfan Magnetic Scoop"
+	plural "Orfan Magnetic Scoops"
+
+outfit "Plasmadyne Scoop"
+	"display name" "Orfan Plasmadyne Scoop"
+	plural "Orfan Plasmadyne Scoops"
+
+outfit "Deuterium Slush Tank"
+	"display name" "Orfan Deuterium Slush Tank"
+	plural "Orfan Deuterium Slush Tanks"
+
+outfit "Cryogenic Deuterium Tank"
+	"display name" "Orfan Cryogenic Deuterium Tank"
+	plural "Orfan Cryogenic Deuterium Tanks"
+
+outfit "Heatsink Partition"
+	"display name" "Orfan Heatsink Partition"
+	plural "Orfan Heatsink Partitions"
+
+outfit "Multispectral Scanner"
+	"display name" "Orfan Multispectral Scanner"
+	plural "Orfan Multispectral Scanners"
+
+outfit "Spectrometer Array"
+	"display name" "Orfan Spectrometer Array"
+	plural "Orfan Spectrometer Arrays"
+
+outfit "Diffuse Deflector"
+	"display name" "Orfan Diffuse Deflector"
+	plural "Orfan Diffuse Deflectors"
+
+outfit "Specular Deflector"
+	"display name" "Orfan Specular Deflector"
+	plural "Orfan Specular Deflectors"
+
+outfit "Concentrating Solar Cell"
+	"display name" "Orfan Concentrating Solar Cell"
+	plural "Orfan Concentrating Solar Cells"
+
+outfit "Concentrating Solar Array"
+	"display name" "Orfan Concentrating Solar Array"
+	plural "Orfan Concentrating Solar Arrays"
+
+outfit "Photoelectric Lamina"
+	"display name" "Orfan Photoelectric Lamina"
+	plural "Orfan Photoelectric Laminas"
+
+outfit "Lantern Fission Core"
+	"display name" "Orfan Lantern Fission Core"
+	plural "Orfan Lantern Fission Cores"
+
+outfit "Ultracapacitor Cell"
+	"display name" "Orfan Ultracapacitor Cell"
+	plural "Orfan Ultracapacitor Cells"
+
+outfit "Ultracapacitor Bank"
+	"display name" "Orfan Ultracapacitor Bank"
+	plural "Orfan Ultracapacitor Banks"
+
+outfit "Magnetoplasma Drive"
+	"display name" "Orfan Magnetoplasma Drive"
+	plural "Orfan Magnetoplasma Drives"
+
+outfit "Vapor Nuclear Rocket"
+	"display name" "Orfan Vapor Nuclear Rocket"
+	plural "Orfan Vapor Nuclear Rockets"
+
+outfit "Remass Injector"
+	"display name" "Orfan Remass Injector"
+	plural "Orfan Remass Injectors"
+
+outfit "Inductive Extractor"
+	"display name" "Orfan Inductive Extractor"
+	plural "Orfan Inductive Extractors"
+
+outfit "R-180 RCS Thrusters"
+	"display name" "Orfan R-180 RCS Thrusters"
+	plural "Orfan R-180 RCS Thrusterses"
+
+outfit "R-360 RCS Thrusters"
+	"display name" "Orfan R-360 RCS Thrusters"
+	plural "Orfan R-360 RCS Thrusterses"
+
+outfit "R-720 RCS Thrusters"
+	"display name" "Orfan R-720 RCS Thrusters"
+	plural "Orfan R-720 RCS Thrusterses"
+
+outfit "Optical Laser Rifle"
+	"display name" "Orfan Optical Laser Rifle"
+	plural "Orfan Optical Laser Rifles"
+
+outfit "Trefoil Board"
+	"display name" "Orfan Trefoil Board"
+	plural "Orfan Trefoil Boards"
+
+outfit "Damselflyman"
+	"display name" "Orfan Damselflyman"
+	plural "Orfan Damselflymans"
+
+outfit "Lancet Adamant"
+	"display name" "Orfan Lancet Adamant"
+	plural "Orfan Lancet Adamants"
+
+outfit "Twilight Guard License"
+	"display name" "Orfan Twilight Guard License"
+	plural "Orfan Twilight Guard Licenses"
+
+outfit "Avgi Torch License"
+	"display name" "Orfan Torch License"
+	plural "Orfan Torch Licenses"
+
+outfit "Avgi Atomics License"
+	"display name" "Orfan Atomics License"
+	plural "Orfan Atomics Licenses"
+
+outfit "Speck Round"
+	"display name" "Orfan Speck Round"
+	plural "Orfan Speck Rounds"
+
+outfit "Speck Magazine"
+	"display name" "Orfan Speck Magazine"
+	plural "Orfan Speck Magazines"
+
+outfit "Speckle Coilgun"
+	"display name" "Orfan Speckle Coilgun"
+	plural "Orfan Speckle Coilguns"
+
+outfit "Speckle Turret"
+	"display name" "Orfan Speckle Turret"
+	plural "Orfan Speckle Turrets"
+
+outfit "Speck"
+	"display name" "Orfan Speck"
+	plural "Orfan Specks"
+
+outfit "Optical Lasing Generator"
+	"display name" "Orfan Optical Lasing Generator"
+	plural "Orfan Optical Lasing Generators"
+
+outfit "Green Optical Laser"
+	"display name" "Orfan Green Optical Laser"
+	plural "Orfan Green Optical Lasers"
+
+outfit "Blue Optical Laser"
+	"display name" "Orfan Blue Optical Laser"
+	plural "Orfan Blue Optical Lasers"
+
+outfit "Ultraviolet Excimer Laser"
+	"display name" "Orfan Ultraviolet Excimer Laser"
+	plural "Orfan Ultraviolet Excimer Lasers"
+
+outfit "Ultrarelativistic Electron Beam"
+	"display name" "Orfan Ultrarelativistic Electron Beam"
+	plural "Orfan Ultrarelativistic Electron Beams"
+
+outfit "TeV Electron Bunch"
+	"display name" "Orfan TeV Electron Bunch"
+	plural "Orfan TeV Electron Bunches"
+
+outfit "UREB Turret"
+	"display name" "Orfan UREB Turret"
+	plural "Orfan UREB Turrets"
+
+outfit "GeV Electron Bunch"
+	"display name" "Orfan GeV Electron Bunch"
+	plural "Orfan GeV Electron Bunches"
+
+outfit "External Launch Rail"
+	"display name" "Orfan External Launch Rail"
+	plural "Orfan External Launch Rails"
+
+outfit "External Launch Tube"
+	"display name" "Orfan External Launch Tube"
+	plural "Orfan External Launch Tubes"
+
+outfit "Tiny VLS"
+	"display name" "Orfan Tiny VLS"
+	plural "Orfan Tiny VLSs"
+
+outfit "Small VLS"
+	"display name" "Orfan Small VLS"
+	plural "Orfan Small VLSs"
+
+outfit "Medium VLS"
+	"display name" "Orfan Medium VLS"
+	plural "Orfan Medium VLSs"
+
+outfit "Nettle Active"
+	"display name" "Orfan Nettle Active"
+	plural "Orfan Nettle Actives"
+
+outfit "Nettle Flecks"
+	"display name" "Orfan Nettle Flecks"
+	plural "Orfan Nettle Fleckses"
+
+outfit "Orchid Active"
+	"display name" "Orfan Orchid Active"
+	plural "Orfan Orchid Actives"
+
+outfit "Orchid Boost"
+	"display name" "Orfan Orchid Boost"
+	plural "Orfan Orchid Boosts"
+
+outfit "Orchid Coast"
+	"display name" "Orfan Orchid Coast"
+	plural "Orfan Orchid Coasts"
+
+outfit "Orchid Divert"
+	"display name" "Orfan Orchid Divert"
+	plural "Orfan Orchid Diverts"
+
+outfit "Orchid Terminal"
+	"display name" "Orfan Orchid Terminal"
+	plural "Orfan Orchid Terminals"
+
+outfit "Orchid Boost Stage Expended"
+	"display name" "Orfan Orchid Boost Stage Expended"
+	plural "Orfan Orchid Boost Stage Expendeds"
+
+outfit "Orchid Divert Stage Expended"
+	"display name" "Orfan Orchid Divert Stage Expended"
+	plural "Orfan Orchid Divert Stage Expendeds"
+
+outfit "Ophrys Stockpile"
+	"display name" "Orfan Ophrys Stockpile"
+	plural "Orfan Ophrys Stockpiles"
+
+outfit "Ophrys Terminal"
+	"display name" "Orfan Ophrys Terminal"
+	plural "Orfan Ophrys Terminals"
+
+outfit "Successor License"
+	"display name" "Successor License"
+	plural "Successor Licenses"
+
+outfit "High Houses License"
+	"display name" "Successor High Houses License"
+	plural "Successor High Houses Licenses"
+
+outfit "Harmonic Keystone"
+	"display name" "Successor Harmonic Keystone"
+	plural "Successor Harmonic Keystones"
+
+outfit "Shield Cortex Interface"
+	"display name" "Successor Shield Cortex Interface"
+	plural "Successor Shield Cortex Interfaces"
+
+outfit "Auxiliary Power Reserve"
+	"display name" "Successor Auxiliary Power Reserve"
+	plural "Successor Auxiliary Power Reserves"
+
+outfit "Primary Power Reserve"
+	"display name" "Successor Primary Power Reserve"
+	plural "Successor Primary Power Reserves"
+
+outfit "Successor Cooling"
+	"display name" "Successor Cooling"
+	plural "Successor Coolings"
+
+outfit "Successor Fuel Sail"
+	"display name" "Successor Fuel Sail"
+	plural "Successor Fuel Sails"
+
+outfit "Multimodal Armor: Light"
+	"display name" "Successor Multimodal Armor: Light"
+	plural "Successor Multimodal Armor: Lights"
+
+outfit "Multimodal Armor: Heavy"
+	"display name" "Successor Multimodal Armor: Heavy"
+	plural "Successor Multimodal Armor: Heavies"
+
+outfit "Multimodal Armor: Regen"
+	"display name" "Successor Multimodal Armor: Regen"
+	plural "Successor Multimodal Armor: Regens"
+
+outfit "Multimodal Armor: Keystone"
+	"display name" "Successor Multimodal Armor: Keystone"
+	plural "Successor Multimodal Armor: Keystones"
+
+outfit "Kinetic Rail Rifle"
+	"display name" "Successor Kinetic Rail Rifle"
+	plural "Successor Kinetic Rail Rifles"
+
+outfit "Radiant Shield Shunt"
+	"display name" "Successor Radiant Shield Shunt"
+	plural "Successor Radiant Shield Shunts"
+
+outfit "Bimodal Coilgun Turret"
+	"display name" "Successor Bimodal Coilgun Turret"
+	plural "Successor Bimodal Coilgun Turrets"
+
+outfit "Bimodal Switch"
+	"display name" "Successor Bimodal Switch"
+	plural "Successor Bimodal Switches"
+
+outfit "Drag Cannon"
+	"display name" "Successor Drag Cannon"
+	plural "Successor Drag Cannons"
+
+outfit "Drag Projectile"
+	"display name" "Successor Drag Projectile"
+	plural "Successor Drag Projectiles"
+
+outfit "Successor Pulse Laser"
+	"display name" "Successor Pulse Laser"
+	plural "Successor Pulse Lasers"
+
+outfit "Pulse Laser Turret"
+	"display name" "Successor Pulse Laser Turret"
+	plural "Successor Pulse Laser Turrets"
+
+outfit "Overcharged Pulse Laser"
+	"display name" "Successor Overcharged Pulse Laser"
+	plural "Successor Overcharged Pulse Lasers"
+
+outfit "Overcharged Laser Turret"
+	"display name" "Successor Overcharged Laser Turret"
+	plural "Successor Overcharged Laser Turrets"
+
+outfit "High-Velocity Spike"
+	"display name" "Successor High-Velocity Spike"
+	plural "Successor High-Velocity Spikes"
+
+outfit "High-Velocity Spike Rack"
+	"display name" "Successor High-Velocity Spike Rack"
+	plural "Successor High-Velocity Spike Racks"
+
+outfit "Sunbeam"
+	"display name" "Motilali Sunbeam"
+	plural "Motilali Sunbeams"
+
+outfit "Sunbeam Turret"
+	"display name" "Motilali Sunbeam Turret"
+	plural "Motilali Sunbeam Turrets"
+
+outfit "Dual Sunbeam Turret"
+	"display name" "Motilali Dual Sunbeam Turret"
+	plural "Motilali Dual Sunbeam Turrets"
+
+outfit "Moonbeam"
+	"display name" "Motilali Moonbeam"
+	plural "Motilali Moonbeams"
+
+outfit "Moonbeam Turret"
+	"display name" "Motilali Moonbeam Turret"
+	plural "Motilali Moonbeam Turrets"
+
+outfit "Wanderer Anti-Missile"
+	"display name" "Motilali Anti-Missile"
+	plural "Motilali Anti-Missiles"
+
+outfit "Thunderhead Launcher"
+	"display name" "Motilali Thunderhead Launcher"
+	plural "Motilali Thunderhead Launchers"
+
+outfit "Thunderhead Missile"
+	"display name" "Motilali Thunderhead Missile"
+	plural "Motilali Thunderhead Missiles"
+
+outfit "Thunderhead"
+	"display name" "Motilali Thunderhead"
+	plural "Motilali Thunderheads"
+
+outfit "Thunderhead Storage Array"
+	"display name" "Motilali Thunderhead Storage Array"
+	plural "Motilali Thunderhead Storage Arrays"
+
+outfit "Small Biochemical Cell"
+	"display name" "Motilali Small Biochemical Cell"
+	plural "Motilali Small Biochemical Cells"
+
+outfit "Large Biochemical Cell"
+	"display name" "Motilali Large Biochemical Cell"
+	plural "Motilali Large Biochemical Cells"
+
+outfit "Red Sun Reactor"
+	"display name" "Motilali Red Sun Reactor"
+	plural "Motilali Red Sun Reactors"
+
+outfit "Yellow Sun Reactor"
+	"display name" "Motilali Yellow Sun Reactor"
+	plural "Motilali Yellow Sun Reactors"
+
+outfit "White Sun Reactor"
+	"display name" "Motilali White Sun Reactor"
+	plural "Motilali White Sun Reactors"
+
+outfit "Blue Sun Reactor"
+	"display name" "Motilali Blue Sun Reactor"
+	plural "Motilali Blue Sun Reactors"
+
+outfit "Bright Cloud Shielding"
+	"display name" "Motilali Bright Cloud Shielding"
+	plural "Motilali Bright Cloud Shieldings"
+
+outfit "Dark Storm Shielding"
+	"display name" "Motilali Dark Storm Shielding"
+	plural "Motilali Dark Storm Shieldings"
+
+outfit "Wanderer Ramscoop"
+	"display name" "Motilali Ramscoop"
+	plural "Motilali Ramscoops"
+
+outfit "Wanderer Heat Sink"
+	"display name" "Motilali Heat Sink"
+	plural "Motilali Heat Sinks"
+
+outfit "Type 1 Radiant Thruster"
+	"display name" "Motilali Type 1 Radiant Thruster"
+	plural "Motilali Type 1 Radiant Thrusters"
+
+outfit "Type 2 Radiant Thruster"
+	"display name" "Motilali Type 2 Radiant Thruster"
+	plural "Motilali Type 2 Radiant Thrusters"
+
+outfit "Type 3 Radiant Thruster"
+	"display name" "Motilali Type 3 Radiant Thruster"
+	plural "Motilali Type 3 Radiant Thrusters"
+
+outfit "Type 4 Radiant Thruster"
+	"display name" "Motilali Type 4 Radiant Thruster"
+	plural "Motilali Type 4 Radiant Thrusters"
+
+outfit "Type 1 Radiant Steering"
+	"display name" "Motilali Type 1 Radiant Steering"
+	plural "Motilali Type 1 Radiant Steerings"
+
+outfit "Type 2 Radiant Steering"
+	"display name" "Motilali Type 2 Radiant Steering"
+	plural "Motilali Type 2 Radiant Steerings"
+
+outfit "Type 3 Radiant Steering"
+	"display name" "Motilali Type 3 Radiant Steering"
+	plural "Motilali Type 3 Radiant Steerings"
+
+outfit "Type 4 Radiant Steering"
+	"display name" "Motilali Type 4 Radiant Steering"
+	plural "Motilali Type 4 Radiant Steerings"
+
+outfit "Wanderer Outfits License"
+	"display name" "Motilali Outfits License"
+	plural "Motilali Outfits Licenses"
+
+outfit "Wanderer License"
+	"display name" "Motilali License"
+	plural "Motilali Licenses"
+
+outfit "Wanderer Military License"
+	"display name" "Motilali Military License"
+	plural "Motilali Military Licenses"
+
+outfit "Shield Relay Booster"
+	"display name" "Botwin Shield Relay Booster"
+	plural "Botwin Shield Relay Boosters"
+
+outfit "Shield Relay Limiter"
+	"display name" "Botwin Shield Relay Limiter"
+	plural "Botwin Shield Relay Limiters"
+
+outfit "Small Shield Relay"
+	"display name" "Botwin Small Shield Relay"
+	plural "Botwin Small Shield Relays"
+
+outfit "Large Shield Relay"
+	"display name" "Botwin Large Shield Relay"
+	plural "Botwin Large Shield Relays"
+
+outfit "Nanite Enhancer"
+	"display name" "Botwin Nanite Enhancer"
+	plural "Botwin Nanite Enhancers"
+
+outfit "Nanite Limiter"
+	"display name" "Botwin Nanite Limiter"
+	plural "Botwin Nanite Limiters"
+
+outfit "Small Nanite Fabricator"
+	"display name" "Botwin Small Nanite Fabricator"
+	plural "Botwin Small Nanite Fabricators"
+
+outfit "Large Nanite Fabricator"
+	"display name" "Botwin Large Nanite Fabricator"
+	plural "Botwin Large Nanite Fabricators"
+
+outfit "Solar Battery"
+	"display name" "Botwin Solar Battery"
+	plural "Botwin Solar Batteries"
+
+outfit "Solar Cell"
+	"display name" "Botwin Solar Cell"
+	plural "Botwin Solar Cells"
+
+outfit "Reactor Overclocker"
+	"display name" "Botwin Reactor Overclocker"
+	plural "Botwin Reactor Overclockers"
+
+outfit "Reactor Limiter"
+	"display name" "Botwin Reactor Limiter"
+	plural "Botwin Reactor Limiters"
+
+outfit "Quark Reactor"
+	"display name" "Botwin Quark Reactor"
+	plural "Botwin Quark Reactors"
+
+outfit "Electroweak Reactor"
+	"display name" "Botwin Electroweak Reactor"
+	plural "Botwin Electroweak Reactors"
+
+outfit "Dark Reactor"
+	"display name" "Botwin Dark Reactor"
+	plural "Botwin Dark Reactors"
+
+outfit "Lasher Pistol"
+	"display name" "Botwin Lasher Pistol"
+	plural "Botwin Lasher Pistols"
+
+outfit "Chiisana Rift Thruster"
+	"display name" "Botwin Chiisana Rift Thruster"
+	plural "Botwin Chiisana Rift Thrusters"
+
+outfit "Nami Rift Thruster"
+	"display name" "Botwin Nami Rift Thruster"
+	plural "Botwin Nami Rift Thrusters"
+
+outfit "Ookii Rift Thruster"
+	"display name" "Botwin Ookii Rift Thruster"
+	plural "Botwin Ookii Rift Thrusters"
+
+outfit "Subarashii Rift Thruster"
+	"display name" "Botwin Subarashii Rift Thruster"
+	plural "Botwin Subarashii Rift Thrusters"
+
+outfit "Chiisana Rift Steering"
+	"display name" "Botwin Chiisana Rift Steering"
+	plural "Botwin Chiisana Rift Steerings"
+
+outfit "Nami Rift Steering"
+	"display name" "Botwin Nami Rift Steering"
+	plural "Botwin Nami Rift Steerings"
+
+outfit "Ookii Rift Steering"
+	"display name" "Botwin Ookii Rift Steering"
+	plural "Botwin Ookii Rift Steerings"
+
+outfit "Subarashii Rift Steering"
+	"display name" "Botwin Subarashii Rift Steering"
+	plural "Botwin Subarashii Rift Steerings"
+
+outfit "Locust Blaster"
+	"display name" "Botwin Locust Blaster"
+	plural "Botwin Locust Blasters"
+
+outfit "Locust Turret"
+	"display name" "Botwin Locust Turret"
+	plural "Botwin Locust Turrets"
+
+outfit "Mandible Cannon"
+	"display name" "Botwin Mandible Cannon"
+	plural "Botwin Mandible Cannons"
+
+outfit "Thorax Cannon"
+	"display name" "Botwin Thorax Cannon"
+	plural "Botwin Thorax Cannons"
+
+outfit "Swarm Clip"
+	"display name" "Botwin Swarm Clip"
+	plural "Botwin Swarm Clips"
+
+outfit "Swarm Missile"
+	"display name" "Botwin Swarm Missile"
+	plural "Botwin Swarm Missiles"
+
+outfit "Swarm Pod"
+	"display name" "Botwin Swarm Pod"
+	plural "Botwin Swarm Pods"
+
+outfit "Buzzer Anti-Missile"
+	"display name" "Botwin Buzzer Anti-Missile"
+	plural "Botwin Buzzer Anti-Missiles"
+
+outfit "Small Graviton Thruster"
+	"display name" "Calivon Small Graviton Thruster"
+	plural "Calivon Small Graviton Thrusters"
+
+outfit "Small Graviton Steering"
+	"display name" "Calivon Small Graviton Steering"
+	plural "Calivon Small Graviton Steerings"
+
+outfit "Medium Graviton Thruster"
+	"display name" "Calivon Medium Graviton Thruster"
+	plural "Calivon Medium Graviton Thrusters"
+
+outfit "Medium Graviton Steering"
+	"display name" "Calivon Medium Graviton Steering"
+	plural "Calivon Medium Graviton Steerings"
+
+outfit "Large Graviton Thruster"
+	"display name" "Calivon Large Graviton Thruster"
+	plural "Calivon Large Graviton Thrusters"
+
+outfit "Large Graviton Steering"
+	"display name" "Calivon Large Graviton Steering"
+	plural "Calivon Large Graviton Steerings"
+
+outfit "Quantum Vacuum Battery"
+	"display name" "Calivon Quantum Vacuum Battery"
+	plural "Calivon Quantum Vacuum Batteries"
+
+outfit "Antimatter Core"
+	"display name" "Calivon Antimatter Core"
+	plural "Calivon Antimatter Cores"
+
+outfit "Singularity Core"
+	"display name" "Calivon Singularity Core"
+	plural "Calivon Singularity Cores"
+
+outfit "Quasar Core"
+	"display name" "Calivon Quasar Core"
+	plural "Calivon Quasar Cores"
+
+outfit "Aspis Shield Generator"
+	"display name" "Calivon Aspis Shield Generator"
+	plural "Calivon Aspis Shield Generators"
+
+outfit "Ancile Shield Generator"
+	"display name" "Calivon Ancile Shield Generator"
+	plural "Calivon Ancile Shield Generators"
+
+outfit "Aegis Shield Generator"
+	"display name" "Calivon Aegis Shield Generator"
+	plural "Calivon Aegis Shield Generators"
+
+outfit "Peripheral Repair Hub"
+	"display name" "Calivon Peripheral Repair Hub"
+	plural "Calivon Peripheral Repair Hubs"
+
+outfit "Central Repair Hub"
+	"display name" "Calivon Central Repair Hub"
+	plural "Calivon Central Repair Hubs"
+
+outfit "Skydagger"
+	"display name" "Calivon Skydagger"
+	plural "Calivon Skydaggers"
+
+outfit "Skylance"
+	"display name" "Calivon Skylance"
+	plural "Calivon Skylances"
+
+outfit "Stratospear"
+	"display name" "Calivon Stratospear"
+	plural "Calivon Stratospears"
+
+outfit "Elysian Ranseur"
+	"display name" "Calivon Elysian Ranseur"
+	plural "Calivon Elysian Ranseurs"
+
+outfit "Celestial Culverin"
+	"display name" "Calivon Celestial Culverin"
+	plural "Calivon Celestial Culverins"
+
+outfit "Astral Ribault"
+	"display name" "Calivon Astral Ribault"
+	plural "Calivon Astral Ribaults"
+
+outfit "ribault unguided"
+	"display name" "Calivon ribault unguided"
+	plural "Calivon ribault unguideds"
+
+outfit "ribault guided"
+	"display name" "Calivon ribault guided"
+	plural "Calivon ribault guideds"
+
+outfit "Slipstream Projector"
+	"display name" "Calivon Slipstream Projector"
+	plural "Calivon Slipstream Projectors"
+
+outfit "Phalanx System"
+	"display name" "Calivon Phalanx System"
+	plural "Calivon Phalanx Systems"
+
+outfit "Plasma Discharger"
+	"display name" "Tandoga Plasma Discharger"
+	plural "Tandoga Plasma Dischargers"
+
+outfit "plasma particle"
+	"display name" "Tandoga plasma particle"
+	plural "Tandoga plasma particles"
+
+outfit "Stagnation Beam"
+	"display name" "Tandoga Stagnation Beam"
+	plural "Tandoga Stagnation Beams"
+
+outfit "Star Tail"
+	"display name" "Tandoga Star Tail"
+	plural "Tandoga Star Tails"
+
+outfit "Star Tail Projectile"
+	"display name" "Tandoga Star Tail Projectile"
+	plural "Tandoga Star Tail Projectiles"
+
+outfit "Star Tail Cell"
+	"display name" "Tandoga Star Tail Cell"
+	plural "Tandoga Star Tail Cells"
+
+outfit "Star Tail Storage"
+	"display name" "Tandoga Star Tail Storage"
+	plural "Tandoga Star Tail Storages"
+
+outfit "Horizon Grappler"
+	"display name" "Tandoga Horizon Grappler"
+	plural "Tandoga Horizon Grapplers"
+
+outfit "Gas-Class Shield"
+	"display name" "Tandoga Gas-Class Shield"
+	plural "Tandoga Gas-Class Shields"
+
+outfit "Liquid-Class Shield"
+	"display name" "Tandoga Liquid-Class Shield"
+	plural "Tandoga Liquid-Class Shields"
+
+outfit "Metallic Hydrogen Cell"
+	"display name" "Tandoga Metallic Hydrogen Cell"
+	plural "Tandoga Metallic Hydrogen Cells"
+
+outfit "MH Blue-Class Thruster"
+	"display name" "Tandoga MH Blue-Class Thruster"
+	plural "Tandoga MH Blue-Class Thrusters"
+
+outfit "MH Blue-Class Steering"
+	"display name" "Tandoga MH Blue-Class Steering"
+	plural "Tandoga MH Blue-Class Steerings"
+
+outfit "MH Green-Class Thruster"
+	"display name" "Tandoga MH Green-Class Thruster"
+	plural "Tandoga MH Green-Class Thrusters"
+
+outfit "MH Green-Class Steering"
+	"display name" "Tandoga MH Green-Class Steering"
+	plural "Tandoga MH Green-Class Steerings"
+
+outfit "MH Red-Class Thruster"
+	"display name" "Tandoga MH Red-Class Thruster"
+	plural "Tandoga MH Red-Class Thrusters"
+
+outfit "MH Red-Class Steering"
+	"display name" "Tandoga MH Red-Class Steering"
+	plural "Tandoga MH Red-Class Steerings"
+
+outfit "Cloud Piercer"
+	"display name" "Tandoga Cloud Piercer"
+	plural "Tandoga Cloud Piercers"
+
+outfit "Hicemus Conflict License"
+	"display name" "Tandoga Hicemus Conflict License"
+	plural "Tandoga Hicemus Conflict Licenses"
+
+outfit "Pug Zapper"
+	"display name" "Kael Zapper"
+	plural "Kael Zappers"
+
+outfit "Pug Zapper Turret"
+	"display name" "Kael Zapper Turret"
+	plural "Kael Zapper Turrets"
+
+outfit "Pug Seeker"
+	"display name" "Kael Seeker"
+	plural "Kael Seekers"
+
+outfit "Pug Anti-Missile"
+	"display name" "Kael Anti-Missile"
+	plural "Kael Anti-Missiles"
+
+outfit "Tier 3 Anti-Missile"
+	"display name" "Kael Tier 3 Anti-Missile"
+	plural "Kael Tier 3 Anti-Missiles"
+
+outfit "Pug Gridfire Turret"
+	"display name" "Kael Gridfire Turret"
+	plural "Kael Gridfire Turrets"
+
+outfit "Pug Akfar Thruster"
+	"display name" "Kael Akfar Thruster"
+	plural "Kael Akfar Thrusters"
+
+outfit "Pug Akfar Steering"
+	"display name" "Kael Akfar Steering"
+	plural "Kael Akfar Steerings"
+
+outfit "Pug Cormet Thruster"
+	"display name" "Kael Cormet Thruster"
+	plural "Kael Cormet Thrusters"
+
+outfit "Pug Cormet Steering"
+	"display name" "Kael Cormet Steering"
+	plural "Kael Cormet Steerings"
+
+outfit "Pug Lohmar Thruster"
+	"display name" "Kael Lohmar Thruster"
+	plural "Kael Lohmar Thrusters"
+
+outfit "Pug Lohmar Steering"
+	"display name" "Kael Lohmar Steering"
+	plural "Kael Lohmar Steerings"
+
+outfit "Pug Biodefenses"
+	"display name" "Kael Biodefenses"
+	plural "Kael Biodefenseses"
+
+outfit "Pug Peacekeeping Staff"
+	"display name" "Kael Peacekeeping Staff"
+	plural "Kael Peacekeeping Staffs"
+
+outfit "Small EM Battery"
+	"display name" "Goth Small EM Battery"
+	plural "Goth Small EM Batteries"
+
+outfit "Large EM Battery"
+	"display name" "Goth Large EM Battery"
+	plural "Goth Large EM Batteries"
+
+outfit "Small Hybrid Cooling"
+	"display name" "Goth Small Hybrid Cooling"
+	plural "Goth Small Hybrid Coolings"
+
+outfit "Large Hybrid Cooling"
+	"display name" "Goth Large Hybrid Cooling"
+	plural "Goth Large Hybrid Coolings"
+
+outfit "Fission Drive"
+	"display name" "Goth Fission Drive"
+	plural "Goth Fission Drives"
+
+outfit "Fusion Drive"
+	"display name" "Goth Fusion Drive"
+	plural "Goth Fusion Drives"
+
+outfit "Electronic Warfare System"
+	"display name" "Goth Electronic Warfare System"
+	plural "Goth Electronic Warfare Systems"
+
+outfit "Dragonflame Cannon"
+	"display name" "Goth Dragonflame Cannon"
+	plural "Goth Dragonflame Cannons"
+
+outfit "Sheragi Anti-Missile"
+	"display name" "Goth Anti-Missile"
+	plural "Goth Anti-Missiles"
+
+outfit "Particle Waveform Turret"
+	"display name" "Goth Particle Waveform Turret"
+	plural "Goth Particle Waveform Turrets"
+
+outfit "Shard Fabricator"
+	"display name" "Goth Shard Fabricator"
+	plural "Goth Shard Fabricators"
+
+outfit "Shard inactive"
+	"display name" "Goth Shard inactive"
+	plural "Goth Shard inactives"
+
+outfit "Heavy Ion Cyclotron"
+	"display name" "Goth Heavy Ion Cyclotron"
+	plural "Goth Heavy Ion Cyclotrons"
+
+outfit "Heavy Ion Fragment"
+	"display name" "Goth Heavy Ion Fragment"
+	plural "Goth Heavy Ion Fragments"
+
+outfit "Drak Distancer"
+	"display name" "Them Distancer"
+	plural "Them Distancers"
+
+outfit "Drak Draining Field"
+	"display name" "Them Draining Field"
+	plural "Them Draining Fields"
+
+outfit "Drak Draining Field (Augmented)"
+	"display name" "Them Draining Field (Augmented)"
+	plural "Them Draining Field (Augmented)s"
+
+outfit "Drak Anti-Missile Field"
+	"display name" "Them Anti-Missile Field"
+	plural "Them Anti-Missile Fields"
+
+outfit "Drak Anti-Missile Field (Augmented)"
+	"display name" "Them Anti-Missile Field (Augmented)"
+	plural "Them Anti-Missile Field (Augmented)s"
+
+outfit "Drak Turret"
+	"display name" "Them Turret"
+	plural "Them Turrets"
+
+outfit "Drak Turret (Augmented)"
+	"display name" "Them Turret (Augmented)"
+	plural "Them Turret (Augmented)s"
+
+outfit "Drak Antimatter Cannon"
+	"display name" "Them Antimatter Cannon"
+	plural "Them Antimatter Cannons"
+
+outfit "Drak Antimatter Cannon (Augmented)"
+	"display name" "Them Antimatter Cannon (Augmented)"
+	plural "Them Antimatter Cannon (Augmented)s"
+
+outfit "Drak Antimatter Fragment"
+	"display name" "Them Antimatter Fragment"
+	plural "Them Antimatter Fragments"
+
+outfit "Drak Antimatter Fragment (Augmented)"
+	"display name" "Them Antimatter Fragment (Augmented)"
+	plural "Them Antimatter Fragment (Augmented)s"
+
+outfit "Ka'het Nullifier"
+	"display name" "Kaylon Nullifier"
+	plural "Kaylon Nullifiers"
+
+outfit "Ka'het Ravager Beam"
+	"display name" "Kaylon Ravager Beam"
+	plural "Kaylon Ravager Beams"
+
+outfit "Ka'het Ravager Turret"
+	"display name" "Kaylon Ravager Turret"
+	plural "Kaylon Ravager Turrets"
+
+outfit "Ka'het Annihilator"
+	"display name" "Kaylon Annihilator"
+	plural "Kaylon Annihilators"
+
+outfit "Ka'het Annihilator Turret"
+	"display name" "Kaylon Annihilator Turret"
+	plural "Kaylon Annihilator Turrets"
+
+outfit "Annihilator Projectile"
+	"display name" "Kaylon Annihilator Projectile"
+	plural "Kaylon Annihilator Projectiles"
+
+outfit "Ka'het EMP Deployer"
+	"display name" "Kaylon EMP Deployer"
+	plural "Kaylon EMP Deployers"
+
+outfit "Ka'het Emergency Deployer"
+	"display name" "Kaylon Emergency Deployer"
+	plural "Kaylon Emergency Deployers"
+
+outfit "Ka'het Support Cooling"
+	"display name" "Kaylon Support Cooling"
+	plural "Kaylon Support Coolings"
+
+outfit "Ka'het Primary Cooling"
+	"display name" "Kaylon Primary Cooling"
+	plural "Kaylon Primary Coolings"
+
+outfit "Ka'het Shield Restorer"
+	"display name" "Kaylon Shield Restorer"
+	plural "Kaylon Shield Restorers"
+
+outfit "Ka'het Grand Restorer"
+	"display name" "Kaylon Grand Restorer"
+	plural "Kaylon Grand Restorers"
+
+outfit "Ka'het MHD Generator"
+	"display name" "Kaylon MHD Generator"
+	plural "Kaylon MHD Generators"
+
+outfit "Ka'het Reserve Accumulator"
+	"display name" "Kaylon Reserve Accumulator"
+	plural "Kaylon Reserve Accumulators"
+
+outfit "Ka'het Ion Trap"
+	"display name" "Kaylon Ion Trap"
+	plural "Kaylon Ion Traps"
+
+outfit "Maeri Engine Nacelles"
+	"display name" "Kaylon Maeri Engine Nacelles"
+	plural "Kaylon Maeri Engine Nacelleses"
+
+outfit "Ka'het Sustainer Nacelles"
+	"display name" "Kaylon Sustainer Nacelles"
+	plural "Kaylon Sustainer Nacelleses"
+
+outfit "Telis Engine Nacelles"
+	"display name" "Kaylon Telis Engine Nacelles"
+	plural "Kaylon Telis Engine Nacelleses"
+
+outfit "Vareti Engine Block"
+	"display name" "Kaylon Vareti Engine Block"
+	plural "Kaylon Vareti Engine Blocks"
+
+outfit "Ka'het Compact Engine"
+	"display name" "Kaylon Compact Engine"
+	plural "Kaylon Compact Engines"
+
+outfit "Ka'het Electric Stunner"
+	"display name" "Kaylon Electric Stunner"
+	plural "Kaylon Electric Stunners"
+
+outfit "Aberrant Spiker"
+	"display name" "Kaylon Aberrant Spiker"
+	plural "Kaylon Aberrant Spikers"
+
+outfit "Nucleolysis Beam"
+	"display name" "Kaylon Nucleolysis Beam"
+	plural "Kaylon Nucleolysis Beams"
+
+outfit "Telescopic Antimissile"
+	"display name" "Kaylon Telescopic Antimissile"
+	plural "Kaylon Telescopic Antimissiles"
+
+outfit "Anomalous Shield Restorer"
+	"display name" "Kaylon Anomalous Shield Restorer"
+	plural "Kaylon Anomalous Shield Restorers"
+
+outfit "Antimatter Power Cell"
+	"display name" "Kaylon Antimatter Power Cell"
+	plural "Kaylon Antimatter Power Cells"
+
+outfit "Anomalous Mass"
+	"display name" "Kaylon Anomalous Mass"
+	plural "Kaylon Anomalous Masses"
+
+outfit "Fate Sealer"
+	"display name" "Silurian Fate Sealer"
+	plural "Silurian Fate Sealers"
+
+outfit "Fate Sealer Activated"
+	"display name" "Silurian Fate Sealer Activated"
+	plural "Silurian Fate Sealer Activateds"
+
+outfit "Fate Divider"
+	"display name" "Silurian Fate Divider"
+	plural "Silurian Fate Dividers"
+
+outfit "Fate Divider Activated"
+	"display name" "Silurian Fate Divider Activated"
+	plural "Silurian Fate Divider Activateds"
+
+outfit "Abyssal Composer"
+	"display name" "Silurian Abyssal Composer"
+	plural "Silurian Abyssal Composers"
+
+outfit "Plankton Mouth"
+	"display name" "Bender Plankton Mouth"
+	plural "Bender Plankton Mouths"
+
+outfit "Boomerang Organ"
+	"display name" "Bender Boomerang Organ"
+	plural "Bender Boomerang Organs"
+
+outfit "Astral Mouth"
+	"display name" "Bender Astral Mouth"
+	plural "Bender Astral Mouths"
+
+outfit "Nano Strike"
+	"display name" "Tzenketh Nano Strike"
+	plural "Tzenketh Nano Strikes"

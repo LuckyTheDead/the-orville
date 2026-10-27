@@ -1,0 +1,145 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Orville Endless Sky Mod - First contracts after each starting scenario.
+#
+# One small delivery job per start, offered on landing at the starting planet.
+# These are deliberately low-stakes: the start conversations end at the
+# shipyard, so this is the player's first chance to actually earn something.
+
+mission "intro: deep"
+	landing
+	non-blocking
+	name `Deep Region Fabrication Contract`
+	description `A Union fabricator on <origin> has posted a small delivery contract. Take <cargo> to <destination>.`
+	cargo "Union Textiles" 10 40
+	to offer
+		has "start: deep"
+	source
+		system "Deep Region"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Velos"
+		attributes "spaceport"
+	on offer
+		conversation
+			`A fabricator's agent catches up with you on the landing pad. "You just came off the loan program," she says. "That means you have a ship and you need work. I have forty tons of deck carpeting that needs to be on <destination> by the end of the week. It pays <payment>."`
+			choice
+				`	"I'll take it."`
+					accept
+				`	"I've never hauled deck carpeting before."`
+					goto carpet
+				`	"Not right now."`
+					decline
+			label carpet
+			`"You fly it like anything else," she says. "Point the ship, press the button, get paid."`
+				accept
+	on complete
+		payment 8000
+		dialog `The foreman on <planet> signs for the <commodity> and transfers <payment>. "You came off the loan program," he says. "Come back when you've got a bigger hold."`
+
+
+mission "intro: paradise"
+	landing
+	non-blocking
+	name `Paradise World Consignment`
+	description `A Paradise World estate on <origin> needs <cargo> delivered to <destination>.`
+	cargo "Luxury Goods" 5 20
+	to offer
+		has "start: paradise"
+	source
+		system "Deep Space"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Deep Region"
+		attributes "spaceport"
+	on offer
+		conversation
+			`A valet in a very good suit finds you before you have taken three steps from the docking ring. "Captain. The estate of a family you have certainly heard of requires a consignment of <cargo> delivered to <destination>. Discretion is assumed. The fee is <payment>."`
+			choice
+				`	"I'll take it."`
+					accept
+				`	"Whose family?"`
+					goto whose
+				`	"I don't do discreet errands."`
+					decline
+			label whose
+			`"A family that prefers the question not to be asked," the valet says. "Asking it would be a second question, and the estate has a policy on those."`
+				accept
+	on complete
+		payment 12000
+		dialog `The consignment is received by a second valet, who pays you <payment> without a word and is gone before you have finished landing.`
+
+
+mission "intro: syndicate"
+	landing
+	non-blocking
+	name `Frontier Supply Run`
+	description `A frontier wholesaler on <origin> needs <cargo> moved to <destination>.`
+	cargo "Union Rations" 20 60
+	to offer
+		has "start: syndicate"
+	source
+		system "Frontier Zone"
+		attributes "spaceport"
+	destination
+		system "Velos" "Frontier Zone"
+		attributes "spaceport"
+	on offer
+		conversation
+			`A wholesaler waves you down inside the cavern, shouting over the noise of the docking traffic. "You're the new license, right? I've got <cargo> that needs to reach <destination>. The Syndicate used to move it for half what I can pay. You can guess why I'm talking to you instead."`
+			choice
+				`	"I'll move it."`
+					accept
+				`	"You've got a grudge and I'm the target?"`
+					goto grudge
+				`	"Not my problem."`
+					decline
+			label grudge
+			`"The Syndicate took everything I had left," he says. "You're the first license that came through here who isn't on their books. That's worth <payment> to me."`
+				accept
+	on complete
+		payment 6000
+		dialog `The buyer on <planet> counts the crates, nods once, and pays you <payment>. "Come back," he says. "I've always got more."`
+
+
+mission "intro: hai"
+	landing
+	non-blocking
+	name `Border Run`
+	description `A Moritali clan on <origin> needs <cargo> carried to <destination>.`
+	cargo "Moritali Spices" 10 35
+	to offer
+		has "start: hai"
+	source
+		system "Orville Space"
+		attributes "spaceport"
+	destination
+		system "Orville Space" "Calivon"
+		attributes "spaceport"
+	on offer
+		conversation
+			`A Moritali warrior blocks your path across the landing pad, hand on the hilt of a blade that is clearly ceremonial and clearly sharp. "Human captain. The clan requires <cargo> carried to <destination>. The work is simple. The honor is not."`
+			choice
+				`	"Tell me about the honor."`
+					goto honor
+				`	"I'll carry it."`
+					accept
+				`	"I don't take orders from strangers."`
+					decline
+			label honor
+			`"The last three captains we asked refused," he says. "One because he was afraid, one because he was proud, and one because he could not be bothered. All three are remembered. We would prefer you be remembered differently."`
+				accept
+	on complete
+		payment 7000
+		dialog `The warrior on <planet> receives the <cargo> and presses his hand to his chest. <payment> is transferred, and then he is gone, as warriors tend to be.`

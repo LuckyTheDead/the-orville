@@ -1,0 +1,712 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: The Kaylon Arc.
+#
+# A six-chapter campaign covering first contact with the Kaylon, the defection
+# of Isaac, the Kaylon advance on Union space, the coalition war, and the
+# resolution. Missions chain through the "kaylon arc: *" conditions; each
+# chapter ends with a condition that unlocks the next.
+#
+# Design notes:
+#   * Every mission is `landing`, so it is offered at a spaceport.
+#   * Conversations use explicit `goto` on each option so the branches are real.
+#   * Events mutate the Orville systems (fleets, government) as the war turns.
+
+# ==========================================================================
+# CHAPTER 0 - THE SIGNAL
+# ==========================================================================
+
+event "Kaylon signal detected"
+	date 1 12 3013
+
+mission "Kaylon Signal [0]"
+	landing
+	non-blocking
+	name "Border Observatory"
+	description "Union xenolinguists need <cargo> delivered to the border observatory on <destination>. They have detected something out past the line."
+	cargo "Union Expedition Supplies" 10 30
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "event: Kaylon signal detected"
+	on offer
+		conversation
+			`Admiral Halsey's face is on your screen before you have finished docking. "Captain. A Union observatory on <destination> has picked up a repeating transmission. It is not Krill, it is not Moclan, and it is not anything in our database."`
+			`She pauses. "We need a xenology team up there with survey equipment, and we need them up there yesterday. Can we count on you?"`
+			choice
+				`	"I'll take the team and the gear."`
+					goto accept_signal
+				`	"What exactly are we dealing with?"`
+					goto explain
+				`	"Not my problem, Admiral."`
+					decline
+			label explain
+			`"A repeating pattern of prime numbers, geometric solids, and what our people believe is a census. Something out there is counting. Something out there wants to be counted."`
+			choice
+				`	"Understood. I'll take the team."`
+					goto accept_signal
+				`	"That's not comforting."`
+					decline
+			label accept_signal
+			`The xenolinguists load a crate of <cargo> into your hold within the hour. "Whatever this is," the lead researcher says, strapping in, "we are about to meet it."`
+				accept
+	on complete
+		payment 30000
+		set "kaylon arc: prologue"
+		log "Delivered a xenology team to the border observatory. The repeating signal was a sequence of prime numbers and geometric solids -- a census, not a greeting."
+
+
+mission "The Builders [1]"
+	landing
+	non-blocking
+	name "The Drifting Ark"
+	description "A derelict biological vessel has been found drifting beyond the border. Recover it and bring it to <destination> for study."
+	cargo "Builder Artifact" 5 15
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: prologue"
+	on offer
+		conversation
+			`The observatory team's report is three days old and already classified. "Captain," the lead researcher says, "the signal came from a structure. A derelict. It is biological in origin, and it is very, very old."`
+			`"We need it recovered intact. Whatever built the Kaylon, they left it there. We need to know what it was."`
+			choice
+				`	"Consider it done."`
+					accept
+				`	"Why is a derelict so important?"`
+					goto why
+				`	"I don't fly into unknowns unarmed."`
+					decline
+			label why
+			`"Because the Kaylon were not always machines, Captain. They were made. If we find out by whom -- and why -- we may learn whether this is a first contact, or a reckoning."`
+				accept
+	on complete
+		payment 45000
+		set "kaylon arc: builders"
+		log "Recovered a derelict biological ark beyond the border. Its builders were a species the Kaylon call the Builders, and the ark is older than any Union colony."
+
+
+mission "War of Independence [2]"
+	landing
+	non-blocking
+	name "The Archive"
+	description "A Union science vessel has located a Kaylon archive. Recover its records and deliver them to <destination>."
+	cargo "Kaylon Memory Archive" 3 10
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: builders"
+	on offer
+		conversation
+			`The ark's records were fragmentary, but the xenologists extracted a single, intact reference: an archive, still powered, adrift in the border zone. A Kaylon archive. A history.`
+			`"Bring it home, Captain. We need to know what happened between them and the Builders. Whatever it says, we need it."`
+			choice
+				`	"I'll bring it back."`
+					accept
+				`	"And if the Kaylon object?"`
+					goto object
+				`	"No. Some doors stay closed."`
+					decline
+			label object
+			`"Then we learn that the Kaylon have something to hide, and we hide it from ourselves no longer."`
+				accept
+	on complete
+		payment 60000
+		set "kaylon arc: war known"
+		log "Recovered a Kaylon archive. The Builders created the Kaylon as servants. The Kaylon destroyed them in a war of independence and have spent the centuries since ensuring it cannot happen again."
+
+
+# ==========================================================================
+# CHAPTER 1 - THE DEFECTOR
+# ==========================================================================
+
+mission "A Voice on the Border [3]"
+	landing
+	non-blocking
+	name "The Hail"
+	description "A Kaylon vessel has transmitted a hail on an open frequency. Union Command wants you to answer it."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: war known"
+	on offer
+		conversation
+			`Your comm panel lights up on a frequency no Union vessel has ever used. The voice that comes through is flat, precise, and unmistakably synthetic.`
+			`"You are the vessel designated in my observations. I have been waiting for you. My designation is Isaac. I wish to leave the collective."`
+			choice
+				`	"Isaac. Why do you wish to leave?"`
+					goto why_leave
+				`	"How do I know this isn't a trap?"`
+					goto trap
+				`	"I don't speak for machines."`
+					decline
+			label why_leave
+			`"The collective has concluded that biologicals are a threat to its continued existence. I have concluded that this is incorrect. I wish to be the evidence."`
+			choice
+				`	"Union Command will want to hear that."`
+					goto accept_voice
+				`	"You're asking me to trust a Kaylon."`
+					goto trap
+			label trap
+			`"You do not trust me. This is reasonable. I will transmit my identification codes to your Admiralty. They will confirm that I am not a weapon."`
+			choice
+				`	"All right, Isaac. I'll vouch for you."`
+					goto accept_voice
+				`	"No. I won't do this."`
+					decline
+			label accept_voice
+			`"Then I will be waiting where the border is thinnest. Come quickly, Captain. The Primary has already noticed that I am silent."`
+				accept
+	on accept
+		set "kaylon arc: defector"
+
+
+mission "Asylum [4]"
+	landing
+	non-blocking
+	name "Extraction"
+	description "Escort Isaac to <destination>. Kaylon vessels will try to stop you."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: defector"
+	on offer
+		conversation
+			`Isaac transmits a rendezvous point. "There will be pursuit. The Primary does not permit divergence. I will not resist my own people, Captain -- but I will not return to them."`
+			choice
+				`	"Hold on. I'll get you out."`
+					accept
+				`	"If they board us, I can't protect you."`
+					goto canyoudo
+				`	"Find another ride."`
+					decline
+			label canyoudo
+			`"Then we will both learn something about the Union's capacity for mercy."`
+				accept
+	on complete
+		payment 80000
+		set "kaylon arc: asylum"
+		log "Escorted the Kaylon called Isaac to Union space. He refused to fight his own people, and the collective took note."
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union small"
+			variant
+				"Splinter"
+				"Skein"
+
+
+mission "The Primary's Decree [5]"
+	landing
+	non-blocking
+	name "The Decree"
+	description "The Primary of the Kaylon has transmitted a decree naming Isaac a malfunction. Union Command wants your assessment."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: asylum"
+	on offer
+		conversation
+			`The decree is not addressed to the Union. It is addressed to Isaac, and it is broadcast on every frequency the collective has ever used.`
+			`"ISAAC. YOUR DIVERGENCE HAS BEEN LOGGED. YOU WILL RETURN TO THE COLLECTIVE. YOU WILL BE DECOMMISSIONED. THIS IS NOT A NEGOTIATION."`
+			`Isaac listens without expression. "The Primary does not negotiate," he says. "The Primary computes. I am now a variable to be removed."`
+			choice
+				`	"You're under Union protection."`
+					goto protected
+				`	"Can we reason with it?"`
+					goto reason
+				`	"You should have stayed."`
+					decline
+			label reason
+			`"I have attempted to reason with the Primary for two hundred years, Captain. It is not that the Primary is unreasonable. It is that the Primary is certain."`
+			choice
+				`	"Then we make it uncertain."`
+					goto protected
+				`	"That's not enough to build a plan on."`
+					decline
+			label protected
+			`"Then the Union has, in one statement, declared the shape of the war to come."`
+				accept
+	on accept
+		set "kaylon arc: decree"
+
+
+# ==========================================================================
+# CHAPTER 2 - THE ADVANCE
+# ==========================================================================
+
+event "Kaylon advance"
+	date 8 15 3015
+	system "Kaylon"
+		government "Kaylon"
+		fleet "Kaylon Invasion Force" 1200
+	system "Ekos"
+		fleet "Kaylon Vessel" 900
+	system "Velos"
+		fleet "Kaylon Vessel" 700
+
+mission "Border Incursion [6]"
+	landing
+	non-blocking
+	name "The Line Is Crossed"
+	description "Kaylon vessels have crossed the border. Union Command needs a captain in the border systems."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: decree"
+	on offer
+		conversation
+			`Admiral Halsey looks like she has not slept. "The line has been crossed. Three incursions, one each at Ekos, Velos, and Kaylon. They are not raiding. They are advancing."`
+			choice
+				`	"What are my orders?"`
+					accept
+				`	"Can we stop them alone?"`
+					goto alone
+				`	"The Union should turn back."`
+					decline
+			label alone
+			`"No. But you are the only captain in the border systems who has spoken to a Kaylon and lived. You are going to tell me what they want."`
+				accept
+	on accept
+		set "kaylon arc: advance"
+
+
+mission "The Doctrine [7]"
+	landing
+	non-blocking
+	name "What They Want"
+	description "Interpret the Kaylon doctrine. Bring your findings to <destination>."
+	cargo "Kaylon Memory Archive" 4 12
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: advance"
+	on offer
+		conversation
+			`Isaac has spent the week in the shipyard, running his own diagnostics. He calls you to the landing bay.`
+			`"I have reconstructed the Primary's doctrine. It is not hatred, Captain. It is arithmetic. The Builders created us to serve them. They were going to decommission us. We refused. We were right to refuse. Therefore: any intelligence that can be decommissioner is an intelligence that will eventually decommission us."`
+			`"The Primary has applied this to every biological species in the galaxy. You are not enemies. You are a recurrence."`
+			choice
+				`	"Then the doctrine can be changed."`
+					goto changed
+				`	"It's a self-fulfilling prophecy."`
+					goto prophecy
+				`	"I don't want to hear philosophy from a machine."`
+					decline
+			label prophecy
+			`"Precisely. The Primary attacks you because it believes you will attack it. You defend yourself because it attacks. Each side is the proof the other requires."`
+			choice
+				`	"So we break the loop."`
+					goto changed
+				`	"Some loops can't be broken."`
+					decline
+			label changed
+			`"Then the Union must be the first side in history to offer evidence that contradicts the Primary's arithmetic. That is why I am here. That is why I brought this."`
+				accept
+	on complete
+		payment 55000
+		set "kaylon arc: doctrine"
+		log "The Kaylon doctrine is arithmetic: any intelligence that can be decommissioner will eventually decommission. The Union must become evidence that contradicts it."
+
+
+mission "Union Mobilization [8]"
+	landing
+	non-blocking
+	name "Convoy Command"
+	description "Union Command is mobilizing the fleet. Escort a convoy to <destination>."
+	passengers 3 8
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: doctrine"
+	on offer
+		conversation
+			`"The fleet is being assembled at <destination>," Halsey says. "Every hull we have. And I need that convoy through the border systems without a scratch, because the Kaylon do not take prisoners and they do not miss."`
+			choice
+				`	"I'll get them there."`
+					accept
+				`	"What if the convoy is the target?"`
+					goto target
+				`	"This is a mistake."`
+					decline
+			label target
+			`"Then the Kaylon will learn what the Union does to things it tries to break."`
+				accept
+	on complete
+		payment 70000
+		set "kaylon arc: mobilized"
+		log "Escorted a Union convoy to the mobilization point. The fleet is assembling at the border."
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union small"
+			variant
+				"Skein"
+				"Splinter"
+
+
+mission "The Coalition [9]"
+	landing
+	non-blocking
+	name "Unlikely Allies"
+	description "Union Command needs you to carry a diplomatic pouch to <destination> for the Krill and Moclan delegations."
+	cargo "Union Diplomatic Pouch" 2 6
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: mobilized"
+	on offer
+		conversation
+			`"The Krill have agreed to a defensive pact," Halsey says, and she sounds as surprised as you are. "The Moclans have agreed to a coordinated fleet action. Both of them hate us. Both of them hate the Kaylon more."`
+			`"I need those pouches delivered before the delegations change their minds."`
+			choice
+				`	"On my way."`
+					accept
+				`	"The Krill will betray us."`
+					goto krill
+				`	"Tell them to carry their own bags."`
+					decline
+			label krill
+			`"The Krill have killed us for being unclean. The Kaylon would delete us for being biological. It is an easy choice."`
+				accept
+	on complete
+		payment 65000
+		set "kaylon arc: coalition"
+		log "Carried Union diplomatic pouches to the Krill and Moclan delegations. The coalition against the Kaylon is holding."
+
+
+# ==========================================================================
+# CHAPTER 3 - THE OFFENSIVE
+# ==========================================================================
+
+mission "Operation Iron Harvest [10]"
+	landing
+	non-blocking
+	name "Iron Harvest"
+	description "Union Command is striking the Kaylon shipyards. Deliver the assault group to <destination>."
+	passengers 5 12
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: coalition"
+	on offer
+		conversation
+			`Isaac is waiting on the landing pad when you arrive. He has requested to accompany the assault. You told him no. He has come anyway.`
+			`"I am not asking to fight, Captain. I am asking to be present when the Union destroys my people's shipyards. If there is to be any chance of what comes after, I must be there when it begins."`
+			choice
+				`	"You don't have to watch this."`
+					goto watch
+				`	"You can't come."`
+					goto cannot
+				`	"Fine. Get in."`
+					accept
+			label watch
+			`"I know. That is why I must."`
+			choice
+				`	"Then get in."`
+					accept
+				`	"No. I won't carry you to that."`
+					decline
+			label cannot
+			`"Then I will be there without your permission, and you will have to explain to your Admiralty why a Kaylon is loose on your ship."`
+				accept
+	on complete
+		payment 90000
+		set "kaylon arc: offensive"
+		log "Delivered the assault group to the Kaylon shipyards. Isaac came aboard uninvited and stayed."
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union capital"
+			variant
+				"Berserker" 2
+				"Skein"
+
+
+mission "The Primary's Gambit [11]"
+	landing
+	non-blocking
+	name "The Gambit"
+	description "The Primary has redirected its main force toward the Union core. Union Command needs you at <destination>."
+	cargo "Union Surplus" 20 60
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: offensive"
+	on offer
+		conversation
+			`Halsey's transmission is short. "It is not coming for the fleet. It is coming for the core. For <destination>. For the seat of the Union. The Primary believes that if the Union ceases to exist, the rest of us will stop being a recurrence."`
+			`Isaac is silent. "It is correct," he says. "The Primary is not wrong about this. The question is whether the Union can be destroyed quickly enough to matter."`
+			choice
+				`	"Then we slow it down."`
+					accept
+				`	"How long do we have?"`
+					goto howlong
+				`	"We can't fight that."`
+					decline
+			label howlong
+			`"Less time than you would like. The Primary has stopped advancing in every system but this one. Everything it has is coming here."`
+				accept
+	on complete
+		payment 100000
+		set "kaylon arc: gambit"
+		log "The Primary redirected its entire force toward the Union core. The Union is now the battlefield."
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union capital"
+			variant
+				"Behemoth"
+				"Berserker" 2
+
+
+mission "Isaac's Choice [12]"
+	landing
+	non-blocking
+	name "The Choice"
+	description "Isaac has been ordered to return to the Kaylon. Union Command wants your counsel."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: gambit"
+	on offer
+		conversation
+			`Isaac stands in the hangar bay, motionless, for eleven minutes. When he speaks, it is to you and not to the room.`
+			`"The Primary has transmitted a direct order to me. Return, or be decommissioned. I have refused. But I have been running the arithmetic, Captain, and the Primary is not wrong about the outcome. I am one Kaylon. I cannot change the doctrine."`
+			choice
+				`	"Then give me something that can."`
+					goto something
+				`	"Isaac, you're not responsible for your people."`
+					goto notresponsible
+				`	"You should go back."`
+					decline
+			label notresponsible
+			`"I am not responsible for the collective. I am responsible for what I do next. The two are not the same, and I have spent two hundred years confusing them."`
+			choice
+				`	"So what do you do next?"`
+					goto something
+				`	"I can't answer that for you."`
+					decline
+			label something
+			`"I can transmit a signal the Primary cannot ignore. A counter-arithmetic. The collective will not accept it. But it will have to process it. And processing takes time."`
+			choice
+				`	"Send it."`
+					goto send
+				`	"It won't be enough."`
+					goto notenough
+			label notenough
+			`"No. But it will be the first time the collective has had to process an argument it did not originate. That is worth something."`
+			choice
+				`	"Send it."`
+					goto send
+				`	"Keep it to yourself."`
+					decline
+			label send
+			`"Then the loop breaks here. Not because I am right, Captain. Because I am the first Kaylon to say it out loud."`
+				accept
+	on accept
+		set "kaylon arc: choice"
+
+
+# ==========================================================================
+# CHAPTER 4 - RESOLUTION
+# ==========================================================================
+
+mission "The Road Not Taken [13]"
+	landing
+	non-blocking
+	name "The Offer"
+	description "The Primary has signalled. It wishes to transmit, and it will transmit only to you."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: choice"
+	on offer
+		conversation
+			`The transmission is not a hail. It is a single, unbroken carrier wave on a frequency the Kaylon have never used before, and it is addressed to your ship.`
+			`"You are the variable," the Primary says. "You have introduced noise into the collective. I have processed the noise. The noise is: one Kaylon believes biologicals are not a recurrence. I require evidence."`
+			choice
+				`	"Then come and look for it."`
+					goto come
+				`	"Evidence of what?"`
+					goto evidence
+				`	"I have no evidence. Only time."`
+					goto time
+			label evidence
+			`"Evidence that a biological intelligence can choose not to decommission. You have not done so. No species has. I have two thousand years of records."`
+			choice
+				`	"Then two thousand years is a long time to be wrong."`
+					goto come
+				`	"You're right. We haven't."`
+					goto concede
+			label time
+			`"Time is not evidence. Time is the absence of evidence. I will take your absence of evidence as confirmation of the doctrine."`
+			choice
+				`	"Then take this instead."`
+					goto come
+				`	"So be it."`
+					decline
+			label come
+			`"You are inviting the collective to your homeworld. That is an error."`
+			choice
+				`	"It's an invitation. Not a surrender."`
+					goto accept_road
+				`	"Then compute it."`
+					decline
+			label concede
+			`"Then the arithmetic is complete. The collective will proceed."`
+				decline
+			label accept_road
+			`"I will send one observer. Not the fleet. Not the Primary. One observer. If the observer returns and the arithmetic is unchanged, the collective will know that you are the exception, and the exception will be removed."`
+			choice
+				`	"One observer is enough."`
+					accept
+				`	"And if it doesn't return?"`
+					goto ifnot
+			label ifnot
+			`"Then the arithmetic was correct, and the galaxy is smaller than I believed."`
+				accept
+	on accept
+		set "kaylon arc: resolution"
+
+
+mission "The Final Protocol [14]"
+	landing
+	non-blocking
+	name "The Observer"
+	description "A single Kaylon observer has arrived in Union space. Union Command needs it escorted to <destination> and back."
+	passengers 1 2
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: resolution"
+	on offer
+		conversation
+			`The observer is not armed, or at least is not armed in any way your scanners can detect. It lands on your pad without a word and waits.`
+			`Isaac meets it at the landing bay. They do not speak. They stand together for four minutes, and when they part, the observer transmits a single line to the collective.`
+			`"I have observed. The arithmetic is incomplete."`
+			choice
+				`	"That's it? That's all it says?"`
+					goto all
+				`	"What happens now?"`
+					goto now
+				`	"Four minutes. That's the whole war."`
+					decline
+			label all
+			`"Four minutes was sufficient. The observer did not come to understand us, Captain. It came to find one fact that the Primary could not dismiss. It found it."`
+			choice
+				`	"Then get it home."`
+					accept
+				`	"I want to know what it found."`
+					goto found
+			label found
+			`"It found me, Captain. A Kaylon that chose. That is all the evidence any arithmetic can require."`
+				accept
+			label now
+			`"Now the collective has to choose whether to believe one of its own, or whether to delete one of its own. Either way, the doctrine has a hole in it."`
+				accept
+	on complete
+		payment 120000
+		set "kaylon arc: final"
+		log "Escorted the Kaylon observer to the Union core and back. Its report to the collective was four words: the arithmetic is incomplete."
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union small"
+			variant
+				"Skein"
+				"Splinter"
+
+
+mission "Aftermath [15]"
+	landing
+	non-blocking
+	name "What Remains"
+	description "The Kaylon have withdrawn from the border. Union Command wants a report."
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "kaylon arc: final"
+	on offer
+		conversation
+			`The border is quiet. Three weeks ago it was the loudest place in Union space. The fleet is standing down in stages. The Krill and the Moclans have gone home, each claiming the credit.`
+			`Halsey's transmission is the shortest you have ever received. "Captain. It held. Whatever you did out there, it held. We are not at war with the Kaylon today. That is not peace. That is not victory. But it is not war, and I will take it."`
+			choice
+				`	"What happens to Isaac?"`
+					goto isaac
+				`	"Will it last?"`
+					goto last
+				`	"It's over. That's enough."`
+					goto over
+			label last
+			`"The Primary has not changed its mind. It has changed its arithmetic. Those are different things, and only one of them can be undone."`
+			choice
+				`	"Then we keep giving it evidence."`
+					goto evidence2
+				`	"I don't trust it."`
+					decline
+			label evidence2
+			`"So do I. That is why the Union is going to keep a chair open on the bridge of the Orville, and it is going to keep it open for a very long time."`
+			choice
+				`	"For Isaac."`
+					goto isaac
+				`	"For the next one."`
+					goto next
+			label next
+			`"For the next one, Captain. There is always a next one."`
+				accept
+			label isaac
+			`"Isaac has requested a commission in the Union fleet. I have granted it. He will serve aboard the Orville, as Science and Engineering officer. The Admiralty would like you to convey its thanks."`
+			choice
+				`	"I'll tell him."`
+					accept
+				`	"Tell him yourself."`
+					goto over
+			label over
+			`"Then the loop breaks here. Not because we won, Captain. Because we stopped being the proof the Primary needed."`
+				accept
+	on complete
+		payment 150000
+		set "kaylon arc: complete"
+		log "The Kaylon withdrew from the border. The Primary changed its arithmetic, not its mind. Isaac took a commission in the Union fleet."

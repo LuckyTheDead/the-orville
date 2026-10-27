@@ -1,0 +1,402 @@
+# Copyright (c) 2021 by Amazinite
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Shield Relay Booster"
+	category "Systems"
+	series "Shields"
+	index 10098
+	cost 59000
+	thumbnail "outfit/shield booster"
+	"mass" 2
+	"outfit space" -2
+	"shield generation" 0.4
+	"shield energy" 1.2
+	"relay upgrades" -1
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Shield Relay Limiter"
+	category "Systems"
+	series "Shields"
+	index 10099
+	cost 12000
+	thumbnail "outfit/shield limiter"
+	"mass" 1
+	"outfit space" -1
+	"shield generation" -0.02
+	"shield energy" -0.1
+	"relay upgrades" -1
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Small Shield Relay"
+	category "Systems"
+	series "Shields"
+	index 10010
+	cost 172000
+	thumbnail "outfit/small shield relay"
+	"mass" 21
+	"outfit space" -21
+	"shield generation" 0.65
+	"shield energy" 0.6
+	"relay upgrades" 6
+	linked "Shield Relay Booster"
+	linked "Shield Relay Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tA version of this is carried by every ship of the faction that built it, which is either a recommendation or a warning."
+
+outfit "Large Shield Relay"
+	category "Systems"
+	series "Shields"
+	index 10020
+	cost 593000
+	thumbnail "outfit/large shield relay"
+	"mass" 56
+	"outfit space" -56
+	"shield generation" 2
+	"shield energy" 1.6
+	"relay upgrades" 16
+	linked "Shield Relay Booster"
+	linked "Shield Relay Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt is heavier than the specification claims, and everyone involved has agreed not to mention it."
+
+
+
+outfit "Nanite Enhancer"
+	category "Systems"
+	series "Repair"
+	index 10098
+	cost 76000
+	thumbnail "outfit/nanite enhancer"
+	"mass" 5
+	"outfit space" -5
+	"hull repair rate" 0.25
+	"hull energy" 0.75
+	"nanite upgrades" -2
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Nanite Limiter"
+	category "Systems"
+	series "Repair"
+	index 10099
+	cost 21000
+	thumbnail "outfit/nanite limiter"
+	"mass" 2
+	"outfit space" -2
+	"hull repair rate" -0.025
+	"hull energy" -0.2
+	"nanite upgrades" -1
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Small Nanite Fabricator"
+	category "Systems"
+	series "Repair"
+	index 10010
+	cost 650000
+	thumbnail "outfit/small nanite fabricator"
+	"mass" 23
+	"outfit space" -23
+	"hull repair rate" 0.72
+	"hull energy" 1.08
+	"nanite upgrades" 4
+	linked "Nanite Enhancer"
+	linked "Nanite Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt is maintained by people who learned the design from someone who learned it from someone else, and the chain of custody is the only manual there is."
+
+outfit "Large Nanite Fabricator"
+	category "Systems"
+	series "Repair"
+	index 10020
+	cost 1940000
+	thumbnail "outfit/large nanite fabricator"
+	"mass" 58
+	"outfit space" -58
+	"hull repair rate" 2.12
+	"hull energy" 3.18
+	"nanite upgrades" 10
+	linked "Nanite Enhancer"
+	linked "Nanite Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt is maintained by people who learned the design from someone who learned it from someone else, and the chain of custody is the only manual there is."
+
+
+
+outfit "Solar Battery"
+	plural "Solar Batteries"
+	category "Power"
+	series "Batteries"
+	index 10010
+	cost 49000
+	thumbnail "outfit/solar battery"
+	"mass" 7
+	"outfit space" -7
+	"energy capacity" 6000
+	"solar cell" 36
+	linked "Solar Cell"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Solar Cell"
+	category "Power"
+	series "Batteries"
+	index 10020
+	cost 17000
+	thumbnail "outfit/solar cell"
+	"mass" 1
+	"outfit space" -1
+	"solar collection" 0.145
+	"solar heat" 0.07
+	"solar cell" -1
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt was captured rather than bought, and the crew who took it are still proud of that fact."
+
+
+
+outfit "Reactor Overclocker"
+	category "Power"
+	series "Generators"
+	index 10098
+	cost 142000
+	thumbnail "outfit/reactor overclocker"
+	"mass" 4
+	"outfit space" -4
+	"energy generation" 0.9
+	"heat generation" 3.15
+	"reactor upgrades" -3
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Reactor Limiter"
+	category "Power"
+	series "Generators"
+	index 10099
+	cost 26000
+	thumbnail "outfit/reactor limiter"
+	"mass" 2
+	"outfit space" -2
+	"energy generation" -0.55
+	"heat generation" -6.6
+	"reactor upgrades" -2
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Quark Reactor"
+	category "Power"
+	series "Generators"
+	index 10010
+	cost 3367000
+	thumbnail "outfit/quark reactor"
+	"mass" 61
+	"outfit space" -61
+	"energy generation" 8.35
+	"heat generation" 10.9
+	"reactor upgrades" 6
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tThe previous owner left it behind, which is the sort of testimony that should tell you something."
+
+outfit "Electroweak Reactor"
+	category "Power"
+	series "Generators"
+	index 10020
+	cost 8393000
+	thumbnail "outfit/electroweak reactor"
+	"mass" 106
+	"outfit space" -106
+	"energy generation" 17.25
+	"heat generation" 20.5
+	"reactor upgrades" 18
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt is maintained by people who learned the design from someone who learned it from someone else, and the chain of custody is the only manual there is."
+
+outfit "Dark Reactor"
+	category "Power"
+	series "Generators"
+	index 10030
+	cost 15022000
+	thumbnail "outfit/dark reactor"
+	"mass" 142
+	"outfit space" -142
+	"energy generation" 24.7
+	"heat generation" 28.6
+	"reactor upgrades" 30
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+	description "\tIt does the job it was built for, and it does not pretend to do anything else."
+
+
+
+outfit "Lasher Pistol"
+	category "Hand to Hand"
+	series "H2H"
+	index 10010
+	cost 47000
+	thumbnail "outfit/lasher pistol"
+	"capture attack" 1.1
+	"capture defense" 2.8
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+
+
+outfit "Chiisana Rift Thruster"
+	category "Engines"
+	series "Engines"
+	index 10011
+	cost 130000
+	thumbnail "outfit/chiisana rift thruster"
+	"mass" 11
+	"outfit space" -11
+	"engine capacity" -11
+	"thrust" 11.6625
+	"thrusting energy" 1.15
+	"thrusting heat" 0.65
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.3
+	"flare sound" "ion tiny"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Nami Rift Thruster"
+	category "Engines"
+	series "Engines"
+	index 10021
+	cost 262000
+	thumbnail "outfit/nami rift thruster"
+	"mass" 19
+	"outfit space" -19
+	"engine capacity" -19
+	"thrust" 21.135
+	"thrusting energy" 2.3
+	"thrusting heat" 1.3
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.6
+	"flare sound" "ion small"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Ookii Rift Thruster"
+	category "Engines"
+	series "Engines"
+	index 10031
+	cost 512000
+	thumbnail "outfit/ookii rift thruster"
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"thrust" 37.455
+	"thrusting energy" 4.4
+	"thrusting heat" 2.5
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.8
+	"flare sound" "ion medium"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Subarashii Rift Thruster"
+	category "Engines"
+	series "Engines"
+	index 10041
+	cost 1004000
+	thumbnail "outfit/subarashii rift thruster"
+	"mass" 55
+	"outfit space" -55
+	"engine capacity" -55
+	"thrust" 69.75
+	"thrusting energy" 8.6
+	"thrusting heat" 4.9
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+	"flare sound" "ion large"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Chiisana Rift Steering"
+	category "Engines"
+	series "Engines"
+	index 10010
+	cost 201000
+	thumbnail "outfit/chiisana rift steering"
+	"mass" 17
+	"outfit space" -17
+	"engine capacity" -17
+	"turn" 808.5
+	"turning energy" 2.6
+	"turning heat" 1
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.3
+	"steering flare sound" "ion tiny"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Nami Rift Steering"
+	category "Engines"
+	series "Engines"
+	index 10020
+	cost 442000
+	thumbnail "outfit/nami rift steering"
+	"mass" 31
+	"outfit space" -31
+	"engine capacity" -31
+	"turn" 1705.5
+	"turning energy" 5.3
+	"turning heat" 2.1
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.6
+	"steering flare sound" "ion small"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Ookii Rift Steering"
+	category "Engines"
+	series "Engines"
+	index 10030
+	cost 940000
+	thumbnail "outfit/ookii rift steering"
+	"mass" 53
+	"outfit space" -53
+	"engine capacity" -53
+	"turn" 3148.5
+	"turning energy" 9.2
+	"turning heat" 3.65
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.8
+	"steering flare sound" "ion medium"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."
+
+outfit "Subarashii Rift Steering"
+	category "Engines"
+	series "Engines"
+	index 10040
+	cost 1577000
+	thumbnail "outfit/subarashii rift steering"
+	"mass" 90
+	"outfit space" -90
+	"engine capacity" -90
+	"turn" 5850
+	"turning energy" 17.1
+	"turning heat" 6.5
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+	"steering flare sound" "ion large"
+	description "This is Botwin equipment, built with a patience that the Union finds difficult to share."

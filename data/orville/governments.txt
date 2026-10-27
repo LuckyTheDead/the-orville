@@ -1,0 +1,657 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville -- government overrides
+#
+# STRATEGY (all verified in source, this is why the previous version of this
+# file was wrong):
+#
+#   Set<T>::Get  (Set.h:31)      returns &data[name] -- std::map::operator[].
+#                                Re-parsing `government "Republic"` mutates the
+#                                EXISTING object; it does not replace it.
+#   UniverseObjects.cpp:156      governments.Get(name)->Load(node)
+#   Government.cpp:491,493,499   "display name" / "friendly hail" /
+#                                "hostile hail" / "language" are plain
+#                                assignments => a later file OVERWRITES them.
+#   "attitude toward"            per-target-key assignment => overwrites that
+#                                pair only.
+#   shouldOverwrite = {"raid"}   (Government.cpp:161) -- the only field with
+#                                replace semantics; everything else merges.
+#
+# Consequence: we MUST reuse the real stock keys. Inventing `government
+# "Planetary Union"` (as the previous draft did, for 15 of 18 blocks) creates
+# an orphan key that nothing in map systems, fleets, missions, news, or
+# outfitters references -- it spawns nothing and changes nothing. That was
+# "added onto", which is exactly what you rejected.
+#
+# Renaming the KEY would mean chasing 200+ references across the whole data
+# tree. Renaming only the DISPLAY NAME gives the player the Orville name in
+# every place it is ever shown -- the HailPanel header, map labels, and all
+# combat messages route through Government::DisplayName() -- while every
+# internal reference keeps resolving. Stock data already does this itself:
+# `government "Republic (Friendly)"` carries `"display name" "Republic"`.
+#
+# Blocks below are deliberately MINIMAL. Merge is cumulative, so any key not
+# listed inherits its stock value (swizzle, color, crew attack/defense,
+# confusion, raid, reputation bounds, bribe, fine). Copying stock fields in
+# would only guarantee drift as upstream changes them.
+#
+# Every "display name" and phrase name here maps to a phrase that actually
+# exists in data/orville/hails.txt, or to a stock phrase being intentionally
+# reused ("friendly disabled", "hostile disabled", "ship bribe rejection
+# navy"). No dangling references.
+#
+# NOTE ON `confusion`: valid names are defined in data/confusions.txt --
+# player, civilian, militia, military, elite, pirate, miner, basic automata,
+# advanced automata, kor mereti, kor sestor, ka'het, aberrant, wild, pug,
+# perfect. The previous draft used "religious", "bureaucratic", "zookeeper"
+# and "logic", none of which exist. UniverseObjects.cpp:266 warns and the
+# field is dropped, so those blocks silently lost their pilot-skill profile.
+# Omitted here; stock values inherited instead.
+#
+# NOTE ON `language`: no `language "..."` definition block exists anywhere
+# under data/, so language names are not independently enumerable from data.
+# Left unset; inherits stock.
+
+
+
+# ---- HUMAN BLOCS ----------------------------------------------------------
+# Republic IS the human Navy in this game; there is no separate "Navy"
+# government. Both Republic blocks therefore become the Planetary Union.
+
+government "Republic"
+	"display name" "Planetary Union"
+	"friendly hail" "friendly union navy"
+	"friendly disabled hail" "friendly union disabled"
+	"hostile hail" "hostile union navy"
+	"hostile disabled hail" "hostile union disabled"
+	"ship bribe rejection hail" "union ship bribe rejection"
+	"planet bribe rejection hail" "union planet bribe rejection"
+
+government "Republic (Friendly)"
+	"display name" "Planetary Union"
+	"friendly hail" "friendly union navy"
+	"friendly disabled hail" "friendly union disabled"
+	"hostile hail" "hostile union navy"
+	"hostile disabled hail" "hostile union disabled"
+	"ship bribe rejection hail" "union ship bribe rejection"
+	"planet bribe rejection hail" "union planet bribe rejection"
+
+government "Navy Intelligence"
+	"display name" "Union Intelligence"
+	"friendly hail" "friendly intelligence navy"
+	"hostile hail" "hostile intelligence navy"
+	"ship bribe rejection hail" "union ship bribe rejection"
+	"friendly disabled hail" "friendly union disabled"
+	"hostile disabled hail" "hostile union disabled"
+
+government "Navy (Oathkeeper)"
+	"display name" "Union Loyalists"
+	"friendly hail" "friendly loyalist navy"
+	"hostile hail" "hostile loyalist navy"
+	"ship bribe rejection hail" "union ship bribe rejection"
+	"friendly disabled hail" "friendly union disabled"
+	"hostile disabled hail" "hostile union disabled"
+
+# Free Worlds is the human breakaway faction; the Moclans are the secessionist,
+# conservative, status-obsessed power in The Orville.
+government "Free Worlds"
+	"display name" "Moclan Hegemony"
+	"friendly hail" "friendly moclan navy"
+	"hostile hail" "hostile moclan navy"
+	"friendly disabled hail" "friendly moclan disabled"
+	"hostile disabled hail" "hostile moclan disabled"
+	"ship bribe acceptance hail" "moclan ship bribe acceptance"
+	"ship bribe rejection hail" "moclan ship bribe rejection"
+	"planet bribe rejection hail" "moclan planet bribe rejection"
+
+# The FW militia that fights alongside Free Worlds.
+government "Militia"
+	"display name" "Moclan Militia"
+	"friendly hail" "friendly moclan militia"
+	"hostile hail" "hostile moclan militia"
+	"friendly disabled hail" "friendly moclan disabled"
+	"hostile disabled hail" "hostile moclan disabled"
+	"planet bribe rejection hail" "moclan planet bribe rejection"
+
+# Planetary Union Corporate is the corporate bloc; the Krill Imperium is the
+# crusading theocracy that replaces it as the human-space antagonist.
+government "Planetary Union Corporate"
+	"display name" "Krill Imperium"
+	"friendly hail" "friendly krill navy"
+	"friendly disabled hail" "krill mercy"
+	"hostile hail" "hostile krill navy"
+	"hostile disabled hail" "hostile krill disabled"
+	"ship bribe rejection hail" "krill bribe rejection"
+	"planet bribe rejection hail" "krill planet bribe rejection"
+
+government "Planetary Union Corporate (Extremist)"
+	"display name" "Krill Imperium"
+	"friendly disabled hail" "friendly krill disabled"
+	"hostile hail" "hostile krill navy"
+	"hostile disabled hail" "hostile krill disabled"
+	"ship bribe rejection hail" "krill bribe rejection"
+	"planet bribe rejection hail" "krill planet bribe rejection"
+
+government "Merchant"
+	"display name" "Union Merchant Marine"
+	"friendly hail" "friendly merchant navy"
+	"hostile hail" "hostile merchant navy"
+	"friendly disabled hail" "friendly merchant disabled"
+	"hostile disabled hail" "hostile merchant disabled"
+	"ship bribe acceptance hail" "merchant ship bribe acceptance"
+	"ship bribe rejection hail" "merchant ship bribe rejection"
+
+government "Merchant (Hostile)"
+	"display name" "Union Merchant Marine"
+	"friendly hail" "friendly merchant navy"
+	"hostile hail" "hostile merchant navy"
+	"friendly disabled hail" "friendly merchant disabled"
+	"hostile disabled hail" "hostile merchant disabled"
+	"ship bribe rejection hail" "merchant ship bribe rejection"
+
+# Smugglers and raiders. The Malidora are The Orville's canonical pirate
+# culture ("Invisible Hand"), so this is a direct lift rather than an
+# invention.
+government "Pirate"
+	"display name" "Malidora"
+	"friendly hail" "friendly pirate navy"
+	"hostile hail" "hostile pirate navy"
+	"hostile disabled hail" "hostile malidora disabled"
+	"friendly disabled hail" "friendly malidora disabled"
+	"ship bribe acceptance hail" "malidora ship bribe acceptance"
+	"ship bribe rejection hail" "malidora ship bribe rejection"
+
+government "Pirate (Rival)"
+	"display name" "Malidora"
+	"friendly hail" "friendly pirate navy"
+	"hostile hail" "hostile pirate navy"
+	"hostile disabled hail" "hostile malidora disabled"
+	"friendly disabled hail" "friendly malidora disabled"
+	"ship bribe acceptance hail" "malidora ship bribe acceptance"
+	"ship bribe rejection hail" "malidora ship bribe rejection"
+
+government "Marauder"
+	"display name" "Malidora Marauders"
+	"friendly hail" "friendly pirate navy"
+	"hostile hail" "hostile pirate navy"
+	"hostile disabled hail" "hostile malidora disabled"
+	"ship bribe rejection hail" "malidora ship bribe rejection"
+	"friendly disabled hail" "friendly malidora disabled"
+
+government "Scar's Legion"
+	"display name" "Malidora Marauders"
+	"hostile hail" "hostile pirate navy"
+	"hostile disabled hail" "hostile malidora disabled"
+	"ship bribe rejection hail" "malidora ship bribe rejection"
+
+government "Scar's Legion (Killable)"
+	"display name" "Malidora Marauders"
+	"hostile hail" "hostile pirate navy"
+	"hostile disabled hail" "hostile malidora disabled"
+
+government "Bounty"
+	"display name" "Independent Contractors"
+	"friendly hail" "friendly bounty navy"
+	"hostile hail" "hostile bounty navy"
+	"friendly disabled hail" "friendly contractor disabled"
+	"hostile disabled hail" "hostile contractor disabled"
+	"ship bribe acceptance hail" "contractor ship bribe acceptance"
+	"ship bribe rejection hail" "contractor ship bribe rejection"
+
+government "Bounty (Disguised)"
+	"display name" "Independent Contractors"
+	"friendly hail" "friendly bounty navy"
+	"hostile hail" "hostile bounty navy"
+	"friendly disabled hail" "friendly contractor disabled"
+	"hostile disabled hail" "hostile contractor disabled"
+	"ship bribe acceptance hail" "contractor ship bribe acceptance"
+	"ship bribe rejection hail" "contractor ship bribe rejection"
+
+government "Bounty Hunter"
+	"display name" "Independent Contractors"
+	"friendly hail" "friendly bounty navy"
+	"hostile hail" "hostile bounty navy"
+	"hostile disabled hail" "hostile contractor disabled"
+	"ship bribe rejection hail" "contractor ship bribe rejection"
+
+# Independent / Neutral carry no display name: "Independent" already reads
+# correctly in The Orville, so renaming them would only add churn.
+government "Independent"
+	"friendly hail" "friendly independent"
+	"hostile hail" "hostile independent"
+	"friendly disabled hail" "friendly independent disabled"
+	"hostile disabled hail" "hostile independent disabled"
+
+government "Independent (Killable)"
+	"friendly hail" "friendly independent"
+	"hostile hail" "hostile independent"
+	"friendly disabled hail" "friendly independent disabled"
+	"hostile disabled hail" "hostile independent disabled"
+
+government "Neutral"
+	"friendly hail" "friendly independent"
+	"hostile hail" "hostile independent"
+	"friendly disabled hail" "friendly independent disabled"
+	"hostile disabled hail" "hostile independent disabled"
+
+
+
+# ---- ALIEN BLOCS ----------------------------------------------------------
+
+# The Quarg are the godlike, isolationist, rule-obsessed elder power that
+# forbids jump technology and refuses to intervene -- that is the Calivon
+# role exactly. All five Quarg subtypes inherit the parent's voice.
+government "Quarg"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon navy"
+	"hostile hail" "hostile calivon navy"
+	"friendly disabled hail" "friendly calivon disabled"
+	"hostile disabled hail" "hostile calivon disabled"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+	"planet bribe rejection hail" "calivon planet bribe rejection"
+
+government "Quarg (Gegno)"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon navy"
+	"hostile hail" "hostile calivon navy"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+	"hostile disabled hail" "hostile calivon disabled"
+
+government "Quarg (Hai)"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon navy"
+	"hostile hail" "hostile calivon navy"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+	"hostile disabled hail" "hostile calivon disabled"
+
+government "Quarg (Incipias)"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon navy"
+	"hostile hail" "hostile calivon navy"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+	"hostile disabled hail" "hostile calivon disabled"
+
+government "Quarg (Kor Efret)"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon navy"
+	"hostile hail" "hostile calivon navy"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+	"hostile disabled hail" "hostile calivon disabled"
+
+# Wanderer (singular key, not "Wanderers") is the honour-bound warrior race
+# that extracts tribute from the Hai: the Motilali, Bortus's people.
+government "Wanderer"
+	"display name" "Motilali"
+	"friendly hail" "friendly motilali navy"
+	"hostile hail" "hostile motilali navy"
+	"friendly disabled hail" "friendly motilali disabled"
+	"hostile disabled hail" "hostile motilali disabled"
+	"ship bribe rejection hail" "motilali ship bribe rejection"
+	"planet bribe rejection hail" "motilali planet bribe rejection"
+
+# Ka'het are the synthetics who warred with and displaced their creators.
+# That is the Kaylon, precisely -- no adaptation needed.
+government "Ka'het"
+	"display name" "Kaylon"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+	"planet bribe rejection hail" "kaylon planet bribe rejection"
+
+government "Ka'het (Infighting)"
+	"display name" "Kaylon"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+
+# The Remnant are machines who rejected their genocidal programming and became
+# the galaxy's benevolent caretakers: the reformed Kaylon, i.e. Isaac's
+# people.
+government "Remnant"
+	"display name" "Kaylon (Reformed)"
+	"friendly hail" "friendly kaylon dissident navy"
+	"hostile hail" "hostile kaylon dissident navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+
+government "Remnant (Research)"
+	"display name" "Kaylon (Reformed)"
+	"friendly hail" "friendly kaylon dissident navy"
+	"hostile hail" "hostile kaylon dissident navy"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+
+government "Remnant (Postverta)"
+	"display name" "Kaylon (Reformed)"
+	"friendly hail" "friendly kaylon dissident navy"
+	"hostile hail" "hostile kaylon dissident navy"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+
+# Hicemus are the insectoid slaving raiders of human space. The Alcorians are
+# The Orville's slaving species. Direct structural match.
+government "Hicemus"
+	"display name" "Alcorian"
+	"friendly hail" "friendly alcorian navy"
+	"hostile hail" "hostile alcorian navy"
+	"friendly disabled hail" "friendly alcorian disabled"
+	"hostile disabled hail" "hostile alcorian disabled"
+	"ship bribe rejection hail" "alcorian ship bribe rejection"
+
+# Kor Efret is the pacifist, trade-and-logistics sect of the exiled Korath.
+# The Bruidian are The Orville's merchant species.
+government "Kor Efret"
+	"display name" "Bruidian"
+	"friendly hail" "friendly bruidian navy"
+	"hostile hail" "hostile bruidian navy"
+	"friendly disabled hail" "friendly bruidian disabled"
+	"hostile disabled hail" "hostile bruidian disabled"
+	"ship bribe acceptance hail" "bruidian ship bribe acceptance"
+	"ship bribe rejection hail" "bruidian ship bribe rejection"
+	"planet bribe acceptance hail" "bruidian planet bribe acceptance"
+
+# The Korath machine sects are Kaylon subtypes.
+government "Kor Mereti"
+	"display name" "Kaylon (Mereti)"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+
+government "Kor Mereti (Hostile)"
+	"display name" "Kaylon (Mereti)"
+	"hostile hail" "hostile kaylon navy"
+	"hostile disabled hail" "hostile kaylon disabled"
+
+government "Kor Sestor"
+	"display name" "Kaylon (Sestor)"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+
+government "Ka'sei"
+	"display name" "Kaylon (Ka'sei)"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"hostile disabled hail" "hostile kaylon disabled"
+
+government "Ka'sei (12.2)"
+	"display name" "Kaylon (Ka'sei)"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"friendly disabled hail" "friendly kaylon disabled"
+
+government "Ka'sei (Patir 18)"
+	"display name" "Kaylon (Ka'sei)"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"hostile disabled hail" "hostile kaylon disabled"
+
+# The Orville: additional government keys referenced by campaign events
+# These are new keys (not in stock), created because campaign missions reference them.
+# Creating new government keys is fine -- they will spawn fleets, outfits, etc. per map data.
+
+government "Krill"
+	"display name" "Krill Imperium"
+	"friendly hail" "friendly krill"
+	"hostile hail" "hostile krill"
+	"friendly disabled hail" "friendly krill disabled"
+	"hostile disabled hail" "hostile krill disabled"
+	"ship bribe rejection hail" "krill ship bribe rejection"
+
+government "Moclan"
+	"display name" "Moclan Hegemony"
+	"friendly hail" "friendly moclan"
+	"hostile hail" "hostile moclan"
+	"friendly disabled hail" "friendly moclan disabled"
+	"hostile disabled hail" "hostile moclan disabled"
+	"ship bribe rejection hail" "moclan ship bribe rejection"
+
+government "Kaylon"
+	"display name" "Kaylon"
+	"friendly hail" "friendly kaylon navy"
+	"hostile hail" "hostile kaylon navy"
+	"friendly disabled hail" "friendly kaylon disabled"
+	"hostile disabled hail" "hostile kaylon disabled"
+	"ship bribe rejection hail" "kaylon ship bribe rejection"
+
+government "Calivon"
+	"display name" "Calivon"
+	"friendly hail" "friendly calivon"
+	"hostile hail" "hostile calivon"
+	"friendly disabled hail" "friendly calivon disabled"
+	"hostile disabled hail" "hostile calivon disabled"
+	"ship bribe rejection hail" "calivon ship bribe rejection"
+
+government "Crildari"
+	"display name" "Crildari"
+	"friendly hail" "friendly crildari"
+	"hostile hail" "hostile crildari"
+	"friendly disabled hail" "friendly crildari disabled"
+	"hostile disabled hail" "hostile crildari disabled"
+	"ship bribe rejection hail" "crildari ship bribe rejection"
+
+
+# ---- Remaining stock governments ----------------------------------------
+# Generic / non-faction keys (Independent, Neutral, Derelict, Escort, Indigenous
+# Lifeform, Magic Asteroid, Wormhole Alpha, ...) keep their stock display names.
+
+government "Avgi"
+	"display name" "Orfan Tribes"
+
+government "Avgi (Consonance)"
+	"display name" "Orfan Tribes"
+
+government "Avgi (Dissonance Angry)"
+	"display name" "Orfan Tribes"
+
+government "Avgi (Dissonance)"
+	"display name" "Orfan Tribes"
+
+government "Avgi (Twilight Guard)"
+	"display name" "Orfan Tribes"
+
+government "Avgi (Wandering Fleet)"
+	"display name" "Orfan Tribes"
+
+government "Bunrodea"
+	"display name" "Botwin League"
+
+government "Bunrodea (Erabu)"
+	"display name" "Botwin League"
+
+government "Bunrodea (Guard)"
+	"display name" "Botwin League"
+
+government "Bunrodea (Megasa)"
+	"display name" "Botwin League"
+
+government "Coalition"
+	"display name" "Xelayan Union"
+
+government "Conlatio"
+	"display name" "Tandoga"
+
+government "Deep"
+	"display name" "Union Deep Space Command"
+
+government "Deep Security"
+	"display name" "Union Security"
+
+government "Drak"
+	"display name" "Them"
+
+government "Drak (Hostile)"
+	"display name" "Them"
+
+government "Drak (Incipias)"
+	"display name" "Them"
+
+government "Ember Waste"
+	"display name" "Moclan Ember Fleet"
+
+government "Gegno"
+	"display name" "Meridian Collective"
+
+government "Gegno Scin"
+	"display name" "Meridian Collective"
+
+government "Gegno Scin (Combative)"
+	"display name" "Meridian Collective"
+
+government "Gegno Scin (Neutral)"
+	"display name" "Meridian Collective"
+
+government "Gegno Vi"
+	"display name" "Meridian Collective"
+
+government "Gegno Vi (Combative)"
+	"display name" "Meridian Collective"
+
+government "Gegno Vi (Duelist A)"
+	"display name" "Meridian Collective"
+
+government "Gegno Vi (Duelist B)"
+	"display name" "Meridian Collective"
+
+government "Gegno Vi (Neutral)"
+	"display name" "Meridian Collective"
+
+government "Hai"
+	"display name" "Barylian Conglomerate"
+
+government "Hai (Unfettered Challenger)"
+	"display name" "Barylian Corsairs"
+
+government "Hai (Unfettered Civilians)"
+	"display name" "Barylian Corsairs"
+
+government "Hai (Unfettered Wanderer Tribute)"
+	"display name" "Barylian Corsairs"
+
+government "Hai (Unfettered)"
+	"display name" "Barylian Corsairs"
+
+government "Hai (Wormhole Access)"
+	"display name" "Barylian Conglomerate"
+
+government "Hai Merchant"
+	"display name" "Barylian Merchants"
+
+government "Hai Merchant (Human)"
+	"display name" "Barylian Merchants"
+
+government "Hai Merchant (Sympathizers)"
+	"display name" "Barylian Merchants"
+
+government "Heliarch"
+	"display name" "Heliarch Interregnum"
+
+government "Heliarch Test Dummy"
+	"display name" "Heliarch Interregnum"
+
+government "High Houses (Unknown)"
+	"display name" "Successor Houses"
+
+government "House Aqrabe"
+	"display name" "House Aqrabe (Successor)"
+
+government "House Chydiyi"
+	"display name" "House Chydiyi (Successor)"
+
+government "House Kaatrij"
+	"display name" "House Kaatrij (Successor)"
+
+government "House Myurej"
+	"display name" "House Myurej (Successor)"
+
+government "House Seineq"
+	"display name" "House Seineq (Successor)"
+
+government "House Sioeora"
+	"display name" "House Sioeora (Successor)"
+
+government "Incipias Civilian"
+	"display name" "Tandoga"
+
+government "Korath"
+	"display name" "Tzenketh"
+
+government "Korath (Civilian)"
+	"display name" "Tzenketh Civilian"
+
+government "Korath Nanobots"
+	"display name" "Tzenketh Nanobots"
+
+government "Lunarium"
+	"display name" "Lunarium"
+
+government "Lunarium (Hidden)"
+	"display name" "Lunarium"
+
+government "New Houses"
+	"display name" "Successor Houses"
+
+government "Old Houses"
+	"display name" "Successor Houses"
+
+government "People's Houses"
+	"display name" "Successor Houses"
+
+government "People's Houses (Hostile)"
+	"display name" "Successor Houses (Hostile)"
+
+government "Predecessor"
+	"display name" "Successor Houses"
+
+government "Pug"
+	"display name" "Kael"
+
+government "Pug (Wanderer)"
+	"display name" "Kael"
+
+government "Rulei"
+	"display name" "Silurians"
+
+government "Sheragi"
+	"display name" "Goth"
+
+government "Silent Ones"
+	"display name" "Silent Ones"
+
+government "Successor"
+	"display name" "Successor Houses"
+
+government "Syndicate"
+	"display name" "Orion Syndicate"
+
+government "Syndicate (Extremist)"
+	"display name" "Orion Syndicate"
+
+government "Incipias"
+	"display name" "Tandoga"
+
+government "Vyrmeid"
+	"display name" "Bender"

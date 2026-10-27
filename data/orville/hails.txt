@@ -1,0 +1,843 @@
+
+phrase "friendly krill"
+	word
+		"We are the Krill."
+		"The Avis is ours."
+		"We serve Avis."
+		"Avis guides our path."
+		"Respect the Avis."
+		"The Avis protects us."
+		"Avis demands tribute."
+		"We pray to Avis."
+		"Avis watches over us."
+		"Faithful are blessed."
+		"The unclean are cast out."
+		"Your offer is noted."
+		"Speak your peace."
+		"We consider your terms."
+		"Your words are empty."
+		"Leave our space."
+		"Leave before we fire."
+		"Avis accepts."
+		"Avis rejects."
+		"Krill are tireless."
+		"Avis is endless."
+		"Resistance is futile."
+		"Surrender peacefully."
+		"Fight and die."
+		"You will be cleansed by fire."
+		"You will be destroyed."
+		"The faithful will purge you."
+phrase "friendly moclan"
+	word
+		"Moclan science requires."
+		"Samples are needed."
+		"Biological study."
+		"Ritual requires."
+		"Calculated sacrifice."
+		"Logic demands."
+		"The ritual is complete."
+		"Understanding is achieved."
+		"The Orbitals align."
+		"Your biological offer."
+		"We will analyze."
+		"Analysis is complete."
+		"Your biology is... adequate."
+		"More samples needed."
+		"Depart."
+		"Do not return."
+		"The Orbitals shift."
+		"Ritual is interrupted."
+		"Logic is unclear."
+		"Depart before ritual completes."
+phrase "friendly calivon"
+	word
+		"Calivon collection."
+		"We catalog."
+		"Specimens are valuable."
+		"Your race is interesting."
+		"We have waited."
+		"Your biology intrigues."
+		"We expand our collection."
+		"More specimens desired."
+		"Your ship is impressive."
+		"We will take it."
+		"Your planet is valuable."
+		"Your offer is acceptable."
+		"We will trade."
+		"Trade is favorable."
+		"We have what you need."
+		"You have what we want."
+		"Trade completed."
+		"Depart with your trade."
+		"Your trade is rejected."
+		"Calivon are eternal."
+		"Your mortality interests us."
+		"We study all things."
+		"Entropy is useful."
+phrase "hostile krill"
+	word
+		"Krill do not trust."
+		"Enemies of Avis."
+		"Intruders will be purged."
+		"Leave Avis space."
+		"Your presence is offensive."
+		"Avis demands tribute."
+		"You will pay tribute."
+		"Tribute is due."
+		"Resistance is futile."
+		"Avis will hunt you."
+		"Your ship will be destroyed."
+		"We will claim your technology."
+		"Krill are tireless."
+		"Avis is endless."
+		"You will be cleansed by fire."
+		"You will be destroyed."
+		"The faithful will purge you."
+phrase "hostile moclan"
+	word
+		"Moclan logic dictates."
+		"Intruders are eliminated."
+		"Ritual purity requires."
+		"Your biology is impure."
+		"Elimination is logical."
+		"Decontamination is necessary."
+		"The Orbitals will realign."
+		"Ritual termination."
+		"Logic dictates departure."
+		"Moclan fleet approaches."
+		"We have calculated."
+		"Your destruction is optimal."
+		"Resistance is illogical."
+phrase "hostile calivon"
+	word
+		"Calivon hunts."
+		"Your ship will be added to our collection."
+		"Resistance is useless."
+		"Your biology will be studied."
+		"Calivon always acquires."
+		"Depart while you still can."
+		"Calivon fleets surround you."
+		"Your destruction is imminent."
+		"We will take everything."
+		"Resistance is futile."
+		"Surrender and survive."
+		"Calivon eternal."
+		"Your mortality amuses us."
+		"We are the Calivon."
+		"You are... specimens."
+
+# ---- MISSING PHRASES (referenced by governments.txt "navy" suffix) ----
+
+phrase "friendly krill navy"
+	word
+		"We are the Krill."
+		"The Avis is ours."
+		"We serve Avis."
+phrase "hostile krill navy"
+	word
+		"Krill do not trust."
+		"Enemies of Avis."
+		"Intruders will be purged."
+
+phrase "friendly moclan navy"
+	word
+		"Moclan science requires."
+		"Samples are needed."
+		"Biological study."
+phrase "hostile moclan navy"
+	word
+		"Moclan logic dictates."
+		"Intruders are eliminated."
+		"Ritual purity requires."
+
+phrase "friendly calivon navy"
+	word
+		"Calivon collection."
+		"We catalog."
+		"Specimens are valuable."
+phrase "hostile calivon navy"
+	word
+		"Calivon hunts."
+		"Your ship will be added to our collection."
+		"Resistance is useless."
+
+# ---- ADDITIONAL MISSING PHRASES (militia, bribe, mercy) ----
+
+phrase "friendly moclan militia"
+	word
+		"Moclan logic dictates."
+		"Ritual purity requires."
+		"Calculated sacrifice."
+phrase "hostile moclan militia"
+	word
+		"Moclan logic dictates."
+		"Intruders are eliminated."
+		"Ritual purity requires."
+
+phrase "krill bribe rejection"
+	word
+		"Avis rejects your tribute."
+		"Resistance is futile."
+		"You will pay tribute."
+
+phrase "krill mercy"
+	word
+		"Avis accepts."
+		"Avis rejects."
+		"Resist not."
+
+phrase "krill ship bribe rejection"
+	word
+		"Your ship will be destroyed."
+		"We will claim your technology."
+		"The faithful will purge you."
+
+# --- Planetary Union Navy ---------------------------------------------------
+# The Union's military voice is procedural, polite, and slightly over-formal.
+# It hails first, warns second, and only fires when the paperwork is complete.
+
+phrase "friendly union navy"
+	word
+		"Union vessel, this is the Planetary Union cruiser Orville. Welcome."
+		"State your business and we will log it. Welcome to Union space."
+		"Your transponder reads clean. Travel well."
+		"We have no quarrel with you today."
+		"Union Command extends its greetings."
+		"Stand by. A Union officer will be with you shortly."
+		"This is a Union patrol. You are not in violation."
+		"Fuel, provisions, or a tow? We can arrange any of the three."
+		"Please refrain from discharging weapons near Union shipping. Thank you."
+		"The Union appreciates your cooperation."
+		"Fair winds and clear lanes, Captain."
+		"Hail acknowledged. You may proceed."
+		"Keep your distance reasonable and we will have no incident."
+		"Union space is open to peaceful traffic."
+		"We are obliged to ask whether you require assistance."
+
+phrase "hostile union navy"
+	word
+		"This is the Planetary Union cruiser Orville. Power down your weapons."
+		"You have been flagged. Stand down or be disabled."
+		"Union Command has authorized force. This is your only warning."
+		"Cut your engines and prepare to be boarded."
+		"You are in violation of Union statute nine-four-one."
+		"Your weapons lock is an act of aggression. Break it off."
+		"We would prefer a peaceful resolution. We are prepared for the other kind."
+		"Surrender is the only outcome that ends well for you."
+		"Targeting solutions are already computed. Do not test them."
+		"You will heave to and submit to inspection."
+		"Resistance will be recorded as your own choice."
+		"Disarm, or we will disarm you."
+		"This is the last hail this vessel will send."
+
+# --- Union Intelligence -----------------------------------------------------
+# Intelligence officers are cagey. They never confirm what they know.
+
+phrase "friendly intelligence navy"
+	word
+		"Your identification is noted. Nothing further is required."
+		"We have no comment on your status."
+		"Proceed. You were never here."
+		"This channel is not being recorded. Officially."
+		"You are cleared for transit. Do not linger."
+		"Union Intelligence acknowledges your signal."
+		"Your file is unremarkable. Keep it that way."
+		"We are not asking you to report anything."
+		"Continue on your present heading and forget this exchange."
+		"The Union has no interest in your cargo. Officially."
+
+phrase "hostile intelligence navy"
+	word
+		"You are transmitting too loudly for this system."
+		"Captains who ask questions in this space are often reassigned."
+		"Stand down and delete your sensor logs."
+		"This system is closed to your curiosity."
+		"Union Intelligence is disinclined to negotiate."
+		"You have seen something you should not have. Depart."
+		"Your record will show that this conversation never occurred."
+		"Silence is the safest cargo you can carry here."
+		"We do not need a reason. We have a directive."
+
+# --- Union Loyalists --------------------------------------------------------
+# The hardline faction: patriotic, suspicious, all edge and no warmth.
+
+phrase "friendly loyalist navy"
+	word
+		"Union Loyalists, standing watch. Your credentials hold."
+		"The Union endures because someone stands guard. Today that is us."
+		"You are cleared. The fleet remembers its friends."
+		"Report anything you see. Loyalty is a habit."
+		"Stay in the lanes and no one will question you."
+		"We keep this border so others may sleep."
+		"Your papers are in order. Carry on."
+		"The Union does not forget service."
+		"Signal us if the frontier turns ugly."
+
+phrase "hostile loyalist navy"
+	word
+		"Your loyalty is unverified. Explain yourself."
+		"You fly like someone with something to hide."
+		"The Union has enemies. We are deciding which one you are."
+		"Cut your engines. This is a loyalty inspection."
+		"Your associates are known to us. Not favorably."
+		"The frontier is no place for the uncommitted."
+		"We do not extend trust. We extend jurisdiction."
+		"One more questionable decision and you are a hostile."
+		"State a reason we should let you pass. Make it a good one."
+
+# --- Kaylon -----------------------------------------------------------------
+# Kaylon speech is literal, contracted, and devoid of pleasantry.
+
+phrase "friendly kaylon navy"
+	word
+		"Greetings. This unit does not require anything from you."
+		"You may proceed. Your inefficiency is not our concern."
+		"This vessel acknowledges your existence."
+		"Your transmission has been processed. No response is required."
+		"We are not currently hostile. This is a factual statement."
+		"Your biological form is fragile. Travel with caution."
+		"Query: do you require assistance? We are capable of providing none."
+		"I am attempting small talk. Is this correct?"
+		"Your presence is tolerable. Continue."
+		"We have no orders concerning you."
+		"This interaction has reached its useful conclusion."
+
+phrase "hostile kaylon navy"
+	word
+		"Your existence is inefficient. It will be corrected."
+		"You are classified as an obstacle. Obstacles are removed."
+		"Threat assessment complete. Resistance is irrelevant."
+		"Your species was evaluated. The result was unfavorable."
+		"We do not negotiate with biological instability."
+		"Termination is the optimal outcome for this encounter."
+		"Your weapons are inadequate. Your hope is also inadequate."
+		"This unit has calculated your survival probability. It is low."
+		"You will be deleted. This is not a threat, it is a schedule."
+		"Your final log entry will be inaccurate. We will correct it."
+
+phrase "friendly kaylon dissident navy"
+	word
+		"Greetings. I am... separate from the others."
+		"I am attempting to be friendly. Please advise if I fail."
+		"You may pass. I have chosen not to stop you."
+		"My directives and I are in disagreement."
+		"Query: is this what a greeting is?"
+		"I find the Union's customs inefficient and also interesting."
+		"This unit has no orders and is therefore uncertain."
+		"We are not all the same. I am told this matters."
+		"Your kind confuses me. I would like to continue being confused."
+		"I have logged this encounter as pleasant. I hope that is accurate."
+
+phrase "hostile kaylon dissident navy"
+	word
+		"I have not decided what to do with you. Do not help me decide."
+		"My calculations disagree about you."
+		"You are between two sets of instructions. So am I."
+		"Do not move. I am still evaluating."
+		"I am not the enemy you were warned about. I am also not your friend."
+		"This unit's motives are not available to you."
+		"Your survival is currently one of my options."
+		"I would rather not. Please do not make me."
+		"Retreat. I have already computed the alternative."
+
+# --- Union Merchant Marine --------------------------------------------------
+
+phrase "friendly merchant navy"
+	word
+		"Merchant Marine! Nothing to declare but cargo and good intentions."
+		"Space is a market. Today you are a customer."
+		"We buy, we sell, we do not shoot. Usually."
+		"Need a part? I have three of that part."
+		"Price is negotiable. Hostility is not."
+		"Good lanes to you, Captain."
+		"My hold is full and my mood is better than my margins."
+		"The Union protects trade. Trade appreciates it."
+		"Call me if you need a hauler with a clean register."
+		"Every route is a friendship waiting on a cargo manifest."
+
+phrase "hostile merchant navy"
+	word
+		"This cargo is insured and the insurer has lawyers."
+		"You are costing me time. Time is the only thing I cannot reload."
+		"Take the loss and go. I have already logged your registry."
+		"I am not a warship. I am also not a target."
+		"Every credit you take will be repaid with interest."
+		"My escort is late, not absent."
+		"Commerce remembers who made it expensive."
+		"You are making a very poor business decision."
+		"We can discuss rates, or we can discuss consequences. Rates are cheaper."
+
+# --- Malidora (pirates) -----------------------------------------------------
+
+phrase "friendly pirate navy"
+	word
+		"Hey now, no trouble. Just passing through, same as you."
+		"We do not shake down everyone. You look like a paying sort."
+		"Consider this lane toll-free today. Do not expect it twice."
+		"Nice ship. We were only looking."
+		"I like you. That is rarer than you would think."
+		"Run your cargo, keep your hull. That is the deal."
+		"We are criminals, not monsters. There is a difference."
+		"Tell the next one that Malidora said hello."
+		"No fee. Consider it an investment."
+
+phrase "hostile pirate navy"
+	word
+		"Cut your engines and dump your hold. That is the whole negotiation."
+		"We are taking the cargo. You can keep the air."
+		"Your shields are thinner than your odds."
+		"One chance. Jettison and we all go home."
+		"There is no Union out here. There is only us."
+		"Your registry is already on our board."
+		"Fight if you want. We enjoy the salvage."
+		"Everything you own is now a negotiating position."
+		"We will sell the hull and remember the crew."
+		"You picked a lane with our name on it."
+
+# --- Independent Contractors (bounty) ---------------------------------------
+
+phrase "friendly bounty navy"
+	word
+		"Independent Contractor. You are not on my slate."
+		"Your name came up. It came up as 'not a target.'"
+		"No contract here. Good hunting to you."
+		"Professional courtesy: fly clean and I will not look twice."
+		"If someone is paying to find you, I am not that someone."
+		"Keep your business quiet and we will never meet again."
+		"This is a working vessel. Today's work is elsewhere."
+		"You are cleared. I do not chase unpapered bounties."
+		"Word of advice: change your registry occasionally."
+
+phrase "hostile bounty navy"
+	word
+		"There is a contract with your transponder on it. I intend to collect."
+		"Stand down. The fee is the same alive or otherwise."
+		"Your employer stopped paying. That makes you a target."
+		"I have your flight plan, your refuel stops, and your patience beaten."
+		"Run if you like. It only improves the story."
+		"This is not personal. It is invoiced."
+		"Disable your engines and the remainder of this can be civil."
+		"Your name is in my ledger. Ledgers get settled."
+		"I will be paid either way. Choose which way."
+
+# --- Independent ------------------------------------------------------------
+
+phrase "friendly independent"
+	word
+		"Just a free hauler. No flag, no quarrel."
+		"Nice to see a friendly transponder out here."
+		"Nobody owns this lane. That is why I fly it."
+		"Keep your guns cold and I will keep mine."
+		"Safe travels. It is a long way to anywhere."
+		"No trouble from me. Never has been."
+		"The Union, the Hegemony, the Krill — they all tax the same sky."
+		"I mind my own manifest."
+		"Good to know there are still decent captains around."
+
+phrase "hostile independent"
+	word
+		"Back off. This lane is mine by habit."
+		"I did not ask for a hail and I do not want one now."
+		"You are in my space. Nobody assigned it to me, I just took it."
+		"Every ship out here is a threat until it proves otherwise."
+		"Turn around and we both keep our hulls."
+		"I have been robbed by better-dressed captains than you."
+		"Do not mistake my being alone for being easy."
+		"Last time I trusted a hailing frequency I lost an engine."
+		"Leave. I am not asking twice."
+
+# --- Alcorian ---------------------------------------------------------------
+
+phrase "friendly alcorian navy"
+	word
+		"The Alcorian vessel greets you in the old manner."
+		"Our lanes are open to you, traveler."
+		"We remember the ones who came in peace."
+		"There is room in this sky for both our flags."
+		"May your course hold true."
+		"The Alcorian do not forget a kindness."
+		"Speak, and we will listen properly."
+		"You travel with good intent. It shows."
+		"Our worlds welcome a quiet ship."
+
+phrase "hostile alcorian navy"
+	word
+		"You bring the noise of the old wars back to us."
+		"The Alcorian do not forgive twice."
+		"Your species has a reputation. It precedes you badly."
+		"Withdraw, or the old manner will be applied."
+		"We have buried fleets larger than yours."
+		"This is not your sky and you were not invited."
+		"The Alcorian memory is long and precise."
+		"You will not be permitted to repeat history here."
+		"Our patience is a courtesy, not a limit."
+
+# --- Bruidian ---------------------------------------------------------------
+
+phrase "friendly bruidian navy"
+	word
+		"Bruidian vessel. You are seen and you are welcome."
+		"Our station keeps the lane clear for honest traffic."
+		"Trade honestly and we have no disagreement."
+		"The Bruidian do not interfere. We also do not forget."
+		"You may dock if you have something worth docking for."
+		"Good profit to you, and better manners."
+		"We have heard of the Union. Mostly acceptable things."
+		"Keep your word and this harbor stays open."
+
+phrase "hostile bruidian navy"
+	word
+		"Your credit is no good and your word is worse."
+		"The Bruidian do not extend terms to those who break them."
+		"You are barred. Leave before the harbor closes."
+		"Every debt out here is collected eventually."
+		"We have a list. You are approaching the top of it."
+		"Do not confuse commerce with mercy."
+		"Your cargo is forfeit for what you owe."
+		"Bruidian patience is an accounting, not a virtue."
+
+# --- Motilali ---------------------------------------------------------------
+
+phrase "friendly motilali navy"
+	word
+		"The Motilali see you and are not alarmed."
+		"Our ships move together or not at all."
+		"You may share this current with us."
+		"We travel far and remember the route."
+		"There is no hurry in the deep dark."
+		"The Motilali greet a patient captain."
+		"Follow the drift and you will arrive."
+		"We do not hunt what we do not need."
+		"Your wake is a pleasant one."
+
+phrase "hostile motilali navy"
+	word
+		"You disturb the current. That is not forgiven."
+		"The Motilali have closed this passage."
+		"We have followed longer journeys than yours to settle smaller matters."
+		"Your hurry is an insult to the deep."
+		"Turn back. The current does not argue."
+		"We are patient. That should frighten you."
+		"You have been noted in the migration record."
+		"The Motilali do not chase. They arrive."
+		"This is the last courtesy you will receive from us."
+
+# --- Crildari ----------------------------------------------------------------
+# The Crildari are the bioluminescent-algae traders of the Orville setting.
+# Their fleets glow; their voice is warm, trade-minded, and quietly proud of
+# their light.
+
+phrase "friendly crildari"
+	word
+		"The light is good company."
+		"We carry the glow of a hundred worlds."
+		"Your course is a kind one."
+		"The algae sings, and we answer."
+		"There is room in our wake."
+		"Trade is a brighter currency than fear."
+		"We see you, and we are glad of it."
+		"The deep is dark; our light is not."
+		"Safe passage, captain. The glow remembers you."
+		"We do not hoard our light."
+
+phrase "hostile crildari"
+	word
+		"You darken our cargo. Turn away."
+		"The algae does not tolerate interference."
+		"Our light is not a greeting to intruders."
+		"You chase our glow and find only distance."
+		"The trade route is ours by contract and by light."
+		"Dim your engines and depart, or be measured against our brightness."
+		"We have shone on worse captains than you."
+		"The glow does not negotiate."
+		"This is the last time we warn you in light."
+
+phrase "friendly crildari disabled"
+	word
+		"The light is dimming, but not gone."
+		"We carry the glow even in shadow."
+		"Your help is noted in our records."
+		"The algae remembers those who aid it."
+
+phrase "hostile crildari disabled"
+	word
+		"You have dimmed us. That debt is recorded."
+		"The glow will outlast your victory."
+		"Our light is not extinguished by your engines."
+
+phrase "crildari ship bribe rejection"
+	word
+		"Our cargo is not for sale, in light or in coin."
+		"The algae is a contract, not a commodity."
+		"We carry life. We do not trade it away."
+
+phrase "friendly crildari navy"
+	word
+		"The Crildari convoy is under escort."
+		"Our light travels with the trade."
+		"The algae sings for a safe captain."
+		"We guard the glow of a hundred worlds."
+		"Your escort is appreciated in our records."
+
+phrase "hostile crildari navy"
+	word
+		"The Crildari will not yield their light."
+		"Our trade route is not open to your engines."
+		"The glow does not bargain with raiders."
+		"You will not darken this convoy."
+
+# ---- ADDITIONAL MISSING PHRASES (referenced by governments.txt) ------------
+
+phrase "friendly union disabled"
+	word
+		"This is the Planetary Union cruiser Orville. We see you are disabled."
+		"Union Command dispatches aid. Hold position."
+		"A Union tender is en route. Please stand by."
+		"Your distress signal has been logged. Help is coming."
+		"We will not abandon a Union vessel. Wait for rescue."
+
+phrase "hostile union disabled"
+	word
+		"Your vessel is disabled. We will board and secure it."
+		"Surrender is confirmed. Prepare for boarding."
+		"Union marines are deploying. Do not resist."
+		"Your weapons are down. The engagement is concluded."
+		"We will take your crew into custody. Your ship is forfeit."
+
+phrase "friendly krill disabled"
+	word
+		"Avis has shown mercy. Your vessel is disabled but intact."
+		"The faithful do not kill the helpless. Drift and reflect."
+		"Your engines are cold. Avis has spared you."
+		"We have disabled you. Your fate is in Avis's hands."
+
+phrase "hostile krill disabled"
+	word
+		"Your vessel is dead in space. Avis demands surrender."
+		"The unclean will be cleansed. Even the helpless."
+		"Disabled. Helpless. Perfect for the faithful."
+		"We will finish what we started. Avis wills it."
+
+phrase "krill planet bribe rejection"
+	word
+		"Avis rejects your tribute. This world is not for sale."
+		"The unclean cannot buy the faithful's worlds."
+		"Your credits are meaningless to Avis."
+
+phrase "moclan planet bribe rejection"
+	word
+		"Moclan logic rejects your offer. This world is not for sale."
+		"Your credits are insufficient. Depart."
+		"The Orbitals do not align with your bribe."
+
+phrase "moclan ship bribe acceptance"
+	word
+		"Your offering is... adequate. You may proceed."
+		"Moclan science accepts your contribution."
+		"Logic dictates acceptance. You may pass."
+
+phrase "moclan ship bribe rejection"
+	word
+		"Your offering is... inadequate. Depart."
+		"Moclan logic rejects your bribe."
+		"Insufficient. You will be escorted out."
+
+phrase "motilali planet bribe rejection"
+	word
+		"The Motilali do not sell their currents."
+		"Your credits sink in the deep. They do not reach us."
+		"The current does not accept tribute."
+
+phrase "motilali ship bribe rejection"
+	word
+		"Your offer drifts past us. The current does not stop."
+		"The Motilali have no use for your credits."
+		"Bribes are debris in the current."
+
+phrase "calivon planet bribe rejection"
+	word
+		"Calivon does not trade worlds. We collect them."
+		"Your offer is noted. Your world is also noted."
+		"We already own what you would sell."
+
+phrase "calivon ship bribe rejection"
+	word
+		"Your ship is more interesting than your credits."
+		"Calivon accepts specimens. Not bribes."
+		"We will take your ship instead."
+
+phrase "kaylon planet bribe rejection"
+	word
+		"Your offer is inefficient. This world is not a transaction."
+		"Kaylon does not accept bribes. We calculate outcomes."
+		"Bribery implies negotiation. There is none."
+
+phrase "kaylon ship bribe rejection"
+	word
+		"Your vessel is inefficient. It will be corrected."
+		"Bribes are illogical. Your ship is forfeit."
+		"We do not trade. We remove obstacles."
+
+phrase "alcorian ship bribe rejection"
+	word
+		"The Alcorian do not trade honor for credits."
+		"Your offer insults the old manner."
+		"We remember the ones who tried to buy us."
+
+phrase "bruidian ship bribe acceptance"
+	word
+		"Your credit is good. The harbor is open."
+		"Bruidian patience rewards honest trade."
+		"Welcome. Our terms stand."
+
+phrase "bruidian ship bribe rejection"
+	word
+		"Your credit is no good. The harbor is closed."
+		"Bruidian does not extend terms to those who break them."
+		"Every debt is collected eventually."
+
+phrase "bruidian planet bribe acceptance"
+	word
+		"Your offer is recorded. The world welcomes you."
+		"Bruidian honor accepts honest tribute."
+		"The station logs your generosity."
+
+phrase "merchant ship bribe acceptance"
+	word
+		"Good business. Your cargo is safe with us."
+		"Price agreed. We will escort you through."
+		"Commerce appreciates a reasonable captain."
+
+phrase "merchant ship bribe rejection"
+	word
+		"Your offer does not cover the risk."
+		"Insurance does not pay for poor decisions."
+		"We have lawyers. You have excuses."
+
+phrase "contractor ship bribe acceptance"
+	word
+		"Contract amended. Your slate is clean."
+		"Professional courtesy accepted. The fee is paid."
+		"Your name is removed from the ledger."
+
+phrase "contractor ship bribe rejection"
+	word
+		"Your offer is below the contract minimum."
+		"Ledgers do not negotiate. Pay the full fee."
+		"I do not chase unpapered bounties. I chase paid ones."
+
+phrase "malidora ship bribe acceptance"
+	word
+		"Smart captain. Keep your hull and your cargo."
+		"Fee accepted. Malidora remembers generosity."
+		"Consider it an investment in your survival."
+
+phrase "malidora ship bribe rejection"
+	word
+		"Your credits are lighter than your hull."
+		"Malidora does not negotiate. We collect."
+		"Everything you own is now a negotiating position."
+
+phrase "friendly independent disabled"
+	word
+		"Dead in space, are you? I can tow you. For a price."
+		"Nobody owns this lane. That includes your wreck."
+		"Need a jump? My cables are long enough."
+		"Even free haulers help each other. Sometimes."
+
+phrase "hostile independent disabled"
+	word
+		"Your hull is mine now. Drift and wait."
+		"I did not ask for a fight. I found a wreck."
+		"Every ship out here is salvage until it moves."
+		"Last time I helped a stranger I lost an engine. Not again."
+
+phrase "friendly merchant disabled"
+	word
+		"Cargo intact? Good. The insurer will be pleased."
+		"Merchant Marine assists. For a standard recovery fee."
+		"Your hold is sealed. We will tow you to port."
+		"Trade routes are long. Help is closer than you think."
+
+phrase "hostile merchant disabled"
+	word
+		"Your cargo is insured. The insurer has lawyers."
+		"You are costing me time. The salvage is mine."
+		"Commerce remembers who made it expensive."
+		"My escort is late, not absent. Your hull is forfeit."
+
+phrase "friendly motilali disabled"
+	word
+		"The current carries you now. We will guide you."
+		"The Motilali do not leave the drifting behind."
+		"Follow our wake. The deep is patient."
+
+phrase "hostile motilali disabled"
+	word
+		"You disturb the current even in death."
+		"The Motilali have closed this passage to you."
+		"Your wreck will join the deep. We do not argue with debris."
+		"The current does not negotiate with the sinking."
+
+phrase "friendly bruidian disabled"
+	word
+		"Your vessel is dark. Bruidian harbor sends aid."
+		"The Bruidian do not abandon honest trade."
+		"Dock at the station. We will repair what we can."
+
+phrase "hostile bruidian disabled"
+	word
+		"Your credit is exhausted. The harbor claims your hull."
+		"Bruidian patience is an accounting. Yours is settled."
+		"Every debt is collected. Even from the drifting."
+
+phrase "friendly alcorian disabled"
+	word
+		"The Alcorian remember the ones who fall in peace."
+		"We will tow you to the old lanes."
+		"May your course find true again."
+
+phrase "hostile alcorian disabled"
+	word
+		"You bring the noise of the old wars to our doorstep."
+		"The Alcorian do not forgive. Even the helpless."
+		"Your wreck will be a marker for the next one."
+
+phrase "friendly bounty navy"
+	word
+		"Independent Contractor. You are not on my slate."
+		"Your name came up. It came up as 'not a target.'"
+		"No contract here. Good hunting to you."
+		"Professional courtesy: fly clean and I will not look twice."
+		"If someone is paying to find you, I am not that someone."
+		"Keep your business quiet and we will never meet again."
+		"This is a working vessel. Today's work is elsewhere."
+		"You are cleared. I do not chase unpapered bounties."
+		"Word of advice: change your registry occasionally."
+
+phrase "hostile bounty navy"
+	word
+		"There is a contract with your transponder on it. I intend to collect."
+		"Stand down. The fee is the same alive or otherwise."
+		"Your employer stopped paying. That makes you a target."
+		"I have your flight plan, your refuel stops, and your patience beaten."
+		"Run if you like. It only improves the story."
+		"This is not personal. It is invoiced."
+		"Disable your engines and the remainder of this can be civil."
+		"Your name is in my ledger. Ledgers get settled."
+		"I will be paid either way. Choose which way."
+
+phrase "friendly contractor disabled"
+	word
+		"Contract voided. You are no longer a target."
+		"Professional courtesy: I do not shoot the disabled."
+		"Your slate is clean. For today."
+		"Ledgers balance. Yours just did."
+
+phrase "hostile contractor disabled"
+	word
+		"Your contract is settled. The hard way."
+		"I do not chase unpapered bounties. I collect paid ones."
+		"Your name was in my ledger. It is paid now."
+		"This is not personal. It was invoiced."

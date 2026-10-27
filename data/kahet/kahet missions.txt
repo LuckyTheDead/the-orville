@@ -1,0 +1,657 @@
+# Copyright (c) 2019 by Tommaso Becca
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "graveyard label"
+	galaxy "label graveyard"
+		sprite label/graveyard
+
+conversation "ka'het: remnant"
+	`Do you want to ask the Remnant about the section of space south of the Ember Waste, the Graveyard, and its inhabitants?`
+	choice
+		`	(Yes.)`
+		`	(Not now.)`
+			defer
+	branch taely
+		has "remnant met taely"
+	`	You ask around more than a dozen people, but none of them seems to be aware of what you're talking about. Either the information is too confidential to be given to a stranger like you, or you didn't ask the right people.`
+		decline
+	label taely
+	`	You ask around more than a dozen people, but none of them seems to be aware of what you're talking about. Perhaps you might have more luck asking Taely on Viminal.`
+		decline
+
+event "graveyard insights"
+	planet Alix
+		add description `	Here the Ka'het attacks were limited to the inhabited settlements; had they also destroyed the mining bases and the unmanned vessels, Parii'het would have run out of supplies thousands of years ago.`
+	planet Celeatis
+		add description `	This planet appears to have been home to one of the largest Builder research centers, which focused on studying the anomaly in the system. Had they found out how to stabilize it and use it as a wormhole, perhaps their species would have survived and spread to the rest of the Ember Waste.`
+	planet Ceilia'sei
+		add description `	The main purpose of Ceilia'sei was to act as some sort of anti-missile platform, but when the Ka'het invaded a second time, the station had no way to defend against their deadly Ravager Beams, and the station's defense systems were subsequently lost forever.`
+	planet Eavine
+		add description `	This moon was also home for the second Ka'het wave, which, same as the first, refused to obey their creators. It had been terraformed to make it a more appealing place to live, but after their civilization collapsed the moon began to return to its natural state. When it reverted to its original sub-zero temperatures, the facilities stopped working, and the Ka'het production in this site came to an end.`
+	planet "Letis'sei"
+		add description `	As it was designed to be crewed as minimally as possible, only a tiny fraction of Letis'sei station was inhabitable. The rest of the station was instead dedicated to advanced computing and targeting systems, most of which are still intact today.`
+	planet Osaeli
+		add description `	For most of the intervening millennia between the Builders' achievement of spaceflight and their extinction, Osaeli was the de facto capital of the Builders, a key part of their economy and society. The first Het station was constructed orbiting this planet's star with the purpose of protecting them from any external threat.`
+	planet Palarei
+		add description `	Thanks to their earlier exploration efforts, this was where the Builders encountered the first lifeforms that evolved outside their home planet. While the climate was drastically different from that of the Builders' homeworld, the fruits the local flora produced were popular enough for Palarei to become a major farming planet.`
+	planet Parii'het
+		add description `	Parii'het was almost finished when the invasion broke out, and already capable of creating Ka'het. Thanks to the mining on Alix and the occasional asteroid mine operated by the Mar drones, most of the facilities are still fully operational to this day.`
+	planet Retilie
+		add description `	As it was mainly used for fishing, the settlements on this planet were never as advanced as the ones on nearby worlds, so when the Ka'het arrived, there was basically nothing to stop them: after a few attacks, the planet was uninhabited again.`
+	planet Seli'het
+		add description `	This was the only Het station the Builders ever completed, orbiting Giribea. As the young Ka'heta reach their "Age of Assembly," strange, lanky machines start molding an exoskeleton onto their bodies right away. As the Ka'heta grow, their exoskeleton is expanded and various outfits are added, transforming them into living weapons.`
+	planet Siteria
+		add description `	This was the Builder homeworld; both the place where their journey began and where it ended. After a dozen millennia of underpopulation, the Ka'het arrival forced them to withdraw from the planet entirely. As one of the few remaining planets capable of sustaining farming, this was their last stronghold, falling centuries after the invasion begun.`
+	planet Veliante
+		add description `	Soon after the beginning the invasion, an attack on some sort of advanced nuclear facility started a meltdown; the fallout quickly spread across most of the planet, leaving all Builder settlements uninhabitable.`
+
+event "patir appears"
+	system "Patir"
+		remove hidden
+
+event "asteroid on patir"
+	planet "Builder Settlement"
+		remove attributes "requires: ka'sei"
+
+event "pacified ka'sei"
+	"reputation: Ka'sei" = 1
+
+event "patir mystery timer"
+
+ship "Cloak Check"
+	attributes
+		"heat dissipation" 1
+		"hull" 3
+		"mass" 100
+		"drag" 5
+		"automaton" 1
+		"thrust" 100
+		"turn" 6000
+	outfits
+		"Cloak Checker"
+	turret 0 0
+
+outfit "Cloak Checker"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	weapon
+		"velocity" 10
+		"lifetime" 1
+		"reload" 1
+		"blast radius" 20
+		"hull damage" 5
+		"no damage scaling"
+		"range override" 1000000
+		"turret turn" 360
+
+ship "Asteroid Planet"
+	attributes
+		category "Heavy Warship"
+		"uncapturable" 1
+		"inscrutable" 1
+		"cost" 158000000
+		"hull" 86135672193
+		"required crew" 1
+		"bunks" 1
+		"mass" 67400
+		"drag" 3040
+		"heat dissipation" 10
+		"energy capacity" 1
+		"fuel generation" 0.3
+		"cargo space" 40
+		"outfit space" 390
+		"weapon capacity" 150
+		"engine capacity" 95
+		"hull repair rate" 47
+		"cargo scan power" 1
+		"cargo scan efficiency" 0.001
+		"thrust" 34020
+		"turn" 593140
+		"asteroid mount jd" 1
+		"asteroid mount am" 1
+		"asteroid mount" 1
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Asteroid Weapon Super"
+
+	gun 0 0 "Asteroid Weapon Super"
+
+outfit "Asteroid Weapon Super"
+	"display name" "???"
+	category "Guns"
+	cost 1861000000
+	thumbnail "outfit/unknown"
+	mass 1
+	"outfit space" -1
+	"weapon capacity" -1
+	"gun ports" -1
+	weapon
+		"submunition" "asteroid fragment" 180
+		"inaccuracy" 1
+		"velocity" 70
+		"lifetime" 2
+		"reload" 360
+		"safe"
+		"split range" 300
+		"blast radius" 400
+
+outfit "asteroid fragment"
+	weapon
+		"submunition" "spin1 print right"
+		"submunition" "spin1 print left"
+		"inaccuracy" 360
+		"velocity" -65
+		"random velocity" 20
+		"lifetime" 40
+		"random lifetime" 80
+		"hull damage" 50
+		"heat damage" 800
+		"ion damage" 3
+		"safe"
+		"hit force" 100
+		"blast radius" 200
+
+
+event "Patir moves"
+	system Patir
+		pos 10059.5 10.5
+		remove haze
+	"ka'het: beyond Patir" ++
+
+event "Patir spaceport"
+	planet "Builder Settlement"
+		spaceport `The Kaylon laboratory merges oddly well with the rest of the environment, similar in color and design to the Builder structures around here. The spaceport consists only of a flat strip of regolith near the settlement, hastily cleaned of the debris that covers most of the terrain.`
+
+
+ship "Remnant Satellite"
+	sprite "ship/remnant satellite"
+	"administrative cost" 0
+	attributes
+		category "Drone"
+		hull 130
+		mass 10
+		drag 2
+		"heat dissipation" 1
+	explode "tiny explosion" 5
+	explode "small explosion" 2
+
+
+ship "Asteroid Blocker"
+	attributes
+		"heat dissipation" 1
+		"hull" 3
+		"mass" 100
+		"drag" 5
+		"automaton" 1
+		"thrust" 100
+		"turn" 6000
+	outfits
+		"Fuel Removal"
+	turret 0 0
+
+outfit "Fuel Removal"
+	category "Turret"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	weapon
+		"velocity" 1000
+		"lifetime" 10
+		"reload" 100000
+		"blast radius" 200000
+		"safe"
+		"no damage scaling"
+		"range override" 10000000
+		"homing"
+			"leading"
+			"throttle control"
+		"tracking" 1
+		"acceleration" 1.5
+		"drag" 0.2
+		"turn" 12
+		"fuel damage" 500
+		"turret turn" 360
+
+event "no Patir spaceport and no Fetri spawn"
+	system Patir
+		remove fleet "Ka'sei"
+	planet "Builder Settlement"
+		remove spaceport
+
+event "Patir spaceport returns and Fetri spawn"
+	system Patir
+		add fleet "Ka'sei" 300
+	planet "Builder Settlement"
+		spaceport `The Kaylon laboratory merges oddly well with the rest of the environment, similar in color and design to the Builder structures around here. The spaceport amounts to only a flat strip of regolith near the settlement, hastily cleaned of the debris that covers most of the terrain.`
+
+
+outfit "Ka'het Machinery"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		"velocity" 1000
+		"lifetime" 1
+		"reload" 1
+		"blast radius" 100000
+		"safe"
+		"no damage scaling"
+		"range override" 1000000
+		"homing"
+			"leading"
+			"throttle control"
+		"tracking" 1
+		"acceleration" 1.5
+		"drag" 0.2
+		"turn" 12
+		"fuel damage" -400
+		"turret turn" 360
+
+ship "Fetri'sei" "Fetri'sei (Patir 12.2)"
+	plural "Fetri'seia"
+	sprite "ship/fetri'sei"
+	thumbnail "thumbnail/fetri'sei"
+	attributes
+		category "Interceptor"
+		"cost" 5700000
+		"shields" 2400
+		"hull" 7200
+		"required crew" 1
+		"bunks" 1
+		"mass" 210
+		"drag" 2.9
+		"heat dissipation" .5
+		"fuel capacity" 100
+		"self destruct" 1
+		"ramscoop" 0.13
+		"cargo space" 62
+		"outfit space" 383
+		"weapon capacity" 184
+		"engine capacity" 86
+		"energy capacity" 10000
+		"energy generation" 23.3
+		"heat generation" 32
+		"shield heat" 3.4
+		"hull repair rate" 0.3
+		"ka'sei" 1
+		weapon
+			"blast radius" 120
+			"shield damage" 540
+			"hull damage" 280
+			"hit force" 780
+	outfits
+		"Ka'het Machinery"
+		"Ka'het Ravager Beam" 2
+
+		"Ka'het Primary Cooling"
+		"Ka'het Shield Restorer"
+		"Ka'het MHD Generator"
+		"Ka'het Reserve Accumulator"
+
+		"Ka'het Compact Engine" 2
+
+	gun -13 -36
+	gun 13 -36
+	turret 0 0
+	engine -20 46.5
+	engine 20 46.5
+	explode "tiny explosion" 6
+	explode "small explosion" 10
+	explode "medium explosion" 18
+	explode "large explosion" 10
+	"final explode" "final explosion small"
+	description "The Fetri is a self replicating probe, built to harvest iridium away from the Graveyard and transport it back to the Builders."
+
+ship "Asteroid Large 1" "Asteroid Large (Patir 12.2)"
+	sprite "ship/asteroid adult"
+	attributes
+		category "Transport"
+		"cost" 1350000000
+		"hull" 965612
+		"required crew" 1
+		"bunks" 1
+		"mass" 130
+		"drag" 4.1
+		"heat dissipation" .7
+		"energy capacity" 1000
+		"energy generation" 10
+		"fuel capacity" 250
+		"fuel generation" -1
+		"cargo space" 50
+		"outfit space" 390
+		"weapon capacity" 150
+		"engine capacity" 95
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Asteroid Anti-Missile"
+
+		"Asteroid Jump Drive"
+		
+	engine 0 0
+		zoom 1
+		angle 0
+		over
+	turret 0 0 "Asteroid Anti-Missile"
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 25
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+
+
+event "Patir returns"
+	system Patir
+		pos -38 553
+		haze _menu/haze-red
+	clear "ka'het: beyond Patir"
+
+
+conversation "end of Patir 2 - on enter"
+	`The cockpit has become quite chaotic: the instruments the team brought with them keep buzzing and beeping. After shutting down the main engines, someone taps on your shoulder to call your attention. "<first>, could you pitch the ship down a few degrees?" Dusk asks, with a calmer look than during liftoff. You reply with a nod, and move the stick forward slightly.`
+	`	"There! Do you see it?" he continues, pointing at a spot in the sky with his hand. Between the mass of stars in front of you, a pattern leaps to the eye: two sets of three stars, right next to each other, forming a prism-like structure. "We are back."`
+
+
+conversation "end of Patir 2 - on complete"
+	`A large crowd quickly gathers around your landing pad, eagerly awaiting your arrival. After all this time between the stars, setting foot on a planet with an actual atmosphere is incredibly refreshing. Ignoring the cold weather for a moment, you take the biggest breath you can to make up for the past weeks of recycled air.`
+	`	Before you've even reached the end of the ramp, the people on the ground are already signing questions to you and the rest of the team about your journey. You do your best to reply, but in the overall mix of confusion and excitement you aren't sure anyone understood what you just said.`
+	`	Between the chaos, you hear a familiar voice singing your name: a few meters on your left, you notice Chilia with his arm raised and a large grin greeting you back. Moving across the crowd not without some difficulty, you follow him through a narrow door inside a cramped room right next to the pad.`
+	`	"I prefer this spaceport when it is more hushed," he remarks with a sigh, "but after the past weeks some frenzy is understandable. We will have to make do with this warehouse for now." He invites you to take a seat. "So, <first>, would you tell me about your journey?"`
+	`	By the time you're done, more than an hour must have passed. Chilia paces aimlessly around the room, reflecting on your recounting of the events. As silence falls, you notice that calm seems to have returned on the pad as well.`
+	choice
+		`	(Wait for him to speak.)`
+			goto wait
+		`	"Do you know how we came back to this galaxy?"`
+		`	"What happened while we were gone?"`
+	`	"Oh. I thought you had been told already." He sits down in front of you. "It was us that brought Patir back here. After your departure, it did not take long for our long-range sensors to pick up that the black hole had disappeared, along with you and the team. Our data was scarce, but we knew one, very important thing: if Patir had appeared here once, there must have been a way to do that again.`
+		goto explain
+	label wait
+	`	"If your description is accurate, it means Patir is not another mouth to a pocket universe, but instead a transporter to another galaxy. Or universe, for all we know. In retrospect, there were enough reasons to doubt that first theory, but we were far too busy trying to save you to look into it seriously." Seeing your confused expression, he continues. "<first>, it was us who brought Patir back here.`
+	label explain
+	`	"We knew Postverta was involved with Patir's initial arrival, and together with the team there, we discovered that the energy burst that had been released when Ssil Vida first appeared had no relation to the systems controlling its pocket universe. So, its activation or deactivation would have no effect on Patir, and we had to start looking somewhere else.`
+	`	"Our research up to this point had mostly focused on the pocket universe; most of Postverta is still obscure to us. As we evaluated our options, we determined that, by the time we could understand the station's systems enough to use them for our purposes, your crew would have already run out of supplies and perished. Instead, we attempted to replicate the energy burst using just our technology, augmented by the transmission systems of Ssil Vida.`
+	`	"The project took most of our workforce, as well as several weeks to complete, no thanks to a number of setbacks almost making us start over from scratch. But with the full power of the onboard reactors and an array of calculators rivaling that of our largest outposts, its giant antennae came back to life, and released a wave as strong as when Ssil Vida appeared. Two weeks later, Patir returned, and now you are here, safe and sound."`
+	`	Finally, a tired Dusk reaches the two of you in the storage room, sitting down after greeting Chilia and you. From a brief exchange between them, you infer that he has also been told of the circumstances around your return.`
+	choice
+		`	"What is going to happen to Patir now?"`
+			goto patir
+		`	"Wait, what if we were not around Patir when it came back?"`
+	`	"The black hole would have departed without us, and we would have been still stuck in that sector - only this time without a laboratory to support us, nor most of our consumables. The people down here perhaps could have been able to send Patir back there to pick us up, but by then we would have run out of supplies long before, and perished between the stars. We were lucky that things went the way they did, all things considered. Our research in those systems was supposed to bring us back, and yet we were just chasing rainbows, endangering ourselves further every step we took.`
+		goto next
+
+	label patir
+	`	"It is difficult to say. Given what we have observed, it will probably disappear once again after the effects of our energy burst; when that will happen or where it will go is beyond our current knowledge. Those same systems we were stuck in could now be inaccessible, and our data might be the only information we will ever gather on them.`
+	label next
+	`	"At this point in time, exploring Patir would be a gamble, and an extremely risky one at that. The next phase will have to be operated from a distance, in order to fully understand the way that system works and how Ssil Vida controls it. How much time that will take, I cannot say; maybe weeks, or months, or even years. But then, and only then, will we go back there and start digging deeper."`
+	choice
+		`	"I understand."`
+			goto finish
+		`	"You want to return there?!"`
+	`	Dusk smiles. "It is my job, after all. The danger of the unknown is always a part of it, even in the simplest of missions. I do admit the risk in these past weeks was far beyond an acceptable level, but one day, we will know enough about the mess in which we have become tangled in to unravel it."`
+	label finish
+	`	The two of them accompany you to the <ship>, sitting alone in the now-quiet spaceport of <planet>. The cargo bay has been emptied of the vast array of instruments that had been lying in it for a while, and you guess the same has been done with the cockpit. As you walk once again up the stairway, the Remnant bid you farewell. "We have transferred <payment> as a way to express our gratitude," Dusk signs with a smile. "Of course, their worth is incomparable with the value of what you have done for us; without you, we would have never made it out alive. Goodbye for now, and may the Embers aid in your pursuits."`
+
+
+
+event "patir mystery 2 timer"
+
+
+event "patir flickers"
+
+
+event "ssil vida changes"
+	system "Postverta"
+		pos 297 269
+		government Remnant
+		attributes "ember waste"
+		belt 2000
+		haze _menu/haze-red
+		link Diespiter
+		link Prosa
+		link Statina
+		asteroids "medium rock" 4 2
+		asteroids "large rock" 4 3
+		asteroids "medium metal" 52 1
+		asteroids "large metal" 9 3
+		hazard "Ember Waste Base Heat" 50
+		hazard "Ember Waste Base Storm" 9000
+		hazard "Ember Waste Base Storm" 15000
+		object
+			sprite star/m8
+		object
+			sprite planet/desert7
+			distance 439
+		object Fertriery
+			sprite planet/fog0
+			distance 814
+			object
+				sprite planet/dust4
+				distance 202
+		object
+			sprite planet/rock10
+			distance 1208
+		object "Ssil Vida"
+			sprite planet/sheragi_postverta_2
+				scale 0.5
+			distance 1408
+
+
+event "Ka'het don't spawn in Fereti and Lire"
+	system Fereti
+		remove fleet "Ka'het Core"
+		remove hazard "Ember Waste Base Storm"
+	system Lire
+		remove fleet "Ka'het"
+		remove fleet "Ka'het Aggressive"
+		remove hazard "Ember Waste Base Storm"
+
+event "Ka'het spawn in Fereti and Lire"
+	system Fereti
+		add fleet "Ka'het Core" 2900
+		add hazard "Ember Waste Base Storm" 9000
+	system Lire
+		add fleet "Ka'het" 2850
+		add fleet "Ka'het Aggressive" 9300
+		add hazard "Ember Waste Base Storm" 9000
+
+# The Ka'sei jumps straight away thanks to its personalities (uninterested, no mining/harvest/scanning, enemy with uninhabited so it can't land)
+# It is forced to jump to Fereti because of the artificial limitation of its jump range (it's the only system within 50 units of Patir)
+# This jump, as all jumps, removes 200 fuel from it; this means it will start regenerating it right after, which leads to the very high fuel heat and consequent overheating, which leads to the overheat damage. The overheat damage is large enough that a single hit will disable it straight away, avoiding the risk of killing it accidentally.
+
+ship "Fetri'sei" "Fetri'sei (Patir 18)"
+	uncapturable
+	add attributes
+		"weapon capacity" 13
+		"fuel capacity" 150
+		"asteroid mount jd" 1
+		"fuel heat" 150
+		"overheat damage rate" 500
+		"overheat damage threshold" -0.2
+		"threshold percentage" 0.9
+	outfits
+		"Ka'het Ravager Beam" 2
+
+		"Ka'het Primary Cooling"
+		"Ka'het Shield Restorer"
+		"Ka'het MHD Generator"
+		"Ka'het Reserve Accumulator"
+		"Asteroid Jump Drive (Patir 18)"
+		"Asteroid Weapon Small"
+	gun -13 -36
+	gun 13 -36
+	gun 0 -36
+
+outfit "Asteroid Jump Drive (Patir 18)"
+	"display name" "???"
+	category "Systems"
+	cost 29631456
+	thumbnail "outfit/asteroid weapon 7"
+	"mass" 20
+	"outfit space" -20
+	"jump speed" 10
+	"jump fuel" 200
+	"jump range" 48
+	"jump drive" 1
+	"asteroid mount jd" -1
+	"jump effect" "jump drive circle"
+	"jump effect" "jump drive spark 1"
+	"jump effect" "jump drive spark 2"
+	"jump effect" "jump drive spark 3"
+	"jump effect" "jump drive spark 4"
+	"jump effect" "jump drive spark 5"
+	"jump effect" "jump drive spark 6"
+	"jump effect" "jump drive spark 7"
+	"jump effect" "jump drive spark 8"
+	"jump effect" "jump drive spark 9"
+	"jump effect" "jump drive 1"
+	"jump effect" "jump drive 2"
+	"jump effect" "jump drive 3"
+	"jump effect" "jump drive 4"
+	"jump effect" "jump drive 5"
+	"jump effect" "jump drive 6"
+	"jump effect" "jump drive 7"
+	"jump effect" "jump drive 8"
+	"jump effect" "jump drive 9"
+	"jump effect" "jump drive 10"
+	"jump effect" "jump drive 11"
+	"jump effect" "jump drive 12"
+	"jump effect" "jump drive 13"
+	"jump effect" "jump drive 14"
+	"jump effect" "jump drive 15"
+	description "Whatever the mechanism that hides beneath the translucent orb may be, it functions similarly to a jump drive, bridging different parts of the universe together for the cost of merely 200 units of fuel."
+
+ship "Petrel" "Petrel (Lifeboat)"
+	"never disabled"
+	add attributes
+		"outfit scan power" -10
+		"outfit scan efficiency" -14
+		"tactical scan power" -20
+		"asteroid scan power" -30
+	outfits
+		"Small Heat Shunt" 1
+		"Crucible-Class Steering"
+		"Bellows-Class Afterburner"
+		"Crystal Capacitor"
+		"Small Bunk Room"
+		"Fuel Processor" 2
+		"Emergency Ramscoop" 2
+		"Generator (Furnace Class)"
+
+
+event "Patir land on Pacili"
+	planet "Pacili"
+		remove attributes "requires: gaslining"
+	planet "Builder Settlement"
+		add attributes "requires: youwish"
+
+
+event "Patir unland on Pacili"
+	planet "Pacili"
+		add attributes "requires: gaslining"
+	planet "Builder Settlement"
+		remove attributes "requires: youwish"
+
+
+event "Patir Lathia landable"
+	system "Lathia"
+		remove object
+			sprite "planet/asteroid magic"
+			distance 2723.62
+		add object "Magic Asteroid Planet"
+			sprite "planet/asteroid magic"
+			distance 2723.62
+
+
+ship "Asteroid Young 2" "Asteroid Young 2 (Patir 27)"
+	"display name" "???"
+	"noun" "asteroid"
+	"uncapturable"
+	add attributes
+		"threshold percentage" 0.9
+
+ship "'olofez" "'olofez (Crew Destroyed)"
+	"uncapturable"
+	add attributes
+		"bunks" -1
+
+ship "Tubfalet" "Tubfalet (Crew Destroyed)"
+	crew 34
+	add attributes
+		"bunks" -120
+
+
+ship "Swan" "Swan (Jump)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Teciimach Bay"
+		"Inhibitor Turret" 3
+		"Point Defense Turret" 2
+		"EMP Torpedo" 20
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Jump Drive"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+
+event "patir mystery 3 timer"
+
+ship "Builder Satellite"
+	sprite "ship/builder satellite"
+	"administrative cost" 0
+	attributes
+		category "Drone"
+		"hull" 1500
+		"mass" 10
+		"drag" 2
+		"heat dissipation" 1
+
+
+ship "Builder Satellite" "Builder Satellite 2"
+	explode "tiny explosion" 5
+	explode "small explosion" 2
+
+
+event "ka'het: quarantine site"
+
+event "ka'het: alix discoveries"
+	planet Alix
+		add description `	Long before becoming an automated mining outpost, this moon was designated as a Builder quarantine site.`
+
+
+
+event "ka'het: gaslining probe storm"
+
+event "Ka'het don't spawn in Ritilas"
+	system Ritilas
+		remove fleet Ka'het 2700
+		remove fleet "Ka'het Aggressive" 9600
+
+event "Ka'het spawn in Ritilas"
+	system Ritilas
+		add fleet Ka'het 2700
+		add fleet "Ka'het Aggressive" 9600
+
+event "Lightning in a Bottle epilogue"

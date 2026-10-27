@@ -1,0 +1,133 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+conversation "assisting merchant"
+	`${assist merchant 1} <origin>${assist merchant 2} ${assist merchant 3} <payment>${assist merchant 4}`
+		decline
+
+conversation "assisting merchant hazardous"
+	`${assist merchant 1 hazardous} <origin>${assist merchant 2} ${assist merchant 3} <payment>${assist merchant 4}`
+		decline
+
+phrase "assist merchant 1"
+	phrase
+		"assist merchant 1-1"
+	phrase
+		"assist merchant 1-2"
+	phrase
+		"assist merchant 1-3"
+
+phrase "assist merchant 1 hazardous"
+	phrase
+		"assist merchant 1-1"
+	phrase
+		"assist merchant 1-2 hazardous"
+	phrase
+		"assist merchant 1-3"
+
+phrase "assist merchant 1-1"
+	word
+		`Knowing that `
+		`Since `
+		`Understanding that `
+		`Considering that `
+		`Seeing how `
+		`Knowing how `
+
+phrase "assist merchant 1-2"
+	word
+		`you altered course `
+		`you went out of your way `
+		`you may have altered your own flight plans `
+
+phrase "assist merchant 1-2 hazardous"
+	word
+		`you risked your life `
+		`you risked your ship `
+		`you risked your own ship `
+		`you braved enemy fire `
+		`you braved danger `
+
+phrase "assist merchant 1-3"
+	word
+		`to ` 4
+		`in order to ` 2
+		`so that you could `
+	word
+		`save `
+		`repair `
+		`rescue `
+		`secure `
+		`assist `
+		`help `
+	word
+		`the`
+
+phrase "assist merchant 2"
+	phrase
+		`assist merchant 2 simple` 2
+		`assist merchant 2 complex`
+
+phrase "assist merchant 2 simple"
+	word
+		`, `
+
+phrase "assist merchant 2 complex"
+	word
+		` and `
+	word
+		`save its cargo, `
+		`secure its cargo, `
+		`save its crew, `
+		`rescue its crew, `
+
+phrase "assist merchant 3"
+	word
+		`its `
+		`the `
+		`the ship's `
+		`the vessel's `
+	word
+		`` 4
+		`relieved `
+	word
+		`captain `
+	word
+		`gives you`
+		`offers you`
+		`rewards you with`
+
+phrase "assist merchant 4"
+	word
+		`.` 5
+		` in gratitude.`
+		` in appreciation.`
+		` as an expression of their gratitude.`
+		` in thanks.`
+		` as thanks.`
+		` for your assistance.`
+
+
+
+conversation "assisting law enforcement"
+	`The captain of the <origin> thanks you for repairing them, but informs you that the pirates that disabled them are only a smaller part of a fleet attacking <destination>.`
+	`	The authorities of <planet> will probably pay you quite well if you assist them, but this could also be an easy way to get yourself killed.`
+	choice
+		`	(Don't join the fight.)`
+			decline
+		`	(Join the defense fleet.)`
+			accept
+
+conversation "boarding pirate"
+	`You make short-range scans of the <origin>'s outfits and cargo. Among the cargo, you find a crate full of credit chips worth <payment>. You drag the crate onto your ship before considering your next move.`
+		decline

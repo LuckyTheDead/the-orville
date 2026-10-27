@@ -1,0 +1,178 @@
+# Copyright (c) 2017 by Michael Zahniser
+# Copyright (c) 2018 by Zitchas
+# Copyright (c) 2022 by williaji
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+conversation "remnant key stones"
+	branch found
+		has "Remnant: Found Keystones: offered"
+
+	branch equipped
+		has "outfit: Quantum Keystone"
+	
+	`As you are walking through the spaceport, a man comes up to you and introduces himself as the manager of the local outfitter. "Greetings, outsider," he says. "I have heard many good things about you and your assistance to our people. Would you be interested in going on a quest for me?"`
+	choice
+		`	"What kind of quest?"`
+			goto quest
+		`	"Sorry, I'm not interested."`
+
+	`	"Please, I assure you, this quest will be very lucrative for you.`
+
+	label quest
+	`	"You may have noticed the red anomalies scattered within this region of space. What you may not have known is that these are wormholes, accessible only with the possession of a Quantum Key Stone. My people highly value these Key Stones because of this, but our mines produce very few of them." The manager shows you a Key Stone that he has with him.`
+	scene "outfit/keystone"
+	
+	branch hai1
+		has "First Contact: Hai: offered"
+	
+	`	"We have explored all of the Ember Waste, but have been unable to find any large concentrations of these stones."`
+	`	"You seem to be able to easily explore outside of this region. If you manage to discover a source of Key Stones outside of the Ember Waste, would you please inform me of them?"`
+	choice
+		`	"If I find anything, I'll let you know."`
+		`	"No thanks. This seems like a wild goose chase to me."`
+			decline
+	
+	`	The outfitter manager thanks you. "We'll discuss payment once you return," he says.`
+		accept
+	
+	label found
+	`You find the outfitter manager and tell him that you have good news. "You found another world where the stones can be mined?" he asks.`
+		goto exchange
+	
+	label hai1
+	`	"I've seen that before," you say.`
+	`	He looks at you with surprise. "You found another world where these stones can be mined?"`
+		goto exchange
+	
+	label equipped
+	`As you are walking through the spaceport, a man comes up to you and introduces himself as the manager of the local outfitter. He says, "I could not help but notice that you have a Key Stone that looks different from the ones from our mines. You may have noticed the red anomalies scattered within this region of space. What you may not have known is that these are wormholes, accessible only with the possession of a Quantum Key Stone. My people highly value these Key Stones because of this, but our mines produce very few of them. Have you found another world where these stones can be mined?"`
+
+	label exchange
+	choice
+		`	"Yes, in the territory of some aliens far to the north of here."`
+			goto hai2
+		`	"Yes, but I would prefer not to tell you where."`
+	
+	`	"That is understandable," he says. "I am a businessman and I understand how valuable certain trade secrets can be. But perhaps I can interest you in a mutually profitable endeavor?"`
+		goto more
+	
+	label hai2
+	`	"Intriguing," he sings. "Are they aware of how valuable these stones are?" You tell him about the Hai, that they are an old species and that to them the Key Stones are just good luck charms. "Perhaps they have forgotten the true use of the Stones," says the man. "This may give us an opportunity for a mutually profitable endeavor."`
+	
+	label more
+	`	"Tell me more," you say.`
+	`	He says, "If you could fetch me a large supply of these stones, say fifty of them, I would purchase them from you for a high enough price that you would earn a tidy profit. What do you say?"`
+	choice
+		`	"Sure, I would be glad to accept that deal."`
+		`	"Sorry, I'm really not interested in doing business with you Remnant folks."`
+			decline
+	
+	`	After a bit of haggling, he agrees to pay you six million credits in exchange for a cargo of fifty Hai "keystones." Given how cheap they are to purchase in Hai space, you will be earning a very tidy profit on the deal.`
+	`	"We look forward to receiving this shipment," he sings. "Just instruct the dockworkers to load them into your cargo bay."`
+	`	He glances at his commlink and starts tapping at something. "We look forward to your return," he trills, before striding away still looking at his display.`
+		accept
+
+
+
+conversation "remnant key stones done"
+	`You visit the local outfitter and tell the manager that you have brought a shipment of "quantum keystones" to sell to him. He is overjoyed, and gladly pays you six million credits for them. You can't help noticing that based on how much the Key Stones sell for here, he will be earning even more profit than you did, even though you did nearly all the work.`
+	`	"You have made a valuable contribution to our people by doing this," he says. "These stones will allow more of our ships to explore the Ember Waste and discover the secrets that it holds."`
+
+
+
+conversation "taely cultural data"
+	branch return
+		has "Remnant: Salvage 1B: done"
+	`As you step out into the icy chill of Viminal, you get a message from Taely, the engineering prefect, asking if you could meet her in the cafeteria.`
+	choice
+		`	(Accept her invitation.)`
+		`	(Not right now.)`
+			defer
+	`	Replying that you can, you make your way through the crowds and find an empty table. Moments later Taely appears and grabs two trays from the dispenser before heading towards you. She settles down in the opposite chair with a look of exhaustion.`
+	`	"It is good to see you again, <first>," she sings softly. When you sign a reply she sits up, smiles, and switches to sign. "My, you are a quick learner. This is much faster." Her quick gestures are hard to follow, but the language videos seem to have focused on a practical vocabulary that has most of the words she uses.`
+	`	"I have not fully..." (She makes a sign that you don't understand, but seems similar to the signs for "break" and "understand.") "... the technology you retrieved for us, but we are learning much from what we have already found. Could you help us catch up with what has happened in ancestral space since our Exodus?"`
+	choice
+		`	"Yes. What can I do to help?"`
+		`	"Sorry, not interested."`
+			decline
+	branch data
+		has "human cultural data"
+	`	"Excellent! According to a friend of mine who is versed in history from the war, there were rumors that a grand library was being built in the Deep to house all of human knowledge. If it exists, that would likely be where to go."`
+		accept
+	label data
+	`	"Excellent! According to a friend of mine who is versed in history from the war, there were rumors that a grand library was being built in the Deep to house all of human knowledge. If it exists..." She stops when she notices you nodding with a knowing expression. "You have already been there? Well, you certainly get around, Captain <last>. I suppose that makes things rather straightforward."`
+	`	"I actually already have a copy of the library's data in my ship," you respond.`
+	`	"Oh, that's even better," Taely trills. "Go ahead and get it."`
+	`	You return to your ship to get the data chip, but when you glance out the cockpit you notice that the spaceport is more animated than usual. Remnant look to be running to their ships as fast as they can when you notice that Taely is halfway up the side of your ship securing a refueling hose and charging cable. As you reach for the commlink she scrambles up to the bridge windows and quickly rattles off a series of signs at you. All you can make out is "Keep it hot, incoming!" Before you can frame a reply she has raced across your wing and leapt to the Albatross parked next to you.`
+		goto launch
+	
+	label return
+	`Having acquired a copy of the archive, you gently set your ship down on Viminal hoping that this information is helpful. The port seems unusually busy, but the comm channels are quiet beyond the bare minimum to keep traffic organized.`
+	`	Before you have even taken the time to shut down the engines Taely is halfway up the side of your ship securing a refueling hose and charging cable. As you reach for the commlink she scrambles up to the bridge windows and quickly rattles off a series of signs at you. All you can make out is "Keep it hot, incoming!" Before you can frame a reply she has raced across your wing and leapt to the Albatross parked next to you.`
+	
+	label launch
+	`	Looking around more carefully, you note that every ship in the port is idling with fuel lines still connected. If this were some Republic port the safety inspectors would be having a nightmare. One Starling is getting holes in its wings patched even as the crew appear to be running prep-for-flight checklists. It also looks like every ship has a guard. Something tells you that right now would be a bad time to take a walk around town.`
+	`	After some tense minutes of waiting, the planetary defense sirens start and the idling ships begin to ascend one by one. You quickly figure out where you are in the launch sequence and follow the stream of craft heading for orbit.`
+		launch
+
+
+
+phrase "broken jump drive on visit"
+	word
+		`You've landed on <planet>, but you don't have a broken jump drive to give to the Kaylon. You may need to steal one from Palavrets or Rano'ereks found through Kaylon jobs, or depart and wait for an escort carrying one to enter the system.`
+
+ship "Starling" "Starling (Keystone)"
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Keystone"
+		"Salvage Scanner"
+		
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+
+
+
+outfit "_Ion Storm Timer: Generator"
+	# This generator will fail when an ion storm comes and the ship runs out of energy
+	"hull repair rate" 60000
+	"hull energy" 1
+
+
+
+ship "_Ion Timer Ship"
+	# The Timer Weapon causes this ship to continually lose hull points
+	# The _Ion Storm Timer: Generator outfit counteracts this until there is an ion storm
+	# sprite "ship/shuttle" # uncomment this for debugging
+	attributes
+		category "Game Mechanics"
+		"heat dissipation" 1
+		"hull" 1.0
+		"mass" 100
+		"drag" 5
+		"automaton" 1
+		"energy generation" 1
+		"thrust" 10
+		"turn" 600
+	outfits
+		"Timer Weapon"
+		"_Ion Storm Timer: Generator"
+	gun 0 0
+
+

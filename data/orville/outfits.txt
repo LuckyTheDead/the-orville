@@ -1,0 +1,298 @@
+# Orville Endless Sky Mod - Outfit display names
+# Mechanism: "display name" overrides the player-visible outfit name while
+# keeping the model key intact, so all weapon/outfit/shipping references
+# continue to resolve. Sprites are reused; the art is the fiction.
+
+outfit "Jump Drive"
+	"display name" "Quantum Drive"
+
+outfit "Jump Drive (Broken)"
+	"display name" "Quantum Drive (Broken)"
+
+outfit "Asteroid Jump Drive"
+	"display name" "Calivon Quantum Drive"
+
+outfit "Hyperdrive"
+	"display name" "Quantum Drive (Auxiliary)"
+
+outfit "Fusion Reactor"
+	"display name" "Fusion Reactor (Union)"
+
+outfit "Breeder Reactor"
+	"display name" "Moclan Reactor"
+
+outfit "Blue Sun Reactor"
+	"display name" "Krill Reactor"
+
+outfit "Boulder Reactor"
+	"display name" "Kaylon Reactor"
+
+outfit "Aegis Shield Generator"
+	"display name" "Union Deflector Shield"
+
+outfit "Ancile Shield Generator"
+	"display name" "Moclan Deflector Shield"
+
+outfit "Aspis Shield Generator"
+	"display name" "Kaylon Deflector Shield"
+
+outfit "Bright Cloud Shielding"
+	"display name" "Calivon Deflector Shield"
+
+outfit "Interference Plating"
+	"display name" "Krill Armor Plating"
+
+outfit "Liquid Helium Cooler"
+	"display name" "Quantum Cooling Unit"
+
+outfit "Liquid Nitrogen Cooler"
+	"display name" "Quantum Cooling Unit (Auxiliary)"
+
+outfit "Afterburner"
+	"display name" "Impulse Afterburner"
+
+outfit "Bellows-Class Afterburner"
+	"display name" "Impulse Afterburner (Heavy)"
+
+outfit "Caldera Afterburner"
+	"display name" "Krill Impulse Burn"
+
+outfit "Ionic Afterburner"
+	"display name" "Kaylon Impulse Burn"
+
+outfit "Cargo Expansion"
+	"display name" "Cargo Bay Expansion"
+
+outfit "Cargo Scanner"
+	"display name" "Long-Range Sensor Scanner"
+
+outfit "Asteroid Scanner"
+	"display name" "Planetary Survey Scanner"
+
+outfit "Local Map"
+	"display name" "Stellar Chart"
+
+outfit "Brig"
+	"display name" "Brig (Union)"
+
+outfit "Bunk Room"
+	"display name" "Crew Quarters"
+
+outfit "Emotional Baggage"
+	"display name" "Emotional Baggage"
+
+outfit "Cloaking Device"
+	"display name" "Calivon Cloak"
+
+outfit "Beam Laser"
+	"display name" "Plasma Cannon"
+
+outfit "Heavy Laser"
+	"display name" "Heavy Plasma Cannon"
+
+outfit "Heavy Laser Turret"
+	"display name" "Heavy Plasma Turret"
+
+outfit "Electron Beam"
+	"display name" "Ion Beam"
+
+outfit "Electron Turret"
+	"display name" "Ion Turret"
+
+outfit "Energy Blaster"
+	"display name" "Plasma Blaster"
+
+outfit "Heavy Blaster"
+	"display name" "Heavy Plasma Blaster"
+
+outfit "Blaster Turret"
+	"display name" "Plasma Turret"
+
+outfit "Heavy Blaster Turret"
+	"display name" "Heavy Plasma Turret"
+
+outfit "Anti-Missile Turret"
+	"display name" "Point-Defense Turret"
+
+outfit "Heavy Anti-Missile Turret"
+	"display name" "Heavy Point-Defense Turret"
+
+outfit "Armageddon Core"
+	"display name" "Doomsday Device"
+
+outfit "Dwarf Core"
+	"display name" "Dyson Core"
+
+outfit "Fuel Pod"
+	"display name" "Dilithium Fuel Pod"
+
+outfit "Fuel Scoop"
+	"display name" "Bussard Ram Scoop"
+
+outfit "Navy License"
+	"display name" "Union Commission"
+
+outfit "Navy Auxiliary License"
+	"display name" "Union Auxiliary Commission"
+
+outfit "Navy Carrier License"
+	"display name" "Union Carrier Commission"
+
+outfit "Navy Cruiser License"
+	"display name" "Union Cruiser Commission"
+
+outfit "Militia License"
+	"display name" "Moclan Militia Commission"
+
+outfit "Pilot's License"
+	"display name" "Union Pilot's Commission"
+
+outfit "Carrier License"
+	"display name" "Union Carrier Commission"
+
+outfit "Cruiser License"
+	"display name" "Union Cruiser Commission"
+
+outfit "City-Ship License"
+	"display name" "City-Ship Commission"
+
+outfit "Coalition License"
+	"display name" "Planetary Union Coalition Commission"
+
+outfit "gbullet"
+	"display name" "Kinetic Slug"
+
+outfit "Ballistic Cannon"
+	"display name" "Kinetic Cannon"
+
+outfit "Ballistic Cannon Turret"
+	"display name" "Kinetic Turret"
+
+outfit "Heavy Rocket"
+	"display name" "Torpedo"
+
+outfit "Heavy Rocket Launcher"
+	"display name" "Torpedo Launcher"
+
+outfit "Heavy Rocket Pod"
+	"display name" "Torpedo Pod"
+
+outfit "Heavy Rocket Rack"
+	"display name" "Torpedo Rack"
+
+outfit "Javelin"
+	"display name" "Missile"
+
+outfit "Javelin Mini Pod"
+	"display name" "Missile Mini Pod"
+
+outfit "Javelin Pod"
+	"display name" "Missile Pod"
+
+outfit "Javelin Storage Crate"
+	"display name" "Missile Storage Crate"
+
+outfit "Javelin Turret"
+	"display name" "Missile Turret"
+
+outfit "Blood of Surtr"
+	"display name" "Moclan Fire Weapon"
+
+outfit "Imaginary Weapon"
+	"display name" "Training Weapon"
+
+outfit "Laser Rifle"
+	"display name" "Phase Rifle"
+
+outfit "Flamethrower"
+	"display name" "Plasma Projector"
+
+outfit "Flamethrower Projectile"
+	"display name" "Plasma Projectile"
+
+outfit "Fragmentation Grenades"
+	"display name" "Fragmentation Grenades"
+
+outfit "KP-6 Photovoltaic Array"
+	"display name" "Solar Array"
+
+outfit "KP-6 Photovoltaic Panel"
+	"display name" "Solar Panel"
+
+outfit "Astuit Battery"
+	"display name" "Power Cell"
+
+outfit "LP036a Battery Pack"
+	"display name" "Power Cell (Small)"
+
+outfit "LP072a Battery Pack"
+	"display name" "Power Cell (Medium)"
+
+outfit "LP144a Battery Pack"
+	"display name" "Power Cell (Large)"
+
+outfit "LP288a Battery Pack"
+	"display name" "Power Cell (Heavy)"
+
+outfit "LP576a Battery Pack"
+	"display name" "Power Cell (Capital)"
+
+outfit "Large Radar Jammer"
+	"display name" "Sensor Jammer"
+
+outfit "Cooling Ducts"
+	"display name" "Heat Sink Ducts"
+
+outfit "Antigrav Glass"
+	"display name" "Transparent Aluminum"
+
+outfit "Integral Wood"
+	"display name" "Integral Wood"
+
+outfit "Crystalline Formation"
+	"display name" "Calivon Crystal"
+
+outfit "Floating Crystal"
+	"display name" "Calivon Floating Crystal"
+
+outfit "Hexagonal Crystal"
+	"display name" "Calivon Hex Crystal"
+
+outfit "Greyhound Plasma Steering"
+	"display name" "Union Plasma Steering"
+
+outfit "Greyhound Plasma Thruster"
+	"display name" "Union Plasma Thruster"
+
+outfit "Chipmunk Plasma Steering"
+	"display name" "Moclan Plasma Steering"
+
+outfit "Chipmunk Plasma Thruster"
+	"display name" "Moclan Plasma Thruster"
+
+outfit "Impala Plasma Steering"
+	"display name" "Krill Plasma Steering"
+
+outfit "Impala Plasma Thruster"
+	"display name" "Krill Plasma Thruster"
+
+outfit "Arkrof GP Hybrid Steering"
+	"display name" "Calivon Steering"
+
+outfit "Arkrof GP Hybrid Thruster"
+	"display name" "Calivon Thruster"
+
+outfit "Aluminum"
+	"display name" "Tritanium"
+
+outfit "Copper"
+	"display name" "Tritanium Alloy"
+
+outfit "Gold"
+	"display name" "Latinum"
+
+outfit "Iron"
+	"display name" "Durasteel"
+
+outfit "Lead"
+	"display name" "Lead Shielding"

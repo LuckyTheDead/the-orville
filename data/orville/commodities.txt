@@ -1,0 +1,396 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Orville Endless Sky Mod - Commodities.
+#
+# New trade goods for the Orville star map, plus mission-specific cargo.
+# Load order: data/commodities.txt loads before data/orville/, so these blocks
+# ADD to the stock commodity list. Regular commodities carry a price range;
+# special commodities (no range) are used as mission cargo only.
+#
+# Faction goods are themed to The Orville:
+#   Union   - rations, quantum drive components, medical, textiles
+#   Moclan  - biotech, alloys
+#   Krill   - Avis scriptures, relics
+#   Kaylon  - processor cores, memory archives
+#   Calivon - exotic specimens
+#   Crildari- bioluminescent algae
+#   Moritali- relics, tribute
+
+trade
+	# ---- PLANETARY UNION -------------------------------------------------
+
+	commodity "Union Rations" 120 520
+		"field rations"
+		"protein paste"
+		"sealed meal packs"
+		"emergency rations"
+		"hydrated meals"
+		"nutrient bars"
+		"synthetic coffee"
+		"recycled water"
+		"vitamin supplements"
+		"shipboard rations"
+
+	commodity "Quantum Drive Components" 650 1150
+		"quantum drive coils"
+		"drive stabilizers"
+		"phase inverters"
+		"coil housings"
+		"drive regulators"
+		"quantum capacitors"
+		"navigational crystals"
+		"drive coolant"
+		"spare drive cores"
+
+	commodity "Union Textiles" 140 460
+		"uniform fabric"
+		"deck carpeting"
+		"insulating felt"
+		"synthetic wool"
+		"duty uniforms"
+		"thermal blankets"
+		"shipboard upholstery"
+
+	commodity "Union Medical Supplies" 430 930
+		"trauma kits"
+		"antibiotic gels"
+		"regenerative serums"
+		"stasis injectors"
+		"bone knits"
+		"antiradiation shots"
+		"pain suppressants"
+		"diagnostic scanners"
+
+	# ---- MOCLAN -----------------------------------------------------------
+
+	commodity "Moclan Biotech" 750 1300
+		"biogenic cultures"
+		"gene therapies"
+		"synthetic tissue"
+		"hormone regulators"
+		"fertility treatments"
+		"genetic sequencers"
+		"bioreactor samples"
+		"stem cell banks"
+
+	commodity "Moclan Alloys" 320 720
+		"hull plating"
+		"armor laminate"
+		"structural trusses"
+		"reinforced bulkheads"
+		"ballistic plating"
+		"ceramic composites"
+		"welded frames"
+
+	# ---- KRILL ------------------------------------------------------------
+
+	commodity "Krill Avis Scriptures" 400 900
+		"bound Avis"
+		"scripture scrolls"
+		"illuminated Avis"
+		"prayer texts"
+		"sermon recordings"
+		"temple transcripts"
+		"commentary volumes"
+		"consecrated bindings"
+
+	commodity "Krill Relics" 500 1100
+		"temple artifacts"
+		"burning word insignia"
+		"reliquary fragments"
+		"consecrated icons"
+		"pilgrimage tokens"
+		"altar fittings"
+		"ceremonial daggers"
+
+	# ---- KAYLON -----------------------------------------------------------
+
+	commodity "Kaylon Processors" 950 1700
+		"processor cores"
+		"neural lattice"
+		"logic substrates"
+		"memory banks"
+		"compute clusters"
+		"quantum logic gates"
+		"synthesis matrices"
+		"redundancy arrays"
+
+	commodity "Kaylon Memory Archives" 700 1400
+		"memory archives"
+		"collective records"
+		"historical cores"
+		"archived protocols"
+		"legacy data stores"
+		"identity backups"
+		"census ledgers"
+
+	# ---- CALIVON ---------------------------------------------------------
+
+	commodity "Calivon Exotic Specimens" 850 1500
+		"habitat specimens"
+		"preserved fauna"
+		"genetic samples"
+		"display specimens"
+		"exotic flora"
+		"specimen jars"
+		"taxidermied specimens"
+
+	commodity "Calivon Collectibles" 900 1600
+		"curated exhibits"
+		"specimen catalogs"
+		"exhibit plaques"
+		"collection catalogs"
+		"taxidermy tools"
+		"preservation fluids"
+
+	# ---- CRILDARI --------------------------------------------------------
+
+	commodity "Crildari Bioluminescent Algae" 280 680
+		"glow algae"
+		"bioluminescent cultures"
+		"algae vials"
+		"light colonies"
+		"cultured algae"
+		"glowing cultures"
+		"algae colonies"
+
+	commodity "Crildari Textiles" 200 560
+		"woven algae cloth"
+		"bioluminescent fabric"
+		"glowing tapestries"
+		"woven reeds"
+		"dyed fibers"
+		"ceremonial cloth"
+
+	# ---- MOTIALI ---------------------------------------------------------
+
+	commodity "Moritali Relics" 480 1050
+		"tribute relics"
+		"honor-bound artifacts"
+		"warrior relics"
+		"clan insignia"
+		"battle trophies"
+		"ancestral totems"
+		"tribute plaques"
+
+	commodity "Moritali Spices" 180 500
+		"fermented pastes"
+		"spice clusters"
+		"dried fungi"
+		"fermented beverages"
+		"aromatic resins"
+		"seasoning salts"
+
+	# ---- NAVARIAN ---------------------------------------------------------
+
+	commodity "Navarian Crystals" 550 1150
+		"resonance crystals"
+		"harmonic crystals"
+		"cut crystals"
+		"crystal clusters"
+		"tuned resonators"
+		"singing crystals"
+
+	# ---- SPECIAL COMMODITIES (mission cargo; no price range) -------------
+
+	commodity "Kaylon Processor Core"
+		"processor core"
+		"logic core"
+		"neural core"
+		"quantum core"
+
+	commodity "Union Diplomatic Pouch"
+		"diplomatic pouch"
+		"sealed dispatch"
+		"classified briefcase"
+		"envoy's pouch"
+
+	commodity "Krill Scripture"
+		"sacred Avis"
+		"scripture bundle"
+		"prayer codex"
+
+	commodity "Moclan Bioweapon Sample"
+		"bioweapon sample"
+		"biogenic sample"
+		"culture sample"
+
+	commodity "Crildari Tribute"
+		"tribute algae"
+		"tribute cloth"
+		"diplomatic cargo"
+
+	commodity "Calivon Specimen"
+		"live specimen"
+		"habitat specimen"
+		"exotic specimen"
+
+	commodity "Moritali Tribute"
+		"warrior tribute"
+		"honor tribute"
+		"clan tribute"
+
+	commodity "Union Surplus"
+		"surplus cargo"
+		"military surplus"
+		"decommissioned gear"
+
+	commodity "Kaylon Memory Archive"
+		"memory archive"
+		"collective record"
+		"historical core"
+
+	commodity "Builder Artifact"
+		"ancient artifact"
+		"builder relic"
+		"pre-union cache"
+
+	commodity "Kaylon Defector"
+		"defector"
+		"fugitive"
+		"asylum seeker"
+
+	commodity "Union Expedition Supplies"
+		"expedition supplies"
+		"survey equipment"
+		"xenology kit"
+
+	# ---- CAMPAIGN MISSION CARGO -------------------------------------------
+
+	commodity "Union Mission Supplies"
+		"field rations"
+		"medical kit"
+		"survey equipment"
+		"spare drive coil"
+		"sealed tool crate"
+
+	commodity "Kaylon Mission Supplies"
+		"processor core"
+		"memory archive"
+		"sensor lattice"
+		"power cell"
+		"data core"
+
+	commodity "Krill Mission Supplies"
+		"chapel supplies"
+		"scripture case"
+		"memorial urns"
+		"incense"
+		"prayer texts"
+
+	commodity "Moclan Mission Supplies"
+		"forge alloy"
+		"weapons crate"
+		"armour plate"
+		"targeting module"
+		"ammunition"
+
+	commodity "Calivon Mission Supplies"
+		"survey equipment"
+		"biological sample kit"
+		"containment unit"
+		"field laboratory"
+		"preservation tank"
+
+	commodity "Motilali Mission Supplies"
+		"hive nutrient"
+		"brood chamber"
+		"tribute goods"
+		"pheromone stores"
+		"resin block"
+
+	commodity "Xelayan Mission Supplies"
+		"academy materials"
+		"flight simulator"
+		"ringworld alloy"
+		"canyon timber"
+		"forge mould"
+
+	commodity "Meridian Mission Supplies"
+		"genealogy scroll"
+		"duelling kit"
+		"assembly records"
+		"lineage seal"
+		"archive case"
+
+	commodity "Orfan Mission Supplies"
+		"tents"
+		"rope"
+		"seasonal goods"
+		"cooking fuel"
+		"trade goods"
+
+	commodity "Botwin Mission Supplies"
+		"precision tools"
+		"measured alloy"
+		"archive ledger"
+		"calibration kit"
+		"blueprint case"
+
+	commodity "Tandoga Mission Supplies"
+		"survey equipment"
+		"jungle kit"
+		"containment unit"
+		"preservation tank"
+		"mapping gear"
+
+	commodity "Kael Mission Supplies"
+		"negotiation goods"
+		"relic case"
+		"spare parts"
+		"trade samples"
+		"trophy case"
+
+	commodity "Goth Mission Supplies"
+		"excavation tools"
+		"shoring timber"
+		"artifact crate"
+		"brushes"
+		"site survey kit"
+
+	commodity "Them Mission Supplies"
+		"unmarked crate"
+		"sensor kit"
+		"survey equipment"
+		"containment unit"
+		"mapping gear"
+
+	commodity "Silurian Mission Supplies"
+		"medical kit"
+		"cavern lamp"
+		"air filtration unit"
+		"field rations"
+		"water purifier"
+
+	commodity "Bender Mission Supplies"
+		"foundry parts"
+		"calibration kit"
+		"precision tool"
+		"alloy billet"
+		"quality gauge"
+
+	commodity "Tzenketh Mission Supplies"
+		"forge alloy"
+		"slag container"
+		"smelting tools"
+		"heat shield"
+		"ore sample"
+
+	commodity "Successor Mission Supplies"
+		"archive case"
+		"house seal"
+		"genealogy scroll"
+		"ceremonial goods"
+		"tribute goods"
+

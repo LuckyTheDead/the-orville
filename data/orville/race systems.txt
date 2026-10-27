@@ -1,0 +1,460 @@
+# The Orville -- race homeworld systems.
+#
+# One system and one planet for every race that had none, so each race's
+# sub-questline has a world to be offered from. Every system links into
+# the existing Orville network.
+
+system "Calivon Reach"
+	government "Calivon"
+	pos 620 -520
+	attributes "race world"
+	link "Ekos"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/o0
+		period 10
+	object
+		sprite planet/mars
+		distance 500
+		period 300
+	object "Calivon Reach"
+		sprite planet/mars
+		distance 900
+		period 365
+
+planet "Calivon Reach"
+	attributes "calivon swamp urban"
+	landscape land/city5
+	description `Calivon Prime is a swamp world of shallow seas and floating reed-cities, older than any Union colony and governed by a species that measures time in centuries. The Calivon do not hurry, and they do not forget.`
+	spaceport `The spaceport is a platform of living reed and fitted alloy, tethered to a floating city that has not moved in two hundred years.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Xelayan Union"
+	government "Coalition"
+	pos 300 -640
+	attributes "race world"
+	link "Calivon"
+	link "Ekos"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/b0
+		period 10
+	object
+		sprite planet/earth
+		distance 500
+		period 300
+	object "Xelaya"
+		sprite planet/earth
+		distance 900
+		period 365
+
+planet "Xelaya"
+	attributes "coalition urban wealthy"
+	landscape land/city1
+	description `Xelaya is a high-gravity world of mountain cities and deep forges, home to three spacefaring species that share one government and one shipyard.`
+	spaceport `The spaceport is built into the wall of a canyon, its docking arms reinforced for ships that land twice as heavy as they were built to be.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Meridian Collective"
+	government "Gegno"
+	pos -420 -560
+	attributes "race world"
+	link "Otranta"
+	link "Calivon"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/a0
+		period 10
+	object
+		sprite planet/luna
+		distance 500
+		period 300
+	object "Meridian"
+		sprite planet/luna
+		distance 900
+		period 365
+
+planet "Meridian"
+	attributes "gegno urban research"
+	landscape land/city2
+	description `Meridian is a world of amphitheatres and genealogical archives, where the Collective's ruling lineages record every decision back eleven generations.`
+	spaceport `The spaceport is decorated with the genealogies of the ruling lineages, and the officials will ask about yours.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Orfan Tribes"
+	government "Avgi"
+	pos -620 -420
+	attributes "race world"
+	link "Velos"
+	link "Midgard System"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/f0
+		period 10
+	object
+		sprite planet/ganymede
+		distance 500
+		period 300
+	object "Orfan Drift"
+		sprite planet/ganymede
+		distance 900
+		period 365
+
+planet "Orfan Drift"
+	attributes "avgi farming frontier"
+	landscape land/city3
+	description `Orfan Drift is a river-delta world the Orfan tribes cross and recross with the seasons. Nothing the Orfan build is meant to last, and nothing they carry is meant to be left behind.`
+	spaceport `The spaceport is a temporary structure of fabric and tensioned cable, and the Orfan will take it down and move it within the season.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Botwin League"
+	government "Bunrodea"
+	pos 560 420
+	attributes "race world"
+	link "Ekos"
+	link "Orville Space"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/io
+		distance 500
+		period 300
+	object "Botwin"
+		sprite planet/io
+		distance 900
+		period 365
+
+planet "Botwin"
+	attributes "bunrodea urban factory"
+	landscape land/city4
+	description `Botwin is a world of precise cities and deliberate architecture, built by a species that measures twice and cuts once. The Botwin are patient, and their neighbours find it unnerving.`
+	spaceport `The spaceport is clean, quiet and heavily monitored, and nothing about it has been left to chance.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Tandoga"
+	government "Incipias"
+	pos -300 620
+	attributes "race world"
+	link "Velos"
+	link "Frontier Zone"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/k0
+		period 10
+	object
+		sprite planet/callisto
+		distance 500
+		period 300
+	object "Tandoga Prime"
+		sprite planet/callisto
+		distance 900
+		period 365
+
+planet "Tandoga Prime"
+	attributes "incipias jungle urban"
+	landscape land/desert1
+	description `Tandoga Prime is a world of deep jungles and buried machines, settled by a species that no longer explains how its own equipment works. The Tandoga trade in things the Union does not have names for.`
+	spaceport `The spaceport is a cleared circle in the jungle, lit at night by bioluminescence the Tandoga did not install.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Kael"
+	government "Pug"
+	pos 720 300
+	attributes "race world"
+	link "Orville Space"
+	link "Ekos"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/m0
+		period 10
+	object
+		sprite planet/europa
+		distance 500
+		period 300
+	object "Kael"
+		sprite planet/europa
+		distance 900
+		period 365
+
+planet "Kael"
+	attributes "pug urban wealthy"
+	landscape land/dune1
+	description `Kael is a world of towers and loud arguments, governed by houses that settle their disputes by lot and their trade by volume. The Kael have opinions about everything and will share them at length.`
+	spaceport `The spaceport is a place of constant negotiation, and the officials here will talk you into a deal you did not come for.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Goth"
+	government "Sheragi"
+	pos -700 200
+	attributes "race world"
+	link "Midgard System"
+	link "Frontier Zone"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/o0
+		period 10
+	object
+		sprite planet/titan
+		distance 500
+		period 300
+	object "Gothar"
+		sprite planet/titan
+		distance 900
+		period 365
+
+planet "Gothar"
+	attributes "sheragi ruins urban"
+	landscape land/forest1
+	description `Gothar is a world of ruins and patient archaeologists, where the Goth dig up their own history and do not share what they find. Every city on Gothar was built on the ruins of a previous one.`
+	spaceport `The spaceport is a cleared landing field at the edge of an excavation, and the archaeologists will ask you not to park on anything.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Them"
+	government "Drak"
+	pos 820 -200
+	attributes "race world"
+	link "Kaylon"
+	link "Deep Space"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/b0
+		period 10
+	object
+		sprite planet/mercury
+		distance 500
+		period 300
+	object "Them Hold"
+		sprite planet/mercury
+		distance 900
+		period 365
+
+planet "Them Hold"
+	attributes "drak urban frontier"
+	landscape land/beach1
+	description `Them Hold is a world the Them do not discuss. They do not build anything for the reason the Union would assume, and they do not explain what they build instead.`
+	spaceport `The spaceport is functional and unmarked, and the Them will tell you nothing about it.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Silurians"
+	government "Rulei"
+	pos -820 -100
+	attributes "race world"
+	link "Deep Region"
+	link "Midgard System"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/a0
+		period 10
+	object
+		sprite planet/venus
+		distance 500
+		period 300
+	object "Siluria"
+		sprite planet/venus
+		distance 900
+		period 365
+
+planet "Siluria"
+	attributes "rulei underground urban"
+	landscape land/fields1
+	description `Siluria is a world whose people live beneath the surface, in caverns the Silurians have occupied since before the Union had a navy. They rarely ask for help, which makes it notable when they do.`
+	spaceport `The spaceport is a lit cavern mouth, and the air inside is warmer than the world above it.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Bender"
+	government "Vyrmeid"
+	pos 420 720
+	attributes "race world"
+	link "Orville Space"
+	link "Velos"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/f0
+		period 10
+	object
+		sprite planet/neptune
+		distance 500
+		period 300
+	object "Bender"
+		sprite planet/neptune
+		distance 900
+		period 365
+
+planet "Bender"
+	attributes "vyrmeid factory urban"
+	landscape land/badlands1
+	description `Bender is a world of foundries and pride, where the Bender build the best machines in the sector and know it. Trade negotiations here are awkward in a way the Bender enjoy.`
+	spaceport `The spaceport is a foundry yard, and the Bender will inspect your ship before they let you dock.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Tzenketh"
+	government "Korath"
+	pos -520 700
+	attributes "race world"
+	link "Deep Region"
+	link "Frontier Zone"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/uranus
+		distance 500
+		period 300
+	object "Tzenketh Prime"
+		sprite planet/uranus
+		distance 900
+		period 365
+
+planet "Tzenketh Prime"
+	attributes "korath factory volcanic"
+	landscape land/fog1
+	description `Tzenketh Prime is a forge world of ash and slag, where the Tzenketh have smelted metal since before the Union existed. The sky is permanently hazed by the exhaust of the industrial complexes that cover the equator.`
+	spaceport `The spaceport is built into the wall of a slag canyon, its docking arms hanging over a furnace that has been burning for a century.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+
+system "Successor Houses"
+	government "Successor"
+	pos 200 820
+	attributes "race world"
+	link "Deep Space"
+	link "Orville Space"
+	asteroids "small rock" 20 2.0
+	trade Food 231
+	trade Clothing 251
+	trade Electronics 831
+	trade Medical 777
+	minables iron 8 3.8
+	minables titanium 4 4.2
+	object
+		sprite star/k0
+		period 10
+	object
+		sprite planet/mars
+		distance 500
+		period 300
+	object "Successor Seat"
+		sprite planet/mars
+		distance 900
+		period 365
+
+planet "Successor Seat"
+	attributes "successor urban wealthy"
+	landscape land/city5
+	description `Successor Seat is the collective capital of the Successor Houses, a world of inherited privilege and older claims. The houses that hold this region of space have held it since before the Union existed.`
+	spaceport `The spaceport flies the colours of every house with a claim on it, which means it flies a great many colours.`
+	shipyard "Basic Ships"
+	outfitter "Common Outfits"
+	bribe 0.05
+	security 0.7
+

@@ -1,0 +1,480 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Orville Endless Sky Mod - Jobs for the Orville star map.
+#
+# Every job here is scoped to the Orville systems (data/orville/systems.txt)
+# using `system` filters, and every cargo references a commodity that actually
+# exists in data/orville/commodities.txt or the stock list.
+
+# ---- UNION TRADE ---------------------------------------------------------
+
+mission "Union Ration Run"
+	name "Rations to <planet>"
+	description "The Union quartermaster needs <cargo> delivered to <destination> before the next fleet deployment. Payment is <payment>."
+	job
+	repeat
+	cargo "Union Rations" 20 80
+	to offer
+		random < 60
+	source
+		system "Midgard System" "Deep Region" "Deep Space" "Velos" "Ekos"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Deep Region" "Deep Space" "Velos" "Ekos"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 6000 40
+		dialog "You unload the <commodity> onto a waiting cargo droid and collect your payment of <payment>. A quartermaster stamps your manifest without looking up."
+
+mission "Quantum Component Haul"
+	name "Drive components to <planet>"
+	description "A Union shipyard on <destination> is waiting on <cargo>. The yardmaster is offering <payment> for timely delivery."
+	job
+	repeat
+	cargo "Quantum Drive Components" 8 30
+	to offer
+		random < 45
+	source
+		system "Midgard System" "Deep Region" "Ekos"
+		attributes "spaceport"
+	destination
+		system "Deep Region" "Midgard System" "Velos"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 9000 60
+		dialog "The yardmaster inspects the <commodity>, nods once, and transfers <payment> to your account. \"Drive coils are always in demand,\" she says."
+
+mission "Union Medical Run"
+	name "Medical supplies to <planet>"
+	description "A clinic on <destination> has run short of <cargo>. The Union Health Directorate will pay <payment> for delivery."
+	job
+	repeat
+	cargo "Union Medical Supplies" 10 40
+	deadline
+	to offer
+		random < 50
+	source
+		system "Midgard System" "Deep Region" "Deep Space" "Velos"
+		attributes "spaceport"
+	destination
+		system "Velos" "Ekos" "Deep Region"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 45
+		dialog "A medical technician signs for the <commodity> and hands you <payment>. \"You may have just kept a frontier clinic open another month,\" she says."
+
+mission "Union Textile Freight"
+	name "Textiles to <planet>"
+	description "A garment collective on <destination> needs <cargo> for the coming season. Payment is <payment>."
+	job
+	repeat
+	cargo "Union Textiles" 25 90
+	to offer
+		random < 55
+	source
+		system "Midgard System" "Deep Space" "Deep Region"
+		attributes "spaceport"
+	destination
+		system "Deep Space" "Midgard System" "Velos"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 4000 25
+		dialog "You deliver the <commodity> to a brightly lit workshop and collect <payment>. The seamstresses are already cutting fabric as you leave."
+
+# ---- MOCLAN --------------------------------------------------------------
+
+mission "Moclan Biotech Transfer"
+	name "Biotech to <planet>"
+	description "The Moclan Hegemony requires <cargo> moved between its research facilities. The work is precise and the pay is exact: <payment>."
+	job
+	repeat
+	cargo "Moclan Biotech" 5 20
+	to offer
+		random < 35
+	source
+		system "Otranta"
+		attributes "spaceport"
+	destination
+		system "Otranta"
+		attributes "spaceport"
+		distance 1 3
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 12000 90
+		dialog "A Moclan technician verifies the <commodity> against a checklist, then transfers <payment> without a word. Efficiency, as always."
+
+mission "Moclan Alloy Freight"
+	name "Alloys to <planet>"
+	description "A Moclan foundry needs <cargo> for hull production. Payment is <payment>."
+	job
+	repeat
+	cargo "Moclan Alloys" 30 100
+	to offer
+		random < 40
+	source
+		system "Otranta" "Frontier Zone"
+		attributes "spaceport"
+	destination
+		system "Otranta" "Ekos"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 5000 35
+		dialog "The foundry foreman weighs the <commodity>, logs it, and pays you <payment>. \"Acceptable,\" he says, which is high praise."
+
+# ---- KRILL ---------------------------------------------------------------
+
+mission "Krill Pilgrimage"
+	name "Pilgrims to <planet>"
+	description "A group of Krill faithful wish to visit the temple archives on <destination>. They will pay <payment> for passage."
+	job
+	repeat
+	passengers 4 12
+	to offer
+		random < 45
+	source
+		system "Calivon" "Ekos" "Velos"
+		attributes "spaceport"
+	destination
+		system "Calivon"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 8000 70
+		dialog "The pilgrims disembark in silence, each touching a small Avis to their forehead as they pass you. <payment> appears in your account."
+
+mission "Avis Scripture Delivery"
+	name "Scriptures to <planet>"
+	description "A Krill temple on <destination> has commissioned <cargo>. The High Temple pays <payment> for careful handling."
+	job
+	repeat
+	cargo "Krill Avis Scriptures" 6 25
+	to offer
+		random < 40
+	source
+		system "Calivon" "Orville Space"
+		attributes "spaceport"
+	destination
+		system "Calivon"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 10000 75
+		dialog "A Krill acolyte receives the <commodity> with both hands and a low bow. Your payment of <payment> is transferred before you have left the pad."
+
+mission "Krill Relic Run"
+	name "Relics to <planet>"
+	description "A collector has paid <payment> to have <cargo> delivered to <destination>."
+	job
+	repeat
+	cargo "Krill Relics" 4 15
+	to offer
+		random < 30
+	source
+		system "Calivon"
+		attributes "spaceport"
+	destination
+		system "Calivon" "Deep Space"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 14000 100
+		dialog "The collector unwraps each piece of <commodity> in turn, then nods and pays you <payment>. \"Faithfully preserved,\" she says."
+
+# ---- CALIVON -------------------------------------------------------------
+
+mission "Calivon Specimen Run"
+	name "Specimens to <planet>"
+	description "The Calivon collector guild requires <cargo> transported under controlled conditions. Payment is <payment>."
+	job
+	repeat
+	cargo "Calivon Exotic Specimens" 3 12
+	deadline
+	to offer
+		random < 30
+	source
+		system "Calivon" "Deep Space"
+		attributes "spaceport"
+	destination
+		system "Calivon"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 16000 120
+		dialog "A Calivon handler checks the containment seals on the <commodity>, then pays you <payment>. \"Adequate,\" he says, which is better than most."
+
+# ---- CRILDARI / MOTIALI --------------------------------------------------
+
+mission "Crildari Algae Convoy"
+	name "Algae to <planet>"
+	description "A Crildari merchant guild needs <cargo> moved along the border. Payment is <payment>."
+	job
+	repeat
+	cargo "Crildari Bioluminescent Algae" 20 70
+	to offer
+		random < 40
+	source
+		system "Orville Space" "Velos"
+		attributes "spaceport"
+	destination
+		system "Orville Space" "Calivon"
+		attributes "spaceport"
+		distance 2 6
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 5500 40
+		dialog "The Crildari buyer holds a vial of the <commodity> up to the light, smiles, and pays you <payment>. \"It glows,\" she says, delighted."
+
+mission "Moritali Tribute Run"
+	name "Tribute to <planet>"
+	description "A Moritali clan requires <cargo> delivered as tribute. The honor is considerable; the pay is <payment>."
+	job
+	repeat
+	cargo "Moritali Relics" 5 20
+	to offer
+		random < 35
+	source
+		system "Orville Space"
+		attributes "spaceport"
+	destination
+		system "Orville Space"
+		attributes "spaceport"
+		distance 1 3
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 9000 70
+		dialog "A Moritali warrior accepts the <commodity> and presses a hand to his chest. <payment> is transferred without discussion."
+
+mission "Moritali Spice Freight"
+	name "Spices to <planet>"
+	description "A Moritali kitchen collective needs <cargo>. Payment is <payment>."
+	job
+	repeat
+	cargo "Moritali Spices" 15 60
+	to offer
+		random < 45
+	source
+		system "Orville Space" "Frontier Zone"
+		attributes "spaceport"
+	destination
+		system "Orville Space"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 4500 30
+		dialog "The collective's cook inhales the <commodity> from across the pad and immediately pays you <payment>. \"These will do,\" she says."
+
+# ---- KAYLON --------------------------------------------------------------
+
+mission "Kaylon Tech Recovery"
+	name "Salvage to <planet>"
+	description "A Union science team has marked a debris field of <cargo> in the border systems. Recovery is hazardous. Payment is <payment>."
+	job
+	repeat
+	cargo "Kaylon Processors" 4 15
+	deadline
+	to offer
+		random < 25
+	source
+		system "Ekos" "Velos" "Frontier Zone"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Deep Region"
+		attributes "spaceport"
+		distance 3 7
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet
+			names "pirate"
+			variant
+				"Sparrow"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 18000 130
+		dialog "The science team seals the <commodity> in a shielded crate and pays you <payment>. \"Do not ask what these were used for,\" one of them says."
+
+mission "Kaylon Archive Recovery"
+	name "Archive to <planet>"
+	description "A Union xenology team needs <cargo> recovered from a derelict. Payment is <payment>."
+	job
+	repeat
+	cargo "Kaylon Memory Archives" 3 10
+	deadline
+	to offer
+		random < 20
+	source
+		system "Ekos" "Kaylon"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Deep Region"
+		attributes "spaceport"
+		distance 3 8
+	npc
+		government "Kaylon"
+		personality nemesis staying
+		system destination
+		fleet
+			names "union small"
+			variant
+				"Splinter"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 22000 150
+		dialog "The xenologists accept the <commodity> with gloved hands and pay you <payment>. \"These records may rewrite our understanding of the Kaylon,\" one whispers."
+
+# ---- ESCORT / PASSENGER --------------------------------------------------
+
+mission "Union Convoy Escort"
+	name "Escort to <planet>"
+	description "A Union convoy is moving through the border systems and needs an escort. Payment is <payment>."
+	job
+	repeat
+	passengers 1 3
+	to offer
+		random < 35
+	source
+		system "Ekos" "Velos" "Frontier Zone"
+		attributes "spaceport"
+	destination
+		system "Midgard System" "Deep Region"
+		attributes "spaceport"
+		distance 3 6
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet
+			names "pirate"
+			variant
+				"Sparrow"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 15000 100
+		dialog "The convoy master signals her thanks as the last freighter docks. <payment> is transferred to your account."
+
+mission "Frontier Commute"
+	name "Passengers to <planet>"
+	description "A family is relocating to <destination> and will pay <payment> for the trip."
+	job
+	repeat
+	passengers 2 5
+	to offer
+		random < 60
+	source
+		system "Frontier Zone" "Velos"
+		attributes "spaceport"
+	destination
+		system "Velos" "Midgard System" "Frontier Zone"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 5000 40
+		dialog "The family unloads their belongings and pays you <payment>. \"A fresh start,\" the father says, looking around at the docking bay."
+
+mission "Deep Region Commute"
+	name "Passengers to <planet>"
+	description "Researchers are moving between the Union core worlds. They will pay <payment> for passage."
+	job
+	repeat
+	passengers 3 8
+	to offer
+		random < 55
+	source
+		system "Midgard System" "Deep Space"
+		attributes "spaceport"
+	destination
+		system "Deep Region" "Midgard System"
+		attributes "spaceport"
+		distance 2 4
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 6500 50
+		dialog "The researchers pay you <payment> and immediately begin arguing about data as they walk toward the spaceport exit."
+
+mission "Navarian Crystal Run"
+	name "Crystals to <planet>"
+	description "A Navarian choir requires <cargo> for their instruments. Payment is <payment>."
+	job
+	repeat
+	cargo "Navarian Crystals" 6 20
+	to offer
+		random < 30
+	source
+		system "Deep Space"
+		attributes "spaceport"
+	destination
+		system "Deep Space" "Midgard System"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 11000 85
+		dialog "A Navarian musician taps one of the <commodity> and listens to it ring. She pays you <payment> with evident satisfaction."
+
+mission "Exotic Fauna Transport"
+	name "Fauna to <planet>"
+	description "The Calivon guild needs <cargo> moved between habitats. Payment is <payment>."
+	job
+	repeat
+	cargo "Calivon Collectibles" 5 18
+	to offer
+		random < 25
+	source
+		system "Calivon"
+		attributes "spaceport"
+	destination
+		system "Calivon" "Deep Space"
+		attributes "spaceport"
+		distance 2 5
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 13000 95
+		dialog "The guild's curator checks the manifest twice, then pays you <payment>. \"You may go,\" he says, already turning back to his exhibits."

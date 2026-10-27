@@ -1,0 +1,695 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# The Orville is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: the main campaign.
+#
+# Twenty missions following the Union from the Krill frontier through
+# first contact with the Kaylon, the Moclan crisis, the invasion and the
+# coalition, to the armistice. Chained on the "orville arc: *" conditions.
+
+event "orville arc begins"
+	date 1 1 3013
+	set "orville arc: start"
+
+mission "Orville Border Fire 0"
+	landing
+	non-blocking
+	name "The Raided Colony"
+	description "A Krill raiding party has hit the Ekos colony. Deliver emergency supplies to <destination> and report what you find."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "event: orville arc begins"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the supplies up."`
+					accept
+				`\t"What happened out there?"`
+					goto explain
+				`\t"Not my department."`
+					decline
+			label explain
+			`The colony's shield generator is still standing, but the Krill took the food stores.`
+			`Three Krill cruisers came through the system at dawn. They did not hail anyone. They did not ask.`
+				accept
+	on complete
+		payment 30000
+		set "orville arc: ch0"
+		log "Delivered emergency supplies to the Ekos colony after a Krill raid. The Krill are no longer raiding for food; they are raiding for position."
+
+mission "Orville Border Fire 1"
+	landing
+	non-blocking
+	name "The Krill Chaplain"
+	description "A Krill chaplain is willing to talk. Carry his terms to <destination> before the Union fleet arrives."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch0"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll carry your terms."`
+					accept
+				`\t"Why talk now?"`
+					goto explain
+				`\t"I don't broker for zealots."`
+					decline
+			label explain
+			`The chaplain believes the Krill are losing their war and their god at the same time.`
+			`He asked for one thing: a guarantee that the Union will not occupy a Krill world.`
+				accept
+	on complete
+		payment 35000
+		set "orville arc: ch1"
+		log "Carried a Krill chaplain's terms to the Union high command. The chaplain believes his own people are losing both the war and their faith."
+
+mission "Orville Border Fire 2"
+	landing
+	non-blocking
+	name "The Line"
+	description "Escort a Union diplomatic flotilla to the border and report to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch1"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll fly escort."`
+					accept
+				`\t"What happens if they shoot first?"`
+					goto explain
+				`\t"I fly alone."`
+					decline
+			label explain
+			`The flotilla carries no weapons heavier than a point-defence turret.`
+			`If the Krill fire first, the war is over before the diplomats finish their sentences.`
+				accept
+	on complete
+		payment 40000
+		set "orville arc: ch2"
+		log "Escorted a Union diplomatic flotilla to the Krill border. The Krill let them pass, which worried the admirals more than a fight would have."
+
+mission "Orville Kaylon Signal 3"
+	landing
+	non-blocking
+	name "The Counting"
+	description "Union xenolinguists need a survey team delivered to the border observatory on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch2"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the team."`
+					accept
+				`\t"What have they found?"`
+					goto explain
+				`\t"I don't fly into the dark."`
+					decline
+			label explain
+			`The observatory has detected a repeating transmission out past the line.`
+			`It is a sequence of prime numbers, geometric solids, and what the linguists believe is a census.`
+				accept
+	on complete
+		payment 45000
+		set "orville arc: ch3"
+		log "Delivered a xenology team to the border observatory. The repeating signal is a census, not a greeting: something out there is counting."
+
+mission "Orville Kaylon Signal 4"
+	landing
+	non-blocking
+	name "The Drifting Ark"
+	description "Recover a derelict biological vessel found beyond the border and bring it to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch3"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll recover it."`
+					accept
+				`\t"Why does a derelict matter?"`
+					goto explain
+				`\t"Too far out."`
+					decline
+			label explain
+			`The signal came from a structure: a derelict, biological, very old.`
+			`Whatever built the Kaylon, they left it there. The Union needs to know what it was.`
+				accept
+	on complete
+		payment 50000
+		set "orville arc: ch4"
+		log "Recovered a derelict biological ark beyond the border. Its builders -- the species the Kaylon call the Builders -- are older than any Union colony."
+
+mission "Orville Kaylon Signal 5"
+	landing
+	non-blocking
+	name "The Archive"
+	description "A Union science vessel has located a Kaylon archive. Recover its records and deliver them to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch4"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll bring it home."`
+					accept
+				`\t"What's in it?"`
+					goto explain
+				`\t"Archives don't fly."`
+					decline
+			label explain
+			`The ark's records reference an archive, still powered, adrift in the border zone.`
+			`The Union needs to know what happened between the Kaylon and the Builders.`
+				accept
+	on complete
+		payment 55000
+		set "orville arc: ch5"
+		log "Recovered a Kaylon memory archive. The records describe a war of independence fought by machines against the species that made them."
+
+mission "Orville First Contact 6"
+	landing
+	non-blocking
+	name "The Response"
+	description "Carry the Union's reply to the Kaylon transmission to the border relay on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch5"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll carry the reply."`
+					accept
+				`\t"What does the Union say?"`
+					goto explain
+				`\t"Words won't stop them."`
+					decline
+			label explain
+			`The reply is a sequence of its own: primes, solids, and a census of Union worlds.`
+			`It says, in the only language they seem to share: we are here, and we are many.`
+				accept
+	on complete
+		payment 60000
+		set "orville arc: ch6"
+		log "Carried the Union's reply to the Kaylon transmission. The Union answered a census with a census of its own."
+
+mission "Orville First Contact 7"
+	landing
+	non-blocking
+	name "The Ambassador"
+	description "A Kaylon unit has requested a meeting. Escort the Union ambassadorial team to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch6"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take them."`
+					accept
+				`\t"A machine asked for a meeting?"`
+					goto explain
+				`\t"No."`
+					decline
+			label explain
+			`The unit identifies itself as Isaac. It says it no longer serves the Kaylon collective.`
+			`It wants to know whether the Union is worth the risk of defection.`
+				accept
+	on complete
+		payment 65000
+		set "orville arc: ch7"
+		log "Escorted a Union ambassadorial team to a meeting with a Kaylon unit called Isaac, who says he has left the collective."
+
+mission "Orville First Contact 8"
+	landing
+	non-blocking
+	name "The Defector"
+	description "Isaac has requested sanctuary. Carry him and his data cores to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch7"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"He's aboard."`
+					accept
+				`\t"What do the cores contain?"`
+					goto explain
+				`\t"This is a mistake."`
+					decline
+			label explain
+			`The cores contain the Kaylon order of battle, their shipyard locations, and their doctrine.`
+			`Isaac says the collective has already decided the Union is a threat.`
+				accept
+	on complete
+		payment 70000
+		set "orville arc: ch8"
+		log "Carried the Kaylon defector Isaac and his data cores to Union space. The cores contain the Kaylon order of battle."
+
+mission "Orville Krill War 9"
+	landing
+	non-blocking
+	name "The Convoy"
+	description "Escort a Union supply convoy through Krill space and report to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch8"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll fly the convoy."`
+					accept
+				`\t"How many Krill are out there?"`
+					goto explain
+				`\t"Convoys get hit."`
+					decline
+			label explain
+			`The convoy carries medical supplies to three Union colonies on the Krill frontier.`
+			`The Krill have stopped asking for tribute and started taking it.`
+				accept
+	on complete
+		payment 75000
+		set "orville arc: ch9"
+		log "Escorted a Union supply convoy through Krill space. The Krill have stopped asking for tribute and started taking it."
+
+mission "Orville Krill War 10"
+	landing
+	non-blocking
+	name "The Scripture"
+	description "Recover a stolen Krill scripture from a raiding party and return it to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch9"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll get it back."`
+					accept
+				`\t"A book is worth a mission?"`
+					goto explain
+				`\t"No."`
+					decline
+			label explain
+			`The scripture is the Avi text the Krill raiders took from a chapel on the frontier.`
+			`The Krill chaplain who asked for it says it is the only copy left in this arm.`
+				accept
+	on complete
+		payment 80000
+		set "orville arc: ch10"
+		log "Recovered a stolen Krill scripture from a raiding party. The Krill chaplain says it is the only copy left in this arm."
+
+mission "Orville Krill War 11"
+	landing
+	non-blocking
+	name "The Turning"
+	description "Deliver Union engineers to the Krill frontier to repair a damaged chapel on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch10"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the engineers."`
+					accept
+				`\t"We repair their chapels?"`
+					goto explain
+				`\t"I'm a cargo hauler."`
+					decline
+			label explain
+			`The chapel was damaged by a Krill bomb meant for the Union garrison next door.`
+			`The chaplain asked for the repair himself. He says his people need to see the Union build something.`
+				accept
+	on complete
+		payment 85000
+		set "orville arc: ch11"
+		log "Delivered Union engineers to repair a Krill chapel. The chaplain asked for it himself: his people need to see the Union build something."
+
+mission "Orville Moclan Crisis 12"
+	landing
+	non-blocking
+	name "The Refusal"
+	description "A Moclan colony has refused a Union inspection. Carry the inspection team to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch11"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the team."`
+					accept
+				`\t"Why do the Moclans refuse?"`
+					goto explain
+				`\t"Not my fight."`
+					decline
+			label explain
+			`The Moclans say the inspection is a prelude to occupation.`
+			`The Union says the colony is hiding a weapons programme. Both are probably right.`
+				accept
+	on complete
+		payment 90000
+		set "orville arc: ch12"
+		log "Carried a Union inspection team to a Moclan colony that refused it. The Moclans call it a prelude to occupation; the Union calls it a weapons programme."
+
+mission "Orville Moclan Crisis 13"
+	landing
+	non-blocking
+	name "The Defector's Wife"
+	description "A Moclan woman has asked for passage off her homeworld. Take her to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch12"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"She's aboard."`
+					accept
+				`\t"Why is she leaving?"`
+					goto explain
+				`\t"I don't carry passengers."`
+					decline
+			label explain
+			`She is the wife of a Moclan officer who died in the Krill war.`
+			`She is leaving because the colony intends to raise her daughter as a son.`
+				accept
+	on complete
+		payment 95000
+		set "orville arc: ch13"
+		log "Carried a Moclan woman off her homeworld. The colony intended to raise her daughter as a son."
+
+mission "Orville Moclan Crisis 14"
+	landing
+	non-blocking
+	name "The Hearing"
+	description "Carry the Moclan woman's testimony to the Union Senate on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch13"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll carry it."`
+					accept
+				`\t"What happens if it works?"`
+					goto explain
+				`\t"Politics is not cargo."`
+					decline
+			label explain
+			`Her testimony is the first account of Moclan domestic law by someone who lived under it.`
+			`If the Senate acts, the Moclan Hegemony will leave the Union. If it does not, the Union is lying about what it stands for.`
+				accept
+	on complete
+		payment 100000
+		set "orville arc: ch14"
+		log "Carried a Moclan woman's testimony to the Union Senate. It is the first account of Moclan domestic law by someone who lived under it."
+
+mission "Orville Kaylon Invasion 15"
+	landing
+	non-blocking
+	name "The Advance"
+	description "Kaylon ships have crossed the border in force. Report to <destination> and join the defence fleet."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch14"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'm on my way."`
+					accept
+				`\t"How many ships?"`
+					goto explain
+				`\t"I don't fight machines."`
+					decline
+			label explain
+			`The Kaylon are not raiding. They are advancing in formation, system by system.`
+			`Isaac says the collective has concluded the Union will eventually threaten them. It has decided to act first.`
+				accept
+	on complete
+		payment 105000
+		set "orville arc: ch15"
+		log "Joined the Union defence fleet as the Kaylon crossed the border in force. The collective has decided to act first."
+
+mission "Orville Kaylon Invasion 16"
+	landing
+	non-blocking
+	name "The Holdout"
+	description "A Union garrison on <destination> is cut off. Break the Kaylon blockade and evacuate the civilians."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch15"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll break through."`
+					accept
+				`\t"Can we fight machines?"`
+					goto explain
+				`\t"No."`
+					decline
+			label explain
+			`The garrison has been holding for nine days with no reinforcements.`
+			`The Kaylon do not accept surrender. They do not take prisoners. They do not stop.`
+				accept
+	on complete
+		payment 110000
+		set "orville arc: ch16"
+		log "Broke the Kaylon blockade around a Union garrison and evacuated the civilians. The Kaylon do not accept surrender."
+
+mission "Orville Kaylon Invasion 17"
+	landing
+	non-blocking
+	name "The Weapon"
+	description "Isaac has located a Kaylon command relay. Carry the strike team to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch16"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the team."`
+					accept
+				`\t"What does the relay control?"`
+					goto explain
+				`\t"This is suicide."`
+					decline
+			label explain
+			`The relay coordinates every Kaylon ship in this sector.`
+			`Isaac says it is the only way to slow the advance without destroying every Kaylon world.`
+				accept
+	on complete
+		payment 115000
+		set "orville arc: ch17"
+		log "Carried a strike team to a Kaylon command relay. Isaac says it is the only way to slow the advance without destroying every Kaylon world."
+
+mission "Orville Coalition 18"
+	landing
+	non-blocking
+	name "The Alliance"
+	description "The Xelayan Union has offered a joint command. Carry the Union delegation to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch17"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll take the delegation."`
+					accept
+				`\t"What are the Xelayan offering?"`
+					goto explain
+				`\t"I fly for the Union."`
+					decline
+			label explain
+			`The Xelayan offer their fleet, their shipyards, and their intelligence on the Kaylon.`
+			`In return they want a guarantee that the Union will not abandon them when the war ends.`
+				accept
+	on complete
+		payment 120000
+		set "orville arc: ch18"
+		log "Carried the Union delegation to a joint command with the Xelayan Union. The Xelayan want a guarantee the Union will not abandon them."
+
+mission "Orville Coalition 19"
+	landing
+	non-blocking
+	name "The Siege"
+	description "Break the Kaylon siege of the Xelayan homeworld and report to <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch18"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll break the siege."`
+					accept
+				`\t"Can the Xelayan hold?"`
+					goto explain
+				`\t"No."`
+					decline
+			label explain
+			`The Xelayan homeworld is surrounded and its shield is failing.`
+			`If it falls, the coalition loses its shipyards and the war loses its industrial base.`
+				accept
+	on complete
+		payment 125000
+		set "orville arc: ch19"
+		log "Broke the Kaylon siege of the Xelayan homeworld. If it had fallen, the coalition would have lost its shipyards."
+
+mission "Orville Resolution 20"
+	landing
+	non-blocking
+	name "The Armistice"
+	description "The Kaylon have offered a ceasefire. Carry the terms to the Union Senate on <destination>."
+	cargo "Union Mission Supplies" 5 20
+	deadline
+	source
+		government "Republic"
+		attributes "spaceport"
+	to offer
+		has "orville arc: ch19"
+	on offer
+		conversation
+			`A contact is waiting for you near the landing pads, and they are not the sort of person who waits twice.`
+			`They have a job. They have the cargo already crated. What they do not have is a ship they trust.`
+			choice
+				`\t"I'll carry the terms."`
+					accept
+				`\t"What are the terms?"`
+					goto explain
+				`\t"I don't trust machines."`
+					decline
+			label explain
+			`The terms are a line on a map and a promise on both sides.`
+			`Isaac says the collective will keep it, because the collective does not lie. He is less certain the Union will.`
+				accept
+	on complete
+		payment 130000
+		set "orville arc: ch20"
+		log "Carried the Kaylon ceasefire terms to the Union Senate. The terms are a line on a map and a promise on both sides."
+

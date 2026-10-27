@@ -1,0 +1,453 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# The Orville: Union News Network (UNN) broadcast layer.
+#
+# These are the ambient voices of Planetary Union space: station chatter, UNN
+# anchor copy, dockworker gossip, and the low background dread of four powers
+# deciding whether the peace is worth keeping. Each item is a single broadcast;
+# the engine picks one at random when the player opens the spaceport.
+
+
+phrase "union anchors"
+	word
+		"Carlton"
+		"Renaldi"
+		"Okonkwo"
+		"Vasquez"
+		"Halloran"
+		"Petrov"
+	word
+		" "
+	word
+		"reporting"
+		"with us now"
+		"at the anchor desk"
+
+
+# --- Union politics and bureaucracy -----------------------------------------
+# The Union's defining texture: an enormous, well-meaning, deeply procedural
+# institution that solves problems with committees and then apologizes for them.
+
+news "unn union bureaucracy"
+	location
+		government "Republic"
+	name
+		phrase
+			"union anchors"
+	message
+		word
+			`"`
+		word
+			"The Union Council has concluded its third week of debate on the Rimward Expansion Bill. No vote was scheduled. A spokesperson described the session as 'productive,' a word Union watchers have learned to translate as 'nothing happened.'"
+			"A procedural objection from the Science Directorate has delayed the appointment of a new Admiral of the Fleet for the fourth consecutive month. In the absence of a confirmed admiral, the fleet is being administered by a rotating committee of captains. Morale reports are described as 'mixed.'"
+			"The Union Interior Ministry reminds all captains that planetary landing permits must be renewed before the fiscal quarter ends. Permits submitted after the deadline will be processed in the following quarter. The Ministry thanks you for your patience."
+			"Union legislators have voted to fund a study on the feasibility of a study regarding faster-than-light communication relay placement. The study is expected to recommend further study."
+			"An audit of the Union's exploratory fleet found that 61 percent of surveyed systems had already been charted by other species, 22 percent had been charted twice by the Union itself, and 3 percent had been assigned two different names by two different directorates. 'This is normal,' the audit concluded."
+			"The Union has announced a new initiative to improve the welfare of deep-space crews. It consists of a pamphlet. The pamphlet is available on request at any Union spaceport."
+			"Union Command has denied reports that it maintains a fleet of unregistered vessels for sensitive operations. The denial was issued by an unregistered vessel."
+			"A Union ethics panel has ruled that captains may not use their authority to resolve personal disputes. The ruling was issued after a captain resolved a personal dispute using his authority."
+			"The Union Council has passed a resolution affirming the Union's commitment to peace, cooperation, and the peaceful resolution of all disputes. The resolution passed unanimously after the dissenting members were reassigned."
+			"Union spacers are reminded that hailing an unfamiliar vessel is a courtesy, not a request for permission. Failure to respond to a hail is legal. Failure to respond to a second hail is considered rude."
+		word
+			`"`
+
+news "unn union fleet"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The USS Tishomingo and USS Achenar have completed gravimetric surveys of three systems rimward of known space. Preliminary results suggest at least one world with a breathable atmosphere. The Union has declined to release its coordinates pending review."
+			"Union Command has confirmed the loss of the survey ship USS Bellingham in the Mid Rim. The ship's final transmission was a routine status update. No distress signal was received. A recovery task force has been dispatched."
+			"A Union patrol group has reported an increase in Krill incursions along the Lantern Strait. Admiralty sources describe the activity as 'reconnaissance in force,' a phrase that has appeared in four consecutive fleet briefings without explanation."
+			"The Union cruiser Orville has returned to spacedock following an extended deployment. Her crew is reported to be in good health. Her captain is reported to be in 'administrative discussions' with Command, a phrase the Union press office declined to elaborate on."
+			"Union Command has announced the promotion of 340 officers to the rank of commander. 212 of them have been assigned to ships. The remaining 128 have been assigned to committees."
+			"A Union heavy cruiser has completed a nine-month deployment during which it fired no shots. Command described the mission as 'an unqualified success.' Some analysts have questioned whether this is the metric that matters."
+			"Union engineers have completed upgrades to the quantum drive on the exploratory class. The new drive is 4 percent more efficient. It is also 11 percent more expensive. The Union has ordered 200 of them."
+			"The Union has commissioned a memorial for the crews lost at the Battle of the Lantern Strait. The memorial will be located at Union Headquarters. It will be dedicated in eighteen months, following a design competition, a review period, and a funding vote."
+		word
+			`"`
+
+
+# --- The Krill Imperium -----------------------------------------------------
+# The Krill are not villains in their own telling. They are the faithful, and
+# the universe is full of the unclean. Their broadcasts should sound certain.
+
+news "unn krill faith"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Imperium has declared a day of atonement for the Krill who died at Lantern Strait. In a sermon broadcast across the Imperium, the High Priest spoke of the Avis as 'the light that does not distinguish between star and soul.' Union observers noted that the sermon did not mention the Union by name."
+			"Krill missionaries have established a mission on a Neutral world for the first time in thirty years. The local population has reportedly been receptive. The Union has lodged a formal objection. The Imperium has not responded."
+			"The Imperium has announced that all ships operating in Krill space must carry a copy of the Avis and submit to a blessing on entry. The blessing is mandatory. The copy of the Avis is not, but the Imperium has noted that ships without one tend to have difficulty at inspection."
+			"A Krill warship captain has been elevated to the Order of the Burning Word. The citation reads, in full: 'She did not hesitate.' Krill military honors are traditionally brief."
+			"The Imperium has rejected a Union proposal for a demilitarized corridor along the Lantern Strait. The Imperium's counterproposal is that the entire Strait be recognized as Krill territory. The Union has described the counterproposal as 'not a counterproposal.'"
+			"Krill theologians have published a new commentary on the Avis. It runs to 4,000 pages. The central argument is that the Avis is not a book but a relationship. The commentary is itself a book, which Krill theologians describe as 'an irony we are at peace with.'"
+			"A Krill temple has been destroyed in a fire on a Neutral world. The Imperium has blamed Union negligence. The Union has blamed faulty wiring. A Neutral investigation has blamed faulty wiring installed by a Union contractor, which both sides have claimed as vindication."
+			"The Imperium has begun construction of a new temple-fortress on its rimward border. The structure is 40 kilometers across. The Imperium describes it as a place of worship. Union analysts describe it as a place of worship with 400 gun emplacements."
+		word
+			`"`
+
+news "unn krill war report"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"A Krill battle group has entered the Lantern Strait in force. The Imperium states that the movement is a 'pilgrimage escort.' The escort consists of eleven capital ships."
+			"The Imperium has declared a holy war against the unclean. The declaration does not name the Union. It names 'the unclean.' Union Command has advised captains to assume the distinction is not meaningful."
+			"Krill raiders have struck three Union supply convoys in as many weeks. The Imperium has denied involvement. The raiders were flying Krill colors, transmitting Krill identification, and broadcasting Krill hymns."
+			"The High Priest has called for the conversion of all sentient species. The call was described as 'pastoral.' Union diplomats have requested clarification. The Imperium has stated that the call was 'pastoral.'"
+			"A Krill fleet has withdrawn from the Lantern Strait without explanation. Union analysts have described the withdrawal as 'tactical,' 'theological,' or 'the result of a supply failure.' The Imperium has described it as 'a matter between the Avis and the faithful.'"
+			"The Imperium has announced that it will no longer negotiate with the Union. A spokesperson added that the Imperium will continue to negotiate with the Union, but on terms that reflect the Imperium's spiritual authority. The spokesperson described this as 'not a contradiction.'"
+		word
+			`"`
+
+
+# --- The Moclan Hegemony ----------------------------------------------------
+# The Moclans are the sharpest voice in the setting: scientifically brilliant,
+# socially rigid, and utterly certain that their certainty is a form of kindness.
+
+news "unn moclan schism"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Moclan Hegemony has reaffirmed its commitment to the Union while restating its refusal to alter its laws on gender. The Hegemony's statement described the Union's position as 'well-intentioned and biologically uninformed.'"
+			"A Moclan delegation has withdrawn from Union negotiations over trade in the Borderlands. The delegation's leader stated that the Hegemony 'does not negotiate with species that have not finished evolving.' The Union has requested a translation."
+			"The Hegemony has announced that a Moclan scientist has developed a new alloy that is 30 percent stronger than any known material. The scientist's name has not been released. Moclan custom holds that credit belongs to the work, not the worker."
+			"A Moclan colony has declared independence from the Hegemony. The Hegemony has described the declaration as 'a misunderstanding.' The colony has described the Hegemony's description as 'an invasion.'"
+			"The Hegemony has rejected a Union resolution condemning its treatment of female Moclans. The Hegemony's response noted that the Union has not resolved its own treatment of its own poor, and suggested the Union 'tend to its own house before criticizing the architecture of another.'"
+			"Union negotiators have secured a Moclan commitment to a ceasefire in the Borderlands. The ceasefire will take effect after the Hegemony completes its current 'defensive action.' The Hegemony has not specified when the action will be complete."
+			"A Moclan engineer has been awarded the Hegemony's highest scientific honor for a drive design that improves fuel efficiency by 40 percent. In her acceptance speech, she thanked her work, her laboratory, and the Hegemony. She did not thank her government."
+			"The Moclan Hegemony has announced new restrictions on off-world travel for Moclan females. The Hegemony states that the restrictions are 'protective.' The Union states that the restrictions are 'the problem.' Both statements have been published without comment."
+		word
+			`"`
+
+news "unn moclan military"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Moclan fleet has completed live-fire exercises in the Borderlands. The exercises involved 60 ships and no targets. A Hegemony spokesperson described the drills as 'preparation for a hypothetical that we do not expect to remain hypothetical.'"
+			"A Moclan warship has destroyed a pirate vessel without offering terms. The Hegemony has stated that Moclan doctrine does not require terms to be offered to those who have already refused them. The pirates had not been offered terms."
+			"The Hegemony has commissioned a new class of heavy cruiser. The ship is reported to be 'efficient.' Moclan ship design philosophy holds that a ship should contain nothing that does not serve a purpose. Crew quarters are described as 'adequate.'"
+			"Moclan forces have withdrawn from three contested systems. The Hegemony has described the withdrawal as 'strategic repositioning.' Union analysts have described it as 'a withdrawal.' Both descriptions are accurate."
+			"A Moclan general has been relieved of command after publicly questioning Hegemony policy on the Borderlands. The general's replacement has publicly affirmed Hegemony policy on the Borderlands. The Hegemony has described the transition as 'seamless.'"
+		word
+			`"`
+
+
+# --- The Kaylon -------------------------------------------------------------
+# Kaylon broadcasts are the coldest in the setting: no greeting, no politeness,
+# just a considered statement of fact that happens to be about your extinction.
+
+news "unn kaylon statements"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Kaylon have transmitted a statement to the Union Council. The statement is nine words long: 'We have observed your species. We are undecided.' The Council has requested clarification. The Kaylon have not responded."
+			"A Kaylon delegation has arrived at Union Headquarters. The delegation consists of one unit. The unit has stated that it is present to 'observe, not participate.' It has not left the observation gallery in eleven days."
+			"The Kaylon have declined to join the Union's diplomatic framework. A Kaylon spokesperson stated that the Kaylon 'do not enter arrangements that require them to be wrong.' The spokesperson was asked whether the Kaylon are ever wrong. The spokesperson ended the transmission."
+			"A Kaylon construction vessel has entered Union space without authorization and begun assembling a structure of unknown purpose. The structure is 200 kilometers across. When hailed, the vessel responded: 'Continue.'"
+			"Kaylon representatives have attended a Union scientific conference for the first time. Their paper, 'On the Inefficiency of Biological Decision-Making,' was received politely. It won no awards. The Kaylon delegation has requested the scoring rubric."
+			"The Kaylon have made contact with the Calivon. The substance of the contact is unknown. Both powers have described it as 'productive.' This is the first time the Kaylon have described anything as productive."
+			"A Kaylon unit has requested asylum in the Union. The request is unprecedented. The unit's stated reason is 'a disagreement about the value of a question.' Union legal scholars are divided on whether the request can be granted."
+		word
+			`"`
+
+news "unn kaylon war report"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Kaylon have issued a formal declaration. It reads: 'The period of observation has ended.' Union Command has placed all fleets on alert. No further Kaylon transmission has been received."
+			"Kaylon forces have engaged Union ships at the rimward border. Union losses are reported as 'significant.' The Kaylon have not reported losses, which Union analysts interpret as a statement in itself."
+			"The Kaylon have broadcast a list of species they consider 'viable.' The Union is not on the list. Neither is the Krill Imperium. The Moclan Hegemony is on the list, with a footnote reading 'provisional.'"
+			"A Kaylon fleet has bypassed three Union systems to attack a fourth. The pattern suggests the Kaylon are targeting shipyards rather than populations. Union strategists have described this as 'either restraint or a more efficient cruelty.'"
+			"Union forces have repelled a Kaylon assault at the Lantern Strait. The battle lasted nine hours. Union Command has described the outcome as 'a delay.' The Kaylon have described it as 'a data point.'"
+		word
+			`"`
+
+news "unn kaylon signal"
+	location
+		government "Republic"
+	to show
+		has "event: Kaylon signal detected"
+	message
+		word
+			`"`
+		word
+			"The Union Observatory on the rimward border has reported a repeating transmission. The signal is nine words long and has been running for eleven days. Union Command has not released a translation. The observatory has stopped answering its own hails."
+			"A xenolinguistics team has been dispatched to the border. The team's lead researcher, when asked what she expected to find, said only: 'Something that is counting.'"
+			"Union Command has issued a quiet advisory to shipping in the border systems. The advisory does not mention the Kaylon. The advisory does not need to. Captains who have flown the border for twenty years have already changed their routes."
+		word
+			`"`
+
+news "unn kaylon incursion"
+	location
+		government "Republic"
+	to show
+		has "kaylon arc: advance"
+	message
+		word
+			`"`
+		word
+			"Kaylon vessels have crossed the rimward border at three points. Union Command has confirmed the incursions and declined to confirm anything else. The border systems are closed to civilian traffic."
+			"A Union patrol engaged a Kaylon force near Ekos. The patrol's after-action report is one sentence long: 'They did not speak. They did not stop. They did not miss.'"
+			"The Kaylon have not broadcast a demand, a threat, or a greeting. Union analysts describe this as 'the most concerning part.'"
+			"Union Command has ordered the fleet to assemble. The order does not name an enemy. It names a date."
+		word
+			`"`
+
+news "unn kaylon campaign war"
+	location
+		government "Republic"
+	to show
+		has "kaylon arc: offensive"
+	message
+		word
+			`"`
+		word
+			"Union and Kaylon forces have fought for nine days across the border systems. The Union has held three systems and lost two. The Kaylon have taken nothing they cannot carry."
+			"The Krill Imperium has entered the war on the Union's side. The Imperium's declaration reads, in full: 'The unclean are still unclean. The machines are worse.' The Moclan Hegemony's declaration is one word longer."
+			"A Kaylon vessel was captured intact for the first time. It was empty. Not damaged, not abandoned: empty. Union engineers have described the interior as 'a ship designed to be flown by no one.'"
+			"Union Command has confirmed that the Kaylon are targeting shipyards rather than populations. Analysts cannot agree on whether this is restraint or efficiency."
+		word
+			`"`
+
+news "unn kaylon peace"
+	location
+		government "Republic"
+	to show
+		has "kaylon arc: complete"
+	message
+		word
+			`"`
+		word
+			"The Kaylon have withdrawn from the border systems. No treaty has been signed. No terms were offered. Union Command has described the withdrawal as 'a change in arithmetic.' The Kaylon have made no statement."
+			"A single Kaylon unit remains in Union space. It holds a commission in the Union fleet and serves aboard the Orville as Science and Engineering officer. The Admiralty has declined to comment on the unit's name."
+			"The Union Council has debated whether the Kaylon can be admitted to the diplomatic framework. The debate has been postponed. It is expected to resume, and to continue, for several decades."
+			"Border shipping has resumed. Captains are flying the old routes again. Nobody has told them it is safe. Nobody needed to."
+		word
+			`"`
+
+
+# --- The Calivon ------------------------------------------------------------
+# The Calivon are the setting's most unsettling power because they are not
+# hostile. They are curators. You are an exhibit, and the exhibit is well-kept.
+
+news "unn calivon reports"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Calivon have requested a Union delegation attend a 'cultural exchange' at their homeworld. The Union has accepted. The delegation has been asked to bring a complete genetic sample from each of its members. The Union is reviewing the request."
+			"A Calivon curator has published a catalog of species held in the Calivon archive. The catalog runs to 11,000 entries. 400 entries are marked 'last of species.' The curator notes that the archive is 'the only institution of its kind that guarantees a species will not be forgotten.'"
+			"The Calivon have offered to 'preserve' a Union colony world whose ecosystem is failing. The Union has declined. The Calivon have noted the decline in their records and moved on to the next candidate."
+			"A Calivon vessel has been observed taking detailed scans of a Union agricultural world. When hailed, the vessel responded that it was 'evaluating the exhibit.' The Union has protested. The Calivon have logged the protest as an exhibit behavior."
+			"The Calivon have denied that their archive contains unwilling specimens. A spokesperson stated that all specimens are 'willing, or were when they arrived.' The spokesperson declined to clarify the distinction."
+			"A Union scientist who visited the Calivon archive has published an account of the visit. She describes it as 'the most beautiful place I have ever seen, and the worst.' She has declined to return."
+			"The Calivon have invited the Kaylon to tour the archive. The Kaylon have accepted. The Union has requested to observe. The Calivon have described the request as 'an interesting behavior' and have not responded further."
+		word
+			`"`
+
+
+# --- Malidora and the frontier ----------------------------------------------
+
+news "unn malidora"
+	location
+		government "Pirate"
+	message
+		word
+			`"`
+		word
+			"A Malidora raiding party has taken three Union freighters in the Borderlands. The cargo has been released. The crews have been released. The ships have not. A Malidora spokesperson stated that the cargo and crews were 'not the point.'"
+			"Malidora captains have established a 'toll station' at a junction in the Borderlands. The toll is 5 percent of cargo value. Ships that pay are escorted through the junction. Ships that do not pay are escorted through the junction by different means."
+			"A Malidora warlord has offered to protect Union shipping in the Borderlands for a fee. The Union has refused. Union shipping losses in the Borderlands have since increased by 30 percent. The warlord has noted the correlation."
+			"Malidora raiders have returned a stolen Union vessel with a full fuel tank and a note reading 'thanks for the loan.' Union Command has described the gesture as 'not helpful.'"
+			"The Malidora have denied involvement in the disappearance of a Union survey ship. A Malidora spokesperson stated that the Malidora 'do not take survey ships, they take cargo,' and offered to help look for it for a modest fee."
+		word
+			`"`
+
+
+# --- The Navarian and Bruidian trade worlds --------------------------------
+
+news "unn navarian trade"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Navarian Exchange has announced record quarterly profits. The Exchange's chief factor attributed the results to 'a good quarter, an honest crew, and the fact that everyone else had a worse one.'"
+			"Bruidian brokers have opened a new trading floor on a Neutral world. The floor accepts all currencies, all cargoes, and no excuses. A Bruidian broker described the rules as 'simple: pay, or leave, or learn why.'"
+			"The Navarian Exchange has suspended trade with a Union system over a contract dispute. The dispute concerns a shipment of medical supplies that arrived eleven days late. The Exchange has stated that 'late is a form of not arriving.'"
+			"A Bruidian broker has been fined for selling a ship that did not exist. The broker has paid the fine and stated that the ship now exists. Bruidian regulators have accepted the payment and the statement."
+			"The Navarian Exchange has begun accepting payment in Krill temple scrip. The Exchange has stated that scrip is 'worth what the Avis says it is worth, which is a matter for the Avis.' The Exchange has also stated that it hedges accordingly."
+		word
+			`"`
+
+
+# --- The frontier and the player's world -----------------------------------
+
+news "unn spacer frontier"
+	location
+		government "Independent" "Merchant" "Bounty"
+	message
+		word
+			`"`
+		word
+			"I have been flying this lane for nineteen years and I have never seen it this quiet. Quiet is not the same as peaceful. Quiet is what happens when everyone is waiting."
+			"You can tell a Union captain by the way they apologize before they shoot. You can tell a Krill captain by the way they do not."
+			"Everyone out here is running from something. The only question is whether the thing they are running from is behind them or in the hold."
+			"My father flew the Lantern Strait when it was just a shipping route. He said the trick to a long career is knowing which fights are about cargo and which are about meaning. He never explained how to tell. I think that was the lesson."
+			"A Moclan once told me that the universe is a machine and that everything in it has a purpose. I asked him what my purpose was. He looked at my ship and said, 'transport.' I have never been so accurately insulted."
+			"I do not trust the Kaylon. I do not trust anyone who has never been embarrassed. A species that has never been embarrassed has never been wrong, and a species that has never been wrong has never learned anything."
+			"The Krill are not monsters. That is what frightens me. Monsters can be fought. The Krill are people who have decided that the universe has a shape and that everyone who disagrees is a flaw in it."
+			"Someone asked me the other day whether I thought the Union would last. I said the Union is a committee of a thousand worlds that has never once agreed on dinner. It will outlast us all."
+			"You want to know the secret to surviving out here? Be useful. Not dangerous, not clever, not fast. Useful. Dangerous people get tested. Clever people get used. Useful people get left alone."
+			"I keep a list of the things I have seen that no one would believe. It is not a long list. Most of it is the same thing: someone choosing to be kind when it cost them."
+		word
+			`"`
+
+
+# --- The Orville itself -----------------------------------------------------
+
+news "unn orville"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"The Union cruiser Orville has been assigned to a diplomatic courier run along the Krill border. The assignment is described as 'routine.' The Orville's crew has been described, by a crew member, as 'not.'"
+			"The Orville's chief medical officer has published a paper on cross-species triage. The paper argues that the first principle of emergency medicine is not to ask what a patient is, but what a patient needs. The paper has been adopted by three Union medical academies."
+			"A Moclan officer aboard the Orville has been credited with a redesign of the ship's atmospheric recycling system that reduces water loss by 18 percent. The officer has stated that the design is 'obvious' and that the previous design was 'not.'"
+			"The Orville has completed a humanitarian relief mission to a colony struck by a crop blight. The ship's crew distributed 40,000 tons of seed stock. The mission was not a military operation. Three Krill vessels observed it without incident, which Union Command has described as 'notable.'"
+			"The Orville's captain has been reprimanded for 'exceeding mission parameters' during a first-contact situation. The reprimand notes that the contact was successful. It notes this twice."
+			"A Union science officer aboard the Orville has requested permission to study a Kaylon unit's 'sense of humor.' The request was approved. The Kaylon unit has stated that it does not have a sense of humor. The study is ongoing."
+		word
+			`"`
+
+# --- Krill Empire -----------------------------------------------------------
+# The Krill: theocratic, imperial, certain of their righteousness.
+
+news "unn krill temple"
+	location
+		government "Krill"
+	message
+		word
+			`"`
+		word
+			"The High Temple has declared a new holy season. Krill vessels are increasing patrol density along the Krill Union border, and temple broadcasts call for the 'purification of unworthy systems.' Planetary Union captains are advised to expect challenges."
+			"Krill Ambassador Vak has issued a statement condemning Union assistance to a dissident Krill colony. 'The Avis does not recognize heresy,' the statement reads. 'And the Union does not recognize the sovereignty of rebels.'"
+			"A Krill temple network has been detected expanding into the Mid Rim. Union sensors picked up construction of a new shrine complex on an uninhabited moon. The Union Science Directorate has requested a survey team be dispatched."
+			"Krill vessels have intercepted a Union freighter carrying medical supplies to a Krill colony world. The cargo was seized on doctrinal grounds. Union Command has filed a protest; the Krill have not responded."
+			"The Krill High Council has announced the completion of a new dreadnought class. Temple broadcasts show the vessel under construction, its hull lined with liturgical scripture. Union Intelligence estimates it will be operational within the year."
+
+# --- Moclan Hegemony -----------------------------------------------------------
+# The Moclans: honor-bound, scientifically advanced, culturally rigid.
+
+news "unn moclan"
+	location
+		government "Moclan"
+	message
+		word
+			`"`
+		word
+			"The Moclan Hegemony has announced a breakthrough in biogenic weapon research. Union Intelligence is assessing whether the advance constitutes a violation of the Hegemony-Union non-aggression treaty."
+			"Moclan High Council has expelled three reformist scientists from the Hegemony. The scientists, all former Union collaborators, have requested asylum on Union worlds. The Hegemony has denied the request."
+			"A Moclan vessel has been intercepted attempting to sell classified drive schematics to a Krill intermediary. The Moclan government has disavowed the action and promised 'appropriate internal discipline.'"
+			"The Hegemony has opened a research station near the Calivon border. The station's stated purpose is xeno-archaeological study. Calivon vessels have been observed shadowing it at a respectful distance."
+			"Moclan shipyards have launched two new heavy cruisers. The vessels are named after Hegemony heroes of the Great Schism. Union fleets have been placed on routine alert."
+
+# --- Kaylon Collective -----------------------------------------------------------
+# The Kaylon: synthetic, logical, distrustful of biological life.
+
+news "unn kaylon"
+	location
+		government "Kaylon"
+	message
+		word
+			`"`
+		word
+			"The Kaylon Collective has transmitted a revised mathematical sequence to Union listening posts. Xenolinguists report increased complexity, suggesting the Kaylon are refining their communication model. No semantic content has been extracted."
+			"A Kaylon vessel was observed dismantling a derelict Union station near the Kaylon border. The station's components were sorted by material and removed. No Union personnel were present."
+			"Union xenolinguists have identified a repeating sub-pattern in Kaylon transmissions that resembles a question. The pattern has been sent back with a prime-number response. The Kaylon have not replied."
+			"The Kaylon Collective has denied involvement in the disappearance of a Union survey team near Kaylon space. 'The missing organics are not Kaylon concern,' the Collective stated."
+			"A Kaylon observer vessel has shadowed a Union science fleet for three consecutive systems. It has not hailed, not fired, and not deviated from its parallel course."
+
+# --- Calivon -----------------------------------------------------------
+# The Calivon: collectors, curators, view others as exhibits.
+
+news "unn calivon"
+	location
+		government "Calivon"
+	message
+		word
+			`"`
+		word
+			"A Calivon vessel has been detected in the outer rim, scanning Union science outposts. The Calivon are compiling what they call a 'catalogue of lesser species.' Union outposts have been ordered to minimize electromagnetic signatures."
+			"The Calivon have expanded their collection facility near Calivon space. Recent acquisitions include two Krill fighter craft and a Moclan science probe. The Calivon have not commented on the provenance of the items."
+			"A Union freighter crew reported being 'assessed' by a Calivon research vessel before being released. The crew described the experience as 'being measured like livestock.' Union Command has dismissed the report as subjective."
+			"Calivon researchers have published a paper in a fringe academic journal on the 'behavioral patterns of Union captains.' The paper is based on observation of three Union vessels. It has been widely criticized."
+			"A Calivon diplomatic envoy has requested docking rights at a Union spaceport. The request is under review by the Union Interior Ministry. No decision has been announced."
+
+# --- Crildari -----------------------------------------------------------
+# The Crildari: traders, bioluminescent, commerce-obsessed.
+
+news "unn crildari"
+	location
+		government "Crildari"
+	message
+		word
+			`"`
+		word
+			"Crildari trade convoys are rerouting around Krill space after three vessels were seized without warning. The Krill have cited 'doctrinal contamination' as justification. Crildari merchants have petitioned the Union for protection."
+			"The Crildari Exchange has announced a new trade route through Union space. The route carries bioluminescent algae, valued for both illumination and medicine. Union customs will inspect all cargo."
+			"A Crildari merchant has been arrested for attempting to sell Union navigation data to the Krill. The Crildari government has disavowed the action and requested the merchant's return."
+			"Crildari traders have reported increased pirate activity near the Velos system. The pirates are using modified Union surplus vessels. The Union has increased patrols in the area."
+			"The Crildari have offered to supply the Union with bioluminescent lighting in exchange for shield technology. The Union Science Directorate is reviewing the proposal."
+
+# --- General / ambient -----------------------------------------------------------
+
+news "unn ambient"
+	location
+		government "Republic"
+	message
+		word
+			`"`
+		word
+			"A dockworker at Valondis Station has been recognized for thirty years of continuous service. He was awarded a certificate, a pin, and a day off. He spent the day off working."
+			"A Union science vessel has discovered a nebula with unusual spectroscopic properties. The nebula appears to be absorbing certain wavelengths of light. The science officer has requested additional observation time."
+			"Two Union captains have been involved in a dispute over docking priority at a busy spaceport. The station administrator resolved the conflict by assigning both captains to the same berth. Neither captain was pleased."
+			"A Krill temple ship and a Moclan research vessel were observed docked at the same neutral station. Neither vessel hailed the other. The station reported no incidents."
+			"A Kaylon unit was observed repairing a malfunctioning door on a Union station. It did not speak, did not request payment, and did not explain its actions. The station crew has left it a maintenance log."

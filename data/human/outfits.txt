@@ -1,0 +1,606 @@
+# Copyright (c) 2014 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Cooling Ducts"
+	plural "Cooling Ducts"
+	category "Systems"
+	series "Cooling"
+	index 01010
+	cost 10000
+	thumbnail "outfit/cooling ducts"
+	"mass" 5
+	"outfit space" -5
+	"cooling" 5
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "Water Coolant System"
+	category "Systems"
+	series "Cooling"
+	index 01020
+	cost 25000
+	thumbnail "outfit/water cooling"
+	"mass" 10
+	"outfit space" -10
+	"cooling" 12
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Liquid Nitrogen Cooler"
+	category "Systems"
+	series "Cooling"
+	index 01030
+	cost 60000
+	thumbnail "outfit/liquid nitrogen"
+	"mass" 20
+	"outfit space" -20
+	"cooling" 29
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Liquid Helium Cooler"
+	category "Systems"
+	series "Cooling"
+	index 01040
+	cost 150000
+	thumbnail "outfit/liquid helium"
+	"mass" 40
+	"outfit space" -40
+	"cooling" 69
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+
+outfit "D14-RN Shield Generator"
+	category "Systems"
+	series "Shields"
+	index 01010
+	cost 20000
+	thumbnail "outfit/tiny shield"
+	"mass" 15
+	"outfit space" -15
+	"shield generation" .2
+	"shield energy" .2
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "D23-QP Shield Generator"
+	category "Systems"
+	series "Shields"
+	index 01020
+	cost 35000
+	thumbnail "outfit/small shield"
+	"mass" 22
+	"outfit space" -22
+	"shield generation" .32
+	"shield energy" .32
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "D41-HY Shield Generator"
+	category "Systems"
+	series "Shields"
+	index 01030
+	cost 65000
+	thumbnail "outfit/medium shield"
+	"mass" 30
+	"outfit space" -30
+	"shield generation" .51
+	"shield energy" .51
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "D67-TM Shield Generator"
+	category "Systems"
+	series "Shields"
+	index 01040
+	cost 120000
+	thumbnail "outfit/large shield"
+	"mass" 45
+	"outfit space" -45
+	"shield generation" .82
+	"shield energy" .82
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "D94-YV Shield Generator"
+	category "Systems"
+	series "Shields"
+	index 01050
+	cost 200000
+	thumbnail "outfit/huge shield"
+	"mass" 60
+	"outfit space" -60
+	"shield generation" 1.31
+	"shield energy" 1.31
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "S-270 Regenerator"
+	category "Systems"
+	series "Shields"
+	index 01060
+	cost 220000
+	thumbnail "outfit/small regenerator"
+	"mass" 12
+	"outfit space" -12
+	"shield generation" .6
+	"shield energy" .6
+	"energy consumption" .3
+	"heat generation" 2
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "S-970 Regenerator"
+	category "Systems"
+	series "Shields"
+	index 01070
+	cost 800000
+	thumbnail "outfit/large regenerator"
+	"mass" 37
+	"outfit space" -37
+	"shield generation" 2.3
+	"shield energy" 2.3
+	"energy consumption" .9
+	"heat generation" 6
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+
+outfit "Small Radar Jammer"
+	category "Systems"
+	series "Jammers"
+	index 01010
+	cost 24000
+	thumbnail "outfit/small radar jammer"
+	"mass" 4
+	"outfit space" -4
+	"radar jamming" 2
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Large Radar Jammer"
+	category "Systems"
+	series "Jammers"
+	index 01020
+	cost 138000
+	thumbnail "outfit/large radar jammer"
+	"mass" 14
+	"outfit space" -14
+	"radar jamming" 10
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+
+outfit "Ramscoop"
+	category "Systems"
+	series "Ramscoops"
+	index 01010
+	cost 60000
+	thumbnail "outfit/ramscoop"
+	"mass" 10
+	"outfit space" -10
+	"ramscoop" 1
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+	description "\tIt weighs more than the specification says it does, and everyone knows it, and nobody does anything about it."
+
+outfit "Catalytic Ramscoop"
+	category "Systems"
+	series "Ramscoops"
+	index 01020
+	cost 320000
+	thumbnail "outfit/catalytic ramscoop"
+	"mass" 16
+	"outfit space" -16
+	"ramscoop" 7
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "Hyperdrive"
+	category "Systems"
+	series "Drives"
+	index 10
+	cost 50000
+	thumbnail "outfit/hyperdrive"
+	"mass" 20
+	"outfit space" -20
+	"jump speed" .2
+	"jump fuel" 100
+	"hyperdrive" 1
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+	description "\tEvery shipyard in Union space stocks these, and most of them will fit one while you wait."
+
+outfit "Scram Drive"
+	category "Systems"
+	series "Drives"
+	index 20
+	cost 90000
+	thumbnail "outfit/scram drive"
+	"mass" 30
+	"outfit space" -30
+	"scram drive" .2
+	"jump fuel" 150
+	"hyperdrive" 1
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Jump Drive"
+	category "Systems"
+	series "Drives"
+	index 30
+	cost 1000000
+	thumbnail "outfit/jump drive"
+	"mass" 20
+	"outfit space" -20
+	"jump speed" .3
+	"jump fuel" 200
+	"jump drive" 1
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "Jump Drive (Broken)"
+	plural "Jump Drives (Broken)"
+	series "Drives"
+	index 40
+	category "Systems"
+	cost 25000
+	thumbnail "outfit/jump drive (broken)"
+	"mass" 20
+	"outfit space" -20
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+
+outfit "Cargo Scanner"
+	category "Systems"
+	series "Scanners"
+	index 01020
+	cost 8000
+	thumbnail "outfit/cargo scanner"
+	"mass" 1
+	"outfit space" -1
+	"cargo scan power" 9
+	"cargo scan efficiency" 5
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Outfit Scanner"
+	category "Systems"
+	series "Scanners"
+	index 01030
+	cost 24000
+	thumbnail "outfit/outfit scanner"
+	"mass" 2
+	"outfit space" -2
+	"outfit scan power" 25
+	"outfit scan efficiency" 15
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "Asteroid Scanner"
+	category "Systems"
+	series "Scanners"
+	index 01010
+	cost 61000
+	thumbnail "outfit/asteroid scanner"
+	"mass" 6
+	"outfit space" -6
+	"asteroid scan power" 40
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "Tactical Scanner"
+	category "Systems"
+	series "Scanners"
+	index 01040
+	cost 144000
+	thumbnail "outfit/tactical scanner"
+	"mass" 4
+	"outfit space" -4
+	"tactical scan power" 32
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Surveillance Pod"
+	category "Systems"
+	series "Scanners"
+	index 01050
+	cost 122500
+	thumbnail "outfit/surveillance pod"
+	"mass" 5
+	"outfit space" -5
+	"outfit scan power" 16
+	"outfit scan efficiency" 20
+	"cargo scan power" 4
+	"cargo scan efficiency" 10
+	"atmosphere scan" 100
+	"tactical scan power" 9
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+
+outfit "Cloaking Device"
+	category "Unique"
+	series "Functional Unique"
+	index 10
+	cost 1200000
+	"mass" 10
+	"outfit space" -10
+	"cloak" .01
+	"cloaking energy" 1
+	"cloaking fuel" .2
+	"cloaked regen multiplier" -1
+	"cloaked repair multiplier" -1
+	"unique" 1
+	"unplunderable" 1
+	description "This is a Union outfit of no particular distinction."
+
+
+outfit "Outfits Expansion"
+	category "Systems"
+	series "Expansions"
+	index 20
+	cost 50000
+	thumbnail "outfit/outfit expansion"
+	"mass" 5
+	"outfit space" 15
+	"cargo space" -20
+	"cooling inefficiency" 1
+	"heat dissipation" -.0065
+	"unplunderable" 1
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+	description "\tIt weighs more than the specification says it does, and everyone knows it, and nobody does anything about it."
+
+outfit "Cargo Expansion"
+	category "Systems"
+	series "Expansions"
+	index 10
+	cost 30000
+	thumbnail "outfit/cargo expansion"
+	"mass" 5
+	"cargo space" 15
+	"outfit space" -20
+	"unplunderable" 1
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+outfit "Bunk Room"
+	category "Systems"
+	series "Passenger"
+	index 20
+	cost 40000
+	thumbnail "outfit/bunk room"
+	"mass" 5
+	"bunks" 4
+	"outfit space" -20
+	"unplunderable" 1
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "Small Bunk Room"
+	category "Systems"
+	series "Passenger"
+	index 10
+	cost 20000
+	thumbnail "outfit/small bunk room"
+	"mass" 3
+	"bunks" 2
+	"outfit space" -12
+	"unplunderable" 1
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "Brig"
+	category "Systems"
+	series "Passenger"
+	index 30
+	cost 40000
+	thumbnail "outfit/brig"
+	"mass" 3
+	"outfit space" -3
+	"unplunderable" 1
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Luxury Accommodations"
+	plural "Luxury Accommodations"
+	category "Systems"
+	series "Passenger"
+	index 40
+	cost 250000
+	thumbnail "outfit/luxury accommodations"
+	"mass" 10
+	"outfit space" -10
+	"required crew" 2
+	"unplunderable" 1
+	description "This is a Union system, carried because the ship cannot do its job without it and because the crew have learned to distrust the alternatives."
+
+outfit "Fuel Pod"
+	category "Systems"
+	series "Fuel"
+	index 10
+	cost 20000
+	thumbnail "outfit/fuel pod"
+	"mass" 8
+	"outfit space" -8
+	"fuel capacity" 100
+	description "This is a Union shipboard system, wired into the vessel's main bus and maintained by the crew who understand it least."
+
+outfit "Interference Plating"
+	category "Systems"
+	series "Special Systems"
+	index 01010
+	cost 50000
+	thumbnail "outfit/interference plating"
+	"mass" 4
+	"outfit space" -4
+	"scan interference" .5
+	description "This is a Union installation, bolted into the ship's frame and connected to everything it needs to be connected to."
+
+
+outfit "Laser Rifle"
+	category "Hand to Hand"
+	series "H2H"
+	index 01010
+	cost 8000
+	thumbnail "outfit/laser rifle"
+	"capture attack" .6
+	"capture defense" .8
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is a Union-issue personal weapon, issued to crew who expect to meet their opposite numbers at close quarters."
+
+outfit "Fragmentation Grenades"
+	plural "Fragmentation Grenades"
+	category "Hand to Hand"
+	series "H2H"
+	index 01020
+	cost 17000
+	thumbnail "outfit/fragmentation grenades"
+	"capture attack" 1.3
+	"capture defense" .3
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is a Union-issue personal weapon, issued to crew who expect to meet their opposite numbers at close quarters."
+
+outfit "Security Station"
+	category "Hand to Hand"
+	series "Fortifications"
+	index 01010
+	cost 42000
+	thumbnail "outfit/security station"
+	"mass" 2
+	"outfit space" -2
+	"capture defense" 3.4
+	"unplunderable" 1
+	description "This is a Union-issue personal weapon, issued to crew who expect to meet their opposite numbers at close quarters."
+
+outfit "Nerve Gas"
+	plural "Nerve Gas"
+	category "Hand to Hand"
+	series "H2H"
+	index 01030
+	cost 75000
+	thumbnail "outfit/nerve gas"
+	"capture attack" 2.8
+	"capture defense" .8
+	"scan brightness" 1
+	"illegal" 1000000
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is a Union sidearm, carried on the belt of anyone the ship's captain expects to need one."
+
+outfit "Mug"
+	category "Hand to Hand"
+	series "H2H"
+	index 99010
+	cost 50
+	thumbnail "outfit/mug"
+	"capture attack" .1
+	"unique" 1
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is a Union close-quarters weapon, and the training manual that comes with it is mostly about not pointing it at your own side."
+
+outfit "Antigrav Glass"
+	category "Hand to Hand"
+	series "H2H"
+	index 99020
+	plural "Antigrav Glasses"
+	cost 25
+	thumbnail "outfit/unknown"
+	"capture attack" .2
+	"unique" 1
+	"unplunderable" 1
+	"can jettison" 1
+	description "This is a Union close-quarters weapon, and the training manual that comes with it is mostly about not pointing it at your own side."
+	description "\tA ship fitted with this will not win any beauty prizes, but it will be around at the end of the engagement."
+
+outfit "Old Man's Sword"
+	category "Unique"
+	series "H2H"
+	index 99030
+	cost 220000
+	thumbnail "outfit/sword"
+	"capture attack" 1.4
+	"capture defense" 1
+	"unplunderable" 1
+	"unique" 1
+	"can jettison" 1
+	description "This is a Union outfit of no particular distinction."
+
+outfit "Puny"
+	category "Unique"
+	series "Non-Functional Unique"
+	index 10
+	"display name" `"Puny"`
+	thumbnail "outfit/collar"
+	"unique" 1
+	"can jettison" 1
+	description "This is a Union outfit of no particular distinction."
+	description "\tUnion yards turn these out by the thousand, and the ones that fail are usually the ones that have been repaired rather than the ones that have been made."
+
+outfit "Tear of Skade"
+	category "Unique"
+	series "Functional Unique"
+	index 20
+	thumbnail "outfit/skadetear"
+	"cooling" 4
+	"unique" 1
+	"can jettison" 1
+	description "This is a Union outfit of no particular distinction."
+
+outfit "Blood of Surtr"
+	category "Unique"
+	series "Functional Unique"
+	index 21
+	thumbnail "outfit/surtrblood"
+	"energy generation" 2
+	"heat generation" 4
+	"unique" 1
+	"can jettison" 1
+	description "This is a Union outfit of no particular distinction."
+
+
+outfit "Local Map"
+	category "Special"
+	cost 1000
+	thumbnail "outfit/map"
+	"map" 12
+	"map minables" 1
+	description "This is a Union outfit of no particular distinction."
+
+
+outfit "Pilot's License"
+	category "Licenses"
+	series "Licenses"
+	index 01010
+	cost 120000
+	thumbnail "outfit/license"
+	description "This is a Union warrant, issued by an authority that does not expect to be questioned and is usually right."
+
+outfit "Navy License"
+	category "Licenses"
+	series "Licenses"
+	index 01020
+	thumbnail "outfit/navy license"
+	description "This is a Union commission, carried in the ship's registry and checked by the dockyard before you are allowed to buy anything at all."
+
+outfit "Navy Auxiliary License"
+	category "Licenses"
+	series "Licenses"
+	index 01030
+	thumbnail "outfit/auxiliary license"
+	description "This is a Union licence, and without it the dockyard will sell you nothing but fuel and bad advice."
+
+outfit "Navy Cruiser License"
+	category "Licenses"
+	series "Licenses"
+	index 01040
+	thumbnail "outfit/navy cruiser license"
+	description "This is a Union warrant, issued by an authority that does not expect to be questioned and is usually right."
+
+outfit "Navy Carrier License"
+	category "Licenses"
+	series "Licenses"
+	index 01050
+	thumbnail "outfit/navy carrier license"
+	description "This is a Union licence, and without it the dockyard will sell you nothing but fuel and bad advice."
+
+outfit "Militia License"
+	category "Licenses"
+	series "Licenses"
+	index 01060
+	thumbnail "outfit/militia license"
+	description "This is a Union commission, carried in the ship's registry and checked by the dockyard before you are allowed to buy anything at all."
+
+outfit "City-Ship License"
+	category "Licenses"
+	series "Licenses"
+	index 01070
+	thumbnail "outfit/city-ship license"
+	description "This is a Union warrant, issued by an authority that does not expect to be questioned and is usually right."

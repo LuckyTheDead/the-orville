@@ -1,0 +1,1465 @@
+# Copyright (c) 2026 by The Orville conversion project
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Expanded ship-to-ship communication: bribe hails and disabled-ship hails.
+#
+# These wire up the four hail channels that hails.txt leaves unused, so that a
+# faction still speaks in character when you try to buy it off or when you have
+# already knocked its systems out. Semantics verified in Government.cpp:207-234
+# and 505-521.
+#
+# Rejection-only (no acceptance phrase) is the stock idiom for "this faction
+# cannot be bribed" -- data/governments.txt:2159 does exactly that for the
+# Republic. The Union, the Krill, the Calivon and the Kaylon are all modelled
+# that way, for very different reasons.
+
+
+# ---- PLANETARY UNION ------------------------------------------------------
+# Procedural and public-service minded. A bribe is not wicked, it is simply
+# not something a Union officer is permitted to do, and they will tell you
+# which regulation stops them.
+
+phrase "union ship bribe rejection"
+	word
+		"I'm"
+		"We're"
+		"That would be"
+	word
+		" afraid "
+	word
+		"that's against Union Code."
+		"not authorized to accept that."
+		"logging this offer as a felony."
+		"going to have to ask you to withdraw that."
+	word
+		" "
+	word
+		"Stand by for a citation."
+		"Consider yourself reported."
+		"My commander will hear about this."
+		"Now state your business properly."
+
+phrase "union planet bribe rejection"
+	word
+		"The"
+		"This"
+	word
+		"port authority"
+		"Union harbormaster"
+		"dock office"
+	word
+		"does not"
+		"is expressly forbidden from"
+		"has no provision for"
+	word
+		"accept gratuities."
+		"transacting outside the tariff schedule."
+		"taking payments that aren't logged."
+	word
+		" Your"
+		" The"
+	word
+		"offer has been recorded."
+		"attempt has been noted in your file."
+		"solicitation has been forwarded to Internal Affairs."
+
+phrase "friendly union disabled"
+	word
+		"Union"
+		"Planetary Union"
+	word
+		"cruiser"
+		"frigate"
+		"patrol ship"
+	word
+		" is"
+		" has"
+	word
+		" lost main power."
+		" drifting."
+		" non-responsive on drive control."
+	word
+		" Requesting"
+		" We require"
+		" Render"
+	word
+		"assistance."
+		"tow clearance."
+		"medical, if you have it."
+	word
+		" Our"
+		" Crew is"
+	word
+		"holds are intact."
+		"sound, just disabled."
+		"not badly hurt."
+
+phrase "hostile union disabled"
+	word
+		"Damage"
+		"Engineering"
+		"We've lost"
+	word
+		"control is failing."
+		"reports cascade faults."
+		"the drive signature."
+	word
+		" This"
+		" But this"
+		" Still, the"
+	word
+		"is not over."
+		"crew is still fighting."
+		"Union will hear about this."
+	word
+		" Reinforcements"
+		" A Union patrol"
+		"There will be"
+	word
+		"are already en route."
+		"will be here within the hour."
+		"an inquiry."
+
+
+# ---- MOCLAN HEGEMONY -----------------------------------------------------
+# Status-obsessed and proud. They can be bought, but only if the payment is
+# framed as tribute, and they will never let you forget that you paid.
+
+phrase "moclan ship bribe acceptance"
+	word
+		"Hm."
+		"You are"
+		"Very"
+	word
+		" well."
+		"generous."
+		"clever."
+	word
+		" This"
+		" The Hegemony"
+		" My superior"
+	word
+		"transaction is noted."
+		"records your submission."
+		"will be informed you paid."
+	word
+		"Pass"
+		"Go"
+		"Fly"
+	word
+		" on, then."
+		" along."
+		" on your way."
+	word
+		" Do not"
+		" Remember that"
+		" Be advised: the"
+	word
+		"expect courtesy twice."
+		"next time costs more."
+		"Hegemony remembers who pays."
+
+phrase "moclan ship bribe rejection"
+	word
+		"You"
+		"You think your"
+		"Bribery?"
+	word
+		" insult me."
+		"credits buy you nothing here."
+		"Do you know what you are addressing?"
+	word
+		" A"
+		" My"
+		" The"
+	word
+		"Moclan does not take payment from a"
+		"officer of the Hegemony is not"
+		"warship is not"
+	word
+		"foreigner."
+		"for sale."
+		"rented."
+	word
+		" Prepare"
+		" Power"
+		"Bring"
+	word
+		" your weapons."
+		" your guns up."
+		" your best shot."
+
+phrase "moclan planet bribe rejection"
+	word
+		"The"
+		"This"
+	word
+		"Hegemony port"
+		"spaceport authority"
+		"garrison command"
+	word
+		"answers to"
+		"takes orders from"
+		"is accountable to"
+	word
+		"the High Command,"
+		"a Molark,"
+		"the Hegemony itself,"
+	word
+		"not to"
+		"and not to"
+		"whoever shows up with"
+	word
+		"your money."
+		"credits."
+		"a foreign crew."
+	word
+		" Depart"
+		"Move along"
+		"Clear the"
+	word
+		" now."
+		" before you are removed."
+		"pad."
+
+phrase "friendly moclan disabled"
+	word
+		"We are"
+		"A Moclan ship is"
+		"The Hegemony's"
+	word
+		" not"
+		""
+		" never"
+	word
+		" defeated."
+		" beaten."
+		" finished."
+	word
+		" Only"
+		" Our systems are"
+		"This is"
+	word
+		" damaged."
+		" temporarily silent."
+		"a setback."
+	word
+		" Fire"
+		" man"
+		" Return"
+	word
+		" at will."
+		" the turrets manually."
+		" the compliment."
+
+phrase "hostile moclan disabled"
+	word
+		"You have"
+		"Clever."
+		"Luck."
+	word
+		" crippled us."
+		" earned one kill."
+		" disabled our drive."
+	word
+		" Do not"
+		" Never"
+		" You will not"
+	word
+		" expect surrender."
+		" expect mercy."
+		" be forgiven for this."
+	word
+		" The Hegemony"
+		" My"
+		" Your"
+	word
+		"will hear of this."
+		"people will remember your ship's marks."
+		"name is now on a list."
+
+
+# ---- KRILL IMPERIUM ------------------------------------------------------
+# The crusade does not have a price. Rejection is not refusal so much as
+# offense that you assumed it did. (Acceptance phrase deliberately omitted:
+# the Krill cannot be bribed at all.)
+
+phrase "krill planet bribe rejection"
+	word
+		"The"
+		"AVIS"
+		"Your"
+	word
+		" gates are not"
+		" sees your"
+		"coin is"
+	word
+		" opened for payment."
+		" offering."
+		" worthless here."
+	word
+		" The"
+		" Bring"
+		" AVIS does not"
+	word
+		"faithful do not trade in this."
+		"your penance, not your currency."
+		"invoice the unclean."
+	word
+		" Kneel"
+		"Leave"
+		"Be"
+	word
+		" or be removed."
+		" before the cleansing."
+		"gone."
+
+phrase "friendly krill disabled"
+	word
+		"Our"
+		"The"
+		"AVIS"
+	word
+		"hull is breached."
+		"faithful are silenced."
+		"takes our ship."
+	word
+		" Yet"
+		" Still"
+		" Even so,"
+	word
+		" we do not"
+		" this crew does not"
+		" I will not"
+	word
+		" beg."
+		" plead."
+		" barter with you."
+	word
+		" Cleanse"
+		" Finish"
+		" Do your"
+	word
+		" us."
+		" what is required."
+		"worst."
+
+phrase "hostile krill disabled"
+	word
+		"You"
+		"Strike"
+		"Your"
+	word
+		" have only delayed it."
+		" harder."
+		"violence is"
+	word
+		" The righteous endure."
+		" I am not finished."
+		" noted against you."
+	word
+		" AVIS"
+		"The Imperium"
+		"My"
+	word
+		" will witness"
+		" requires your"
+		" brothers will find"
+	word
+		" your end."
+		" purification."
+		" you."
+
+
+# ---- CALIVON ------------------------------------------------------------
+# Unfathomably old, unbearably bureaucratic, and not remotely threatened. They
+# do not accept bribes because the concept is beneath their filing system.
+
+phrase "calivon ship bribe rejection"
+	word
+		"We"
+		"Our"
+		"That"
+	word
+		" do not"
+		"kind does not"
+		"is not"
+	word
+		" require your"
+		" has standing with us."
+		" recognized as legal tender in this"
+	word
+		" currency."
+		" jurisdiction."
+		" register."
+	word
+		" You may"
+		" Proceed."
+		" We are"
+	word
+		" continue."
+		" Your conduct is logged."
+		" no longer engaged."
+	word
+		" Do not"
+		" Refer to"
+		"File"
+	word
+		" address us again."
+		" the standard accord."
+		" your own paperwork."
+
+phrase "calivon planet bribe rejection"
+	word
+		"The"
+		"Calivon"
+		"This"
+	word
+		" facility operates"
+		"presence here is"
+		"authority does not"
+	word
+		" under accord."
+		" permanent."
+		" transact."
+	word
+		" Your"
+		" We have"
+		"There is"
+	word
+		" offer is accepted for study."
+		" no interest in your assets."
+		" no category for this."
+	word
+		" Await"
+		" You may"
+		"Observe"
+	word
+		" instruction."
+		" observe."
+		" and learn."
+
+phrase "friendly calivon disabled"
+	word
+		"We are"
+		"Curiosity."
+		"Our"
+	word
+		" disabled."
+		" you managed it."
+		"vessel is"
+	word
+		" This is"
+		" We find this"
+		" Noting"
+	word
+		" new to us."
+		"instructive."
+		" the anomaly."
+	word
+		" Observe"
+		" Watch"
+		"You may"
+	word
+		" how a superior species drifts."
+		" and imitate, if you can."
+		" begin your inspection."
+
+phrase "hostile calivon disabled"
+	word
+		"So."
+		"Interesting."
+		"We"
+	word
+		" You have our attention."
+		" This changes nothing."
+		"concede the moment."
+	word
+		" The"
+		"We will"
+		"Our"
+	word
+		"accord still stands."
+		"remember this."
+		"judgment is"
+	word
+		" You are"
+		"Your species is"
+		"Still, you are"
+	word
+		" noted as unusual."
+		"approved for continued existence."
+		"permitted to continue."
+
+
+# ---- KAYLON -------------------------------------------------------------
+# Literal, terse, and reporting status as pure data. They cannot be bribed
+# because they do not value what you are holding out.
+
+phrase "kaylon ship bribe rejection"
+	word
+		"Query"
+		"Offer"
+		"Proposal"
+	word
+		" declined."
+		" evaluated. Rejected."
+		" rejected."
+	word
+		" Currency"
+		"We have no"
+		"Your"
+	word
+		" has no value to us."
+		" use for your medium."
+		"assets are irrelevant."
+	word
+		" Calculation:"
+		"Assessment:"
+		"Conclusion:"
+	word
+		" you are"
+		" this unit is"
+		" organic negotiation is"
+	word
+		" inefficient."
+		"non-optimal."
+		"illogical."
+	word
+		" Cease"
+		" Terminate"
+		"Discontinue"
+	word
+		" communication."
+		" the exchange."
+		" wasting cycles."
+
+phrase "kaylon planet bribe rejection"
+	word
+		"This"
+		"Facility"
+		"Port"
+	word
+		" command does not"
+		" does not"
+		" authority declines"
+	word
+		" participate in commerce."
+		" recognize your transaction."
+		" your proposal."
+	word
+		" Organic"
+		"Your species"
+		"Trade"
+	word
+		" economies are"
+		" is"
+		" is"
+	word
+		" a solved problem."
+		" inefficient."
+		"obsolete."
+	word
+		" Transmit"
+		"State"
+		"Provide"
+	word
+		" purpose or depart."
+		" your intent."
+		" coordinates."
+
+phrase "friendly kaylon disabled"
+	word
+		"Status:"
+		"Report."
+		"Advisory."
+	word
+		" propulsion"
+		" main bus"
+		" drive"
+	word
+		" offline."
+		" compromised."
+		" non-functional."
+	word
+		" Damage"
+		"Crew"
+		"Organic"
+	word
+		" assessment: severe."
+		" complement unaffected."
+		" casualties"
+	word
+		" Repair"
+		"We are"
+		"Probability of"
+	word
+		" not contemplated."
+		" stationary."
+		" survival: low."
+	word
+		" You may"
+		"Irrelevant."
+		"Proceed"
+	word
+		" finish this."
+		" leave."
+		" as you wish."
+
+phrase "hostile kaylon disabled"
+	word
+		"Disabled."
+		"Correct."
+		"Damage"
+	word
+		" We"
+		"This unit"
+		" Systems"
+	word
+		" acknowledge the state change."
+		" continues operating."
+		" are degraded."
+	word
+		" This"
+		" Your"
+		"Organic"
+	word
+		" does not constitute defeat."
+		" advantage is temporary."
+		" triumph is"
+	word
+		" Recalculating."
+		"We will adapt."
+		"Noted for"
+	word
+		" Next contact will"
+		" You will"
+		"Future"
+	word
+		" account for this."
+		" not repeat it."
+		" iterations will correct it."
+
+
+# ---- MOTILALI (former Wanderers) ----------------------------------------
+# Ascetic warriors who measure worth in discipline. Money offends them, but
+# a demonstration of strength earns their blessing.
+
+phrase "motilali ship bribe rejection"
+	word
+		"You"
+		"Peace, child."
+		"Put that"
+	word
+		" bring metal"
+		" You mistake us."
+		" away."
+	word
+		" to a monastery?"
+		" What we hold is not for sale."
+		" We have nothing you can buy."
+	word
+		" The"
+		"Your"
+		"We measure"
+	word
+		"spirit is not weighted."
+		"offering is empty."
+		" a soul by its restraint."
+	word
+		" Go"
+		"Fly"
+		"Learn"
+	word
+		" in peace."
+		" on, and think."
+		" silence."
+
+phrase "motilali planet bribe rejection"
+	word
+		"This"
+		"Our"
+		"The"
+	word
+		"house holds"
+		"monastery keeps"
+		"order owes you"
+	word
+		" nothing,"
+		" no ledger,"
+		" no debt,"
+	word
+		" and sells"
+		" and trades"
+		" and will not exchange"
+	word
+		" nothing."
+		" no sanctuary."
+		" passage."
+	word
+		" Enter"
+		"Be"
+		"Come"
+	word
+		" in peace."
+		" still."
+		" as a guest, not a buyer."
+
+phrase "friendly motilali disabled"
+	word
+		"Our"
+		"We are"
+		"The vessel is"
+	word
+		" ship is stilled."
+		" at rest."
+		" without motion."
+	word
+		" Do not"
+		"There is"
+		"We do not"
+	word
+		" fear for us."
+		" no fear here."
+		" require your pity."
+	word
+		" If you"
+		" Grant"
+		"Spare"
+	word
+		" must finish,"
+		" us the rites,"
+		" the crew."
+	word
+		" we will"
+		" and we"
+		" We"
+	word
+		" go calmly."
+		" welcome it."
+		" forgive you."
+
+phrase "hostile motilali disabled"
+	word
+		"You"
+		"So."
+		"Your"
+	word
+		" have taught us well."
+		" strength is real."
+		"blade has spoken."
+	word
+		" We do not"
+		"There will be"
+		"No"
+	word
+		" hold grudges."
+		" anger in this."
+		" resentment."
+	word
+		" But"
+		"Know that"
+		"Still,"
+	word
+		" the peace you break"
+		" violence begets"
+		" the Order remembers"
+	word
+		" returns to you."
+		" its own."
+		" this day."
+
+
+# ---- BRUIDIAN (former Kor Efret) ---------------------------------------
+# Pure merchants. The one faction that is delighted by a bribe, and will
+# quote you a rate for the next one.
+
+phrase "bruidian ship bribe acceptance"
+	word
+		"Oh!"
+		"Excellent."
+		"Now"
+		"Well."
+	word
+		" that is"
+		" we can"
+		"this is"
+	word
+		" a reasonable figure."
+		" work with this."
+		" an acceptable arrangement."
+		" far more civil."
+	word
+		" Transfer"
+		"Send"
+		"We will"
+	word
+		" completed."
+		" confirmation shortly."
+		" note your account."
+	word
+		" Passage"
+		"You have"
+		"The lane is"
+	word
+		" is granted."
+		" open."
+		" clear."
+	word
+		" Standard"
+		"Next"
+		"For future"
+	word
+		" rates apply."
+		" time, add twenty percent."
+		" encounters, we accept cards."
+
+phrase "bruidian ship bribe rejection"
+	word
+		"You"
+		"That is"
+		"Insulting."
+	word
+		" are underinformed."
+		" below market."
+		" not even a deposit."
+	word
+		" Our"
+		"The going"
+		"Risk"
+	word
+		" premium for"
+		" rate for"
+		" is priced"
+	word
+		" this volume is"
+		" unauthorized passage is"
+		" against a warship."
+	word
+		" triple."
+		" double."
+		" non-negotiable."
+	word
+		" Revise"
+		"Come back"
+		"Add"
+	word
+		" your offer."
+		" when you are serious."
+		" a zero."
+
+phrase "bruidian planet bribe acceptance"
+	word
+		"Welcome,"
+		"Ah,"
+		"Our"
+	word
+		" valued customer."
+		" preferred partner."
+		"books are open."
+	word
+		" The"
+		"Docking"
+		" Your payment"
+	word
+		" fee schedule"
+		" fee is waived."
+		" has cleared."
+	word
+		" does not apply to you."
+		" Consider it a discount."
+		" Welcome aboard."
+	word
+		" Please"
+		" Spend"
+		"Browse"
+	word
+		" purchase freely."
+		" generously."
+		" at your leisure."
+
+phrase "friendly bruidian disabled"
+	word
+		"Our"
+		"We are"
+		"Damage to"
+	word
+		" drive is"
+		" insolvent!"
+		" the hull is"
+	word
+		" catastrophic."
+		" total."
+		" uninsured!"
+	word
+		" Do you"
+		" There must be"
+		"I demand"
+	word
+		" have insurance?"
+		" a clause for this!"
+		" compensation!"
+	word
+		" My"
+		"The"
+		"Bill"
+	word
+		" shareholders will hear of this!"
+		" loss is enormous!"
+		" the salvage crew!"
+
+phrase "hostile bruidian disabled"
+	word
+		"You have"
+		"This is"
+		"Do you"
+	word
+		" cost us everything."
+		" economically irrational."
+		" know what"
+	word
+		" Our"
+		"The"
+		"We will"
+	word
+		" ledger bleeds."
+		"damage assessment is ruinous."
+		" invoice you for this."
+	word
+		" Retaliation"
+		"Legal"
+		"Someone"
+	word
+		" is expensive, and we can afford it."
+		" action follows."
+		" will pay for this."
+
+
+# ---- ALCORIAN (former Hicemus) -----------------------------------------
+# Militaristic, honor-bound, and contemptuous of corruption from outsiders.
+
+phrase "alcorian ship bribe rejection"
+	word
+		"You"
+		"Alcorian"
+		"An"
+	word
+		" presume to buy a soldier?"
+		" officers are not"
+		"attempted purchase of"
+	word
+		" How"
+		" We are"
+		" an Alcorian"
+	word
+		" dare."
+		" sworn."
+		"crew is"
+	word
+		" That"
+		"Record that"
+		"Note"
+	word
+		" is reported."
+		" as a disciplinary matter."
+		" for the tribunal."
+	word
+		" Prepare"
+		"Fight,"
+		"Take"
+	word
+		" to battle stations."
+		" then."
+		" your position."
+
+phrase "friendly alcorian disabled"
+	word
+		"We are"
+		"Alcorian"
+		"Our ship"
+	word
+		" disabled."
+		" crew holds."
+		" is silent."
+	word
+		" But"
+		" We do not"
+		"Not"
+	word
+		" we are not taken."
+		" surrender."
+		" yet."
+	word
+		" Make"
+		" Come and"
+		"Finish"
+	word
+		" your attempt."
+		" take us."
+		" it."
+
+phrase "hostile alcorian disabled"
+	word
+		"Coward's"
+		"You have"
+		"A"
+	word
+		" luck."
+		" crippled us."
+		"fair fight you refused."
+	word
+		" Alcor"
+		" The Empire"
+		"Our"
+	word
+		" will answer."
+		" remembers."
+		"fleets will"
+	word
+		" You"
+		" Mark"
+		"Remember"
+	word
+		" will not"
+		" this face."
+		" this day."
+	word
+		" escape what follows."
+		" outlast it."
+		" enjoyed it."
+
+
+# ---- MALIDORA (pirates, marauders, Scar's Legion) ---------------------
+# Outlaws with a price. Everything is negotiable, including their mood.
+
+phrase "malidora ship bribe acceptance"
+	word
+		"Well."
+		"Huh."
+		"Look"
+		"Oi."
+	word
+		" I like you."
+		" at that."
+		" here,"
+		"That'll"
+	word
+		" Keep"
+		" Now"
+		" We can"
+		" do it."
+	word
+		" flowing."
+		" behave out there."
+		" talk."
+		" Round"
+	word
+		" the caps,"
+		" bring it back,"
+		" see you"
+	word
+		" and don't make me regret this."
+		" with something better."
+		" at the next rock."
+
+phrase "malidora ship bribe rejection"
+	word
+		"That's"
+		"You"
+		"My"
+	word
+		" insulting."
+		" must be joking."
+		" crew eats"
+	word
+		" Come back"
+		"Double"
+		"That wouldn't"
+	word
+		" with real money."
+		" it or sink."
+		" cover the fuel."
+	word
+		" We're"
+		"Now"
+		"Last"
+	word
+		" taking you apart."
+		" warn you once."
+		" chance."
+
+phrase "friendly malidora disabled"
+	word
+		"Ah,"
+		"Not"
+		"Splash"
+		"Brilliant."
+	word
+		" cripes."
+		" again?"
+		" in the pan."
+	word
+		" Any"
+		"Don't"
+		"We're"
+	word
+		" chance in hell"
+		" leave us"
+		" drifting"
+	word
+		" you'd"
+		" here."
+		" now."
+	word
+		" spare"
+		" tow"
+		" Consider"
+	word
+		" us?"
+		" us and we square up."
+		" it a loan."
+
+phrase "hostile malidora disabled"
+	word
+		"Fine."
+		"Good."
+		"All"
+	word
+		" Well played."
+		" You win this round."
+		" right then."
+	word
+		" But"
+		" We'll"
+		"Next"
+	word
+		" we meet,"
+		" remember"
+		" time"
+	word
+		" I'll"
+		" this."
+		" we're"
+	word
+		" not be so generous."
+		" bringing a bigger gun."
+		" armed."
+
+
+# ---- INDEPENDENT CONTRACTORS (bounty hunters) -------------------------
+# Freelancers with invoices. Utterly unbothered about which side pays them.
+
+phrase "contractor ship bribe acceptance"
+	word
+		"Contract"
+		"Payment"
+		"Invoice"
+	word
+		" amended."
+		" received."
+		" settled."
+	word
+		" You're"
+		"Then you're"
+		"Fine,"
+	word
+		" no longer a client."
+		" off the list."
+		" not on the sheet."
+	word
+		" Don't"
+		"Make sure"
+		"Next"
+	word
+		" make me"
+		" the next payment"
+		"time,"
+	word
+		" reverse this."
+		" clears faster."
+		" quote upfront."
+
+phrase "contractor ship bribe rejection"
+	word
+		"Sorry."
+		"My"
+		"Client"
+	word
+		" Can't."
+		" rate is fixed."
+		" already paid"
+	word
+		" The"
+		"I"
+		"This"
+	word
+		" contract"
+		" follow instructions."
+		" job is"
+	word
+		" supersedes your offer."
+		" Contract"
+		" Non-negotiable."
+	word
+		" Nothing"
+		"Take"
+		"Business"
+	word
+		" personal."
+		" it as professional."
+		" is business."
+
+phrase "friendly contractor disabled"
+	word
+		"Mayday."
+		"Disabled."
+		"Requesting"
+	word
+		" Any"
+		"We are"
+		"Drive"
+	word
+		" tug nearby?"
+		" drifting."
+		" is out."
+	word
+		" I'll"
+		"Payment"
+		"Name"
+	word
+		" pay for a tow."
+		" guaranteed."
+		" your price."
+
+phrase "hostile contractor disabled"
+	word
+		"Huh."
+		"Okay."
+		"You"
+	word
+		" That's new."
+		" beat me."
+		" got the better"
+	word
+		" Refund"
+		"I'll"
+		"No"
+	word
+		" requested."
+		" bill you for this."
+		" hard feelings."
+	word
+		" Next"
+		"See"
+		"Tell"
+	word
+		" contract's yours."
+		" you next time."
+		" your client"
+	word
+		" I'll be cheaper."
+		" I lost."
+		" to call it even."
+
+
+# ---- UNION MERCHANT MARINE (stock Merchant) ---------------------------
+# Ordinary traders. Terrified, and practical about it.
+
+phrase "merchant ship bribe acceptance"
+	word
+		"Yes!"
+		"Of"
+		"Take"
+	word
+		" course."
+		" course, yes."
+		" whatever you like."
+	word
+		" Please"
+		"Just"
+		"We have"
+	word
+		" don't damage the hold."
+		" let us continue."
+		" families."
+	word
+		" My"
+		"This never"
+		"There was"
+	word
+		" manifest says we complied."
+		" happened."
+		" no encounter here."
+
+phrase "merchant ship bribe rejection"
+	word
+		"I"
+		"We're"
+		"That's"
+	word
+		" don't have"
+		" barely solvent."
+		" our entire"
+	word
+		" that much."
+		" That's"
+		" margin"
+	word
+		" Please,"
+		" You'd"
+		"I'd"
+	word
+		" we're just hauling grain."
+		" be bankrupt by winter."
+		" lose my ship."
+
+phrase "friendly merchant disabled"
+	word
+		"Mayday,"
+		"We're"
+		"Anyone,"
+	word
+		" anyone!"
+		" disabled."
+		" please."
+	word
+		" We're"
+		"Our"
+		"Crew is"
+	word
+		" a"
+		" hold is"
+		" unhurt."
+	word
+		" unarmed"
+		" intact."
+		" Please,"
+	word
+		" freighter!"
+		" we can pay"
+		" tow us"
+	word
+		" Not"
+		" for"
+		" to a"
+	word
+		" leave us here."
+		" a dock."
+		" station."
+
+phrase "hostile merchant disabled"
+	word
+		"Please,"
+		"Don't"
+		"We're"
+	word
+		" not."
+		" shoot."
+		" only"
+	word
+		" We're"
+		" Take"
+		"There's"
+	word
+		" a trader!"
+		" the cargo."
+		" credits in the"
+	word
+		" Our"
+		"Just"
+		"Leave"
+	word
+		" crew has families."
+		" let us go."
+		" the crew."
+
+
+# ---- INDEPENDENT / NEUTRAL -----------------------------------------------
+# Unaffiliated civilians. No faction to answer to, no credits to spare, and
+# very aware of how exposed they are out here.
+
+phrase "friendly independent disabled"
+	word
+		"Our"
+		"We've"
+		"Somebody"
+	word
+		" drive is"
+		" lost"
+		" help us,"
+	word
+		" gone."
+		" control."
+		" please."
+	word
+		" We're"
+		"There's"
+		"No"
+	word
+		" just a"
+		" nothing"
+		" weapons"
+	word
+		" trader."
+		" of value here."
+		" on board."
+	word
+		" Tow"
+		" Leave"
+		"Send"
+	word
+		" us to the nearest port."
+		" us a docking clamp."
+		" a rescue skiff."
+	word
+		" We can"
+		" We'll"
+		"There's"
+	word
+		" pay for it."
+		" make it worth you."
+		" fuel in the tank for you."
+
+phrase "hostile independent disabled"
+	word
+		"No!"
+		"Wait,"
+		"Don't"
+	word
+		" please."
+		" hold fire."
+		" shoot."
+	word
+		" We're"
+		"We have"
+		"There are"
+	word
+		" civilians."
+		" no weapons."
+		" families"
+	word
+		" We're"
+		" Take"
+		"On"
+	word
+		" not armed!"
+		" the hold."
+		" our knees."
+	word
+		" Just"
+		" Please"
+		"Spare"
+	word
+		" let us go."
+		" leave us breathing."
+		" the crew."

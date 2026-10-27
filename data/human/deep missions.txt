@@ -1,0 +1,500 @@
+# Copyright (c) 2017 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+event "deep: warlord detected"
+
+
+
+event "assisted the deep"
+
+
+
+conversation "deep: questioning"
+	branch question1
+		has "Deep: Interrogation: offered"
+	
+	`When you land on <origin> and open your ship's main hatch, you find yourself face-to-face with two Deep Security officers, neither of whom appear armed. "Hello, Captain <last>. We're going to need to ask you some questions. If you would please step off of your ship and follow us, that would be much appreciated."`
+	choice
+		`	(Follow their orders.)`
+			goto orders
+		`	"Why do you need to question me?"`
+		`	(Close the hatch and flee.)`
+			goto flee
+	
+	`	"Because we wish to question you on the nature of your work for Albert Foster. Now please, step off your ship and come with us."`
+	choice
+		`	(Follow their orders.)`
+		`	(Close the hatch and flee.)`
+			goto flee
+	
+	label orders
+	`	You follow the officers to a building located on the eastern edge of the spaceport. You are led to a small, dimly lit room on the second floor that contains nothing but two chairs and a table. You are told to sit in one of the chairs and wait.`
+		goto questioning
+	
+	label flee
+	`	You attempt to close the hatch, but a strong tingling sensation radiates from your abdomen. As you drop to the floor convulsing, you hold your eyes open long enough to glimpse a stun gun in one officer's hand.`
+	``
+	`	You wake up, slumped in a chair, in a dimly lit room. Across the table is another chair, empty. As you twist about, examining the rest of the room, the lingering soreness in your abdomen reminds you that even though you are alone for the moment, attempting to leave is likely unwise.`
+	
+	label questioning
+	choice
+		`	(Wait.)`
+	
+	`	Ten minutes pass in silence until a figure enters the room. In the dim light, you discern a tall, dark woman wearing what looks like a Deep Security uniform. Some of its badges, pins, and striping are unfamiliar to you.`
+	`	"I hope my men didn't have to struggle too much to get you here."`
+	choice
+		`	"Don't worry, it was just fine."`
+		`	"It wasn't the warmest welcome I've ever received."`
+	
+	`	The woman chuckles slightly. "No need to be sarcastic with me. Now, you know why you're here."`
+	choice
+		`	"I do?"`
+			goto clueless
+		`	"I didn't commit any crimes, so you have no right to detain me."`
+	
+	`	"Indeed, no crimes were committed during your work for Albert Foster, but we still have the right to detain you to keep the Deep safe. Cause us no trouble during this little meeting, answer my questions, and you will be on your way in a few minutes' time.`
+		goto foster
+	
+	label clueless
+	`	"Well if you don't then let me jog your memory: You took a small chip of wood from a historical church on Midgard - nothing criminal, mind you - and returned it to Vinci, where I assume you handed it over to the 'archaeologist' Albert Foster." The tone of her voice as she says "archaeologist," clearly conveys her disdain for his title. "Later you returned to Midgard with Albert Foster in tow, prompting us to run you out of the Deep.`
+	
+	label foster
+	`	"My first question to you: what exactly were you doing with Albert Foster?"`
+	label first
+	choice
+		`	"You can't interrogate me. I'm a citizen of the Deep."`
+			to display
+				has "start: deep"
+				not "questioning: citizen"
+		`	"We were scanning Midgard with gravitational field mapping equipment and spotted an artificial singularity before we fled."`
+			goto honest
+		`	"He told me he was researching the Deep and he needed help conducting his research."`
+			goto work
+	
+	action
+		set "questioning: citizen"
+	`	She frowns. "That does not give you immunity from our investigation.`
+	`	"Now again: what exactly were you doing with Albert Foster?"`
+		goto first
+	
+	label work
+	`	"And why do you think he needed someone else to do the work for him?"`
+	choice
+		`	"Because he wanted something illegal done."`
+		`	"Because he isn't allowed in the Deep."`
+			goto allowed
+	
+	`	"I already told you that you didn't commit a crime. The reason is that Foster has caused the Deep plenty of trouble in the past, so we don't particularly enjoy his presence. Now, did Albert make any discoveries due to your assistance?"`
+		goto choice
+	
+	label allowed
+	`	"Precisely. Now, did Albert make any discoveries due to your assistance?"`
+	
+	label choice
+	choice
+		`	"He discovered that the church on Midgard is far older than should be possible, dating back to at least the early 1700s."`
+		`	"We spotted something on Midgard that he called an 'artificial singularity.'"`
+			goto honest
+		
+	`	"Interesting finding, Captain. Is there anything else that he discovered?"`
+	choice
+		`	"No."`
+		`	"Yes. We used gravitational mapping equipment on Midgard and we found what looked like an artificial singularity."`
+			goto honest
+	
+	`	The woman does not respond for a few seconds. When she does begin speaking, you have to lean in to hear her. "Don't lie to me. I can make this experience very uncomfortable for you."`
+	choice
+		`	"Alright. We discovered an artificial singularity on Midgard."`
+	
+	`	"See? That wasn't so hard to admit, now was it?"`
+	
+	label honest
+	action
+		clear "questioning: citizen"
+	branch helped
+		has "Deep: Mystery Cubes 4: done"
+	
+	`	The woman's mouth turns into a sly smile as she leans back in her chair. "Thank you for the information. That is all we needed you for. You will be escorted back outside momentarily. Enjoy the rest of your day, <first> <last>."`
+		goto next
+	
+	label helped
+	action
+		set "deep: helped before archaeology"
+	`	The woman's mouth turns into a sly smile as she leans back in her chair. "Thank you for the information, Captain. Before I let you go, I'd like to thank you for the work you've done for the Deep. I was interested to hear that the same Captain who helped us pursue Beelzebub also helped Albert Foster. Don't worry, we all make stupid mistakes. We'll scratch this one off your record.`
+	`	"You clearly mean no harm to the Deep, so I'll give you the privilege of asking me any questions you might have after this encounter."`
+		goto questions
+	
+	label question1
+	`You are escorted by two <planet> security guards to a Corvette occupying a landing pad close to the spaceport's Deep Security complex. Standing below the Corvette is the tall, dark-skinned woman who questioned you on your work for Albert Foster.`
+	`	"Good evening, Captain," she looks up to the overcast sky for a moment, "or whatever time of day it might be right now. I've been informed that you proved yourself a great asset to the Navy and Deep Security in tracking down and... almost trapping Beelzebub. Please, come inside my ship for a moment."`
+	choice
+		`	(Follow her.)`
+			goto ask
+		`	"Why?"`
+	
+	`	"You can leave if you wish to, but I'd only be keeping you for a moment."`
+	choice
+		`	(Enter her ship.)`
+		`	(Leave.)`
+			decline
+	
+	label ask
+	`	The woman closes the Corvette's hatch, leaving you in the light of dim fluorescent bulbs. This must be quite an old ship to still be using fluorescent bulbs instead of the LED lights that most modern ships use for their interiors.`
+	`	"I've asked you onto my ship so that we may have some privacy. You clearly mean no harm to the Deep. For starters, I'm sure you'll be happy to hear that we've scratched your incident with Albert Foster from your record. Additionally, I'm extending you the privilege of asking me any questions you might have relating to our last encounter."`
+		goto questions
+	
+	label questions
+	choice
+		`	"When was the Deep really settled?"`
+		`	"Is there really an artificial singularity on Midgard?"`
+			goto singularity?
+		`	"I don't have any questions."`
+			goto none
+		
+	`	"The exact date has been lost to time, but folklore states that the first humans arrived here in the mid-1300s, before the time of the 'Black Death' plague on ancient Earth. It's not wise to believe in wonder tales, though."`
+	choice
+		`	"Were the original humans of the Deep really brought here by aliens?"`
+		`	"I don't have any more questions."`
+			goto none
+		
+	`	"That's a question for the people who were originally brought here." The woman flashes another sly smile.`
+	choice
+		`	"Is there really an artificial singularity on Midgard?"`
+		`	"I don't have any more questions."`
+			goto none
+		
+	`	"Those gravitational mapping devices can be so finicky sometimes. I'm sure it was nothing."`
+		goto done
+	
+	label singularity?
+	`	"Those gravitational mapping devices can be so finicky sometimes. I'm sure it was nothing."`
+	choice
+		`	"When was the Deep really settled?"`
+		`	"I don't have any questions."`
+			goto none
+		
+	`	"The exact date has been lost to time, but folklore states that the first humans arrived here in the mid-1300s, before the time of the 'Black Death' plague on ancient Earth. It's not wise to believe in wonder tales, though."`
+	choice
+		`	"Were the original humans of the Deep really brought here by aliens?"`
+		`	"I don't have any more questions."`
+			goto none
+		
+	`	"That's a question for the people who were originally brought here." The woman flashes another sly smile.`
+	
+	label done
+	branch question2
+		has "Deep: Interrogation: offered"
+	
+	`	"That will be enough questions for now. You will be escorted back outside momentarily. Enjoy the rest of your day, Captain."`
+		goto next
+	
+	label question2
+	`	"That will be enough questions for now."`
+		goto next
+	
+	label none
+	branch question3
+		has "Deep: Interrogation: offered"
+	
+	`	"If that is all, then this meeting is over. You will be escorted back outside momentarily. Enjoy the rest of your day, Captain."`
+		goto next
+		
+	label question3
+	`	"Very well."`
+		goto next
+	
+	label next
+	branch question4
+		has "Deep: Interrogation: offered"
+	
+	`	The woman gets up from her chair and stops in the doorway. She turns her head slightly and says in a low voice, "I'll be watching," then leaves. Moments later, the same two men that brought you here step into the room and ask you to follow them. They lead you to an entryway and lock the door as you step out into the spaceport.`
+		decline
+
+	label question4
+	`	The woman opens the hatch to the ship. "We might meet again in the future. Stay on your best behavior and our next meeting will surely be on good terms. Goodbye, Captain."`
+		decline
+	
+
+
+event "deep: keystone research"
+
+
+
+conversation "deep: remnant"
+	branch "on second mission" "on first mission"
+		has "Deep: Remnant 1: done"
+	
+	label "on first mission"
+	`You contact Ivan after you land and he sends you directions to his research lab, located on the outskirts of the city. "Quite the distance from my office, but we work with what we have," he comments. When you arrive, you hardly have time to greet Ivan, Rayna, and the others before Ivan begins discussing what they have learned from the quantum keystones.`
+	branch "knew before" "didn't know before"
+		has "deep: knew of stones before scientists"
+	
+	label "knew before"
+	`	"As you mentioned before, a single keystone is sufficient to enter the wormhole," Ivan says. "We've determined that there is a stabilization effect, either on the ship or the wormhole, that allows matter to cross the threshold. However, we'll need much more time and data to fully understand the true mechanism.`
+	branch remnant1
+		has "deep: did reveal remnant"
+	`	"Last time, you mentioned that there were alien creatures able to survive the vacuum of space, correct?"`
+	`	You nod.`
+	`	"Right. Well, it would be extremely interesting if we were to learn more about these alien creatures.`
+		goto end
+
+	label remnant1
+	`	"Last time, you mentioned that there were humans living in this space, the... the 'Remainder?'"`
+	`	"Remnant," you say.`
+	`	"Right, that was it. Well, it would be extremely interesting if we were to learn more about this people.`
+		goto end
+	
+	label "didn't know before"
+	`	"We've analyzed the keystones, and surprisingly they do allow entry into the wormhole in Terminus," Ivan explains. "It would appear that the stones stabilize the wormhole as the ship passes through it, or maybe it is stabilizing the ship in some way and not the wormhole. We'll need much more time to fully understand the true mechanism that is at play here. Whatever the case is, one stone is required for each ship to pass through the wormhole.`
+	`	"We sent a single drone through the wormhole to test that it was passable, and programmed it to return immediately in case the region beyond is hostile or dangerous. Would you be willing to explore the region for us? You may want to install a ramscoop, as we are unsure if there will be anywhere for your ship to refuel."`
+	branch "know now" "still don't know"
+		has "First Contact: Remnant: offered"
+	
+	label "know now"
+	choice
+		`	"Actually, I already explored the region beyond the wormhole while you were researching."`
+			goto skip
+		`	"Sorry, I don't want to work for you anymore."`
+			decline
+	
+	label "on second mission"
+	`When you return, Ivan and the rest of the scientists wait eagerly for you to explain what you discovered.`
+	
+	label skip
+	`	You begin by recounting your experience with the strange space-dwelling creatures you found in the Nenia system. Ivan's eyes go wide when you mention the ease with which they fed on asteroids, and how they seemed to effortlessly escape from the gravity of local gas giants. You also mention that there are more strange wormholes like the one that you passed through to enter the region of space, including a series of wormholes that create a loop between multiple systems.`
+	branch friendly
+		has "event: ember waste label"
+	action
+		set "deep: did reveal remnant"
+	`	You then tell them about the strange-looking humans who communicate in song and sign language that attacked you after you wouldn't submit to a blood test.`
+		goto remnant2
+		
+	label friendly
+	choice
+		`	(Reveal the existence of the Remnant.)`
+		`	(Don't reveal the existence of the Remnant.)`
+			goto secret
+	action
+		set "deep: did reveal remnant"
+	`	You then tell them about the Remnant, a group of friendly humans who fled human space during the Alpha Wars and have advanced independently of humanity for centuries, and how they call the region of space the "Ember Waste."`
+		goto remnant2
+
+	label secret
+	action
+		set "deep: did not reveal remnant"
+	`	The group of scientists looks captivated the entire time, almost like kindergarten children listening to a fairy tale. When you finish talking, they immediately chatter among themselves, seeming to be most interested in the alien creatures which inhabit the region. They seem to agree that they need to learn more about these aliens.`
+	`	"We can seek to learn more about these alien creatures later," Ivan says.`
+		goto end
+		
+	label remnant2
+	`	The group of scientists looks captivated the entire time, almost like kindergarten children listening to a fairy tale. When you finish talking, they immediately chatter among themselves, seeming to be most interested in the human beings which inhabit the region. They seem to agree that they need to learn more about these humans, and more specifically about the technology which they have developed.`
+	`	"We can seek to learn more about this group of humans later," Ivan says.`
+
+	label end
+	`	"But, first and foremost, we should continue our work on understanding these wormholes. You mentioned a strange series of wormholes. Their behavior is definitely noteworthy. Could you return to this region of space while carrying a suite of astronomic instruments? If you travel through these wormholes, we may learn more about what makes them tick."`
+	choice
+		`	"Okay, I'm willing to do it."`
+		`	"Sorry, but I didn't agree to help you beyond that first job. Goodbye."`
+			decline
+	`	"Wonderful! We'll get the instruments loaded onto your ship immediately."`
+		accept
+
+	label "still don't know"
+	choice
+		`	"I'm always willing to go on an adventure."`
+		`	"This sounds too risky. You're going to need to find someone else to go exploring."`
+			decline
+	`	"Splendid! We will give you a single quantum keystone in order to travel through the wormhole. Return here once you have finished exploring."`
+		accept
+
+
+
+event "deep: arculus empty"
+	system "Arculus"
+		remove fleet "Large Remnant"
+		remove fleet "Small Remnant"
+		remove fleet "Remnant Transport"
+		remove fleet "Remnant Home Guard"
+		remove fleet "Korath Ember Waste Raid"
+
+event "deep: arculus restored"
+	system "Arculus"
+		add fleet "Large Remnant" 3000
+		add fleet "Small Remnant" 2200
+		add fleet "Remnant Transport" 2200
+		add fleet "Remnant Home Guard" 2000
+		add fleet "Korath Ember Waste Raid" 40000
+
+
+
+conversation "deep: remnant 3"
+	`The team of scientists is already waiting in the spaceport when you arrive. They remove the equipment from your ship and immediately begin analyzing the results after returning to the lab.`
+	`	"At first glance, this series of wormholes seems no different than the one that is used to enter this region of space, but it will require some time for us to go over all the data the sensors collected," Ivan explains to you.`
+	branch revealed
+		has "deep: did reveal remnant"
+	`	"While you wait, though, I have another job you could do. You mentioned something about strange alien creatures beyond the wormhole that seemed to be able to survive in the vacuum of space. Would you be able to return there and scan them for us? These alien creatures won't have 'outfits' for the scanners to pick up, but a typical outfits scanner is still likely to give us the most information."`
+		goto end
+
+	label revealed
+	`	"While you wait, though, I have another job you could do. You mentioned something about a group of humans, or at least human-like beings, beyond the wormhole. Would you be able to return there and scan their ships for us? I'd be interested in seeing what an outfits scanner returns. You need not contact them, simply find a couple of ships and scan them so that we might learn more about their capabilities."`
+	label end
+	choice
+		`	"Sounds like a good plan. I'll be back as soon as I can."`
+			accept
+		`	"Sorry, but I'm not comfortable with this idea. You'll need to find someone else."`
+			decline
+
+
+
+event "deep: scan log research"
+
+
+
+event "deep: remnant: rest period"
+
+
+
+event "deep: scientist rescue timer"
+
+
+
+event "battle in arneb"
+	system "Arneb"
+		remove fleet "Large Northern Pirates"
+		remove fleet "Small Northern Pirates"
+		remove fleet "Large Republic"
+		add fleet "Large Republic" 10000
+
+
+
+ship "Star Queen" "Star Queen (Unarmed)"
+	outfits
+		"NT-200 Nucleovoltaic"
+		"LP072a Battery Pack"
+		"D94-YV Shield Generator"
+		"Small Radar Jammer" 3
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
+
+
+ship "Bactrian" "Bactrian (Cosmic Devil)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Hai Tracker Pod" 2
+		"Hai Tracker" 168
+		"Tracker Storage Pod" 2
+		"Pulse Turret" 4
+		"Point Defense Turret"
+		"Heavy Anti-Missile Turret"
+		"Boulder Reactor" 2
+		"Hai Ravine Batteries"
+		"Hai Chasm Batteries"
+		"Hai Diamond Regenerator"
+		"Liquid Helium Cooler"
+		"Outfits Expansion" 4
+		"Quantum Keystone"
+		"Tactical Scanner"
+		"Outfit Scanner"
+		"Cargo Scanner"
+		"Ramscoop"
+		`"Bondir" Atomic Thruster`
+		`"Bufaer" Atomic Steering`
+		"Hyperdrive"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Hai Tracker Pod"
+	gun "Hai Tracker Pod"
+	turret "Heavy Anti-Missile Turret"
+	turret "Pulse Turret"
+	turret "Pulse Turret"
+	turret "Pulse Turret"
+	turret "Pulse Turret"
+	turret "Point Defense Turret"
+
+
+
+event "battle in arneb end"
+	system Arneb
+		remove fleet "Large Republic"
+		add fleet "Small Northern Pirates" 400
+		add fleet "Large Northern Pirates" 500
+		add fleet "Large Republic" 15000
+
+
+
+event "Stone waiting"
+
+
+event "Stone Waiting more"
+
+
+
+event "nifel waiting"
+
+
+
+event "mani refit"
+
+
+
+event "skadenga death"
+
+
+
+event "nifel hjlod"
+
+
+
+event "the book"
+
+
+
+event "asgard hjlod"
+
+
+
+event "hjlod waits again"
+
+
+
+event "hroar message"
+
+
+
+conversation "land at windblain"
+	scene "scene/seasidecliffs"
+	`The reserved and limited government of Windblain pays neither you nor your fleet any heed as you make your way down to the outskirts of Hrithfjall. An empty, windswept landscape beneath gray clouds and a small group of weathered fishermen are waiting for you outside your ship.`
+	`	"I thought I'd be seeing you again," Aldfrith says at the front of his small delegation. "I dreamt that ice rained down upon the seas, and that Ran was glad of it." The creases in his face bunch up as he smiles at the memory, and then his eyes wander to the disembarking Skadenga. A moment later, the Ondurdis joins you.`
+	`	"So, you are the ice that falls from the stars?" asks Aldfrith with a hint of mirth in his eyes.`
+	`	"We are Skadenga, daughters of Skade. Mistresses of ice, mountain, and cold. But, I think now, she sends us to her sister Ran." The Ondurdis replies.`
+	`	Aldfrith nods slowly. "We are the folk of Ran; the offspring of the surf, the students of the wind, and the watchers of the storm. We welcome you and your people here. Though there are few here at present, many more of our number can be found out amongst the surging seas." He glances at the growing number of Skadenga. "If you follow me, I will escort you to our village and show you what buildings you may use. Though I fear we can not house so many."`
+	`	The Ondurdis smiles. "We thank you for your hospitality. It is good to find others who remember the old ways. Fear not, though; we are resourceful lot." Turning to you, she continues, "Meet me near the ships at makeshift spaceport in a few hours. I have much to do at moment." She and many others then follow Aldfrith and his group to the halls of Hrithfjall.`
+	`	As you watch them leave, you hear the sound of Hroar's fleet taking off and heading back to Nifel to pick up the rest of the Skadenga.`
+		to display
+			not "refusedhroar"
+
+
+
+event "skadenga life"
+
+
+
+event "skadenga mourners"
+
+
+
+event "hjlod waits"
+
+

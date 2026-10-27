@@ -1,0 +1,471 @@
+# Orville Endless Sky Mod - Fleets for the Orville star map.
+#
+# The Orville systems (data/orville/systems.txt) and the start systems
+# reference faction fleets that do not exist in stock data. Stock keys are
+# reused for the ships; only the fleet wrappers are new.
+#
+# Load order: data/orville/ loads after data/map systems.txt and the stock
+# fleet files, so these blocks add new fleet keys without touching stock ones.
+
+# ---- PLANETARY UNION -----------------------------------------------------
+
+fleet "Small Union"
+	government "Republic"
+	names "union small"
+	cargo 0
+	personality
+		heroic opportunistic
+	variant 6
+		"Rainmaker" 2
+	variant 5
+		"Gunboat"
+		"Rainmaker"
+	variant 4
+		"Frigate"
+	variant 3
+		"Gunboat" 2
+	variant 1
+		"Rainmaker" 3
+	variant 6
+		"Gunboat"
+
+fleet "Large Union"
+	government "Republic"
+	names "union capital"
+	fighters
+		names "union fighter"
+	cargo 0
+	personality
+		heroic opportunistic
+	variant 5
+		"Frigate" 2
+		"Rainmaker"
+		"Gunboat"
+	variant 3
+		"Cruiser"
+		"Combat Drone" 4
+	variant 2
+		"Carrier"
+		"Lance" 8
+		"Combat Drone" 6
+	variant 1
+		"Cruiser"
+		"Combat Drone" 4
+		"Frigate" 2
+	variant 1
+		"Frigate"
+		"Rainmaker" 2
+		"Gunboat"
+
+# ---- MOCLAN --------------------------------------------------------------
+
+fleet "Small Moclan"
+	government "Moclan"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Valkyrie" 2
+	variant 5
+		"Sunder"
+		"Valkyrie"
+	variant 4
+		"Bactrian"
+	variant 3
+		"Sunder" 2
+	variant 6
+		"Bactrian"
+
+fleet "Large Moclan"
+	government "Moclan"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Bactrian" 2
+		"Sunder"
+		"Valkyrie"
+	variant 3
+		"Bulwark"
+		"Combat Drone" 4
+	variant 1
+		"Bulwark"
+		"Bactrian" 2
+		"Sunder" 2
+
+# ---- KAYLON --------------------------------------------------------------
+
+fleet "Kaylon Core"
+	government "Kaylon"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Splinter" 2
+	variant 5
+		"Skein"
+		"Splinter"
+	variant 4
+		"Berserker"
+	variant 3
+		"Skein" 2
+	variant 6
+		"Berserker"
+
+fleet "Kaylon Aggressive"
+	government "Kaylon"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Berserker" 2
+		"Skein"
+		"Splinter"
+	variant 3
+		"Behemoth"
+		"Surveillance Drone" 4
+	variant 1
+		"Behemoth"
+		"Berserker" 2
+		"Skein" 2
+
+# ---- KRILL ---------------------------------------------------------------
+
+fleet "Krill"
+	government "Krill"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Barb" 2
+	variant 5
+		"Boxwing"
+		"Barb"
+	variant 4
+		"Arrow"
+	variant 3
+		"Boxwing" 2
+	variant 6
+		"Arrow"
+
+fleet "Large Krill"
+	government "Krill"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Arrow" 2
+		"Boxwing"
+		"Barb"
+	variant 3
+		"Corvette"
+		"Combat Drone" 4
+	variant 1
+		"Corvette"
+		"Arrow" 2
+		"Boxwing" 2
+
+# ---- MOTILALI ------------------------------------------------------------
+
+fleet "Small Motilali"
+	government "Wanderer"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Grasshopper" 2
+	variant 5
+		"Aphid"
+		"Grasshopper"
+	variant 4
+		"Grasshopper"
+	variant 3
+		"Aphid" 2
+	variant 6
+		"Aphid"
+
+fleet "Large Motilali"
+	government "Wanderer"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Aphid" 2
+		"Grasshopper"
+		"Grasshopper"
+	variant 2
+		"Centipede"
+		"Aphid" 2
+
+# ---- KAYLON (campaign fleets) -------------------------------------------
+
+fleet "Kaylon Vessel"
+	government "Kaylon"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Splinter" 2
+	variant 5
+		"Skein"
+		"Splinter"
+	variant 4
+		"Berserker"
+	variant 3
+		"Skein" 2
+	variant 6
+		"Berserker"
+
+fleet "Kaylon Observer"
+	government "Kaylon"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 8
+		"Surveillance Drone" 2
+	variant 6
+		"Splinter"
+	variant 4
+		"Skein"
+	variant 6
+		"Surveillance Drone"
+
+fleet "Kaylon Invasion Force"
+	government "Kaylon"
+	names "union capital"
+	fighters
+		names "union fighter"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Berserker" 2
+		"Skein"
+		"Splinter"
+	variant 3
+		"Behemoth"
+		"Surveillance Drone" 4
+	variant 2
+		"Behemoth"
+		"Berserker" 2
+		"Skein" 2
+
+# ---- CAMPAIGN EVENT FLEETS (data/orville/campaign events.txt) -------------
+# These fleets are referenced by the campaign events as `remove fleet` /
+# `fleet` directives. Undefined, those directives are no-ops; defined here,
+# the events actually alter the systems they target.
+
+fleet "Small Krill Patrol"
+	government "Krill"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 6
+		"Barb" 2
+	variant 5
+		"Boxwing"
+		"Barb"
+	variant 4
+		"Arrow"
+	variant 3
+		"Boxwing" 2
+	variant 6
+		"Arrow"
+
+fleet "Large Krill Patrol"
+	government "Krill"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Arrow" 2
+		"Boxwing"
+		"Barb"
+	variant 3
+		"Corvette"
+		"Nighthawk" 2
+	variant 1
+		"Corvette"
+		"Arrow" 2
+
+fleet "Krill Raider"
+	government "Krill"
+	names "pirate"
+	cargo 0
+	personality
+		heroic opportunistic harvests plunders
+	variant 8
+		"Barb" 2
+	variant 6
+		"Boxwing"
+		"Barb"
+	variant 4
+		"Cutthroat"
+	variant 6
+		"Barb"
+
+fleet "Small Moclan Science Vessel"
+	government "Moclan"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 8
+		"Valkyrie"
+	variant 6
+		"Sunder"
+	variant 4
+		"Valkyrie"
+		"Sunder"
+
+fleet "Large Moclan Science Vessel"
+	government "Moclan"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Bactrian" 2
+		"Sunder"
+	variant 3
+		"Bulwark"
+		"Bactrian"
+	variant 1
+		"Bulwark"
+		"Sunder" 2
+
+fleet "Moclan Heavy Cruiser"
+	government "Moclan"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Bulwark"
+		"Bactrian"
+	variant 2
+		"Bulwark"
+		"Sunder" 2
+	variant 1
+		"Bulwark"
+		"Bactrian" 2
+
+fleet "Small Kaylon Ship"
+	government "Kaylon"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 8
+		"Splinter"
+	variant 6
+		"Skein"
+	variant 4
+		"Splinter"
+		"Skein"
+
+fleet "Large Kaylon Ship"
+	government "Kaylon"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Berserker" 2
+		"Skein"
+	variant 3
+		"Behemoth"
+		"Surveillance Drone" 2
+	variant 1
+		"Behemoth"
+		"Berserker"
+
+fleet "Small Calivon Ship"
+	government "Calivon"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 8
+		"Manta"
+	variant 6
+		"Mammoth"
+	variant 4
+		"Manta"
+		"Mammoth"
+
+fleet "Calivon Cruiser"
+	government "Calivon"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Leviathan"
+		"Mammoth"
+	variant 2
+		"Leviathan"
+		"Manta" 2
+	variant 1
+		"Leviathan"
+		"Mammoth"
+		"Manta"
+
+fleet "Small Crildari Ship"
+	government "Crildari"
+	names "union small"
+	cargo 0
+	personality
+		heroic
+	variant 8
+		"Shuttle"
+	variant 6
+		"Hauler"
+	variant 4
+		"Scout"
+		"Shuttle"
+
+fleet "Large Crildari Ship"
+	government "Crildari"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Freighter" 2
+		"Hauler"
+	variant 2
+		"Freighter"
+		"Hauler" 2
+	variant 1
+		"Freighter"
+		"Star Barge"
+
+fleet "Crildari Cruiser"
+	government "Crildari"
+	names "union capital"
+	cargo 0
+	personality
+		heroic
+	variant 4
+		"Freighter"
+		"Star Barge"
+		"Mule"
+	variant 2
+		"Star Barge" 2
+		"Freighter"
+	variant 1
+		"Freighter" 2
+		"Mule" 2

@@ -1,0 +1,20 @@
+# Copyright (c) 2026 by Daeridanii
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+conversation "successor keystone delivery"
+	`	As soon as you inform traffic control that you are returning with the fifty keystones that House Aqrabe requested, your ship is directed to a side hangar surrounded by multiple small outfitting bays. Most are shuttered, but one is brightly lit and full of activity. It seems to be the domain of some of House Aqrabe's more unorthodox research efforts - the walls are draped with strange-looking fabrics, and a couple of unusual, abstract statues dot its interior. In the center, a ship-mounted scanner is in the midst of being deconstructed; as you walk in, a Successor pops their head around from behind it.`
+	`	"Captain <last>?" they ask.`
+	`	"Yes?"`
+	`	They slither forward towards you and splay their arms in the traditional gesture. "Tiliia," they offer as an introduction. "I was told to expect thine arrival. Thou hast brought," and they pause to pronounce the word, "keystones, yes?"`
+	`	"I have," you say. "Fifty keystones, as was requested." Tiliia joins you in walking back to the <ship> to examine the cargo; when they're sufficiently satisfied that you've brought the proper amount, they pull out a data-pad and enter a couple of values. Though their eyes widen when you provide them with your receipts, they nonetheless confirm a few moments later that House Aqrabe has credited you to offset the purchase price of the keystones, plus a three hundred thousand-credit bonus.`
+	`	As they begin directing ground crews to offload the keystones, Tiliia turns to you for a moment and requests that you meet them back at the spaceport by the end of the day: "thine assistance might be a boon to us in the next part of this journey," they say.`
